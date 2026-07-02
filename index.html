@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Robert Joke</title>
+    <meta name="description" content="認真講幹話六格漫畫">
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #111111;
+        --panel: #1d1d1d;
+        --text: #f4f0e8;
+        --muted: #b9b1a7;
+        --accent: #f0c24b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", sans-serif;
+      }
+
+      main {
+        width: min(1120px, 100%);
+        margin: 0 auto;
+        padding: 28px 16px 40px;
+      }
+
+      header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 0 0 18px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(28px, 5vw, 52px);
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      p {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      .tag {
+        color: #111111;
+        background: var(--accent);
+        border-radius: 999px;
+        padding: 8px 12px;
+        font-size: 14px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .comic {
+        background: var(--panel);
+        border: 1px solid #313131;
+        border-radius: 8px;
+        padding: 10px;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+
+      footer {
+        padding-top: 16px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 640px) {
+        header {
+          align-items: start;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <h1>Robert Joke</h1>
+          <p>認真講幹話六格漫畫</p>
+        </div>
+        <div class="tag">賓士貓冷眼監修</div>
+      </header>
+
+      <section class="comic" aria-label="認真講幹話六格漫畫">
+        <img src="assets/001_deadpan_nonsense_tuxedo_cat.png" alt="認真講幹話六格漫畫：不是偷懶，是提前抵達成果。">
+      </section>
+
+      <footer>
+        不是偷懶，是提前抵達成果。
+      </footer>
+    </main>
+  </body>
+</html>
