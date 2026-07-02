@@ -1,0 +1,10 @@
+{
+  "name": "robert-joke",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "post:ig": "node scripts/post-to-instagram.mjs",
+    "post:ig:dry-run": "node scripts/post-to-instagram.mjs --dry-run"
+  }
+}
