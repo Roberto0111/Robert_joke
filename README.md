@@ -21,10 +21,10 @@ GitHub Pages 可使用 `index.html` 作為首頁。
 
 這個 repo 也包含一個最小的 Instagram Graph API 發文腳本。
 
-1. 先把圖片放到公開可讀的網址，例如 GitHub Pages：
+1. 先把圖片放到公開可讀的網址，例如 GitHub raw file：
 
    ```text
-   https://Roberto0111.github.io/Robert_joke/assets/001_deadpan_nonsense_tuxedo_cat.png
+   https://raw.githubusercontent.com/Roberto0111/Robert_joke/main/assets/001_deadpan_nonsense_tuxedo_cat.png
    ```
 
 2. 複製環境變數範本：
@@ -38,7 +38,7 @@ GitHub Pages 可使用 `index.html` 作為首頁。
    ```text
    IG_USER_ID=你的 Instagram Business/Creator IG User ID
    IG_ACCESS_TOKEN=你的 Meta long-lived access token
-   IG_IMAGE_URL=https://Roberto0111.github.io/Robert_joke/assets/001_deadpan_nonsense_tuxedo_cat.png
+   IG_IMAGE_URL=https://raw.githubusercontent.com/Roberto0111/Robert_joke/main/assets/001_deadpan_nonsense_tuxedo_cat.png
    IG_CAPTION_FILE=captions/001_deadpan_nonsense_tuxedo_cat.md
    ```
 
