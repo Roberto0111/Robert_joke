@@ -37,21 +37,29 @@ GitHub Pages 可使用 `index.html` 作為首頁。
 
    ```text
    IG_USER_ID=你的 Instagram Business/Creator IG User ID
-   IG_ACCESS_TOKEN=你的 Meta long-lived access token
+   IG_ACCESS_TOKEN=你的 Instagram API access token
    IG_IMAGE_URL=https://raw.githubusercontent.com/Roberto0111/Robert_joke/main/assets/001_deadpan_nonsense_tuxedo_cat.png
    IG_CAPTION_FILE=captions/001_deadpan_nonsense_tuxedo_cat.md
+   IG_API_MODE=instagram_login
+   IG_GRAPH_VERSION=v23.0
    ```
 
-4. 先 dry run 檢查 payload：
+4. 先檢查 token：
+
+   ```bash
+   npm run check:ig-token
+   ```
+
+5. 先 dry run 檢查 payload：
 
    ```bash
    npm run post:ig:dry-run
    ```
 
-5. 發文：
+6. 發文：
 
    ```bash
    npm run post:ig
    ```
 
-Instagram Graph API 發圖流程是先建立 media container，再呼叫 publish。帳號需要是 Instagram Business 或 Creator，且 access token 要有發佈內容的權限。
+Instagram API 發圖流程是先建立 media container，再呼叫 publish。預設使用 Instagram Login token 路線，也就是 `graph.instagram.com`。如果你要改用 Facebook Graph API token，請把 `IG_API_MODE` 改成 `facebook_graph`。
