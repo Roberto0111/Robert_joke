@@ -63,3 +63,51 @@ GitHub Pages 可使用 `index.html` 作為首頁。
    ```
 
 Instagram API 發圖流程是先建立 media container，再呼叫 publish。預設使用 Instagram Login token 路線，也就是 `graph.instagram.com`。如果你要改用 Facebook Graph API token，請把 `IG_API_MODE` 改成 `facebook_graph`。
+
+## Python 排程流程
+
+穩定版流程由 Python 主控：
+
+```text
+crontab
+  -> scripts/cron_robert_joke.sh
+  -> scripts/run_daily_pipeline.py
+  -> codex exec 生成圖片/caption/manifest
+  -> Python 等圖片檔出現
+  -> git push 到 GitHub
+  -> Instagram API 發文
+  -> manifest 寫入 IG media id
+```
+
+手動跑一次：
+
+```bash
+/usr/bin/python3 scripts/run_daily_pipeline.py
+```
+
+只測流程，不真的推 GitHub 或發 IG：
+
+```bash
+/usr/bin/python3 scripts/run_daily_pipeline.py --dry-run
+```
+
+已有圖片和 caption，只補發某一篇：
+
+```bash
+/usr/bin/python3 scripts/run_daily_pipeline.py --post-only --run-id 2026-07-03_1210
+```
+
+建議 crontab：
+
+```cron
+0 8,12,18 * * * /Users/roberto/Documents/Codex/2026-07-02/new-chat-4/outputs/Robert_joke/scripts/cron_robert_joke.sh
+```
+
+log 會寫到：
+
+```text
+logs/cron.log
+logs/pipeline.log
+posts/RUN_ID/codex_exec.log
+posts/RUN_ID/instagram_publish.log
+```
