@@ -16,9 +16,10 @@ prompts/YYYY-MM-DD_HHMM_generation_prompt.md
 ## Required Steps
 
 1. 讀取 `prompts/daily_comic_style.md`。
-2. 檢查 `posts/` 舊貼文，避免重複主題與台詞。
-3. 先構思一則新的「認真講幹話」六格腳本。
-4. 用 imagegen 生成一張彩色六格漫畫。
+2. 使用 `assets/main_character_reference.jpg` 作為男主角本人照片參考，生成時必須保留本人特徵。
+3. 檢查 `posts/` 舊貼文，避免重複主題與台詞。
+4. 先構思一則新的「認真講幹話」六格腳本。
+5. 用 imagegen 生成一張彩色六格漫畫。
 5. 把圖存到 `assets/YYYY-MM-DD_HHMM_deadpan_joke.png`。
 6. 產生 IG caption 到 `captions/YYYY-MM-DD_HHMM_deadpan_joke.md`。
 7. 產生本次 prompt 到 `prompts/YYYY-MM-DD_HHMM_generation_prompt.md`。

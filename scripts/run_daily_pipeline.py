@@ -18,6 +18,7 @@ NODE_BIN = Path(os.environ.get(
     "/Users/roberto/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
 ))
 SSH_KEY = Path(os.environ.get("ROBERT_JOKE_SSH_KEY", "/Users/roberto/.ssh/id_ed25519_robert_joke"))
+CHARACTER_REFERENCE = ROOT / "assets" / "main_character_reference.jpg"
 LOCK_FILE = ROOT / ".daily_pipeline.lock"
 LOG_DIR = ROOT / "logs"
 TIMEOUT_SECONDS = int(os.environ.get("ROBERT_JOKE_CODEX_TIMEOUT", "3600"))
@@ -94,6 +95,8 @@ def trigger_codex(run_id: str, paths: dict[str, Path], dry_run: bool) -> None:
 
     if not CODEX_BIN.exists():
         raise RuntimeError(f"Codex CLI not found: {CODEX_BIN}")
+    if not CHARACTER_REFERENCE.exists():
+        raise RuntimeError(f"Main character reference not found: {CHARACTER_REFERENCE}")
 
     prompt = build_codex_prompt(run_id, paths)
     prompt_file = paths["run_dir"] / "codex_prompt.txt"
@@ -109,6 +112,8 @@ def trigger_codex(run_id: str, paths: dict[str, Path], dry_run: bool) -> None:
         "--sandbox",
         "workspace-write",
         "--skip-git-repo-check",
+        "--image",
+        str(CHARACTER_REFERENCE),
         "--output-last-message",
         str(paths["run_dir"] / "codex_last_message.txt"),
         "-",
@@ -137,8 +142,13 @@ Read:
 - prompts/daily_comic_style.md
 - prompts/daily_posting_workflow.md
 
+Attached image:
+- assets/main_character_reference.jpg is the mandatory likeness reference for the male main character.
+
 Hard requirements:
 - Generate exactly one colorful six-panel comic image.
+- The male protagonist must be based on the attached reference photo: East Asian man, round youthful face, side-swept black hair, slightly sleepy eyes, wearing a black collared top with gray zipper/placket.
+- Preserve the reference identity in stylized manga/comic form. Do not use a generic anime man.
 - Style: 認真講幹話, dry Taiwanese internet humor, Traditional Chinese.
 - If a cat appears, it must be a black-and-white tuxedo cat.
 - Do not post to Instagram.
