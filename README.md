@@ -69,8 +69,7 @@ Instagram API 發圖流程是先建立 media container，再呼叫 publish。預
 穩定版流程由 Python 主控：
 
 ```text
-crontab
-  -> scripts/cron_robert_joke.sh
+LaunchAgent com.roberto.robert-joke
   -> scripts/run_daily_pipeline.py
   -> codex exec 生成圖片/caption/manifest
   -> Python 等圖片檔出現
@@ -97,10 +96,24 @@ crontab
 /usr/bin/python3 scripts/run_daily_pipeline.py --post-only --run-id 2026-07-03_1210
 ```
 
-建議 crontab：
+正式排程使用 macOS LaunchAgent：
 
-```cron
-0 8,12,18 * * * /Users/roberto/Documents/Codex/2026-07-02/new-chat-4/outputs/Robert_joke/scripts/cron_robert_joke.sh
+```text
+/Users/roberto/Library/LaunchAgents/com.roberto.robert-joke.plist
+```
+
+LaunchAgent 的工作目錄是：
+
+```text
+/Users/roberto/Automation/Robert_joke
+```
+
+排程時間：
+
+```text
+08:00
+12:00
+18:00
 ```
 
 log 會寫到：
