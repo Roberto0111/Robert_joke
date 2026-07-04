@@ -54,7 +54,7 @@ if (!container.id) {
 
 console.log(`Created media container: ${container.id}`);
 
-const publish = await postGraph(`${baseUrl}/${igUserId}/media_publish`, {
+const publish = await publishWithRetry(`${baseUrl}/${igUserId}/media_publish`, {
   creation_id: container.id,
   access_token: accessToken,
 });
@@ -102,6 +102,33 @@ async function postGraph(url, values) {
   }
 
   return data;
+}
+
+async function publishWithRetry(url, values) {
+  const maxAttempts = Number(process.env.IG_PUBLISH_ATTEMPTS || 6);
+  const delayMs = Number(process.env.IG_PUBLISH_RETRY_MS || 10000);
+  let lastError;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      return await postGraph(url, values);
+    } catch (error) {
+      lastError = error;
+      const message = String(error?.message || error);
+      const mediaNotReady = message.includes("Media ID is not available") || message.includes("素材尚未準備好");
+      if (!mediaNotReady || attempt === maxAttempts) {
+        throw error;
+      }
+      console.error(`Media not ready; retrying publish in ${Math.round(delayMs / 1000)}s (${attempt}/${maxAttempts})`);
+      await sleep(delayMs);
+    }
+  }
+
+  throw lastError;
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function requiredEnv(name) {
