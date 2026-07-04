@@ -1,0 +1,8 @@
+{
+  "run_id": "test_generate_20260704_133650",
+  "topic": "待辦清單改名成未來的可能性清單",
+  "image_path": "assets/test_generate_20260704_133650_deadpan_joke.png",
+  "caption_path": "captions/test_generate_20260704_133650_deadpan_joke.md",
+  "prompt_path": "prompts/test_generate_20260704_133650_generation_prompt.md",
+  "status": "generated"
+}
