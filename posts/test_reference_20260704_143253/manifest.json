@@ -4,5 +4,7 @@
   "image_path": "assets/test_reference_20260704_143253_deadpan_joke.png",
   "caption_path": "captions/test_reference_20260704_143253_deadpan_joke.md",
   "prompt_path": "prompts/test_reference_20260704_143253_generation_prompt.md",
-  "status": "generated"
+  "status": "published",
+  "instagram_media_id": "17978223344882966",
+  "published_at": "2026-07-04T14:42:33"
 }
