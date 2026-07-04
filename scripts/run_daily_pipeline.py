@@ -101,13 +101,13 @@ def trigger_codex(run_id: str, paths: dict[str, Path], dry_run: bool) -> None:
 
     cmd = [
         str(CODEX_BIN),
+        "--ask-for-approval",
+        "never",
         "exec",
         "-C",
         str(ROOT),
         "--sandbox",
         "workspace-write",
-        "--ask-for-approval",
-        "never",
         "--skip-git-repo-check",
         "--output-last-message",
         str(paths["run_dir"] / "codex_last_message.txt"),
