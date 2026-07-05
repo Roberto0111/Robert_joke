@@ -23,6 +23,8 @@ LOCK_FILE = ROOT / ".daily_pipeline.lock"
 LOG_DIR = ROOT / "logs"
 TIMEOUT_SECONDS = int(os.environ.get("ROBERT_JOKE_CODEX_TIMEOUT", "3600"))
 POLL_SECONDS = int(os.environ.get("ROBERT_JOKE_POLL_SECONDS", "5"))
+IG_IMAGE_WIDTH = 1080
+IG_IMAGE_HEIGHT = 1350
 
 
 def main() -> int:
@@ -47,6 +49,7 @@ def main() -> int:
                 return 0
             wait_for_generation(run_id, paths)
 
+        normalize_image_for_instagram(run_id, paths)
         validate_generation(paths)
 
         if args.generate_only:
@@ -147,6 +150,8 @@ Attached image:
 
 Hard requirements:
 - Generate exactly one colorful six-panel comic image.
+- Image must be 1080x1350 pixels, 4:5 portrait ratio, safe for Instagram feed with no cropping.
+- Keep all six panel borders, speech bubbles, faces, and text inside a generous inner safe margin. No important content may touch the outer edges.
 - The male protagonist must be based on the attached reference photo: East Asian man, round youthful face, side-swept black hair, slightly sleepy eyes, wearing a black collared top with gray zipper/placket.
 - Preserve the reference identity in stylized manga/comic form. Do not use a generic anime man.
 - Style: 認真講幹話, dry Taiwanese internet humor, Traditional Chinese.
@@ -174,6 +179,53 @@ Manifest JSON must include:
 Avoid repeating old topics or exact punchlines already found in posts/, captions/, assets/.
 The main punchline should usually be in panel 5, with panel 6 as silent awkward aftertaste.
 """.strip()
+
+
+def normalize_image_for_instagram(run_id: str, paths: dict[str, Path]) -> None:
+    width, height = image_size(paths["image"])
+    if (width, height) == (IG_IMAGE_WIDTH, IG_IMAGE_HEIGHT):
+        log(run_id, f"image already Instagram safe: {width}x{height}")
+        return
+
+    backup = paths["run_dir"] / f"{paths['image'].stem}_original_{width}x{height}{paths['image'].suffix}"
+    if not backup.exists():
+        shutil.copy2(paths["image"], backup)
+
+    temp = paths["run_dir"] / f"{paths['image'].stem}_ig_safe_tmp.png"
+    aspect = width / height
+    target_aspect = IG_IMAGE_WIDTH / IG_IMAGE_HEIGHT
+    if aspect > target_aspect:
+        resize_args = ["--resampleWidth", str(IG_IMAGE_WIDTH)]
+    else:
+        resize_args = ["--resampleHeight", str(IG_IMAGE_HEIGHT)]
+
+    run(["sips", *resize_args, str(paths["image"]), "--out", str(temp)], cwd=ROOT)
+    run([
+        "sips",
+        "--padToHeightWidth",
+        str(IG_IMAGE_HEIGHT),
+        str(IG_IMAGE_WIDTH),
+        "--padColor",
+        "ffffff",
+        str(temp),
+        "--out",
+        str(paths["image"]),
+    ], cwd=ROOT)
+    temp.unlink(missing_ok=True)
+
+    new_width, new_height = image_size(paths["image"])
+    if (new_width, new_height) != (IG_IMAGE_WIDTH, IG_IMAGE_HEIGHT):
+        raise RuntimeError(f"Instagram-safe resize failed: got {new_width}x{new_height}")
+    log(run_id, f"normalized image for Instagram: {width}x{height} -> {new_width}x{new_height}")
+
+
+def image_size(path: Path) -> tuple[int, int]:
+    result = run(["sips", "-g", "pixelWidth", "-g", "pixelHeight", str(path)], cwd=ROOT)
+    width_match = re.search(r"pixelWidth:\s*(\d+)", result.stdout)
+    height_match = re.search(r"pixelHeight:\s*(\d+)", result.stdout)
+    if not width_match or not height_match:
+        raise RuntimeError(f"Could not read image size for {path}")
+    return int(width_match.group(1)), int(height_match.group(1))
 
 
 def wait_for_generation(run_id: str, paths: dict[str, Path]) -> None:
