@@ -1,0 +1,8 @@
+{
+  "run_id": "2026-07-20_1800",
+  "topic": "筆電低電量專案停損",
+  "image_path": "assets/2026-07-20_1800_deadpan_joke.png",
+  "caption_path": "captions/2026-07-20_1800_deadpan_joke.md",
+  "prompt_path": "prompts/2026-07-20_1800_generation_prompt.md",
+  "status": "generated"
+}
