@@ -24,7 +24,7 @@ LOG_DIR = ROOT / "logs"
 TIMEOUT_SECONDS = int(os.environ.get("ROBERT_JOKE_CODEX_TIMEOUT", "3600"))
 POLL_SECONDS = int(os.environ.get("ROBERT_JOKE_POLL_SECONDS", "5"))
 IG_IMAGE_WIDTH = 1080
-IG_IMAGE_HEIGHT = 1350
+IG_IMAGE_HEIGHT = 1080
 
 
 def main() -> int:
@@ -138,7 +138,7 @@ def trigger_codex(run_id: str, paths: dict[str, Path], dry_run: bool) -> None:
 
 def build_codex_prompt(run_id: str, paths: dict[str, Path]) -> str:
     return f"""
-You are generating exactly one Instagram comic for @roberto_joke.
+You are generating exactly one Instagram single-panel meme for @roberto_joke.
 
 Read:
 - README.md
@@ -149,13 +149,16 @@ Attached image:
 - assets/main_character_reference.jpg is the mandatory likeness reference for the male main character.
 
 Hard requirements:
-- Generate exactly one colorful six-panel comic image.
-- Image must be 1080x1350 pixels, 4:5 portrait ratio, safe for Instagram feed with no cropping.
-- Keep all six panel borders, speech bubbles, faces, and text inside a generous inner safe margin. No important content may touch the outer edges.
+- Generate exactly one colorful square single-panel meme image. Never generate a six-panel comic or multiple images.
+- Image must be 1080x1080 pixels, 1:1 square, safe for Instagram feed with no cropping.
+- Use the fixed meme layout: oversized rough black Traditional Chinese headline on a white band at the top, one absurd central scene, and an oversized rough black Traditional Chinese punchline on a white band at the bottom.
+- The top line is a serious setup. The bottom line is a short, stupid, blunt reversal. Both lines must be immediately readable on a phone and must stay fully inside a generous safe margin.
 - The male protagonist must be based on the attached reference photo: East Asian man, round youthful face, side-swept black hair, slightly sleepy eyes, wearing a black collared top with gray zipper/placket.
-- Preserve the reference identity in stylized manga/comic form. Do not use a generic anime man.
-- Style: 認真講幹話, dry Taiwanese internet humor, Traditional Chinese.
-- If a cat appears, it must be a black-and-white tuxedo cat.
+- Preserve the reference identity in a polished realistic-comic meme style. Do not use a generic anime man.
+- Style: 北七、靠杯、擺爛、一本正經講幹話的台灣網路迷因，使用繁體中文。The protagonist should look absurdly solemn while visibly doing something stupid.
+- Include a black-and-white tuxedo cat as the deadpan witness or manager whenever it improves the visual punchline. Never use another cat breed.
+- Prefer an obvious visual contradiction: hiding while discussing management, sleeping while discussing efficiency, giving up while presenting strategy, or similar everyday nonsense. Do not limit topics to offices or companies.
+- Use no more than two main text lines. Avoid speech bubbles and explanatory paragraphs.
 - Do not post to Instagram.
 - Do not run git push.
 - Do not print .env, tokens, access keys, or secrets.
@@ -176,8 +179,8 @@ Manifest JSON must include:
   "status": "generated"
 }}
 
-Avoid repeating old topics or exact punchlines already found in posts/, captions/, assets/.
-The main punchline should usually be in panel 5, with panel 6 as silent awkward aftertaste.
+Avoid repeating old topics, setups, or exact punchlines already found in posts/, captions/, assets/.
+The joke must work in one glance: serious setup at the top, ridiculous visual evidence in the middle, blunt reversal at the bottom.
 """.strip()
 
 
