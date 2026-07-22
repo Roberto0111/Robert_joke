@@ -8,6 +8,8 @@ import shutil
 import subprocess
 import sys
 import time
+import urllib.request
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 
@@ -43,6 +45,7 @@ def main() -> int:
         log(run_id, f"pipeline started dry_run={args.dry_run} generate_only={args.generate_only} post_only={args.post_only}")
 
         if not args.post_only:
+            fetch_trend_context(run_id, paths)
             trigger_codex(run_id, paths, args.dry_run)
             if args.dry_run:
                 log(run_id, "dry-run complete; skipping file wait, git push, and Instagram publish")
@@ -79,6 +82,7 @@ def run_paths(run_id: str) -> dict[str, Path]:
         "caption": ROOT / "captions" / f"{run_id}_deadpan_joke.md",
         "prompt": ROOT / "prompts" / f"{run_id}_generation_prompt.md",
         "manifest": ROOT / "posts" / run_id / "manifest.json",
+        "trends": ROOT / "posts" / run_id / "trend_context.txt",
     }
 
 
@@ -148,6 +152,13 @@ Read:
 Attached image:
 - assets/main_character_reference.jpg is the mandatory likeness reference for the male main character.
 
+Current trend context:
+- Read {paths["trends"]}. It contains current Taiwan Google search trends fetched immediately before this run.
+- You may use a trend only when its context naturally supports a funny everyday joke. Never force a trend into the image.
+- Skip politics, crime, disasters, deaths, medical scares, allegations, and other sensitive news.
+- If web search is available, verify the meaning of any current Taiwanese meme phrase before using it. Never copy another creator's image or caption verbatim.
+- Original jokes are always acceptable and preferred over a weak trend reference.
+
 Hard requirements:
 - Generate exactly one colorful square single-panel meme image. Never generate a six-panel comic or multiple images.
 - Image must be 1080x1080 pixels, 1:1 square, safe for Instagram feed with no cropping.
@@ -156,7 +167,8 @@ Hard requirements:
 - The male protagonist must be based on the attached reference photo: East Asian man, round youthful face, side-swept black hair, slightly sleepy eyes, wearing a black collared top with gray zipper/placket.
 - Preserve the reference identity in a polished realistic-comic meme style. Do not use a generic anime man.
 - Style: 北七、靠杯、擺爛、一本正經講幹話的台灣網路迷因，使用繁體中文。The protagonist should look absurdly solemn while visibly doing something stupid.
-- Include a black-and-white tuxedo cat as the deadpan witness or manager whenever it improves the visual punchline. Never use another cat breed.
+- Include a black-and-white tuxedo cat in every image. The cat is the sharp deadpan roast character: it should expose, insult, or bluntly correct the protagonist's nonsense.
+- The bottom punchline should usually be the cat's line and begin with "貓：" so the speaker is unmistakable.
 - Prefer an obvious visual contradiction: hiding while discussing management, sleeping while discussing efficiency, giving up while presenting strategy, or similar everyday nonsense. Do not limit topics to offices or companies.
 - Use no more than two main text lines. Avoid speech bubbles and explanatory paragraphs.
 - Do not post to Instagram.
@@ -182,6 +194,33 @@ Manifest JSON must include:
 Avoid repeating old topics, setups, or exact punchlines already found in posts/, captions/, assets/.
 The joke must work in one glance: serious setup at the top, ridiculous visual evidence in the middle, blunt reversal at the bottom.
 """.strip()
+
+
+def fetch_trend_context(run_id: str, paths: dict[str, Path]) -> None:
+    url = "https://trends.google.com/trending/rss?geo=TW"
+    request = urllib.request.Request(url, headers={"User-Agent": "RobertJokeBot/1.0"})
+    lines = [
+        f"Fetched at: {dt.datetime.now().isoformat(timespec='seconds')}",
+        f"Source: {url}",
+        "Use only as optional inspiration. Skip sensitive topics and prefer an original joke when uncertain.",
+        "",
+    ]
+    try:
+        with urllib.request.urlopen(request, timeout=15) as response:
+            root = ET.fromstring(response.read())
+        titles = []
+        for item in root.findall("./channel/item"):
+            title = (item.findtext("title") or "").strip()
+            if title and title not in titles:
+                titles.append(title)
+        lines.extend(f"- {title}" for title in titles[:15])
+        if not titles:
+            lines.append("- No usable trend titles returned; create an original joke.")
+        log(run_id, f"trend context fetched topics={len(titles[:15])}")
+    except (OSError, ET.ParseError) as exc:
+        lines.append(f"- Trend fetch unavailable ({type(exc).__name__}); create an original joke.")
+        log(run_id, f"trend context unavailable: {type(exc).__name__}")
+    paths["trends"].write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def normalize_image_for_instagram(run_id: str, paths: dict[str, Path]) -> None:

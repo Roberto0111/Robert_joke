@@ -17,15 +17,16 @@ prompts/YYYY-MM-DD_HHMM_generation_prompt.md
 
 1. 讀取 `prompts/daily_comic_style.md`。
 2. 使用 `assets/main_character_reference.jpg` 作為男主角本人照片參考，生成時必須保留本人特徵。
-3. 檢查 `posts/` 舊貼文，避免重複主題與台詞。
-4. 先構思一則新的「認真講幹話」單格迷因：上方一本正經鋪陳、中央用本人做出荒謬行為、下方用一句北七反轉補刀。題材不限企業。
-5. 用 imagegen 生成一張 1080x1080 彩色方形單格迷因，固定使用上下白底粗黑大字版型。
-6. 把圖存到 `assets/YYYY-MM-DD_HHMM_deadpan_joke.png`。
-7. 產生 IG caption 到 `captions/YYYY-MM-DD_HHMM_deadpan_joke.md`。
-8. 產生本次 prompt 到 `prompts/YYYY-MM-DD_HHMM_generation_prompt.md`。
-9. 建立 `posts/YYYY-MM-DD_HHMM/manifest.json`，記錄圖片、caption、主題、是否發文。
-10. commit 並 push 到 GitHub `main`，讓 raw image URL 可以公開存取。
-11. 使用 Instagram API 發文：
+3. 讀取 Python 當次抓取的 `posts/YYYY-MM-DD_HHMM/trend_context.txt`，把近期台灣熱門搜尋當成可選靈感；敏感事件或硬套不好笑時不用，直接自創。
+4. 檢查 `posts/` 舊貼文，避免重複主題與台詞。
+5. 先構思一則新的「認真講幹話」單格迷因：上方由本人一本正經鋪陳、中央用本人做出荒謬行為、下方通常由賓士貓以「貓：」開頭直接嗆人。題材不限企業。
+6. 用 imagegen 生成一張 1080x1080 彩色方形單格迷因，固定使用上下白底粗黑大字版型，畫面中必須有黑白賓士貓。
+7. 把圖存到 `assets/YYYY-MM-DD_HHMM_deadpan_joke.png`。
+8. 產生 IG caption 到 `captions/YYYY-MM-DD_HHMM_deadpan_joke.md`。
+9. 產生本次 prompt 到 `prompts/YYYY-MM-DD_HHMM_generation_prompt.md`。
+10. 建立 `posts/YYYY-MM-DD_HHMM/manifest.json`，記錄圖片、caption、主題、是否發文。
+11. commit 並 push 到 GitHub `main`，讓 raw image URL 可以公開存取。
+12. 使用 Instagram API 發文：
 
 ```bash
 IG_IMAGE_URL=https://raw.githubusercontent.com/Roberto0111/Robert_joke/main/assets/YYYY-MM-DD_HHMM_deadpan_joke.png \
@@ -33,7 +34,7 @@ IG_CAPTION_FILE=captions/YYYY-MM-DD_HHMM_deadpan_joke.md \
 /Users/roberto/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/post-to-instagram.mjs
 ```
 
-12. 發文成功後，把 IG media id 寫入 manifest，再 commit/push 一次。
+13. 發文成功後，把 IG media id 寫入 manifest，再 commit/push 一次。
 
 ## Git Push
 
