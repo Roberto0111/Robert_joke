@@ -171,6 +171,13 @@ Hard requirements:
 - The bottom punchline should usually be the cat's line and begin with "貓：" so the speaker is unmistakable.
 - Prefer an obvious visual contradiction: hiding while discussing management, sleeping while discussing efficiency, giving up while presenting strategy, or similar everyday nonsense. Do not limit topics to offices or companies.
 - Use no more than two main text lines. Avoid speech bubbles and explanatory paragraphs.
+- Before generating the image, brainstorm at least 12 genuinely different joke candidates. At least 8 must be non-workplace topics.
+- Score every candidate from 0-5 for surprise, visual contradiction, cat-roast sharpness, and shareability. Select only the highest-scoring candidate with at least 15/20.
+- A valid bottom line must REFRAME the setup, expose a hidden consequence, or downgrade the protagonist in an unexpected specific way. It must not merely describe what the image already shows.
+- Reject generic explanatory roasts such as "你只是在...", "你根本沒...", or a literal statement of the protagonist's action. Do not use the "你只是" construction in the final joke.
+- Reject corporate-jargon reskins (risk management, process optimization, crisis response, strategic planning) unless the wording creates a genuinely new double meaning.
+- Compare against the latest 20 posts. Vary the joke mechanism, setting, pose, and cat reaction, not just the nouns.
+- Record the top five candidate setups, punchlines, scores, rejection notes, and the reason for the final selection in the generation prompt record. Still generate exactly one image.
 - Do not post to Instagram.
 - Do not run git push.
 - Do not print .env, tokens, access keys, or secrets.
