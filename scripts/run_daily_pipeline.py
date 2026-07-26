@@ -435,26 +435,27 @@ def create_playful_soundtrack(output: Path) -> None:
     total_samples = REEL_SECONDS * sample_rate
     audio = [0.0] * total_samples
 
-    # Short marimba-like notes; the descending reveal at 3.2s lands with the cat's roast.
+    # Sneaky pizzicato pulses lead into a cartoonish falling "wah" at the cat reveal.
     notes = [
-        (0.00, 0.22, 523.25, 0.34),
-        (0.38, 0.18, 659.25, 0.29),
-        (0.72, 0.22, 783.99, 0.32),
-        (1.18, 0.20, 659.25, 0.26),
-        (1.55, 0.25, 880.00, 0.34),
-        (2.05, 0.18, 783.99, 0.28),
-        (2.42, 0.20, 987.77, 0.31),
-        (2.82, 0.18, 1046.50, 0.30),
-        (3.20, 0.28, 659.25, 0.40),
-        (3.43, 0.32, 493.88, 0.42),
-        (4.05, 0.20, 523.25, 0.27),
-        (4.42, 0.20, 659.25, 0.27),
-        (4.80, 0.20, 783.99, 0.30),
-        (5.28, 0.23, 880.00, 0.30),
-        (5.72, 0.20, 783.99, 0.25),
-        (6.08, 0.22, 659.25, 0.25),
-        (6.48, 0.22, 523.25, 0.28),
-        (6.88, 0.30, 392.00, 0.34),
+        (0.00, 0.14, 196.00, 0.34),
+        (0.28, 0.12, 233.08, 0.27),
+        (0.56, 0.14, 261.63, 0.31),
+        (0.92, 0.13, 233.08, 0.25),
+        (1.20, 0.14, 196.00, 0.33),
+        (1.50, 0.12, 293.66, 0.28),
+        (1.82, 0.14, 261.63, 0.31),
+        (2.18, 0.13, 233.08, 0.27),
+        (2.48, 0.14, 196.00, 0.35),
+        (2.78, 0.12, 311.13, 0.30),
+        (4.18, 0.13, 196.00, 0.27),
+        (4.50, 0.12, 233.08, 0.25),
+        (4.82, 0.14, 261.63, 0.29),
+        (5.22, 0.13, 233.08, 0.24),
+        (5.54, 0.14, 196.00, 0.30),
+        (5.90, 0.12, 293.66, 0.26),
+        (6.24, 0.14, 261.63, 0.28),
+        (6.62, 0.13, 233.08, 0.25),
+        (7.02, 0.22, 196.00, 0.31),
     ]
 
     for start, duration, frequency, volume in notes:
@@ -465,14 +466,36 @@ def create_playful_soundtrack(output: Path) -> None:
             if position >= total_samples:
                 break
             elapsed = index / sample_rate
-            decay = math.exp(-8.5 * elapsed)
-            attack = min(1.0, elapsed / 0.008)
+            decay = math.exp(-15.0 * elapsed)
+            attack = min(1.0, elapsed / 0.004)
             tone = (
                 math.sin(2 * math.pi * frequency * elapsed)
-                + 0.42 * math.sin(2 * math.pi * frequency * 2 * elapsed)
-                + 0.18 * math.sin(2 * math.pi * frequency * 3 * elapsed)
+                + 0.24 * math.sin(2 * math.pi * frequency * 2 * elapsed)
+                + 0.10 * math.sin(2 * math.pi * frequency * 3 * elapsed)
             )
-            audio[position] += volume * attack * decay * tone / 1.6
+            audio[position] += volume * attack * decay * tone / 1.34
+
+    reveal_start = int(3.18 * sample_rate)
+    reveal_samples = int(0.72 * sample_rate)
+    phase = 0.0
+    for index in range(reveal_samples):
+        position = reveal_start + index
+        elapsed = index / sample_rate
+        progress = index / reveal_samples
+        frequency = 740.0 * ((250.0 / 740.0) ** progress)
+        phase += 2 * math.pi * frequency / sample_rate
+        envelope = math.sin(math.pi * progress) ** 0.72
+        wobble = 0.72 + 0.28 * math.sin(2 * math.pi * 8.5 * elapsed)
+        audio[position] += 0.34 * envelope * wobble * math.sin(phase)
+
+    for hit_time in (0.14, 0.70, 1.34, 1.98, 2.62, 4.34, 4.98, 5.70, 6.40, 7.18):
+        start_sample = int(hit_time * sample_rate)
+        hit_samples = int(0.035 * sample_rate)
+        for index in range(hit_samples):
+            position = start_sample + index
+            elapsed = index / sample_rate
+            click = math.sin(2 * math.pi * 1450 * elapsed) * math.exp(-85 * elapsed)
+            audio[position] += 0.12 * click
 
     peak = max(max(abs(sample) for sample in audio), 0.001)
     scale = 0.78 / peak
