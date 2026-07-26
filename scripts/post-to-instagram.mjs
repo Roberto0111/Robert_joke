@@ -12,9 +12,21 @@ const apiMode = process.env.IG_API_MODE || "instagram_login";
 const graphVersion = process.env.IG_GRAPH_VERSION || "v23.0";
 const igUserId = requiredEnv("IG_USER_ID");
 const accessToken = requiredEnv("IG_ACCESS_TOKEN");
-const imageUrl = requiredEnv("IG_IMAGE_URL");
+const mediaType = (process.env.IG_MEDIA_TYPE || "IMAGE").toUpperCase();
+const imageUrl = process.env.IG_IMAGE_URL || "";
+const videoUrl = process.env.IG_VIDEO_URL || "";
 const captionFile = process.env.IG_CAPTION_FILE || "captions/001_deadpan_nonsense_tuxedo_cat.md";
 const caption = fs.readFileSync(path.join(root, captionFile), "utf8").trim();
+
+if (!["IMAGE", "REELS"].includes(mediaType)) {
+  throw new Error(`Unsupported IG_MEDIA_TYPE: ${mediaType}. Use IMAGE or REELS.`);
+}
+if (mediaType === "IMAGE" && !imageUrl) {
+  throw new Error("Missing required environment variable: IG_IMAGE_URL");
+}
+if (mediaType === "REELS" && !videoUrl) {
+  throw new Error("Missing required environment variable: IG_VIDEO_URL");
+}
 
 const baseUrl = getBaseUrl(apiMode, graphVersion);
 
@@ -35,24 +47,41 @@ if (dryRun) {
     apiMode,
     baseUrl,
     igUserId,
+    mediaType,
     imageUrl,
+    videoUrl,
     caption,
     graphVersion,
   }, null, 2));
   process.exit(0);
 }
 
-const container = await postGraph(`${baseUrl}/${igUserId}/media`, {
-  image_url: imageUrl,
-  caption,
-  access_token: accessToken,
-});
+const containerValues = mediaType === "REELS"
+  ? {
+      media_type: "REELS",
+      video_url: videoUrl,
+      caption,
+      share_to_feed: "true",
+      thumb_offset: "3600",
+      access_token: accessToken,
+    }
+  : {
+      image_url: imageUrl,
+      caption,
+      access_token: accessToken,
+    };
+
+const container = await postGraph(`${baseUrl}/${igUserId}/media`, containerValues);
 
 if (!container.id) {
   throw new Error(`Instagram did not return a media container id: ${JSON.stringify(container)}`);
 }
 
 console.log(`Created media container: ${container.id}`);
+
+if (mediaType === "REELS") {
+  await waitForContainer(`${baseUrl}/${container.id}`, accessToken);
+}
 
 const publish = await publishWithRetry(`${baseUrl}/${igUserId}/media_publish`, {
   creation_id: container.id,
@@ -129,6 +158,28 @@ async function publishWithRetry(url, values) {
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function waitForContainer(url, token) {
+  const maxAttempts = Number(process.env.IG_CONTAINER_ATTEMPTS || 18);
+  const delayMs = Number(process.env.IG_CONTAINER_RETRY_MS || 10000);
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    const status = await getGraph(url, {
+      fields: "status_code",
+      access_token: token,
+    });
+    if (["FINISHED", "PUBLISHED"].includes(status.status_code)) {
+      return;
+    }
+    if (["ERROR", "EXPIRED"].includes(status.status_code)) {
+      throw new Error(`Instagram Reel container failed: ${JSON.stringify(status)}`);
+    }
+    console.error(`Reel processing; retrying in ${Math.round(delayMs / 1000)}s (${attempt}/${maxAttempts})`);
+    await sleep(delayMs);
+  }
+
+  throw new Error("Instagram Reel container did not finish processing in time");
 }
 
 function requiredEnv(name) {

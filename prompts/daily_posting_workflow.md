@@ -1,6 +1,6 @@
 # Daily Posting Workflow
 
-每次排程只做一篇 IG 貼文。
+每次排程只做一篇 IG 貼文。14 天成長模式固定每天 20:30 執行一次。
 
 ## Output Naming
 
@@ -26,8 +26,9 @@ prompts/YYYY-MM-DD_HHMM_generation_prompt.md
 9. 產生 IG caption 到 `captions/YYYY-MM-DD_HHMM_deadpan_joke.md`。
 10. 產生本次 prompt 到 `prompts/YYYY-MM-DD_HHMM_generation_prompt.md`。
 11. 建立 `posts/YYYY-MM-DD_HHMM/manifest.json`，記錄圖片、caption、主題、是否發文。
-12. commit 並 push 到 GitHub `main`，讓 raw image URL 可以公開存取。
-13. 使用 Instagram API 發文：
+12. Python 依星期決定格式：週一、三、五、日把方形圖轉成 8 秒、1080x1920 的 Reel；週二、四、六保留方形圖片。
+13. commit 並 push 到 GitHub `main`，讓 raw image 或 video URL 可以公開存取。
+14. 使用 Instagram API 發文：
 
 ```bash
 IG_IMAGE_URL=https://raw.githubusercontent.com/Roberto0111/Robert_joke/main/assets/YYYY-MM-DD_HHMM_deadpan_joke.png \
@@ -35,7 +36,7 @@ IG_CAPTION_FILE=captions/YYYY-MM-DD_HHMM_deadpan_joke.md \
 /Users/roberto/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/post-to-instagram.mjs
 ```
 
-14. 發文成功後，把 IG media id 寫入 manifest，再 commit/push 一次。
+15. 發文成功後，把 IG media id 與 `publish_format` 寫入 manifest，再 commit/push 一次。
 
 ## Git Push
 

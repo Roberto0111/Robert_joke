@@ -23,10 +23,15 @@ SSH_KEY = Path(os.environ.get("ROBERT_JOKE_SSH_KEY", "/Users/roberto/.ssh/id_ed2
 CHARACTER_REFERENCE = ROOT / "assets" / "main_character_reference.jpg"
 LOCK_FILE = ROOT / ".daily_pipeline.lock"
 LOG_DIR = ROOT / "logs"
+FFMPEG_BIN = Path(os.environ.get("FFMPEG_BIN", "/opt/homebrew/bin/ffmpeg"))
 TIMEOUT_SECONDS = int(os.environ.get("ROBERT_JOKE_CODEX_TIMEOUT", "3600"))
 POLL_SECONDS = int(os.environ.get("ROBERT_JOKE_POLL_SECONDS", "5"))
 IG_IMAGE_WIDTH = 1080
 IG_IMAGE_HEIGHT = 1080
+REEL_WIDTH = 1080
+REEL_HEIGHT = 1920
+REEL_SECONDS = 8
+REEL_WEEKDAYS = {0, 2, 4, 6}  # Monday, Wednesday, Friday, Sunday.
 
 
 def main() -> int:
@@ -35,6 +40,12 @@ def main() -> int:
     parser.add_argument("--generate-only", action="store_true", help="Only trigger Codex and wait for local files.")
     parser.add_argument("--post-only", action="store_true", help="Skip Codex and publish an existing run id.")
     parser.add_argument("--dry-run", action="store_true", help="Do not push or publish; useful for testing.")
+    parser.add_argument(
+        "--format",
+        choices=("auto", "image", "reel"),
+        default="auto",
+        help="Publishing format. Auto alternates four Reels and three images per week.",
+    )
     args = parser.parse_args()
 
     LOG_DIR.mkdir(exist_ok=True)
@@ -42,9 +53,15 @@ def main() -> int:
         run_id = args.run_id
         paths = run_paths(run_id)
         ensure_dirs(paths)
-        log(run_id, f"pipeline started dry_run={args.dry_run} generate_only={args.generate_only} post_only={args.post_only}")
+        publish_format = determine_publish_format(args.format, run_id)
+        log(
+            run_id,
+            f"pipeline started format={publish_format} dry_run={args.dry_run} "
+            f"generate_only={args.generate_only} post_only={args.post_only}",
+        )
 
         if not args.post_only:
+            collect_growth_metrics(run_id)
             fetch_trend_context(run_id, paths)
             trigger_codex(run_id, paths, args.dry_run)
             if args.dry_run:
@@ -54,9 +71,10 @@ def main() -> int:
 
         normalize_image_for_instagram(run_id, paths)
         validate_generation(paths)
+        prepare_publish_asset(run_id, paths, publish_format)
 
         if args.generate_only:
-            log(run_id, "generate-only complete")
+            log(run_id, f"generate-only complete format={publish_format}")
             return 0
 
         if args.dry_run:
@@ -64,8 +82,8 @@ def main() -> int:
             return 0
 
         commit_and_push_generated(run_id, paths)
-        media_id = publish_to_instagram(run_id, paths)
-        mark_published(run_id, paths, media_id)
+        media_id = publish_to_instagram(run_id, paths, publish_format)
+        mark_published(run_id, paths, media_id, publish_format)
         commit_and_push_published(run_id, paths)
         log(run_id, f"pipeline complete media_id={media_id}")
         return 0
@@ -73,6 +91,16 @@ def main() -> int:
 
 def current_run_id() -> str:
     return dt.datetime.now().strftime("%Y-%m-%d_%H%M")
+
+
+def determine_publish_format(requested: str, run_id: str) -> str:
+    if requested != "auto":
+        return requested
+    try:
+        run_date = dt.datetime.strptime(run_id[:10], "%Y-%m-%d")
+    except ValueError:
+        run_date = dt.datetime.now()
+    return "reel" if run_date.weekday() in REEL_WEEKDAYS else "image"
 
 
 def run_paths(run_id: str) -> dict[str, Path]:
@@ -83,6 +111,7 @@ def run_paths(run_id: str) -> dict[str, Path]:
         "prompt": ROOT / "prompts" / f"{run_id}_generation_prompt.md",
         "manifest": ROOT / "posts" / run_id / "manifest.json",
         "trends": ROOT / "posts" / run_id / "trend_context.txt",
+        "reel": ROOT / "assets" / f"{run_id}_deadpan_joke_reel.mp4",
     }
 
 
@@ -159,6 +188,10 @@ Current trend context:
 - If web search is available, verify the meaning of any current Taiwanese meme phrase before using it. Never copy another creator's image or caption verbatim.
 - Original jokes are always acceptable and preferred over a weak trend reference.
 
+Growth context:
+- Read analytics/latest.json if it exists. Treat reach, shares, saves, and total interactions as evidence, not vanity metrics.
+- Do not repeat a weak topic merely because it was recently posted. Prefer concepts that a viewer would send to one specific friend.
+
 Hard requirements:
 - Generate exactly one colorful square single-panel meme image. Never generate a six-panel comic or multiple images.
 - Image must be 1080x1080 pixels, 1:1 square, safe for Instagram feed with no cropping.
@@ -166,7 +199,7 @@ Hard requirements:
 - The top line is a serious setup. The bottom line is a short, stupid, blunt reversal. Both lines must be immediately readable on a phone and must stay fully inside a generous safe margin.
 - The male protagonist must be based on the attached reference photo: East Asian man, round youthful face, side-swept black hair, slightly sleepy eyes, wearing a black collared top with gray zipper/placket.
 - Preserve the reference identity in a polished realistic-comic meme style. Do not use a generic anime man.
-- Style: 北七、靠杯、擺爛、一本正經講幹話的台灣網路迷因，使用繁體中文。The protagonist should look absurdly solemn while visibly doing something stupid.
+- Style: 北七、靠杯、擺爛、一本正經講幹話的台灣網路迷因，使用繁體中文。The protagonist may look solemn, mischievous, guilty, or playfully caught in the act. Vary the expression and avoid the same neutral face every day.
 - Include a black-and-white tuxedo cat in every image. The cat is the sharp deadpan roast character: it should expose, insult, or bluntly correct the protagonist's nonsense.
 - The bottom punchline should usually be the cat's line and begin with "貓：" so the speaker is unmistakable.
 - Prefer an obvious visual contradiction: hiding while discussing management, sleeping while discussing efficiency, giving up while presenting strategy, or similar everyday nonsense. Do not limit topics to offices or companies.
@@ -178,6 +211,7 @@ Hard requirements:
 - Reject corporate-jargon reskins (risk management, process optimization, crisis response, strategic planning) unless the wording creates a genuinely new double meaning.
 - Compare against the latest 20 posts. Vary the joke mechanism, setting, pose, and cat reaction, not just the nouns.
 - Record the top five candidate setups, punchlines, scores, rejection notes, and the reason for the final selection in the generation prompt record. Still generate exactly one image.
+- Caption must use only 3-5 relevant hashtags. Add one natural conversational question only when it fits; never use spammy engagement bait.
 - Do not post to Instagram.
 - Do not run git push.
 - Do not print .env, tokens, access keys, or secrets.
@@ -228,6 +262,24 @@ def fetch_trend_context(run_id: str, paths: dict[str, Path]) -> None:
         lines.append(f"- Trend fetch unavailable ({type(exc).__name__}); create an original joke.")
         log(run_id, f"trend context unavailable: {type(exc).__name__}")
     paths["trends"].write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def collect_growth_metrics(run_id: str) -> None:
+    if not NODE_BIN.exists():
+        log(run_id, f"analytics skipped: Node binary not found: {NODE_BIN}")
+        return
+    result = subprocess.run(
+        [str(NODE_BIN), "scripts/collect-instagram-insights.mjs"],
+        cwd=ROOT,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        timeout=180,
+    )
+    if result.returncode == 0:
+        log(run_id, "growth metrics collected")
+    else:
+        log(run_id, f"analytics unavailable; continuing: {redact(result.stdout).strip()[:300]}")
 
 
 def normalize_image_for_instagram(run_id: str, paths: dict[str, Path]) -> None:
@@ -302,20 +354,102 @@ def validate_generation(paths: dict[str, Path]) -> None:
         raise RuntimeError("Manifest status must be generated or published")
 
 
+def prepare_publish_asset(run_id: str, paths: dict[str, Path], publish_format: str) -> None:
+    manifest = json.loads(paths["manifest"].read_text(encoding="utf-8"))
+    manifest["publish_format"] = publish_format
+    if publish_format == "reel":
+        create_reel(run_id, paths)
+        manifest["video_path"] = rel(paths["reel"])
+    else:
+        manifest.pop("video_path", None)
+    paths["manifest"].write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def create_reel(run_id: str, paths: dict[str, Path]) -> None:
+    if not FFMPEG_BIN.exists():
+        raise RuntimeError(f"ffmpeg not found: {FFMPEG_BIN}")
+    foreground_size = 1000
+    foreground_y = (REEL_HEIGHT - foreground_size) // 2
+    punchline_y = foreground_y + 815
+    filter_graph = (
+        f"[0:v]split=2[bgsrc][fgsrc];"
+        f"[bgsrc]scale={REEL_WIDTH}:{REEL_HEIGHT}:force_original_aspect_ratio=increase,"
+        f"crop={REEL_WIDTH}:{REEL_HEIGHT},boxblur=35:12[bg];"
+        f"[fgsrc]scale={foreground_size}:{foreground_size}[fg];"
+        f"[bg][fg]overlay=(W-w)/2:(H-h)/2,"
+        f"drawbox=x=40:y={punchline_y}:w={foreground_size}:h=185:"
+        f"color=white:t=fill:enable='lt(t,3.2)',"
+        f"fade=t=in:st=0:d=0.25,fade=t=out:st=7.5:d=0.5,format=yuv420p[v]"
+    )
+    run([
+        str(FFMPEG_BIN),
+        "-y",
+        "-loop",
+        "1",
+        "-i",
+        str(paths["image"]),
+        "-f",
+        "lavfi",
+        "-i",
+        "anullsrc=r=48000:cl=stereo",
+        "-filter_complex",
+        filter_graph,
+        "-map",
+        "[v]",
+        "-map",
+        "1:a",
+        "-t",
+        str(REEL_SECONDS),
+        "-r",
+        "30",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "medium",
+        "-crf",
+        "20",
+        "-maxrate",
+        "8M",
+        "-bufsize",
+        "16M",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "128k",
+        "-ar",
+        "48000",
+        "-movflags",
+        "+faststart",
+        str(paths["reel"]),
+    ], cwd=ROOT)
+    if paths["reel"].stat().st_size < 100_000:
+        raise RuntimeError(f"Generated Reel looks too small: {paths['reel']}")
+    log(run_id, f"Reel created: {paths['reel'].name}")
+
+
 def commit_and_push_generated(run_id: str, paths: dict[str, Path]) -> None:
-    git(["add", rel(paths["image"]), rel(paths["caption"]), rel(paths["prompt"]), rel(paths["manifest"])])
+    generated = [rel(paths["image"]), rel(paths["caption"]), rel(paths["prompt"]), rel(paths["manifest"])]
+    if paths["reel"].exists():
+        generated.append(rel(paths["reel"]))
+    git(["add", *generated])
     if has_staged_changes():
         git(["commit", "-m", f"Add daily joke comic {run_id}"])
     git_push()
 
 
-def publish_to_instagram(run_id: str, paths: dict[str, Path]) -> str:
+def publish_to_instagram(run_id: str, paths: dict[str, Path], publish_format: str) -> str:
     if not NODE_BIN.exists():
         raise RuntimeError(f"Node binary not found: {NODE_BIN}")
     image_url = f"https://raw.githubusercontent.com/Roberto0111/Robert_joke/main/assets/{run_id}_deadpan_joke.png"
     env = os.environ.copy()
     env["IG_IMAGE_URL"] = image_url
     env["IG_CAPTION_FILE"] = f"captions/{run_id}_deadpan_joke.md"
+    env["IG_MEDIA_TYPE"] = "REELS" if publish_format == "reel" else "IMAGE"
+    if publish_format == "reel":
+        env["IG_VIDEO_URL"] = (
+            f"https://raw.githubusercontent.com/Roberto0111/Robert_joke/main/"
+            f"assets/{run_id}_deadpan_joke_reel.mp4"
+        )
     result = subprocess.run(
         [str(NODE_BIN), "scripts/post-to-instagram.mjs"],
         cwd=ROOT,
@@ -323,7 +457,7 @@ def publish_to_instagram(run_id: str, paths: dict[str, Path]) -> str:
         text=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
-        timeout=120,
+        timeout=300,
     )
     (paths["run_dir"] / "instagram_publish.log").write_text(redact(result.stdout), encoding="utf-8")
     if result.returncode != 0:
@@ -334,9 +468,10 @@ def publish_to_instagram(run_id: str, paths: dict[str, Path]) -> str:
     return match.group(1)
 
 
-def mark_published(run_id: str, paths: dict[str, Path], media_id: str) -> None:
+def mark_published(run_id: str, paths: dict[str, Path], media_id: str, publish_format: str) -> None:
     manifest = json.loads(paths["manifest"].read_text(encoding="utf-8"))
     manifest["status"] = "published"
+    manifest["publish_format"] = publish_format
     manifest["instagram_media_id"] = media_id
     manifest["published_at"] = dt.datetime.now().isoformat(timespec="seconds")
     paths["manifest"].write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

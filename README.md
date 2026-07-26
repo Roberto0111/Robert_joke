@@ -63,7 +63,7 @@ GitHub Pages 可使用 `index.html` 作為首頁。
    npm run post:ig
    ```
 
-Instagram API 發圖流程是先建立 media container，再呼叫 publish。預設使用 Instagram Login token 路線，也就是 `graph.instagram.com`。如果你要改用 Facebook Graph API token，請把 `IG_API_MODE` 改成 `facebook_graph`。
+Instagram API 發圖或 Reel 的流程都是先建立 media container，再呼叫 publish。Reel 會先等待影片處理完成才發布。預設使用 Instagram Login token 路線，也就是 `graph.instagram.com`。如果你要改用 Facebook Graph API token，請把 `IG_API_MODE` 改成 `facebook_graph`。
 
 ## Python 排程流程
 
@@ -72,7 +72,9 @@ Instagram API 發圖流程是先建立 media container，再呼叫 publish。預
 ```text
 LaunchAgent com.roberto.robert-joke
   -> scripts/run_daily_pipeline.py
+  -> 蒐集近期 IG 成效與台灣熱門搜尋
   -> codex exec 生成圖片/caption/manifest
+  -> 依星期決定靜態圖或 8 秒直式 Reel
   -> Python 等圖片檔出現
   -> git push 到 GitHub
   -> Instagram API 發文
@@ -109,13 +111,15 @@ LaunchAgent 的工作目錄是：
 /Users/roberto/Automation/Robert_joke
 ```
 
-排程時間：
+14 天成長模式排程：
 
 ```text
-08:00
-12:00
-18:00
+每天 20:30
+週一、三、五、日：Reel
+週二、四、六：方形圖片
 ```
+
+成長策略與基準記錄在 `growth/strategy.md`。IG 成效會每天寫入本機 `analytics/`，不會 commit token 或私密資料。
 
 log 會寫到：
 
