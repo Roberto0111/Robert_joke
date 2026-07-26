@@ -16,7 +16,7 @@ Start: 2026-07-27
 - Monday, Wednesday, Friday, Sunday: 8-second vertical Reel
 - Tuesday, Thursday, Saturday: square image
 - Reels reveal the tuxedo cat punchline after 3.2 seconds and share to Feed
-- Reels use an original sneaky pizzicato cue with a cartoonish falling sting at the reveal
+- Reels use an original fast prank-vlog cue with bouncy plucks, a pre-reveal pause, and a cartoon falling sting
 
 ## Content Rules
 

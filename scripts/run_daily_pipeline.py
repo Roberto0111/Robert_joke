@@ -435,28 +435,20 @@ def create_playful_soundtrack(output: Path) -> None:
     total_samples = REEL_SECONDS * sample_rate
     audio = [0.0] * total_samples
 
-    # Sneaky pizzicato pulses lead into a cartoonish falling "wah" at the cat reveal.
-    notes = [
-        (0.00, 0.14, 196.00, 0.34),
-        (0.28, 0.12, 233.08, 0.27),
-        (0.56, 0.14, 261.63, 0.31),
-        (0.92, 0.13, 233.08, 0.25),
-        (1.20, 0.14, 196.00, 0.33),
-        (1.50, 0.12, 293.66, 0.28),
-        (1.82, 0.14, 261.63, 0.31),
-        (2.18, 0.13, 233.08, 0.27),
-        (2.48, 0.14, 196.00, 0.35),
-        (2.78, 0.12, 311.13, 0.30),
-        (4.18, 0.13, 196.00, 0.27),
-        (4.50, 0.12, 233.08, 0.25),
-        (4.82, 0.14, 261.63, 0.29),
-        (5.22, 0.13, 233.08, 0.24),
-        (5.54, 0.14, 196.00, 0.30),
-        (5.90, 0.12, 293.66, 0.26),
-        (6.24, 0.14, 261.63, 0.28),
-        (6.62, 0.13, 233.08, 0.25),
-        (7.02, 0.22, 196.00, 0.31),
-    ]
+    # Fast prank-vlog rhythm: bouncy plucks, offbeat clicks, a pause, then a cartoon reveal.
+    beat = 60.0 / 132.0
+    melody = [392.00, 493.88, 587.33, 493.88, 440.00, 523.25, 659.25, 523.25]
+    notes = []
+    for index in range(17):
+        start = index * beat / 2
+        if 2.92 <= start < 3.18:
+            continue
+        notes.append((start, 0.105, melody[index % len(melody)], 0.27))
+    for index, frequency in enumerate([98.00, 98.00, 110.00, 98.00, 130.81, 110.00, 98.00, 98.00]):
+        start = index * beat
+        if 2.92 <= start < 3.18:
+            continue
+        notes.append((start, 0.16, frequency, 0.24))
 
     for start, duration, frequency, volume in notes:
         start_sample = int(start * sample_rate)
@@ -466,36 +458,55 @@ def create_playful_soundtrack(output: Path) -> None:
             if position >= total_samples:
                 break
             elapsed = index / sample_rate
-            decay = math.exp(-15.0 * elapsed)
-            attack = min(1.0, elapsed / 0.004)
+            decay = math.exp(-17.0 * elapsed)
+            attack = min(1.0, elapsed / 0.003)
             tone = (
                 math.sin(2 * math.pi * frequency * elapsed)
-                + 0.24 * math.sin(2 * math.pi * frequency * 2 * elapsed)
-                + 0.10 * math.sin(2 * math.pi * frequency * 3 * elapsed)
+                + 0.31 * math.sin(2 * math.pi * frequency * 2 * elapsed)
+                + 0.12 * math.sin(2 * math.pi * frequency * 4 * elapsed)
             )
-            audio[position] += volume * attack * decay * tone / 1.34
+            audio[position] += volume * attack * decay * tone / 1.43
 
-    reveal_start = int(3.18 * sample_rate)
-    reveal_samples = int(0.72 * sample_rate)
+    reveal_start = int(3.20 * sample_rate)
+    reveal_samples = int(0.62 * sample_rate)
     phase = 0.0
     for index in range(reveal_samples):
         position = reveal_start + index
         elapsed = index / sample_rate
         progress = index / reveal_samples
-        frequency = 740.0 * ((250.0 / 740.0) ** progress)
+        frequency = 880.0 * ((220.0 / 880.0) ** progress)
         phase += 2 * math.pi * frequency / sample_rate
-        envelope = math.sin(math.pi * progress) ** 0.72
-        wobble = 0.72 + 0.28 * math.sin(2 * math.pi * 8.5 * elapsed)
-        audio[position] += 0.34 * envelope * wobble * math.sin(phase)
+        envelope = math.sin(math.pi * progress) ** 0.65
+        wobble = 0.66 + 0.34 * math.sin(2 * math.pi * 10.0 * elapsed)
+        audio[position] += 0.38 * envelope * wobble * math.sin(phase)
 
-    for hit_time in (0.14, 0.70, 1.34, 1.98, 2.62, 4.34, 4.98, 5.70, 6.40, 7.18):
+    for index in range(17):
+        hit_time = index * beat / 2 + beat / 4
+        if 2.90 <= hit_time < 3.18 or hit_time >= REEL_SECONDS:
+            continue
         start_sample = int(hit_time * sample_rate)
-        hit_samples = int(0.035 * sample_rate)
+        hit_samples = int(0.028 * sample_rate)
         for index in range(hit_samples):
             position = start_sample + index
             elapsed = index / sample_rate
-            click = math.sin(2 * math.pi * 1450 * elapsed) * math.exp(-85 * elapsed)
-            audio[position] += 0.12 * click
+            click = (
+                math.sin(2 * math.pi * 1680 * elapsed)
+                + 0.35 * math.sin(2 * math.pi * 2320 * elapsed)
+            ) * math.exp(-105 * elapsed)
+            audio[position] += 0.10 * click
+
+    # A soft double tap marks the punchline without overpowering the text reveal.
+    for hit_time, frequency in ((3.20, 185.00), (3.34, 138.59)):
+        start_sample = int(hit_time * sample_rate)
+        hit_samples = int(0.18 * sample_rate)
+        for index in range(hit_samples):
+            position = start_sample + index
+            elapsed = index / sample_rate
+            audio[position] += (
+                0.22
+                * math.sin(2 * math.pi * frequency * elapsed)
+                * math.exp(-18 * elapsed)
+            )
 
     peak = max(max(abs(sample) for sample in audio), 0.001)
     scale = 0.78 / peak
