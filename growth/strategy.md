@@ -16,6 +16,7 @@ Start: 2026-07-27
 - Monday, Wednesday, Friday, Sunday: 8-second vertical Reel
 - Tuesday, Thursday, Saturday: square image
 - Reels reveal the tuxedo cat punchline after 3.2 seconds and share to Feed
+- Reels use an original playful marimba cue with a short descending sting at the reveal
 
 ## Content Rules
 

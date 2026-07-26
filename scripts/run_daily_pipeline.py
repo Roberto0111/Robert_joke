@@ -2,13 +2,16 @@
 import argparse
 import datetime as dt
 import json
+import math
 import os
 import re
 import shutil
+import struct
 import subprocess
 import sys
 import time
 import urllib.request
+import wave
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -368,6 +371,8 @@ def prepare_publish_asset(run_id: str, paths: dict[str, Path], publish_format: s
 def create_reel(run_id: str, paths: dict[str, Path]) -> None:
     if not FFMPEG_BIN.exists():
         raise RuntimeError(f"ffmpeg not found: {FFMPEG_BIN}")
+    soundtrack = paths["run_dir"] / "playful_soundtrack.wav"
+    create_playful_soundtrack(soundtrack)
     foreground_size = 1000
     foreground_y = (REEL_HEIGHT - foreground_size) // 2
     punchline_y = foreground_y + 815
@@ -388,10 +393,8 @@ def create_reel(run_id: str, paths: dict[str, Path]) -> None:
         "1",
         "-i",
         str(paths["image"]),
-        "-f",
-        "lavfi",
         "-i",
-        "anullsrc=r=48000:cl=stereo",
+        str(soundtrack),
         "-filter_complex",
         filter_graph,
         "-map",
@@ -425,6 +428,66 @@ def create_reel(run_id: str, paths: dict[str, Path]) -> None:
     if paths["reel"].stat().st_size < 100_000:
         raise RuntimeError(f"Generated Reel looks too small: {paths['reel']}")
     log(run_id, f"Reel created: {paths['reel'].name}")
+
+
+def create_playful_soundtrack(output: Path) -> None:
+    sample_rate = 48_000
+    total_samples = REEL_SECONDS * sample_rate
+    audio = [0.0] * total_samples
+
+    # Short marimba-like notes; the descending reveal at 3.2s lands with the cat's roast.
+    notes = [
+        (0.00, 0.22, 523.25, 0.34),
+        (0.38, 0.18, 659.25, 0.29),
+        (0.72, 0.22, 783.99, 0.32),
+        (1.18, 0.20, 659.25, 0.26),
+        (1.55, 0.25, 880.00, 0.34),
+        (2.05, 0.18, 783.99, 0.28),
+        (2.42, 0.20, 987.77, 0.31),
+        (2.82, 0.18, 1046.50, 0.30),
+        (3.20, 0.28, 659.25, 0.40),
+        (3.43, 0.32, 493.88, 0.42),
+        (4.05, 0.20, 523.25, 0.27),
+        (4.42, 0.20, 659.25, 0.27),
+        (4.80, 0.20, 783.99, 0.30),
+        (5.28, 0.23, 880.00, 0.30),
+        (5.72, 0.20, 783.99, 0.25),
+        (6.08, 0.22, 659.25, 0.25),
+        (6.48, 0.22, 523.25, 0.28),
+        (6.88, 0.30, 392.00, 0.34),
+    ]
+
+    for start, duration, frequency, volume in notes:
+        start_sample = int(start * sample_rate)
+        note_samples = int(duration * sample_rate)
+        for index in range(note_samples):
+            position = start_sample + index
+            if position >= total_samples:
+                break
+            elapsed = index / sample_rate
+            decay = math.exp(-8.5 * elapsed)
+            attack = min(1.0, elapsed / 0.008)
+            tone = (
+                math.sin(2 * math.pi * frequency * elapsed)
+                + 0.42 * math.sin(2 * math.pi * frequency * 2 * elapsed)
+                + 0.18 * math.sin(2 * math.pi * frequency * 3 * elapsed)
+            )
+            audio[position] += volume * attack * decay * tone / 1.6
+
+    peak = max(max(abs(sample) for sample in audio), 0.001)
+    scale = 0.78 / peak
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with wave.open(str(output), "wb") as wav_file:
+        wav_file.setnchannels(2)
+        wav_file.setsampwidth(2)
+        wav_file.setframerate(sample_rate)
+        frames = bytearray()
+        for sample in audio:
+            value = int(max(-1.0, min(1.0, sample * scale)) * 32767)
+            packed = struct.pack("<h", value)
+            frames.extend(packed)
+            frames.extend(packed)
+        wav_file.writeframes(frames)
 
 
 def commit_and_push_generated(run_id: str, paths: dict[str, Path]) -> None:
