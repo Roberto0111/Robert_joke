@@ -9,6 +9,7 @@ posts/*/*.log
 posts/*/codex_prompt.txt
 posts/*/codex_last_message.txt
 posts/*/trend_context.txt
+posts/*/playful_soundtrack.wav
 posts/*/*_original_*.png
 previews/
 analytics/

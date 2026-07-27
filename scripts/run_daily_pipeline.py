@@ -193,6 +193,8 @@ Current trend context:
 
 Growth context:
 - Read analytics/latest.json if it exists. Treat reach, shares, saves, and total interactions as evidence, not vanity metrics.
+- Read analytics/daily_strategy.md if it exists and follow its instructions for pacing, joke mechanism, and shareability.
+- The strategy file is recalculated before every post. Do not copy its best caption; reuse only evidence-backed structure.
 - Do not repeat a weak topic merely because it was recently posted. Prefer concepts that a viewer would send to one specific friend.
 
 Hard requirements:
@@ -280,7 +282,18 @@ def collect_growth_metrics(run_id: str) -> None:
         timeout=180,
     )
     if result.returncode == 0:
-        log(run_id, "growth metrics collected")
+        analysis = subprocess.run(
+            [str(NODE_BIN), "scripts/analyze-instagram-performance.mjs"],
+            cwd=ROOT,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            timeout=60,
+        )
+        if analysis.returncode == 0:
+            log(run_id, "growth metrics collected and daily strategy updated")
+        else:
+            log(run_id, f"strategy analysis unavailable; continuing: {redact(analysis.stdout).strip()[:300]}")
     else:
         log(run_id, f"analytics unavailable; continuing: {redact(result.stdout).strip()[:300]}")
 
