@@ -4,6 +4,8 @@
   "image_path": "assets/2026-07-28_2030_deadpan_joke.png",
   "caption_path": "captions/2026-07-28_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-07-28_2030_generation_prompt.md",
-  "status": "generated",
-  "publish_format": "image"
+  "status": "published",
+  "publish_format": "image",
+  "instagram_media_id": "18171328471435337",
+  "published_at": "2026-07-28T20:37:02"
 }
