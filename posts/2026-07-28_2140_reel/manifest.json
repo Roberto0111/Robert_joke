@@ -1,0 +1,11 @@
+{
+  "run_id": "2026-07-28_2140_reel",
+  "topic": "放生蚊子變五星吃到飽",
+  "image_path": "assets/2026-07-28_2140_reel_deadpan_joke.png",
+  "caption_path": "captions/2026-07-28_2140_reel_deadpan_joke.md",
+  "prompt_path": "prompts/2026-07-28_2140_reel_generation_prompt.md",
+  "source_run_id": "2026-07-28_2030",
+  "status": "generated",
+  "publish_format": "reel",
+  "video_path": "assets/2026-07-28_2140_reel_deadpan_joke_reel.mp4"
+}
