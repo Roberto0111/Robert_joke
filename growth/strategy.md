@@ -13,8 +13,10 @@ Start: 2026-07-27
 ## Publishing Schedule
 
 - One post per day at 20:30 Asia/Taipei
-- Monday, Wednesday, Friday, Sunday: 8-second vertical Reel
-- Tuesday, Thursday, Saturday: square image
+- Analyze recent Reel and image performance before every run
+- Use the format recommended by `analytics/daily_strategy.json`
+- Current growth default: 8-second vertical Reel every day because Reel reach is substantially higher
+- Use the old four-Reel weekly split only when analytics has insufficient evidence
 - Reels reveal the tuxedo cat punchline after 3.2 seconds and share to Feed
 - Reels use an original fast prank-vlog cue with bouncy plucks, a pre-reveal pause, and a cartoon falling sting
 

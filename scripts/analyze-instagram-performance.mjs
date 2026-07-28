@@ -21,14 +21,35 @@ const reels = posts.filter((post) => post.media_product_type === "REELS");
 const images = posts.filter((post) => post.media_product_type !== "REELS");
 const reelStats = summarize(reels);
 const imageStats = summarize(images);
+const reelReachAdvantage = imageStats.avgReach > 0
+  ? reelStats.avgReach / imageStats.avgReach
+  : reelStats.avgReach > 0 ? Number.POSITIVE_INFINITY : 0;
+const imageReachAdvantage = reelStats.avgReach > 0
+  ? imageStats.avgReach / reelStats.avgReach
+  : imageStats.avgReach > 0 ? Number.POSITIVE_INFINITY : 0;
+let recommendedFormat = null;
+let formatReason = "Not enough evidence; use the fallback four-Reel schedule.";
+
+if (
+  (reelStats.samples >= 3 && reelReachAdvantage >= 2)
+  || (reelStats.samples >= 2 && reelReachAdvantage >= 5)
+) {
+  recommendedFormat = "reel";
+  formatReason = `Reel average reach is ${fixed(reelReachAdvantage)}x image reach.`;
+} else if (imageStats.samples >= 3 && imageReachAdvantage >= 1.5) {
+  recommendedFormat = "image";
+  formatReason = `Image average reach is ${fixed(imageReachAdvantage)}x Reel reach.`;
+}
 const best = [...posts].sort((a, b) =>
   (b.shares * 5 + b.saves * 4 + b.reach + b.views * 0.1)
   - (a.shares * 5 + a.saves * 4 + a.reach + a.views * 0.1)
 )[0];
 
 const recommendations = [];
-if (reels.length > 0 && reelStats.avgReach >= Math.max(3, imageStats.avgReach * 2)) {
-  recommendations.push("Reel 觸及明顯高於靜態圖；維持每週四支 Reel，靜態圖只保留最強的一眼梗。");
+if (recommendedFormat === "reel") {
+  recommendations.push("Reel 觸及明顯高於靜態圖；成長模式每日優先發布 Reel，靜態圖只作為 Reel 素材。");
+} else if (recommendedFormat === "image") {
+  recommendations.push("靜態圖觸及已明顯高於 Reel；下一篇改用方形圖片驗證是否持續。");
 } else if (reels.length < 3) {
   recommendations.push("Reel 樣本仍少於 3 支；先維持目前比例，不因單篇結果大改排程。");
 }
@@ -68,6 +89,11 @@ ${best ? `- ${best.permalink}
 
 ${recommendations.map((item) => `- ${item}`).join("\n")}
 
+## Publishing Decision
+
+- Recommended format: ${recommendedFormat || "fallback schedule"}
+- Reason: ${formatReason}
+
 ## Guardrails
 
 - Treat fewer than 3 posts in a format as an early signal, not a conclusion.
@@ -83,6 +109,8 @@ fs.writeFileSync(
     followers: number(report.profile?.followers_count),
     reels: reelStats,
     images: imageStats,
+    recommended_format: recommendedFormat,
+    format_reason: formatReason,
     recommendations,
     best_post_id: best?.id || null,
   }, null, 2)}\n`,

@@ -34,7 +34,7 @@ IG_IMAGE_HEIGHT = 1080
 REEL_WIDTH = 1080
 REEL_HEIGHT = 1920
 REEL_SECONDS = 8
-REEL_WEEKDAYS = {0, 2, 4, 6}  # Monday, Wednesday, Friday, Sunday.
+FALLBACK_REEL_WEEKDAYS = {0, 2, 4, 6}  # Used only before analytics has enough evidence.
 
 
 def main() -> int:
@@ -47,7 +47,7 @@ def main() -> int:
         "--format",
         choices=("auto", "image", "reel"),
         default="auto",
-        help="Publishing format. Auto alternates four Reels and three images per week.",
+        help="Publishing format. Auto follows the latest Instagram performance strategy.",
     )
     args = parser.parse_args()
 
@@ -56,15 +56,19 @@ def main() -> int:
         run_id = args.run_id
         paths = run_paths(run_id)
         ensure_dirs(paths)
-        publish_format = determine_publish_format(args.format, run_id)
+
+        if not args.post_only:
+            collect_growth_metrics(run_id)
+
+        publish_format, format_reason = determine_publish_format(args.format, run_id)
         log(
             run_id,
-            f"pipeline started format={publish_format} dry_run={args.dry_run} "
+            f"pipeline started format={publish_format} format_reason={format_reason} "
+            f"dry_run={args.dry_run} "
             f"generate_only={args.generate_only} post_only={args.post_only}",
         )
 
         if not args.post_only:
-            collect_growth_metrics(run_id)
             fetch_trend_context(run_id, paths)
             trigger_codex(run_id, paths, args.dry_run)
             if args.dry_run:
@@ -96,14 +100,25 @@ def current_run_id() -> str:
     return dt.datetime.now().strftime("%Y-%m-%d_%H%M")
 
 
-def determine_publish_format(requested: str, run_id: str) -> str:
+def determine_publish_format(requested: str, run_id: str) -> tuple[str, str]:
     if requested != "auto":
-        return requested
+        return requested, "explicit"
+
+    strategy_path = ROOT / "analytics" / "daily_strategy.json"
+    try:
+        strategy = json.loads(strategy_path.read_text(encoding="utf-8"))
+        recommended = strategy.get("recommended_format")
+        if recommended in {"image", "reel"}:
+            return recommended, "daily_strategy"
+    except (OSError, ValueError, TypeError):
+        pass
+
     try:
         run_date = dt.datetime.strptime(run_id[:10], "%Y-%m-%d")
     except ValueError:
         run_date = dt.datetime.now()
-    return "reel" if run_date.weekday() in REEL_WEEKDAYS else "image"
+    fallback = "reel" if run_date.weekday() in FALLBACK_REEL_WEEKDAYS else "image"
+    return fallback, "fallback_schedule"
 
 
 def run_paths(run_id: str) -> dict[str, Path]:

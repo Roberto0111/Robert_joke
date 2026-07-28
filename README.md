@@ -74,7 +74,7 @@ LaunchAgent com.roberto.robert-joke
   -> scripts/run_daily_pipeline.py
   -> 蒐集近期 IG 成效與台灣熱門搜尋
   -> codex exec 生成圖片/caption/manifest
-  -> 依星期決定靜態圖或 8 秒直式 Reel
+  -> 依每日 IG 成效決定靜態圖或 8 秒直式 Reel
   -> Python 等圖片檔出現
   -> git push 到 GitHub
   -> Instagram API 發文
@@ -115,8 +115,9 @@ LaunchAgent 的工作目錄是：
 
 ```text
 每天 20:30
-週一、三、五、日：Reel
-週二、四、六：方形圖片
+每天先分析 Reel 與圖片的觀看、觸及、分享、收藏
+目前 Reel 觸及明顯領先，因此每日優先發布 Reel
+只有圖片成效明顯反超，或分析樣本不足時，才切回圖片／備援星期表
 Reel 會使用原創惡整 Vlog 感的彈跳撥弦背景音，並在 3.2 秒吐槽揭曉時留白後加入卡通滑音
 ```
 
