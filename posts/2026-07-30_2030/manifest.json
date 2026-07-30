@@ -1,0 +1,10 @@
+{
+  "run_id": "2026-07-30_2030",
+  "topic": "網購包裹逼管理室加開倉庫",
+  "image_path": "assets/2026-07-30_2030_deadpan_joke.png",
+  "caption_path": "captions/2026-07-30_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-07-30_2030_generation_prompt.md",
+  "status": "generated",
+  "publish_format": "reel",
+  "video_path": "assets/2026-07-30_2030_deadpan_joke_reel.mp4"
+}
