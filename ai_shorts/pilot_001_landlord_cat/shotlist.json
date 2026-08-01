@@ -1,0 +1,19 @@
+{
+  "title": "房租也還活著",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "target_duration_seconds": 52,
+  "shots": [
+    { "id": "01", "seconds": 4.0, "visual": "清晨臥室，賓士貓端坐在 Roberto 胸口，超近景睜眼", "dialogue": "貓：起床，你要遲到了。" },
+    { "id": "02", "seconds": 4.0, "visual": "Roberto 驚醒，滿臉困惑，貓冷眼俯視", "dialogue": "Roberto：你誰啊？怎麼又進我家？" },
+    { "id": "03", "seconds": 3.5, "visual": "貓一掌拍掉鬧鐘，Roberto 把貓抱到門外", "dialogue": "音效：鬧鐘落地、關門" },
+    { "id": "04", "seconds": 4.0, "visual": "隔天同角度，貓再次坐在 Roberto 胸口", "dialogue": "貓：快去上班。" },
+    { "id": "05", "seconds": 4.5, "visual": "Roberto 坐起來，認真反駁，頭髮凌亂", "dialogue": "Roberto：我失業三個月了，上什麼班？" },
+    { "id": "06", "seconds": 4.0, "visual": "貓搶走手機，手機特寫顯示荒謬行程", "dialogue": "今日行程：假裝自己還有工作。" },
+    { "id": "07", "seconds": 4.0, "visual": "Roberto 指著貓質問，貓舔爪完全不理", "dialogue": "Roberto：你到底是誰養的？" },
+    { "id": "08", "seconds": 3.5, "visual": "貓用爪翻出黃色項圈吊牌，吊牌寫房東", "dialogue": "貓：房東。" },
+    { "id": "09", "seconds": 5.0, "visual": "Roberto 拿手機通話，背景變安靜，貓坐在桌邊", "dialogue": "房東：我只是請牠每天看看你還活著。" },
+    { "id": "10", "seconds": 3.5, "visual": "Roberto 眼眶微濕，貓面無表情喝咖啡", "dialogue": "Roberto：原來還是有人關心我……" },
+    { "id": "11", "seconds": 5.0, "visual": "貓放下咖啡，正對鏡頭補刀", "dialogue": "貓：順便提醒你，房租也還活著。" },
+    { "id": "12", "seconds": 4.0, "visual": "Roberto 僵硬倒回床上，貓打開催租帳單", "dialogue": "關心是真的，催租也是真的。" }
+  ]
+}

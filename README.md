@@ -6,6 +6,7 @@
 
 - `assets/001_deadpan_nonsense_tuxedo_cat.png`
 - `captions/001_deadpan_nonsense_tuxedo_cat.md`
+- `ai_shorts/pilot_001_landlord_cat/output/roberto_joke_pilot_001.mp4`
 
 IG 文案：
 
