@@ -4,7 +4,11 @@
   "image_path": "assets/2026-08-03_2030_deadpan_joke.png",
   "caption_path": "captions/2026-08-03_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-08-03_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "publish_format": "reel",
-  "video_path": "assets/2026-08-03_2030_deadpan_joke_reel.mp4"
+  "video_path": "assets/2026-08-03_2030_deadpan_joke_reel.mp4",
+  "instagram_media_id": "17961164814153725",
+  "instagram_story_media_id": "17899100676555845",
+  "instagram_story_status": "published",
+  "published_at": "2026-08-03T20:37:08"
 }
