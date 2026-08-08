@@ -14,18 +14,25 @@ const igUserId = requiredEnv("IG_USER_ID");
 const accessToken = requiredEnv("IG_ACCESS_TOKEN");
 const mediaType = (process.env.IG_MEDIA_TYPE || "IMAGE").toUpperCase();
 const imageUrl = process.env.IG_IMAGE_URL || "";
+const carouselImageUrls = parseCarouselUrls(process.env.IG_CAROUSEL_IMAGE_URLS || "");
 const videoUrl = process.env.IG_VIDEO_URL || "";
 const captionFile = process.env.IG_CAPTION_FILE || "captions/001_deadpan_nonsense_tuxedo_cat.md";
 const caption = fs.readFileSync(path.join(root, captionFile), "utf8").trim();
 
-if (!["IMAGE", "REELS"].includes(mediaType)) {
-  throw new Error(`Unsupported IG_MEDIA_TYPE: ${mediaType}. Use IMAGE or REELS.`);
+if (!["IMAGE", "CAROUSEL", "REELS", "STORIES"].includes(mediaType)) {
+  throw new Error(`Unsupported IG_MEDIA_TYPE: ${mediaType}. Use IMAGE, CAROUSEL, REELS, or STORIES.`);
 }
 if (mediaType === "IMAGE" && !imageUrl) {
   throw new Error("Missing required environment variable: IG_IMAGE_URL");
 }
 if (mediaType === "REELS" && !videoUrl) {
   throw new Error("Missing required environment variable: IG_VIDEO_URL");
+}
+if (mediaType === "CAROUSEL" && carouselImageUrls.length < 2) {
+  throw new Error("Instagram carousels require at least two IG_CAROUSEL_IMAGE_URLS values");
+}
+if (mediaType === "STORIES" && !imageUrl && !videoUrl) {
+  throw new Error("Instagram Stories require IG_IMAGE_URL or IG_VIDEO_URL");
 }
 
 const baseUrl = getBaseUrl(apiMode, graphVersion);
@@ -49,6 +56,7 @@ if (dryRun) {
     igUserId,
     mediaType,
     imageUrl,
+    carouselImageUrls,
     videoUrl,
     caption,
     graphVersion,
@@ -56,20 +64,48 @@ if (dryRun) {
   process.exit(0);
 }
 
-const containerValues = mediaType === "REELS"
-  ? {
+let containerValues;
+if (mediaType === "REELS") {
+  containerValues = {
       media_type: "REELS",
       video_url: videoUrl,
       caption,
       share_to_feed: "true",
       thumb_offset: "3600",
       access_token: accessToken,
+    };
+} else if (mediaType === "CAROUSEL") {
+  const children = [];
+  for (const childImageUrl of carouselImageUrls) {
+    const child = await postGraph(`${baseUrl}/${igUserId}/media`, {
+      image_url: childImageUrl,
+      is_carousel_item: "true",
+      access_token: accessToken,
+    });
+    if (!child.id) {
+      throw new Error(`Instagram did not return a carousel child id: ${JSON.stringify(child)}`);
     }
-  : {
+    children.push(child.id);
+  }
+  containerValues = {
+    media_type: "CAROUSEL",
+    children: children.join(","),
+    caption,
+    access_token: accessToken,
+  };
+} else if (mediaType === "STORIES") {
+  containerValues = {
+    media_type: "STORIES",
+    ...(videoUrl ? { video_url: videoUrl } : { image_url: imageUrl }),
+    access_token: accessToken,
+  };
+} else {
+  containerValues = {
       image_url: imageUrl,
       caption,
       access_token: accessToken,
     };
+}
 
 const container = await postGraph(`${baseUrl}/${igUserId}/media`, containerValues);
 
@@ -79,7 +115,7 @@ if (!container.id) {
 
 console.log(`Created media container: ${container.id}`);
 
-if (mediaType === "REELS") {
+if (mediaType === "REELS" || (mediaType === "STORIES" && videoUrl)) {
   await waitForContainer(`${baseUrl}/${container.id}`, accessToken);
 }
 
@@ -188,6 +224,21 @@ function requiredEnv(name) {
     throw new Error(`Missing required environment variable: ${name}`);
   }
   return value;
+}
+
+function parseCarouselUrls(raw) {
+  if (!raw.trim()) {
+    return [];
+  }
+  try {
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed) || parsed.some((value) => typeof value !== "string" || !value.trim())) {
+      throw new Error("must be a JSON array of non-empty strings");
+    }
+    return parsed.map((value) => value.trim());
+  } catch (error) {
+    throw new Error(`Invalid IG_CAROUSEL_IMAGE_URLS: ${error.message}`);
+  }
 }
 
 function loadDotEnv(filePath) {

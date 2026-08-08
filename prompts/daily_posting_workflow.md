@@ -1,51 +1,29 @@
 # Daily Posting Workflow
 
-每次排程只做一篇 IG 貼文。14 天成長模式固定每天 20:30 執行一次。
+每天 20:30 執行一次，只產出並發布一則四格故事。
 
 ## Output Naming
 
-使用台北時間建立資料：
-
 ```text
 posts/YYYY-MM-DD_HHMM/
-assets/YYYY-MM-DD_HHMM_deadpan_joke.png
+assets/YYYY-MM-DD_HHMM_deadpan_joke_01.png
+assets/YYYY-MM-DD_HHMM_deadpan_joke_02.png
 captions/YYYY-MM-DD_HHMM_deadpan_joke.md
 prompts/YYYY-MM-DD_HHMM_generation_prompt.md
 ```
 
 ## Required Steps
 
-1. 讀取 `prompts/daily_comic_style.md`。
-2. 使用 `assets/main_character_reference.jpg` 作為男主角本人照片參考，生成時必須保留本人特徵。
-3. 讀取 Python 當次抓取的 `posts/YYYY-MM-DD_HHMM/trend_context.txt`，把近期台灣熱門搜尋當成可選靈感；敏感事件或硬套不好笑時不用，直接自創。
-4. 檢查 `posts/` 舊貼文，避免重複主題與台詞。
-5. 先構思至少 12 則真正不同的候選梗，至少 8 則為非職場題材，依意外性、畫面反差、貓的殺傷力與轉發感評分。淘汰只是解說畫面、使用「你只是」、換皮企業術語或需要解釋的梗。
-6. 從總分至少 15/20 的候選中選最高分：上方由本人一本正經鋪陳、中央用本人做出荒謬行為、下方由賓士貓以「貓：」開頭重新定義整件事。把前五名與評分記錄在 generation prompt。
-7. 用 imagegen 生成一張 1080x1080 彩色方形單格迷因，固定使用上下白底粗黑大字版型，畫面中必須有黑白賓士貓。
-8. 把圖存到 `assets/YYYY-MM-DD_HHMM_deadpan_joke.png`。
-9. 產生 IG caption 到 `captions/YYYY-MM-DD_HHMM_deadpan_joke.md`。
-10. 產生本次 prompt 到 `prompts/YYYY-MM-DD_HHMM_generation_prompt.md`。
-11. 建立 `posts/YYYY-MM-DD_HHMM/manifest.json`，記錄圖片、caption、主題、是否發文。
-12. Python 依星期決定格式：週一、三、五、日把方形圖轉成 8 秒、1080x1920 的 Reel；週二、四、六保留方形圖片。
-13. commit 並 push 到 GitHub `main`，讓 raw image 或 video URL 可以公開存取。
-14. 使用 Instagram API 發文：
-
-```bash
-IG_IMAGE_URL=https://raw.githubusercontent.com/Roberto0111/Robert_joke/main/assets/YYYY-MM-DD_HHMM_deadpan_joke.png \
-IG_CAPTION_FILE=captions/YYYY-MM-DD_HHMM_deadpan_joke.md \
-/Users/roberto/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/post-to-instagram.mjs
-```
-
-15. 發文成功後，把 IG media id 與 `publish_format` 寫入 manifest，再 commit/push 一次。
-
-## Git Push
-
-使用 repo 專用 deploy key：
-
-```bash
-git -c core.sshCommand="ssh -i /Users/roberto/.ssh/id_ed25519_robert_joke -o IdentitiesOnly=yes" push
-```
+1. 讀取 `prompts/daily_comic_style.md`、近期貼文、當次熱門搜尋與 IG 成效策略。
+2. 使用 `assets/main_character_reference.jpg` 固定 Roberto 本人外型。
+3. 構思並評分至少 12 個故事，選出總分至少 15/20 且第四格反轉最強的一則。
+4. 生成兩張 1080x1350 圖：第 1 張放第 1、2 格，第 2 張放第 3、4 格。
+5. 建立 caption、generation prompt 與 manifest；manifest 的 `image_paths` 必須依序列出兩張圖。
+6. Python 檢查兩張圖尺寸、檔案大小與 manifest，任何一項不符就停止。
+7. 依每日 IG 成效決定發布形式：`image` 代表兩張圖的 carousel；`reel` 代表依序播放兩張圖的 12 秒直式影片。
+8. commit 並用專用 deploy key push 到 GitHub，等待公開 URL 可讀後再呼叫 Instagram API。
+9. 主貼文成功後同步發布 Story，並把 media id 與狀態寫回 manifest。
 
 ## Stop Conditions
 
-如果圖片生成失敗、圖片不是單格方形迷因、主角不像本人、繁體中文字錯誤、caption 不存在、GitHub push 失敗、或 IG API 回錯誤，停止，不要假裝成功。
+圖片不是兩張、不是 1080x1350、不是四格、主角不像本人、賓士貓缺席、繁中錯字、兩張風格不連續、caption/manifest 缺失、GitHub push 或 IG API 失敗時，停止並留下明確 log，不得假裝成功。

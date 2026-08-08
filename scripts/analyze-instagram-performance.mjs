@@ -47,9 +47,9 @@ const best = [...posts].sort((a, b) =>
 
 const recommendations = [];
 if (recommendedFormat === "reel") {
-  recommendations.push("Reel 觸及明顯高於靜態圖；成長模式每日優先發布 Reel，靜態圖只作為 Reel 素材。");
+  recommendations.push("Reel 觸及明顯高於輪播；優先把同一則四格故事做成 12 秒 Reel，但仍保留兩張輪播原稿。");
 } else if (recommendedFormat === "image") {
-  recommendations.push("靜態圖觸及已明顯高於 Reel；下一篇改用方形圖片驗證是否持續。");
+  recommendations.push("輪播觸及已明顯高於 Reel；下一篇直接發布兩張四格 carousel，驗證滑動與分享表現。");
 } else if (reels.length < 3) {
   recommendations.push("Reel 樣本仍少於 3 支；先維持目前比例，不因單篇結果大改排程。");
 }
@@ -60,7 +60,7 @@ if (posts.reduce((sum, post) => sum + post.saves, 0) === 0) {
   recommendations.push("近期收藏為 0；Joke 不硬做知識型收藏，改強化反轉揭曉與重播動機。");
 }
 if (reelStats.repeatViewRate >= 1.1) {
-  recommendations.push("Reel 每位觸及產生超過 1.1 次觀看；保留 3.2 秒揭曉結構與 8 秒片長。");
+  recommendations.push("Reel 每位觸及產生超過 1.1 次觀看；保留兩頁依序揭曉與 12 秒片長。");
 }
 if (reelStats.engagementRate === 0) {
   recommendations.push("Reel 有觸及但尚無互動；貓的下句要更短、更具體、更能讓主角丟臉，caption 不解釋笑點。");

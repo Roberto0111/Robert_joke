@@ -1,6 +1,6 @@
 # Robert Joke
 
-認真講幹話單格迷因：本人主角、賓士貓、上下大字、一本正經說北七幹話。
+認真講幹話四格輪播：本人主角、賓士貓、前三格認真鋪陳、第四格精準拆台。
 
 目前收錄：
 
@@ -14,7 +14,7 @@ IG 文案：
 我沒有在逃避問題。
 我是讓問題找不到我。
 
-#認真講幹話 #單格迷因 #賓士貓 #台式幽默 #擺爛哲學
+#認真講幹話 #四格漫畫 #賓士貓 #台式幽默 #擺爛哲學
 ```
 
 GitHub Pages 可使用 `index.html` 作為首頁。
@@ -74,9 +74,9 @@ Instagram API 發圖或 Reel 的流程都是先建立 media container，再呼�
 LaunchAgent com.roberto.robert-joke
   -> scripts/run_daily_pipeline.py
   -> 蒐集近期 IG 成效與台灣熱門搜尋
-  -> codex exec 生成圖片/caption/manifest
-  -> 依每日 IG 成效決定靜態圖或 8 秒直式 Reel
-  -> Python 等圖片檔出現
+  -> codex exec 生成兩張四格輪播圖/caption/manifest
+  -> 依每日 IG 成效決定兩張 carousel 或 12 秒直式 Reel
+  -> Python 等兩張圖片檔出現並驗證為 1080x1350
   -> git push 到 GitHub
   -> Instagram API 發文
   -> manifest 寫入 IG media id
@@ -118,8 +118,8 @@ LaunchAgent 的工作目錄是：
 每天 20:30
 每天先分析 Reel 與圖片的觀看、觸及、分享、收藏
 目前 Reel 觸及明顯領先，因此每日優先發布 Reel
-只有圖片成效明顯反超，或分析樣本不足時，才切回圖片／備援星期表
-Reel 會使用原創惡整 Vlog 感的彈跳撥弦背景音，並在 3.2 秒吐槽揭曉時留白後加入卡通滑音
+只有 carousel 成效明顯反超，或分析樣本不足時，才切回兩張輪播／備援星期表
+Reel 會依序播放兩張四格原稿，使用原創惡整 Vlog 感背景音，總長 12 秒
 ```
 
 成長策略與基準記錄在 `growth/strategy.md`。IG 成效會每天寫入本機 `analytics/`，不會 commit token 或私密資料。

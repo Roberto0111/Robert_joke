@@ -30,15 +30,16 @@ FFMPEG_BIN = Path(os.environ.get("FFMPEG_BIN", "/opt/homebrew/bin/ffmpeg"))
 TIMEOUT_SECONDS = int(os.environ.get("ROBERT_JOKE_CODEX_TIMEOUT", "3600"))
 POLL_SECONDS = int(os.environ.get("ROBERT_JOKE_POLL_SECONDS", "5"))
 IG_IMAGE_WIDTH = 1080
-IG_IMAGE_HEIGHT = 1080
+IG_IMAGE_HEIGHT = 1350
 REEL_WIDTH = 1080
 REEL_HEIGHT = 1920
-REEL_SECONDS = 8
+REEL_SECONDS = 12
+REEL_PAGE_ONE_SECONDS = 5
 FALLBACK_REEL_WEEKDAYS = {0, 2, 4, 6}  # Used only before analytics has enough evidence.
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Trigger Codex generation, then publish the image to Instagram.")
+    parser = argparse.ArgumentParser(description="Generate a four-panel joke, then publish its carousel or Reel.")
     parser.add_argument("--run-id", default=current_run_id(), help="Run id, default YYYY-MM-DD_HHMM in local time.")
     parser.add_argument("--generate-only", action="store_true", help="Only trigger Codex and wait for local files.")
     parser.add_argument("--post-only", action="store_true", help="Skip Codex and publish an existing run id.")
@@ -47,7 +48,7 @@ def main() -> int:
         "--format",
         choices=("auto", "image", "reel"),
         default="auto",
-        help="Publishing format. Auto follows the latest Instagram performance strategy.",
+        help="Publishing format. 'image' publishes the two-page carousel; auto follows performance strategy.",
     )
     args = parser.parse_args()
 
@@ -76,7 +77,8 @@ def main() -> int:
                 return 0
             wait_for_generation(run_id, paths)
 
-        normalize_image_for_instagram(run_id, paths)
+        for image_path in paths["images"]:
+            normalize_image_for_instagram(run_id, image_path, paths["run_dir"])
         validate_generation(paths)
         prepare_publish_asset(run_id, paths, publish_format)
 
@@ -90,7 +92,21 @@ def main() -> int:
 
         commit_and_push_generated(run_id, paths)
         media_id = publish_to_instagram(run_id, paths, publish_format)
-        mark_published(run_id, paths, media_id, publish_format)
+        story_media_id = ""
+        story_error = ""
+        try:
+            story_media_id = publish_story_to_instagram(run_id, paths, publish_format)
+        except Exception as exc:
+            story_error = redact(str(exc))[:500]
+            log(run_id, f"Instagram Story failed after primary publish: {story_error}")
+        mark_published(
+            run_id,
+            paths,
+            media_id,
+            publish_format,
+            story_media_id=story_media_id,
+            story_error=story_error,
+        )
         commit_and_push_published(run_id, paths)
         log(run_id, f"pipeline complete media_id={media_id}")
         return 0
@@ -122,9 +138,14 @@ def determine_publish_format(requested: str, run_id: str) -> tuple[str, str]:
 
 
 def run_paths(run_id: str) -> dict[str, Path]:
+    image_1 = ROOT / "assets" / f"{run_id}_deadpan_joke_01.png"
+    image_2 = ROOT / "assets" / f"{run_id}_deadpan_joke_02.png"
     return {
         "run_dir": ROOT / "posts" / run_id,
-        "image": ROOT / "assets" / f"{run_id}_deadpan_joke.png",
+        "image": image_1,
+        "image_1": image_1,
+        "image_2": image_2,
+        "images": (image_1, image_2),
         "caption": ROOT / "captions" / f"{run_id}_deadpan_joke.md",
         "prompt": ROOT / "prompts" / f"{run_id}_generation_prompt.md",
         "manifest": ROOT / "posts" / run_id / "manifest.json",
@@ -136,7 +157,7 @@ def run_paths(run_id: str) -> dict[str, Path]:
 def ensure_dirs(paths: dict[str, Path]) -> None:
     for key in ("run_dir",):
         paths[key].mkdir(parents=True, exist_ok=True)
-    for key in ("image", "caption", "prompt"):
+    for key in ("image_1", "image_2", "caption", "prompt"):
         paths[key].parent.mkdir(parents=True, exist_ok=True)
 
 
@@ -189,7 +210,7 @@ def trigger_codex(run_id: str, paths: dict[str, Path], dry_run: bool) -> None:
 
 def build_codex_prompt(run_id: str, paths: dict[str, Path]) -> str:
     return f"""
-You are generating exactly one Instagram single-panel meme for @roberto_joke.
+You are generating one four-panel Instagram carousel story for @roberto_joke.
 
 Read:
 - README.md
@@ -213,31 +234,33 @@ Growth context:
 - Do not repeat a weak topic merely because it was recently posted. Prefer concepts that a viewer would send to one specific friend.
 
 Hard requirements:
-- Generate exactly one colorful square single-panel meme image. Never generate a six-panel comic or multiple images.
-- Image must be 1080x1080 pixels, 1:1 square, safe for Instagram feed with no cropping.
-- Use the fixed meme layout: oversized rough black Traditional Chinese headline on a white band at the top, one absurd central scene, and an oversized rough black Traditional Chinese punchline on a white band at the bottom.
-- The top line is a serious setup. The bottom line is a short, stupid, blunt reversal. Both lines must be immediately readable on a phone and must stay fully inside a generous safe margin.
+- Generate exactly two colorful 1080x1350 images for one Instagram carousel. Each image contains exactly two stacked comic panels, for exactly four panels total.
+- Keep the same characters, wardrobe, rendering, room palette, line weight, and facial identity across both images. They must feel like one continuous four-panel story.
+- Panel 1: a serious declaration that sounds respectable. Panel 2: a concrete explanation that makes the nonsense sound reasonable. Panel 3: Roberto confidently acts on the bad logic. Panel 4: the tuxedo cat delivers the short blunt reversal.
+- Put one large Traditional Chinese line in each panel. Text must be immediately readable on a phone, fully inside generous safe margins, and never overlap a face.
+- The fourth-panel punchline must be the strongest beat. It must reframe the first three panels, not explain the visible action.
 - The male protagonist must be based on the attached reference photo: East Asian man, round youthful face, side-swept black hair, slightly sleepy eyes, wearing a black collared top with gray zipper/placket.
 - Preserve the reference identity in a polished realistic-comic meme style. Do not use a generic anime man.
 - Style: 北七、靠杯、擺爛、一本正經講幹話的台灣網路迷因，使用繁體中文。The protagonist may look solemn, mischievous, guilty, or playfully caught in the act. Vary the expression and avoid the same neutral face every day.
 - Include a black-and-white tuxedo cat in every image. The cat is the sharp deadpan roast character: it should expose, insult, or bluntly correct the protagonist's nonsense.
-- The bottom punchline should usually be the cat's line and begin with "貓：" so the speaker is unmistakable.
+- The panel-four punchline should begin with "貓：" so the speaker is unmistakable.
 - Prefer an obvious visual contradiction: hiding while discussing management, sleeping while discussing efficiency, giving up while presenting strategy, or similar everyday nonsense. Do not limit topics to offices or companies.
-- Use no more than two main text lines. Avoid speech bubbles and explanatory paragraphs.
+- Use exactly four concise dialogue/caption beats, one per panel. Avoid explanatory paragraphs.
 - Before generating the image, brainstorm at least 12 genuinely different joke candidates. At least 8 must be non-workplace topics.
 - Score every candidate from 0-5 for surprise, visual contradiction, cat-roast sharpness, and shareability. Select only the highest-scoring candidate with at least 15/20.
 - A valid bottom line must REFRAME the setup, expose a hidden consequence, or downgrade the protagonist in an unexpected specific way. It must not merely describe what the image already shows.
 - Reject generic explanatory roasts such as "你只是在...", "你根本沒...", or a literal statement of the protagonist's action. Do not use the "你只是" construction in the final joke.
 - Reject corporate-jargon reskins (risk management, process optimization, crisis response, strategic planning) unless the wording creates a genuinely new double meaning.
 - Compare against the latest 20 posts. Vary the joke mechanism, setting, pose, and cat reaction, not just the nouns.
-- Record the top five candidate setups, punchlines, scores, rejection notes, and the reason for the final selection in the generation prompt record. Still generate exactly one image.
+- Record the top five candidate stories, scores, rejection notes, and the reason for the final selection in the generation prompt record. Still generate exactly one four-panel story across two images.
 - Caption must use only 3-5 relevant hashtags. Add one natural conversational question only when it fits; never use spammy engagement bait.
 - Do not post to Instagram.
 - Do not run git push.
 - Do not print .env, tokens, access keys, or secrets.
 
 Output these exact files:
-- Image: {paths["image"]}
+- Carousel page 1 (panels 1-2): {paths["image_1"]}
+- Carousel page 2 (panels 3-4): {paths["image_2"]}
 - Caption: {paths["caption"]}
 - Prompt record: {paths["prompt"]}
 - Manifest: {paths["manifest"]}
@@ -246,14 +269,17 @@ Manifest JSON must include:
 {{
   "run_id": "{run_id}",
   "topic": "<short topic>",
-  "image_path": "assets/{run_id}_deadpan_joke.png",
+  "image_paths": [
+    "assets/{run_id}_deadpan_joke_01.png",
+    "assets/{run_id}_deadpan_joke_02.png"
+  ],
   "caption_path": "captions/{run_id}_deadpan_joke.md",
   "prompt_path": "prompts/{run_id}_generation_prompt.md",
   "status": "generated"
 }}
 
 Avoid repeating old topics, setups, or exact punchlines already found in posts/, captions/, assets/.
-The joke must work in one glance: serious setup at the top, ridiculous visual evidence in the middle, blunt reversal at the bottom.
+The joke must reward swiping: panels 1-3 build one confident interpretation, then panel 4 overturns it with a specific cat roast.
 """.strip()
 
 
@@ -313,17 +339,17 @@ def collect_growth_metrics(run_id: str) -> None:
         log(run_id, f"analytics unavailable; continuing: {redact(result.stdout).strip()[:300]}")
 
 
-def normalize_image_for_instagram(run_id: str, paths: dict[str, Path]) -> None:
-    width, height = image_size(paths["image"])
+def normalize_image_for_instagram(run_id: str, image_path: Path, run_dir: Path) -> None:
+    width, height = image_size(image_path)
     if (width, height) == (IG_IMAGE_WIDTH, IG_IMAGE_HEIGHT):
         log(run_id, f"image already Instagram safe: {width}x{height}")
         return
 
-    backup = paths["run_dir"] / f"{paths['image'].stem}_original_{width}x{height}{paths['image'].suffix}"
+    backup = run_dir / f"{image_path.stem}_original_{width}x{height}{image_path.suffix}"
     if not backup.exists():
-        shutil.copy2(paths["image"], backup)
+        shutil.copy2(image_path, backup)
 
-    temp = paths["run_dir"] / f"{paths['image'].stem}_ig_safe_tmp.png"
+    temp = run_dir / f"{image_path.stem}_ig_safe_tmp.png"
     aspect = width / height
     target_aspect = IG_IMAGE_WIDTH / IG_IMAGE_HEIGHT
     if aspect > target_aspect:
@@ -331,7 +357,7 @@ def normalize_image_for_instagram(run_id: str, paths: dict[str, Path]) -> None:
     else:
         resize_args = ["--resampleHeight", str(IG_IMAGE_HEIGHT)]
 
-    run(["sips", *resize_args, str(paths["image"]), "--out", str(temp)], cwd=ROOT)
+    run(["sips", *resize_args, str(image_path), "--out", str(temp)], cwd=ROOT)
     run([
         "sips",
         "--padToHeightWidth",
@@ -341,11 +367,11 @@ def normalize_image_for_instagram(run_id: str, paths: dict[str, Path]) -> None:
         "ffffff",
         str(temp),
         "--out",
-        str(paths["image"]),
+        str(image_path),
     ], cwd=ROOT)
     temp.unlink(missing_ok=True)
 
-    new_width, new_height = image_size(paths["image"])
+    new_width, new_height = image_size(image_path)
     if (new_width, new_height) != (IG_IMAGE_WIDTH, IG_IMAGE_HEIGHT):
         raise RuntimeError(f"Instagram-safe resize failed: got {new_width}x{new_height}")
     log(run_id, f"normalized image for Instagram: {width}x{height} -> {new_width}x{new_height}")
@@ -362,7 +388,7 @@ def image_size(path: Path) -> tuple[int, int]:
 
 def wait_for_generation(run_id: str, paths: dict[str, Path]) -> None:
     deadline = time.time() + TIMEOUT_SECONDS
-    required = [paths["image"], paths["caption"], paths["prompt"], paths["manifest"]]
+    required = [*paths["images"], paths["caption"], paths["prompt"], paths["manifest"]]
     while time.time() < deadline:
         if all(p.exists() and p.stat().st_size > 0 for p in required):
             log(run_id, "generation files detected")
@@ -373,16 +399,22 @@ def wait_for_generation(run_id: str, paths: dict[str, Path]) -> None:
 
 
 def validate_generation(paths: dict[str, Path]) -> None:
-    if paths["image"].suffix.lower() not in {".png", ".jpg", ".jpeg"}:
-        raise RuntimeError(f"Unsupported image file: {paths['image']}")
-    if paths["image"].stat().st_size < 100_000:
-        raise RuntimeError(f"Generated image looks too small: {paths['image']}")
+    for image_path in paths["images"]:
+        if image_path.suffix.lower() not in {".png", ".jpg", ".jpeg"}:
+            raise RuntimeError(f"Unsupported image file: {image_path}")
+        if image_path.stat().st_size < 100_000:
+            raise RuntimeError(f"Generated image looks too small: {image_path}")
+        if image_size(image_path) != (IG_IMAGE_WIDTH, IG_IMAGE_HEIGHT):
+            raise RuntimeError(f"Carousel image is not {IG_IMAGE_WIDTH}x{IG_IMAGE_HEIGHT}: {image_path}")
     caption = paths["caption"].read_text(encoding="utf-8").strip()
     if not caption:
         raise RuntimeError("Caption is empty")
     manifest = json.loads(paths["manifest"].read_text(encoding="utf-8"))
     if manifest.get("status") not in {"generated", "published"}:
         raise RuntimeError("Manifest status must be generated or published")
+    expected_images = [rel(path) for path in paths["images"]]
+    if manifest.get("image_paths") != expected_images:
+        raise RuntimeError(f"Manifest image_paths must be {expected_images}")
 
 
 def prepare_publish_asset(run_id: str, paths: dict[str, Path], publish_format: str) -> None:
@@ -402,33 +434,37 @@ def create_reel(run_id: str, paths: dict[str, Path]) -> None:
     soundtrack = paths["run_dir"] / "playful_soundtrack.wav"
     create_playful_soundtrack(soundtrack)
     foreground_size = 1000
-    foreground_y = (REEL_HEIGHT - foreground_size) // 2
-    punchline_y = foreground_y + 815
+    foreground_height = 1250
+    foreground_y = (REEL_HEIGHT - foreground_height) // 2
+    page_durations = (REEL_PAGE_ONE_SECONDS, REEL_SECONDS - REEL_PAGE_ONE_SECONDS)
     filter_graph = (
-        f"[0:v]split=2[bgsrc][fgsrc];"
-        f"[bgsrc]scale={REEL_WIDTH}:{REEL_HEIGHT}:force_original_aspect_ratio=increase,"
-        f"crop={REEL_WIDTH}:{REEL_HEIGHT},boxblur=35:12[bg];"
-        f"[fgsrc]scale={foreground_size}:{foreground_size}[fg];"
-        f"[bg][fg]overlay=(W-w)/2:(H-h)/2,"
-        f"drawbox=x=40:y={punchline_y}:w={foreground_size}:h=185:"
-        f"color=white:t=fill:enable='lt(t,3.2)',"
-        f"fade=t=in:st=0:d=0.25,fade=t=out:st=7.5:d=0.5,format=yuv420p[v]"
+        f"[0:v]split=2[bg0src][fg0src];"
+        f"[bg0src]scale={REEL_WIDTH}:{REEL_HEIGHT}:force_original_aspect_ratio=increase,"
+        f"crop={REEL_WIDTH}:{REEL_HEIGHT},boxblur=35:12[bg0];"
+        f"[fg0src]scale={foreground_size}:{foreground_height}[fg0];"
+        f"[bg0][fg0]overlay=(W-w)/2:{foreground_y},"
+        f"fade=t=in:st=0:d=0.25,fade=t=out:st={page_durations[0] - 0.18}:d=0.18,"
+        f"setpts=PTS-STARTPTS[v0];"
+        f"[1:v]split=2[bg1src][fg1src];"
+        f"[bg1src]scale={REEL_WIDTH}:{REEL_HEIGHT}:force_original_aspect_ratio=increase,"
+        f"crop={REEL_WIDTH}:{REEL_HEIGHT},boxblur=35:12[bg1];"
+        f"[fg1src]scale={foreground_size}:{foreground_height}[fg1];"
+        f"[bg1][fg1]overlay=(W-w)/2:{foreground_y},"
+        f"fade=t=in:st=0:d=0.18,fade=t=out:st={page_durations[1] - 0.5}:d=0.5,"
+        f"setpts=PTS-STARTPTS[v1];"
+        f"[v0][v1]concat=n=2:v=1:a=0,format=yuv420p[v]"
     )
-    run([
-        str(FFMPEG_BIN),
-        "-y",
-        "-loop",
-        "1",
-        "-i",
-        str(paths["image"]),
-        "-i",
-        str(soundtrack),
+    command = [str(FFMPEG_BIN), "-y"]
+    for image_path, duration in zip(paths["images"], page_durations):
+        command.extend(["-loop", "1", "-framerate", "30", "-t", str(duration), "-i", str(image_path)])
+    command.extend([
+        "-i", str(soundtrack),
         "-filter_complex",
         filter_graph,
         "-map",
         "[v]",
         "-map",
-        "1:a",
+        "2:a",
         "-t",
         str(REEL_SECONDS),
         "-r",
@@ -452,7 +488,8 @@ def create_reel(run_id: str, paths: dict[str, Path]) -> None:
         "-movflags",
         "+faststart",
         str(paths["reel"]),
-    ], cwd=ROOT)
+    ])
+    run(command, cwd=ROOT)
     if paths["reel"].stat().st_size < 100_000:
         raise RuntimeError(f"Generated Reel looks too small: {paths['reel']}")
     log(run_id, f"Reel created: {paths['reel'].name}")
@@ -463,18 +500,21 @@ def create_playful_soundtrack(output: Path) -> None:
     total_samples = REEL_SECONDS * sample_rate
     audio = [0.0] * total_samples
 
-    # Fast prank-vlog rhythm: bouncy plucks, offbeat clicks, a pause, then a cartoon reveal.
+    # Fast prank-vlog rhythm: bouncy plucks, a page turn, then a cartoon reveal.
     beat = 60.0 / 132.0
+    reveal_time = REEL_PAGE_ONE_SECONDS + 3.0
     melody = [392.00, 493.88, 587.33, 493.88, 440.00, 523.25, 659.25, 523.25]
     notes = []
-    for index in range(17):
+    for index in range(math.ceil(REEL_SECONDS / (beat / 2))):
         start = index * beat / 2
-        if 2.92 <= start < 3.18:
+        if reveal_time - 0.28 <= start < reveal_time:
             continue
         notes.append((start, 0.105, melody[index % len(melody)], 0.27))
-    for index, frequency in enumerate([98.00, 98.00, 110.00, 98.00, 130.81, 110.00, 98.00, 98.00]):
+    bass_notes = [98.00, 98.00, 110.00, 98.00, 130.81, 110.00, 98.00, 98.00]
+    for index in range(math.ceil(REEL_SECONDS / beat)):
+        frequency = bass_notes[index % len(bass_notes)]
         start = index * beat
-        if 2.92 <= start < 3.18:
+        if reveal_time - 0.28 <= start < reveal_time:
             continue
         notes.append((start, 0.16, frequency, 0.24))
 
@@ -495,7 +535,7 @@ def create_playful_soundtrack(output: Path) -> None:
             )
             audio[position] += volume * attack * decay * tone / 1.43
 
-    reveal_start = int(3.20 * sample_rate)
+    reveal_start = int(reveal_time * sample_rate)
     reveal_samples = int(0.62 * sample_rate)
     phase = 0.0
     for index in range(reveal_samples):
@@ -508,9 +548,9 @@ def create_playful_soundtrack(output: Path) -> None:
         wobble = 0.66 + 0.34 * math.sin(2 * math.pi * 10.0 * elapsed)
         audio[position] += 0.38 * envelope * wobble * math.sin(phase)
 
-    for index in range(17):
+    for index in range(math.ceil(REEL_SECONDS / (beat / 2))):
         hit_time = index * beat / 2 + beat / 4
-        if 2.90 <= hit_time < 3.18 or hit_time >= REEL_SECONDS:
+        if reveal_time - 0.30 <= hit_time < reveal_time or hit_time >= REEL_SECONDS:
             continue
         start_sample = int(hit_time * sample_rate)
         hit_samples = int(0.028 * sample_rate)
@@ -524,7 +564,7 @@ def create_playful_soundtrack(output: Path) -> None:
             audio[position] += 0.10 * click
 
     # A soft double tap marks the punchline without overpowering the text reveal.
-    for hit_time, frequency in ((3.20, 185.00), (3.34, 138.59)):
+    for hit_time, frequency in ((reveal_time, 185.00), (reveal_time + 0.14, 138.59)):
         start_sample = int(hit_time * sample_rate)
         hit_samples = int(0.18 * sample_rate)
         for index in range(hit_samples):
@@ -553,7 +593,12 @@ def create_playful_soundtrack(output: Path) -> None:
 
 
 def commit_and_push_generated(run_id: str, paths: dict[str, Path]) -> None:
-    generated = [rel(paths["image"]), rel(paths["caption"]), rel(paths["prompt"]), rel(paths["manifest"])]
+    generated = [
+        *(rel(path) for path in paths["images"]),
+        rel(paths["caption"]),
+        rel(paths["prompt"]),
+        rel(paths["manifest"]),
+    ]
     if paths["reel"].exists():
         generated.append(rel(paths["reel"]))
     git(["add", *generated])
@@ -565,11 +610,16 @@ def commit_and_push_generated(run_id: str, paths: dict[str, Path]) -> None:
 def publish_to_instagram(run_id: str, paths: dict[str, Path], publish_format: str) -> str:
     if not NODE_BIN.exists():
         raise RuntimeError(f"Node binary not found: {NODE_BIN}")
-    image_url = f"https://raw.githubusercontent.com/Roberto0111/Robert_joke/main/assets/{run_id}_deadpan_joke.png"
+    image_urls = [
+        f"https://raw.githubusercontent.com/Roberto0111/Robert_joke/main/"
+        f"assets/{run_id}_deadpan_joke_{index:02d}.png"
+        for index in range(1, 3)
+    ]
     env = os.environ.copy()
-    env["IG_IMAGE_URL"] = image_url
+    env["IG_IMAGE_URL"] = image_urls[0]
+    env["IG_CAROUSEL_IMAGE_URLS"] = json.dumps(image_urls)
     env["IG_CAPTION_FILE"] = f"captions/{run_id}_deadpan_joke.md"
-    env["IG_MEDIA_TYPE"] = "REELS" if publish_format == "reel" else "IMAGE"
+    env["IG_MEDIA_TYPE"] = "REELS" if publish_format == "reel" else "CAROUSEL"
     if publish_format == "reel":
         env["IG_VIDEO_URL"] = (
             f"https://raw.githubusercontent.com/Roberto0111/Robert_joke/main/"
@@ -593,11 +643,65 @@ def publish_to_instagram(run_id: str, paths: dict[str, Path], publish_format: st
     return match.group(1)
 
 
-def mark_published(run_id: str, paths: dict[str, Path], media_id: str, publish_format: str) -> None:
+def publish_story_to_instagram(run_id: str, paths: dict[str, Path], publish_format: str) -> str:
+    if not NODE_BIN.exists():
+        raise RuntimeError(f"Node binary not found: {NODE_BIN}")
+    env = os.environ.copy()
+    env["IG_MEDIA_TYPE"] = "STORIES"
+    env["IG_CAPTION_FILE"] = f"captions/{run_id}_deadpan_joke.md"
+    if publish_format == "reel":
+        env["IG_VIDEO_URL"] = (
+            f"https://raw.githubusercontent.com/Roberto0111/Robert_joke/main/"
+            f"assets/{run_id}_deadpan_joke_reel.mp4"
+        )
+        env.pop("IG_IMAGE_URL", None)
+    else:
+        env["IG_IMAGE_URL"] = (
+            f"https://raw.githubusercontent.com/Roberto0111/Robert_joke/main/"
+            f"assets/{run_id}_deadpan_joke_01.png"
+        )
+        env.pop("IG_VIDEO_URL", None)
+    result = subprocess.run(
+        [str(NODE_BIN), "scripts/post-to-instagram.mjs"],
+        cwd=ROOT,
+        env=env,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        timeout=300,
+    )
+    (paths["run_dir"] / "instagram_story_publish.log").write_text(
+        redact(result.stdout), encoding="utf-8"
+    )
+    if result.returncode != 0:
+        raise RuntimeError(
+            f"Instagram Story publish failed; see {paths['run_dir'] / 'instagram_story_publish.log'}"
+        )
+    match = re.search(r'"id"\s*:\s*"([^"]+)"', result.stdout)
+    if not match:
+        raise RuntimeError("Could not parse Instagram Story media id from publish output")
+    return match.group(1)
+
+
+def mark_published(
+    run_id: str,
+    paths: dict[str, Path],
+    media_id: str,
+    publish_format: str,
+    *,
+    story_media_id: str,
+    story_error: str,
+) -> None:
     manifest = json.loads(paths["manifest"].read_text(encoding="utf-8"))
     manifest["status"] = "published"
     manifest["publish_format"] = publish_format
     manifest["instagram_media_id"] = media_id
+    manifest["instagram_story_media_id"] = story_media_id
+    manifest["instagram_story_status"] = "published" if story_media_id else "failed"
+    if story_error:
+        manifest["instagram_story_error"] = story_error
+    else:
+        manifest.pop("instagram_story_error", None)
     manifest["published_at"] = dt.datetime.now().isoformat(timespec="seconds")
     paths["manifest"].write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
