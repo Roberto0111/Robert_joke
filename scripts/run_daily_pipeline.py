@@ -17,7 +17,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CODEX_BIN = Path(os.environ.get("CODEX_BIN", "/Applications/Codex.app/Contents/Resources/codex"))
+CODEX_BIN = Path(os.environ.get("CODEX_BIN", "/Applications/ChatGPT.app/Contents/Resources/codex"))
 NODE_BIN = Path(os.environ.get(
     "NODE_BIN",
     "/Users/roberto/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
