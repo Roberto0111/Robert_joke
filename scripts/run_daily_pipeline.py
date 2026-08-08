@@ -36,6 +36,7 @@ REEL_HEIGHT = 1920
 REEL_SECONDS = 12
 REEL_PAGE_ONE_SECONDS = 5
 FALLBACK_REEL_WEEKDAYS = {0, 2, 4, 6}  # Used only before analytics has enough evidence.
+LIFE_DIALOGUE_WEEKDAYS = {2, 6}  # Wednesday and Sunday.
 
 
 def main() -> int:
@@ -57,6 +58,8 @@ def main() -> int:
         run_id = args.run_id
         paths = run_paths(run_id)
         ensure_dirs(paths)
+        content_mode, content_reason = determine_content_mode(run_id)
+        paths["content_mode"] = content_mode
 
         if not args.post_only:
             collect_growth_metrics(run_id)
@@ -64,14 +67,15 @@ def main() -> int:
         publish_format, format_reason = determine_publish_format(args.format, run_id)
         log(
             run_id,
-            f"pipeline started format={publish_format} format_reason={format_reason} "
+            f"pipeline started content_mode={content_mode} content_reason={content_reason} "
+            f"format={publish_format} format_reason={format_reason} "
             f"dry_run={args.dry_run} "
             f"generate_only={args.generate_only} post_only={args.post_only}",
         )
 
         if not args.post_only:
             fetch_trend_context(run_id, paths)
-            trigger_codex(run_id, paths, args.dry_run)
+            trigger_codex(run_id, paths, content_mode, args.dry_run)
             if args.dry_run:
                 log(run_id, "dry-run complete; skipping file wait, git push, and Instagram publish")
                 return 0
@@ -137,6 +141,30 @@ def determine_publish_format(requested: str, run_id: str) -> tuple[str, str]:
     return fallback, "fallback_schedule"
 
 
+def determine_content_mode(run_id: str) -> tuple[str, str]:
+    try:
+        run_date = dt.datetime.strptime(run_id[:10], "%Y-%m-%d")
+    except ValueError:
+        run_date = dt.datetime.now()
+    life_days = set(LIFE_DIALOGUE_WEEKDAYS)
+    rotation_reason = "wednesday_sunday_rotation"
+    strategy_path = ROOT / "analytics" / "daily_strategy.json"
+    try:
+        strategy = json.loads(strategy_path.read_text(encoding="utf-8"))
+        if strategy.get("content_mode_confident") is True:
+            if strategy.get("recommended_content_mode") == "life_dialogue":
+                life_days = {2, 5, 6}
+                rotation_reason = "analytics_expanded_life_dialogue"
+            elif strategy.get("recommended_content_mode") == "deadpan_comedy":
+                life_days = {6}
+                rotation_reason = "analytics_reduced_life_dialogue"
+    except (OSError, ValueError, TypeError):
+        pass
+    if run_date.weekday() in life_days:
+        return "life_dialogue", rotation_reason
+    return "deadpan_comedy", rotation_reason
+
+
 def run_paths(run_id: str) -> dict[str, Path]:
     image_1 = ROOT / "assets" / f"{run_id}_deadpan_joke_01.png"
     image_2 = ROOT / "assets" / f"{run_id}_deadpan_joke_02.png"
@@ -161,10 +189,10 @@ def ensure_dirs(paths: dict[str, Path]) -> None:
         paths[key].parent.mkdir(parents=True, exist_ok=True)
 
 
-def trigger_codex(run_id: str, paths: dict[str, Path], dry_run: bool) -> None:
+def trigger_codex(run_id: str, paths: dict[str, Path], content_mode: str, dry_run: bool) -> None:
     if dry_run:
         prompt_file = paths["run_dir"] / "codex_prompt.txt"
-        prompt_file.write_text(build_codex_prompt(run_id, paths), encoding="utf-8")
+        prompt_file.write_text(build_codex_prompt(run_id, paths, content_mode), encoding="utf-8")
         log(run_id, f"dry-run: wrote codex prompt to {prompt_file}")
         return
 
@@ -173,7 +201,7 @@ def trigger_codex(run_id: str, paths: dict[str, Path], dry_run: bool) -> None:
     if not CHARACTER_REFERENCE.exists():
         raise RuntimeError(f"Main character reference not found: {CHARACTER_REFERENCE}")
 
-    prompt = build_codex_prompt(run_id, paths)
+    prompt = build_codex_prompt(run_id, paths, content_mode)
     prompt_file = paths["run_dir"] / "codex_prompt.txt"
     prompt_file.write_text(prompt, encoding="utf-8")
 
@@ -208,9 +236,36 @@ def trigger_codex(run_id: str, paths: dict[str, Path], dry_run: bool) -> None:
         raise RuntimeError(f"codex exec failed with exit code {result.returncode}; see {paths['run_dir'] / 'codex_exec.log'}")
 
 
-def build_codex_prompt(run_id: str, paths: dict[str, Path]) -> str:
+def build_codex_prompt(run_id: str, paths: dict[str, Path], content_mode: str) -> str:
+    if content_mode == "life_dialogue":
+        content_brief = """
+Content mode: LIFE DIALOGUE (人生對話)
+- Start from one concrete adult-life tension such as comparison, rest, boundaries, uncertainty, loneliness, failure, or letting go.
+- Panel 1: Roberto admits a real worry in plain spoken language.
+- Panel 2: the tuxedo cat asks one short question that challenges the hidden assumption.
+- Panel 3: Roberto answers honestly, revealing why he is stuck.
+- Panel 4: the cat gives one concise insight that changes how panels 1-3 are understood.
+- The final line may be quietly witty, but it should primarily feel true and memorable rather than insulting.
+- Avoid generic motivational slogans, fake therapy language, diagnoses, absolute claims, moral superiority, and advice that needs a long explanation.
+- Brainstorm scores: relatability, natural dialogue, insight, and save/share value, each 0-5.
+- The caption must include #人生對話 and 2-4 other relevant hashtags.
+""".strip()
+    else:
+        content_brief = """
+Content mode: DEADPAN COMEDY (認真講幹話)
+- Panel 1: Roberto makes a respectable-sounding declaration.
+- Panel 2: he explains the bad logic so seriously that it almost sounds reasonable.
+- Panel 3: he confidently acts on the nonsense and reveals a concrete absurd consequence.
+- Panel 4: the tuxedo cat delivers the strongest blunt reversal and makes Roberto specifically embarrassing.
+- Prefer a clear visual contradiction. Do not limit topics to offices or companies.
+- Reject explanatory roasts, the predictable "你只是……" construction, and renamed corporate-jargon jokes.
+- Brainstorm scores: surprise, visual contradiction, cat-roast sharpness, and shareability, each 0-5.
+- The caption must include #認真講幹話 and 2-4 other relevant hashtags.
+""".strip()
     return f"""
 You are generating one four-panel Instagram carousel story for @roberto_joke.
+
+{content_brief}
 
 Read:
 - README.md
@@ -236,24 +291,22 @@ Growth context:
 Hard requirements:
 - Generate exactly two colorful 1080x1350 images for one Instagram carousel. Each image contains exactly two stacked comic panels, for exactly four panels total.
 - Keep the same characters, wardrobe, rendering, room palette, line weight, and facial identity across both images. They must feel like one continuous four-panel story.
-- Panel 1: a serious declaration that sounds respectable. Panel 2: a concrete explanation that makes the nonsense sound reasonable. Panel 3: Roberto confidently acts on the bad logic. Panel 4: the tuxedo cat delivers the short blunt reversal.
+- Follow the selected content mode's four-panel dialogue structure exactly.
 - Put one large Traditional Chinese line in each panel. Text must be immediately readable on a phone, fully inside generous safe margins, and never overlap a face.
-- The fourth-panel punchline must be the strongest beat. It must reframe the first three panels, not explain the visible action.
+- The fourth-panel conclusion must be the strongest beat. It must reframe or deepen the first three panels, not explain the visible action.
 - The male protagonist must be based on the attached reference photo: East Asian man, round youthful face, side-swept black hair, slightly sleepy eyes, wearing a black collared top with gray zipper/placket.
 - Preserve the reference identity in a polished realistic-comic meme style. Do not use a generic anime man.
-- Style: 北七、靠杯、擺爛、一本正經講幹話的台灣網路迷因，使用繁體中文。The protagonist may look solemn, mischievous, guilty, or playfully caught in the act. Vary the expression and avoid the same neutral face every day.
-- Include a black-and-white tuxedo cat in every image. The cat is the sharp deadpan roast character: it should expose, insult, or bluntly correct the protagonist's nonsense.
-- The panel-four punchline should begin with "貓：" so the speaker is unmistakable.
-- Prefer an obvious visual contradiction: hiding while discussing management, sleeping while discussing efficiency, giving up while presenting strategy, or similar everyday nonsense. Do not limit topics to offices or companies.
+- Style: original polished Taiwanese webcomic, concise spoken Traditional Chinese, expressive but restrained acting. Match the selected mode: playful and deadpan for comedy; reflective and grounded for life dialogue.
+- Include a black-and-white tuxedo cat in every image. The cat is Roberto's perceptive dialogue partner: sharp in comedy and calmly incisive in life dialogue.
+- The panel-four line should begin with "貓：" so the speaker is unmistakable.
 - Use exactly four concise dialogue/caption beats, one per panel. Avoid explanatory paragraphs.
 - Before generating the image, brainstorm at least 12 genuinely different joke candidates. At least 8 must be non-workplace topics.
-- Score every candidate from 0-5 for surprise, visual contradiction, cat-roast sharpness, and shareability. Select only the highest-scoring candidate with at least 15/20.
-- A valid bottom line must REFRAME the setup, expose a hidden consequence, or downgrade the protagonist in an unexpected specific way. It must not merely describe what the image already shows.
-- Reject generic explanatory roasts such as "你只是在...", "你根本沒...", or a literal statement of the protagonist's action. Do not use the "你只是" construction in the final joke.
-- Reject corporate-jargon reskins (risk management, process optimization, crisis response, strategic planning) unless the wording creates a genuinely new double meaning.
+- Score every candidate with the four criteria defined by the selected content mode. Select only the highest-scoring candidate with at least 15/20.
+- A valid final line must reframe the setup, expose an overlooked assumption or consequence, or create a more precise way to understand the problem. It must not merely describe what the image already shows.
+- Reject corporate-jargon reskins and generic social-media wisdom unless the wording creates a genuinely specific new meaning.
 - Compare against the latest 20 posts. Vary the joke mechanism, setting, pose, and cat reaction, not just the nouns.
 - Record the top five candidate stories, scores, rejection notes, and the reason for the final selection in the generation prompt record. Still generate exactly one four-panel story across two images.
-- Caption must use only 3-5 relevant hashtags. Add one natural conversational question only when it fits; never use spammy engagement bait.
+- Caption must use only 3-5 relevant hashtags and include the selected mode's required hashtag. Add one natural conversational question only when it fits; never use spammy engagement bait.
 - Do not post to Instagram.
 - Do not run git push.
 - Do not print .env, tokens, access keys, or secrets.
@@ -268,6 +321,7 @@ Output these exact files:
 Manifest JSON must include:
 {{
   "run_id": "{run_id}",
+  "content_mode": "{content_mode}",
   "topic": "<short topic>",
   "image_paths": [
     "assets/{run_id}_deadpan_joke_01.png",
@@ -279,7 +333,7 @@ Manifest JSON must include:
 }}
 
 Avoid repeating old topics, setups, or exact punchlines already found in posts/, captions/, assets/.
-The joke must reward swiping: panels 1-3 build one confident interpretation, then panel 4 overturns it with a specific cat roast.
+The story must reward swiping: panels 1-3 reveal the tension naturally, then panel 4 delivers a mode-appropriate cat conclusion worth sharing or saving.
 """.strip()
 
 
@@ -412,6 +466,8 @@ def validate_generation(paths: dict[str, Path]) -> None:
     manifest = json.loads(paths["manifest"].read_text(encoding="utf-8"))
     if manifest.get("status") not in {"generated", "published"}:
         raise RuntimeError("Manifest status must be generated or published")
+    if manifest.get("content_mode") != paths["content_mode"]:
+        raise RuntimeError(f"Manifest content_mode must be {paths['content_mode']}")
     expected_images = [rel(path) for path in paths["images"]]
     if manifest.get("image_paths") != expected_images:
         raise RuntimeError(f"Manifest image_paths must be {expected_images}")
