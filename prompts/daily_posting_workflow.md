@@ -1,6 +1,6 @@
 # Daily Posting Workflow
 
-每天 20:30 執行一次，只產出並發布一則四格故事。週三、週日使用人生對話，其餘日期使用認真講幹話。
+每天 20:30 執行一次，只產出並發布一則 `life_dialogue` 人生對話四格故事。
 
 ## Output Naming
 
@@ -16,7 +16,7 @@ prompts/YYYY-MM-DD_HHMM_generation_prompt.md
 
 1. 讀取 `prompts/daily_comic_style.md`、近期貼文、當次熱門搜尋與 IG 成效策略。
 2. 使用 `assets/main_character_reference.jpg` 固定 Roberto 本人外型。
-3. 依當天 `content_mode` 構思並評分至少 12 個故事，選出總分至少 15/20 且第四格結論最強的一則。
+3. 構思並評分至少 12 個人生對話故事，選出總分至少 15/20 且第四格觀點最強的一則。
 4. 生成兩張 1080x1350 圖：第 1 張放第 1、2 格，第 2 張放第 3、4 格。
 5. 建立 caption、generation prompt 與 manifest；manifest 必須記錄 `content_mode`，`image_paths` 必須依序列出兩張圖。
 6. Python 檢查兩張圖尺寸、檔案大小與 manifest，任何一項不符就停止。

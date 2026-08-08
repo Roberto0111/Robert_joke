@@ -33,9 +33,9 @@ const imageReachAdvantage = reelStats.avgReach > 0
   : imageStats.avgReach > 0 ? Number.POSITIVE_INFINITY : 0;
 let recommendedFormat = null;
 let formatReason = "Not enough evidence; use the fallback four-Reel schedule.";
-let recommendedContentMode = null;
-let contentModeConfident = false;
-let contentModeReason = "兩種內容各累積至少 3 篇前，維持週三、週日人生對話。";
+const recommendedContentMode = "life_dialogue";
+const contentModeConfident = true;
+const contentModeReason = "帳號內容已固定為人生對話；數據只調整格式、節奏與包裝，不切換內容支柱。";
 
 if (
   (reelStats.samples >= 3 && reelReachAdvantage >= 2)
@@ -48,21 +48,6 @@ if (
   formatReason = `Image average reach is ${fixed(imageReachAdvantage)}x Reel reach.`;
 }
 
-if (lifeDialogueStats.samples >= 3 && comedyStats.samples >= 3) {
-  const lifeQuality = contentQuality(lifeDialogueStats);
-  const comedyQuality = contentQuality(comedyStats);
-  if (lifeQuality > 0 && lifeQuality >= comedyQuality * 1.25 && lifeDialogueStats.avgReach >= comedyStats.avgReach * 0.7) {
-    recommendedContentMode = "life_dialogue";
-    contentModeConfident = true;
-    contentModeReason = "人生對話的分享收藏效率明顯較高，且觸及沒有大幅落後。";
-  } else if (comedyQuality > 0 && comedyQuality >= lifeQuality * 1.25 && comedyStats.avgReach >= lifeDialogueStats.avgReach * 0.7) {
-    recommendedContentMode = "deadpan_comedy";
-    contentModeConfident = true;
-    contentModeReason = "認真講幹話的分享收藏效率明顯較高，且觸及沒有大幅落後。";
-  } else {
-    contentModeReason = "兩種內容表現接近，維持每週兩篇人生對話的混合排程。";
-  }
-}
 const best = [...posts].sort((a, b) =>
   (b.shares * 5 + b.saves * 4 + b.reach + b.views * 0.1)
   - (a.shares * 5 + a.saves * 4 + a.reach + a.views * 0.1)
@@ -77,26 +62,20 @@ if (recommendedFormat === "reel") {
   recommendations.push("Reel 樣本仍少於 3 支；先維持目前比例，不因單篇結果大改排程。");
 }
 if (posts.reduce((sum, post) => sum + post.shares, 0) === 0) {
-  recommendations.push("近期分享為 0；下一篇優先寫成能讓觀眾傳給特定朋友的日常情境，避免抽象人生大道理。");
+  recommendations.push("近期分享為 0；下一篇從觀眾會想到某位朋友的具體困境開始，避免空泛人生大道理。");
 }
 if (posts.reduce((sum, post) => sum + post.saves, 0) === 0) {
-  recommendations.push("近期收藏為 0；Joke 不硬做知識型收藏，改強化反轉揭曉與重播動機。");
+  recommendations.push("近期收藏為 0；第四格要提供一個日後能重新想起來的具體視角，不寫通用勵志標語。");
 }
 if (reelStats.repeatViewRate >= 1.1) {
   recommendations.push("Reel 每位觸及產生超過 1.1 次觀看；保留兩頁依序揭曉與 12 秒片長。");
 }
 if (reelStats.engagementRate === 0) {
-  recommendations.push("Reel 有觸及但尚無互動；貓的下句要更短、更具體、更能讓主角丟臉，caption 不解釋笑點。");
+  recommendations.push("Reel 有觸及但尚無互動；貓的結論要更短、更具體，caption 不重複解釋第四格。");
 }
-if (contentModeConfident && recommendedContentMode === "life_dialogue") {
-  recommendations.push("人生對話的分享收藏效率較好；下週增加到三篇，但保留四篇喜劇維持帳號辨識度。");
-} else if (contentModeConfident && recommendedContentMode === "deadpan_comedy") {
-  recommendations.push("認真講幹話的分享收藏效率較好；人生對話先縮到週日一篇，持續保留測試樣本。");
-} else {
-  recommendations.push("內容支柱樣本尚未拉開差距；維持週三、週日人生對話，其餘五天認真講幹話。");
-}
+recommendations.push("內容固定為人生對話；持續比較題材、開場與第四格觀點，但不因短期數據切回喜劇模式。");
 
-const strategy = `# Joke Daily Growth Strategy
+const strategy = `# Life Dialogue Daily Growth Strategy
 
 Updated: ${new Date().toISOString()}
 Account: @${report.profile?.username || "roberto_joke"}
@@ -116,7 +95,7 @@ Followers: ${number(report.profile?.followers_count)}
 | 人生對話 | ${lifeDialogueStats.samples} | ${fixed(lifeDialogueStats.avgReach)} | ${percent(lifeDialogueStats.shareRate)} | ${percent(lifeDialogueStats.saveRate)} |
 | 認真講幹話 | ${comedyStats.samples} | ${fixed(comedyStats.avgReach)} | ${percent(comedyStats.shareRate)} | ${percent(comedyStats.saveRate)} |
 
-- Content recommendation: ${recommendedContentMode || "mixed rotation"}
+- Content recommendation: ${recommendedContentMode}
 - Reason: ${contentModeReason}
 
 ## Best Recent Post
@@ -138,7 +117,8 @@ ${recommendations.map((item) => `- ${item}`).join("\n")}
 
 - Treat fewer than 3 posts in a format as an early signal, not a conclusion.
 - Optimize for non-follower reach, shares, saves, and repeat views before likes.
-- Never copy a winning caption; reuse only the proven pacing or joke mechanism.
+- Never copy a winning caption; reuse only the proven pacing or dialogue structure.
+- Analytics must not change the fixed life_dialogue content mode.
 `;
 
 fs.writeFileSync(path.join(root, "analytics", "daily_strategy.md"), strategy);
@@ -180,10 +160,6 @@ function summarize(items) {
     shareRate: reach ? shares / reach : 0,
     saveRate: reach ? saves / reach : 0,
   };
-}
-
-function contentQuality(stats) {
-  return stats.shareRate * 0.6 + stats.saveRate * 0.4;
 }
 
 function sum(items, key) {

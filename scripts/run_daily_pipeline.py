@@ -36,11 +36,10 @@ REEL_HEIGHT = 1920
 REEL_SECONDS = 12
 REEL_PAGE_ONE_SECONDS = 5
 FALLBACK_REEL_WEEKDAYS = {0, 2, 4, 6}  # Used only before analytics has enough evidence.
-LIFE_DIALOGUE_WEEKDAYS = {2, 6}  # Wednesday and Sunday.
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Generate a four-panel joke, then publish its carousel or Reel.")
+    parser = argparse.ArgumentParser(description="Generate a four-panel life dialogue, then publish its carousel or Reel.")
     parser.add_argument("--run-id", default=current_run_id(), help="Run id, default YYYY-MM-DD_HHMM in local time.")
     parser.add_argument("--generate-only", action="store_true", help="Only trigger Codex and wait for local files.")
     parser.add_argument("--post-only", action="store_true", help="Skip Codex and publish an existing run id.")
@@ -142,27 +141,7 @@ def determine_publish_format(requested: str, run_id: str) -> tuple[str, str]:
 
 
 def determine_content_mode(run_id: str) -> tuple[str, str]:
-    try:
-        run_date = dt.datetime.strptime(run_id[:10], "%Y-%m-%d")
-    except ValueError:
-        run_date = dt.datetime.now()
-    life_days = set(LIFE_DIALOGUE_WEEKDAYS)
-    rotation_reason = "wednesday_sunday_rotation"
-    strategy_path = ROOT / "analytics" / "daily_strategy.json"
-    try:
-        strategy = json.loads(strategy_path.read_text(encoding="utf-8"))
-        if strategy.get("content_mode_confident") is True:
-            if strategy.get("recommended_content_mode") == "life_dialogue":
-                life_days = {2, 5, 6}
-                rotation_reason = "analytics_expanded_life_dialogue"
-            elif strategy.get("recommended_content_mode") == "deadpan_comedy":
-                life_days = {6}
-                rotation_reason = "analytics_reduced_life_dialogue"
-    except (OSError, ValueError, TypeError):
-        pass
-    if run_date.weekday() in life_days:
-        return "life_dialogue", rotation_reason
-    return "deadpan_comedy", rotation_reason
+    return "life_dialogue", "fixed_life_dialogue_series"
 
 
 def run_paths(run_id: str) -> dict[str, Path]:
@@ -237,8 +216,9 @@ def trigger_codex(run_id: str, paths: dict[str, Path], content_mode: str, dry_ru
 
 
 def build_codex_prompt(run_id: str, paths: dict[str, Path], content_mode: str) -> str:
-    if content_mode == "life_dialogue":
-        content_brief = """
+    if content_mode != "life_dialogue":
+        raise RuntimeError(f"Unsupported content mode: {content_mode}")
+    content_brief = """
 Content mode: LIFE DIALOGUE (人生對話)
 - Start from one concrete adult-life tension such as comparison, rest, boundaries, uncertainty, loneliness, failure, or letting go.
 - Panel 1: Roberto admits a real worry in plain spoken language.
@@ -249,18 +229,6 @@ Content mode: LIFE DIALOGUE (人生對話)
 - Avoid generic motivational slogans, fake therapy language, diagnoses, absolute claims, moral superiority, and advice that needs a long explanation.
 - Brainstorm scores: relatability, natural dialogue, insight, and save/share value, each 0-5.
 - The caption must include #人生對話 and 2-4 other relevant hashtags.
-""".strip()
-    else:
-        content_brief = """
-Content mode: DEADPAN COMEDY (認真講幹話)
-- Panel 1: Roberto makes a respectable-sounding declaration.
-- Panel 2: he explains the bad logic so seriously that it almost sounds reasonable.
-- Panel 3: he confidently acts on the nonsense and reveals a concrete absurd consequence.
-- Panel 4: the tuxedo cat delivers the strongest blunt reversal and makes Roberto specifically embarrassing.
-- Prefer a clear visual contradiction. Do not limit topics to offices or companies.
-- Reject explanatory roasts, the predictable "你只是……" construction, and renamed corporate-jargon jokes.
-- Brainstorm scores: surprise, visual contradiction, cat-roast sharpness, and shareability, each 0-5.
-- The caption must include #認真講幹話 and 2-4 other relevant hashtags.
 """.strip()
     return f"""
 You are generating one four-panel Instagram carousel story for @roberto_joke.
@@ -277,14 +245,15 @@ Attached image:
 
 Current trend context:
 - Read {paths["trends"]}. It contains current Taiwan Google search trends fetched immediately before this run.
-- You may use a trend only when its context naturally supports a funny everyday joke. Never force a trend into the image.
+- You may use a trend only when it naturally supports a grounded everyday life question. Never force a trend into the story.
 - Skip politics, crime, disasters, deaths, medical scares, allegations, and other sensitive news.
 - If web search is available, verify the meaning of any current Taiwanese meme phrase before using it. Never copy another creator's image or caption verbatim.
-- Original jokes are always acceptable and preferred over a weak trend reference.
+- Original everyday dilemmas are always acceptable and preferred over a weak trend reference.
 
 Growth context:
 - Read analytics/latest.json if it exists. Treat reach, shares, saves, and total interactions as evidence, not vanity metrics.
-- Read analytics/daily_strategy.md if it exists and follow its instructions for pacing, joke mechanism, and shareability.
+- Read analytics/daily_strategy.md if it exists and follow its instructions for pacing, dialogue clarity, and save/share value.
+- Analytics may adjust format, pacing, and packaging only. It must never change the content mode away from LIFE DIALOGUE.
 - The strategy file is recalculated before every post. Do not copy its best caption; reuse only evidence-backed structure.
 - Do not repeat a weak topic merely because it was recently posted. Prefer concepts that a viewer would send to one specific friend.
 
@@ -296,15 +265,15 @@ Hard requirements:
 - The fourth-panel conclusion must be the strongest beat. It must reframe or deepen the first three panels, not explain the visible action.
 - The male protagonist must be based on the attached reference photo: East Asian man, round youthful face, side-swept black hair, slightly sleepy eyes, wearing a black collared top with gray zipper/placket.
 - Preserve the reference identity in a polished realistic-comic meme style. Do not use a generic anime man.
-- Style: original polished Taiwanese webcomic, concise spoken Traditional Chinese, expressive but restrained acting. Match the selected mode: playful and deadpan for comedy; reflective and grounded for life dialogue.
-- Include a black-and-white tuxedo cat in every image. The cat is Roberto's perceptive dialogue partner: sharp in comedy and calmly incisive in life dialogue.
+- Style: original polished Taiwanese webcomic, concise spoken Traditional Chinese, reflective and grounded, with expressive but restrained acting.
+- Include a black-and-white tuxedo cat in every image. The cat is Roberto's perceptive, calmly incisive dialogue partner.
 - The panel-four line should begin with "貓：" so the speaker is unmistakable.
 - Use exactly four concise dialogue/caption beats, one per panel. Avoid explanatory paragraphs.
-- Before generating the image, brainstorm at least 12 genuinely different joke candidates. At least 8 must be non-workplace topics.
-- Score every candidate with the four criteria defined by the selected content mode. Select only the highest-scoring candidate with at least 15/20.
+- Before generating the image, brainstorm at least 12 genuinely different life-dialogue story candidates. At least 8 must be non-workplace topics.
+- Score every candidate for relatability, natural dialogue, insight, and save/share value. Select only the highest-scoring candidate with at least 15/20.
 - A valid final line must reframe the setup, expose an overlooked assumption or consequence, or create a more precise way to understand the problem. It must not merely describe what the image already shows.
 - Reject corporate-jargon reskins and generic social-media wisdom unless the wording creates a genuinely specific new meaning.
-- Compare against the latest 20 posts. Vary the joke mechanism, setting, pose, and cat reaction, not just the nouns.
+- Compare against the latest 20 posts. Vary the dilemma, insight mechanism, setting, pose, and cat reaction, not just the nouns.
 - Record the top five candidate stories, scores, rejection notes, and the reason for the final selection in the generation prompt record. Still generate exactly one four-panel story across two images.
 - Caption must use only 3-5 relevant hashtags and include the selected mode's required hashtag. Add one natural conversational question only when it fits; never use spammy engagement bait.
 - Do not post to Instagram.
@@ -343,7 +312,7 @@ def fetch_trend_context(run_id: str, paths: dict[str, Path]) -> None:
     lines = [
         f"Fetched at: {dt.datetime.now().isoformat(timespec='seconds')}",
         f"Source: {url}",
-        "Use only as optional inspiration. Skip sensitive topics and prefer an original joke when uncertain.",
+        "Use only as optional inspiration. Skip sensitive topics and prefer an original life dialogue when uncertain.",
         "",
     ]
     try:
@@ -356,10 +325,10 @@ def fetch_trend_context(run_id: str, paths: dict[str, Path]) -> None:
                 titles.append(title)
         lines.extend(f"- {title}" for title in titles[:15])
         if not titles:
-            lines.append("- No usable trend titles returned; create an original joke.")
+            lines.append("- No usable trend titles returned; create an original life dialogue.")
         log(run_id, f"trend context fetched topics={len(titles[:15])}")
     except (OSError, ET.ParseError) as exc:
-        lines.append(f"- Trend fetch unavailable ({type(exc).__name__}); create an original joke.")
+        lines.append(f"- Trend fetch unavailable ({type(exc).__name__}); create an original life dialogue.")
         log(run_id, f"trend context unavailable: {type(exc).__name__}")
     paths["trends"].write_text("\n".join(lines) + "\n", encoding="utf-8")
 
