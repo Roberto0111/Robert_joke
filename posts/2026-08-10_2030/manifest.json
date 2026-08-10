@@ -8,7 +8,11 @@
   ],
   "caption_path": "captions/2026-08-10_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-08-10_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "publish_format": "reel",
-  "video_path": "assets/2026-08-10_2030_deadpan_joke_reel.mp4"
+  "video_path": "assets/2026-08-10_2030_deadpan_joke_reel.mp4",
+  "instagram_media_id": "18188038594401316",
+  "instagram_story_media_id": "18119522060309207",
+  "instagram_story_status": "published",
+  "published_at": "2026-08-10T20:37:05"
 }
