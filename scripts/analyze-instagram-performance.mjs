@@ -25,28 +25,11 @@ const reelStats = summarize(reels);
 const imageStats = summarize(images);
 const lifeDialogueStats = summarize(lifeDialoguePosts);
 const comedyStats = summarize(comedyPosts);
-const reelReachAdvantage = imageStats.avgReach > 0
-  ? reelStats.avgReach / imageStats.avgReach
-  : reelStats.avgReach > 0 ? Number.POSITIVE_INFINITY : 0;
-const imageReachAdvantage = reelStats.avgReach > 0
-  ? imageStats.avgReach / reelStats.avgReach
-  : imageStats.avgReach > 0 ? Number.POSITIVE_INFINITY : 0;
-let recommendedFormat = null;
-let formatReason = "Not enough evidence; use the fallback four-Reel schedule.";
+const recommendedFormat = "reel";
+const formatReason = "The account is fixed to the daily serious life-dialogue Reel format; data adjusts pacing and topics only.";
 const recommendedContentMode = "life_dialogue";
 const contentModeConfident = true;
 const contentModeReason = "帳號內容已固定為人生對話；數據只調整格式、節奏與包裝，不切換內容支柱。";
-
-if (
-  (reelStats.samples >= 3 && reelReachAdvantage >= 2)
-  || (reelStats.samples >= 2 && reelReachAdvantage >= 5)
-) {
-  recommendedFormat = "reel";
-  formatReason = `Reel average reach is ${fixed(reelReachAdvantage)}x image reach.`;
-} else if (imageStats.samples >= 3 && imageReachAdvantage >= 1.5) {
-  recommendedFormat = "image";
-  formatReason = `Image average reach is ${fixed(imageReachAdvantage)}x Reel reach.`;
-}
 
 const best = [...posts].sort((a, b) =>
   (b.shares * 5 + b.saves * 4 + b.reach + b.views * 0.1)
@@ -54,13 +37,7 @@ const best = [...posts].sort((a, b) =>
 )[0];
 
 const recommendations = [];
-if (recommendedFormat === "reel") {
-  recommendations.push("Reel 觸及明顯高於輪播；優先把同一則四格故事做成 12 秒 Reel，但仍保留兩張輪播原稿。");
-} else if (recommendedFormat === "image") {
-  recommendations.push("輪播觸及已明顯高於 Reel；下一篇直接發布兩張四格 carousel，驗證滑動與分享表現。");
-} else if (reels.length < 3) {
-  recommendations.push("Reel 樣本仍少於 3 支；先維持目前比例，不因單篇結果大改排程。");
-}
+recommendations.push("固定發布 16 秒人生對話 Reel；保留兩張四格原稿，成效數據只用來調整題材、開場與閱讀節奏。");
 if (posts.reduce((sum, post) => sum + post.shares, 0) === 0) {
   recommendations.push("近期分享為 0；下一篇從觀眾會想到某位朋友的具體困境開始，避免空泛人生大道理。");
 }
@@ -68,12 +45,13 @@ if (posts.reduce((sum, post) => sum + post.saves, 0) === 0) {
   recommendations.push("近期收藏為 0；第四格要提供一個日後能重新想起來的具體視角，不寫通用勵志標語。");
 }
 if (reelStats.repeatViewRate >= 1.1) {
-  recommendations.push("Reel 每位觸及產生超過 1.1 次觀看；保留兩頁依序揭曉與 12 秒片長。");
+  recommendations.push("Reel 每位觸及產生超過 1.1 次觀看；保留兩頁依序揭曉與 16 秒閱讀節奏。");
 }
 if (reelStats.engagementRate === 0) {
   recommendations.push("Reel 有觸及但尚無互動；貓的結論要更短、更具體，caption 不重複解釋第四格。");
 }
 recommendations.push("內容固定為人生對話；持續比較題材、開場與第四格觀點，但不因短期數據切回喜劇模式。");
+recommendations.push("每日參考貼文只拆解敘事機制；題目、句子、結論與視覺必須保持 Roberto 原創。");
 
 const strategy = `# Life Dialogue Daily Growth Strategy
 
@@ -110,7 +88,7 @@ ${recommendations.map((item) => `- ${item}`).join("\n")}
 
 ## Publishing Decision
 
-- Recommended format: ${recommendedFormat || "fallback schedule"}
+- Recommended format: ${recommendedFormat}
 - Reason: ${formatReason}
 
 ## Guardrails

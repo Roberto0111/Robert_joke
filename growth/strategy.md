@@ -1,4 +1,4 @@
-# Roberto Joke: 14-Day Growth Experiment
+# Roberto Joke: Serious Life-Dialogue Growth Strategy
 
 Start: 2026-07-27
 
@@ -14,20 +14,20 @@ Start: 2026-07-27
 
 - One post per day at 20:30 Asia/Taipei
 - Analyze recent Reel and image performance before every run
-- Use the format recommended by `analytics/daily_strategy.json`
-- Current growth default: 8-second vertical Reel every day because Reel reach is substantially higher
-- Use the old four-Reel weekly split only when analytics has insufficient evidence
-- Reels reveal the tuxedo cat punchline after 3.2 seconds and share to Feed
-- Reels use an original fast prank-vlog cue with bouncy plucks, a pre-reveal pause, and a cartoon falling sting
+- Publish one 16-second vertical Reel every day; analytics adjusts topic and pacing, not the format
+- Show page one for 7 seconds and page two for 9 seconds, with a visible first frame and no black opening
+- Use an original restrained reflective soundtrack with a subtle page-turn chime
+- Study one recent reference carousel before each run, extracting only abstract narrative mechanics
 
 ## Content Rules
 
 - Roberto is always the recognizable protagonist.
-- The tuxedo cat causes or exposes the reversal.
-- Prefer everyday situations people send to a specific friend.
-- Use playful, guilty, mischievous, or deadpan expressions instead of repeating one neutral face.
+- The tuxedo cat asks the clarifying question and delivers the concise final perspective.
+- Prefer grounded everyday situations people would save or send to one specific friend.
+- Use restrained, believable expressions and a subdued cinematic editorial-comic treatment.
 - Use 3-5 relevant hashtags.
-- Do not buy followers, mass-follow, spam comments, or copy another creator's content.
+- Never copy or closely paraphrase the reference creator's wording, topic, conclusion, examples, visuals, layout, typography, or branding.
+- Do not buy followers, mass-follow, or spam comments.
 
 ## Review Metrics
 

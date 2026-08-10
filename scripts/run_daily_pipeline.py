@@ -33,9 +33,10 @@ IG_IMAGE_WIDTH = 1080
 IG_IMAGE_HEIGHT = 1350
 REEL_WIDTH = 1080
 REEL_HEIGHT = 1920
-REEL_SECONDS = 12
-REEL_PAGE_ONE_SECONDS = 5
-FALLBACK_REEL_WEEKDAYS = {0, 2, 4, 6}  # Used only before analytics has enough evidence.
+REEL_SECONDS = 16
+REEL_PAGE_ONE_SECONDS = 7
+REFERENCE_FETCH_PYTHON = Path(os.environ.get("REFERENCE_FETCH_PYTHON", "/opt/anaconda3/bin/python3"))
+REFERENCE_FETCH_SCRIPT = ROOT / "scripts" / "fetch_reference_post.py"
 
 
 def main() -> int:
@@ -48,7 +49,7 @@ def main() -> int:
         "--format",
         choices=("auto", "image", "reel"),
         default="auto",
-        help="Publishing format. 'image' publishes the two-page carousel; auto follows performance strategy.",
+        help="Publishing format. 'image' is available for manual previews; auto publishes the daily serious Reel.",
     )
     args = parser.parse_args()
 
@@ -74,6 +75,7 @@ def main() -> int:
 
         if not args.post_only:
             fetch_trend_context(run_id, paths)
+            fetch_reference_context(run_id, paths)
             trigger_codex(run_id, paths, content_mode, args.dry_run)
             if args.dry_run:
                 log(run_id, "dry-run complete; skipping file wait, git push, and Instagram publish")
@@ -122,22 +124,7 @@ def current_run_id() -> str:
 def determine_publish_format(requested: str, run_id: str) -> tuple[str, str]:
     if requested != "auto":
         return requested, "explicit"
-
-    strategy_path = ROOT / "analytics" / "daily_strategy.json"
-    try:
-        strategy = json.loads(strategy_path.read_text(encoding="utf-8"))
-        recommended = strategy.get("recommended_format")
-        if recommended in {"image", "reel"}:
-            return recommended, "daily_strategy"
-    except (OSError, ValueError, TypeError):
-        pass
-
-    try:
-        run_date = dt.datetime.strptime(run_id[:10], "%Y-%m-%d")
-    except ValueError:
-        run_date = dt.datetime.now()
-    fallback = "reel" if run_date.weekday() in FALLBACK_REEL_WEEKDAYS else "image"
-    return fallback, "fallback_schedule"
+    return "reel", "fixed_serious_life_dialogue_reel"
 
 
 def determine_content_mode(run_id: str) -> tuple[str, str]:
@@ -157,12 +144,15 @@ def run_paths(run_id: str) -> dict[str, Path]:
         "prompt": ROOT / "prompts" / f"{run_id}_generation_prompt.md",
         "manifest": ROOT / "posts" / run_id / "manifest.json",
         "trends": ROOT / "posts" / run_id / "trend_context.txt",
+        "reference_dir": ROOT / "posts" / run_id / "reference",
+        "reference_metadata": ROOT / "posts" / run_id / "reference_post.json",
+        "reference_context": ROOT / "posts" / run_id / "reference_context.txt",
         "reel": ROOT / "assets" / f"{run_id}_deadpan_joke_reel.mp4",
     }
 
 
 def ensure_dirs(paths: dict[str, Path]) -> None:
-    for key in ("run_dir",):
+    for key in ("run_dir", "reference_dir"):
         paths[key].mkdir(parents=True, exist_ok=True)
     for key in ("image_1", "image_2", "caption", "prompt"):
         paths[key].parent.mkdir(parents=True, exist_ok=True)
@@ -196,10 +186,14 @@ def trigger_codex(run_id: str, paths: dict[str, Path], content_mode: str, dry_ru
         "--skip-git-repo-check",
         "--image",
         str(CHARACTER_REFERENCE),
+    ]
+    for reference_image in paths.get("reference_images", ()):
+        cmd.extend(["--image", str(reference_image)])
+    cmd.extend([
         "--output-last-message",
         str(paths["run_dir"] / "codex_last_message.txt"),
         "-",
-    ]
+    ])
     log(run_id, "starting codex exec")
     result = subprocess.run(
         cmd,
@@ -225,7 +219,7 @@ Content mode: LIFE DIALOGUE (人生對話)
 - Panel 2: the tuxedo cat asks one short question that challenges the hidden assumption.
 - Panel 3: Roberto answers honestly, revealing why he is stuck.
 - Panel 4: the cat gives one concise insight that changes how panels 1-3 are understood.
-- The final line may be quietly witty, but it should primarily feel true and memorable rather than insulting.
+- The tone is serious, observant, and emotionally grounded. A trace of dry wit is allowed, but no prank energy or forced punchline.
 - Avoid generic motivational slogans, fake therapy language, diagnoses, absolute claims, moral superiority, and advice that needs a long explanation.
 - Brainstorm scores: relatability, natural dialogue, insight, and save/share value, each 0-5.
 - The caption must include #人生對話 and 2-4 other relevant hashtags.
@@ -242,6 +236,16 @@ Read:
 
 Attached image:
 - assets/main_character_reference.jpg is the mandatory likeness reference for the male main character.
+- Any images attached after the likeness reference are slides from one reference post selected for this run.
+
+Daily reference study:
+- Read {paths["reference_context"]}. If reference images are attached, study the complete post before brainstorming.
+- Privately identify its abstract mechanics: opening tension, escalation, emotional turn, final compression, and why someone might save or share it.
+- Borrow only those abstract mechanics. The output must use a clearly different topic, wording, examples, conclusion, setting, composition, typography, characters, and visual identity.
+- Never translate, paraphrase, remix, or imitate a recognizable sentence from the reference. Never mention the source account in the finished post.
+- Reject the reference post's substance when it depends on stereotypes, manipulation, absolutist claims, or unsupported relationship/financial advice. Structural study is not endorsement.
+- Record the five-part structural analysis and a short originality check in the generation prompt record, not in the caption or artwork.
+- If the reference fetch is unavailable, follow the same serious four-beat structure using an original everyday dilemma.
 
 Current trend context:
 - Read {paths["trends"]}. It contains current Taiwan Google search trends fetched immediately before this run.
@@ -265,7 +269,8 @@ Hard requirements:
 - The fourth-panel conclusion must be the strongest beat. It must reframe or deepen the first three panels, not explain the visible action.
 - The male protagonist must be based on the attached reference photo: East Asian man, round youthful face, side-swept black hair, slightly sleepy eyes, wearing a black collared top with gray zipper/placket.
 - Preserve the reference identity in a polished realistic-comic meme style. Do not use a generic anime man.
-- Style: original polished Taiwanese webcomic, concise spoken Traditional Chinese, reflective and grounded, with expressive but restrained acting.
+- Style: original polished Taiwanese editorial webcomic with a cinematic, subdued palette, concise spoken Traditional Chinese, and restrained natural acting.
+- Use soft practical lighting, calm framing, believable rooms or streets, and subtle facial expressions. Avoid meme fonts, comic explosion lines, exaggerated reaction faces, prank-video energy, stickers, and loud decorative effects.
 - Include a black-and-white tuxedo cat in every image. The cat is Roberto's perceptive, calmly incisive dialogue partner.
 - The panel-four line should begin with "貓：" so the speaker is unmistakable.
 - Use exactly four concise dialogue/caption beats, one per panel. Avoid explanatory paragraphs.
@@ -331,6 +336,48 @@ def fetch_trend_context(run_id: str, paths: dict[str, Path]) -> None:
         lines.append(f"- Trend fetch unavailable ({type(exc).__name__}); create an original life dialogue.")
         log(run_id, f"trend context unavailable: {type(exc).__name__}")
     paths["trends"].write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def fetch_reference_context(run_id: str, paths: dict[str, Path]) -> None:
+    fallback = (
+        "Reference study unavailable for this run. Use an original serious life dialogue and the fixed four-beat structure.\n"
+    )
+    paths["reference_images"] = ()
+    if not REFERENCE_FETCH_PYTHON.exists() or not REFERENCE_FETCH_SCRIPT.exists():
+        paths["reference_context"].write_text(fallback, encoding="utf-8")
+        log(run_id, "reference study unavailable: fetch runtime or script missing")
+        return
+
+    result = subprocess.run(
+        [
+            str(REFERENCE_FETCH_PYTHON),
+            str(REFERENCE_FETCH_SCRIPT),
+            "--run-id",
+            run_id,
+            "--output-dir",
+            str(paths["reference_dir"]),
+            "--metadata",
+            str(paths["reference_metadata"]),
+            "--context",
+            str(paths["reference_context"]),
+        ],
+        cwd=ROOT,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        timeout=120,
+    )
+    if result.returncode != 0:
+        paths["reference_context"].write_text(fallback, encoding="utf-8")
+        log(run_id, f"reference study unavailable; continuing: {redact(result.stdout).strip()[:300]}")
+        return
+    try:
+        metadata = json.loads(result.stdout.strip().splitlines()[-1])
+        images = tuple(Path(path) for path in metadata.get("downloaded_files", []))
+    except (ValueError, TypeError, IndexError):
+        images = ()
+    paths["reference_images"] = tuple(path for path in images if path.exists())
+    log(run_id, f"reference study ready slides={len(paths['reference_images'])}")
 
 
 def collect_growth_metrics(run_id: str) -> None:
@@ -456,8 +503,8 @@ def prepare_publish_asset(run_id: str, paths: dict[str, Path], publish_format: s
 def create_reel(run_id: str, paths: dict[str, Path]) -> None:
     if not FFMPEG_BIN.exists():
         raise RuntimeError(f"ffmpeg not found: {FFMPEG_BIN}")
-    soundtrack = paths["run_dir"] / "playful_soundtrack.wav"
-    create_playful_soundtrack(soundtrack)
+    soundtrack = paths["run_dir"] / "reflective_soundtrack.wav"
+    create_reflective_soundtrack(soundtrack)
     foreground_size = 1000
     foreground_height = 1250
     foreground_y = (REEL_HEIGHT - foreground_height) // 2
@@ -468,7 +515,7 @@ def create_reel(run_id: str, paths: dict[str, Path]) -> None:
         f"crop={REEL_WIDTH}:{REEL_HEIGHT},boxblur=35:12[bg0];"
         f"[fg0src]scale={foreground_size}:{foreground_height}[fg0];"
         f"[bg0][fg0]overlay=(W-w)/2:{foreground_y},"
-        f"fade=t=in:st=0:d=0.25,fade=t=out:st={page_durations[0] - 0.18}:d=0.18,"
+        f"fade=t=out:st={page_durations[0] - 0.18}:d=0.18,"
         f"setpts=PTS-STARTPTS[v0];"
         f"[1:v]split=2[bg1src][fg1src];"
         f"[bg1src]scale={REEL_WIDTH}:{REEL_HEIGHT}:force_original_aspect_ratio=increase,"
@@ -520,28 +567,26 @@ def create_reel(run_id: str, paths: dict[str, Path]) -> None:
     log(run_id, f"Reel created: {paths['reel'].name}")
 
 
-def create_playful_soundtrack(output: Path) -> None:
+def create_reflective_soundtrack(output: Path) -> None:
     sample_rate = 48_000
     total_samples = REEL_SECONDS * sample_rate
     audio = [0.0] * total_samples
 
-    # Fast prank-vlog rhythm: bouncy plucks, a page turn, then a cartoon reveal.
-    beat = 60.0 / 132.0
-    reveal_time = REEL_PAGE_ONE_SECONDS + 3.0
-    melody = [392.00, 493.88, 587.33, 493.88, 440.00, 523.25, 659.25, 523.25]
+    # Slow original underscore: soft minor-seventh chords and a restrained page-turn chime.
+    beat = 60.0 / 72.0
+    chord_progression = (
+        (220.00, 261.63, 329.63, 392.00),
+        (174.61, 220.00, 261.63, 329.63),
+        (196.00, 246.94, 293.66, 369.99),
+        (164.81, 207.65, 261.63, 329.63),
+    )
     notes = []
-    for index in range(math.ceil(REEL_SECONDS / (beat / 2))):
-        start = index * beat / 2
-        if reveal_time - 0.28 <= start < reveal_time:
-            continue
-        notes.append((start, 0.105, melody[index % len(melody)], 0.27))
-    bass_notes = [98.00, 98.00, 110.00, 98.00, 130.81, 110.00, 98.00, 98.00]
-    for index in range(math.ceil(REEL_SECONDS / beat)):
-        frequency = bass_notes[index % len(bass_notes)]
-        start = index * beat
-        if reveal_time - 0.28 <= start < reveal_time:
-            continue
-        notes.append((start, 0.16, frequency, 0.24))
+    for chord_index in range(math.ceil(REEL_SECONDS / (beat * 2))):
+        start = chord_index * beat * 2
+        chord = chord_progression[chord_index % len(chord_progression)]
+        for note_index, frequency in enumerate(chord):
+            notes.append((start + note_index * 0.055, 1.65, frequency, 0.095))
+        notes.append((start, 1.2, chord[0] / 2, 0.12))
 
     for start, duration, frequency, volume in notes:
         start_sample = int(start * sample_rate)
@@ -551,58 +596,30 @@ def create_playful_soundtrack(output: Path) -> None:
             if position >= total_samples:
                 break
             elapsed = index / sample_rate
-            decay = math.exp(-17.0 * elapsed)
-            attack = min(1.0, elapsed / 0.003)
+            decay = math.exp(-2.0 * elapsed)
+            attack = min(1.0, elapsed / 0.045)
             tone = (
                 math.sin(2 * math.pi * frequency * elapsed)
-                + 0.31 * math.sin(2 * math.pi * frequency * 2 * elapsed)
-                + 0.12 * math.sin(2 * math.pi * frequency * 4 * elapsed)
+                + 0.18 * math.sin(2 * math.pi * frequency * 2 * elapsed)
             )
-            audio[position] += volume * attack * decay * tone / 1.43
+            audio[position] += volume * attack * decay * tone / 1.18
 
-    reveal_start = int(reveal_time * sample_rate)
-    reveal_samples = int(0.62 * sample_rate)
-    phase = 0.0
-    for index in range(reveal_samples):
-        position = reveal_start + index
-        elapsed = index / sample_rate
-        progress = index / reveal_samples
-        frequency = 880.0 * ((220.0 / 880.0) ** progress)
-        phase += 2 * math.pi * frequency / sample_rate
-        envelope = math.sin(math.pi * progress) ** 0.65
-        wobble = 0.66 + 0.34 * math.sin(2 * math.pi * 10.0 * elapsed)
-        audio[position] += 0.38 * envelope * wobble * math.sin(phase)
-
-    for index in range(math.ceil(REEL_SECONDS / (beat / 2))):
-        hit_time = index * beat / 2 + beat / 4
-        if reveal_time - 0.30 <= hit_time < reveal_time or hit_time >= REEL_SECONDS:
-            continue
+    for hit_time, frequency in ((REEL_PAGE_ONE_SECONDS, 659.25), (REEL_PAGE_ONE_SECONDS + 0.12, 880.00)):
         start_sample = int(hit_time * sample_rate)
-        hit_samples = int(0.028 * sample_rate)
+        hit_samples = int(0.65 * sample_rate)
         for index in range(hit_samples):
             position = start_sample + index
-            elapsed = index / sample_rate
-            click = (
-                math.sin(2 * math.pi * 1680 * elapsed)
-                + 0.35 * math.sin(2 * math.pi * 2320 * elapsed)
-            ) * math.exp(-105 * elapsed)
-            audio[position] += 0.10 * click
-
-    # A soft double tap marks the punchline without overpowering the text reveal.
-    for hit_time, frequency in ((reveal_time, 185.00), (reveal_time + 0.14, 138.59)):
-        start_sample = int(hit_time * sample_rate)
-        hit_samples = int(0.18 * sample_rate)
-        for index in range(hit_samples):
-            position = start_sample + index
+            if position >= total_samples:
+                break
             elapsed = index / sample_rate
             audio[position] += (
-                0.22
+                0.10
                 * math.sin(2 * math.pi * frequency * elapsed)
-                * math.exp(-18 * elapsed)
+                * math.exp(-5.2 * elapsed)
             )
 
     peak = max(max(abs(sample) for sample in audio), 0.001)
-    scale = 0.78 / peak
+    scale = 0.62 / peak
     output.parent.mkdir(parents=True, exist_ok=True)
     with wave.open(str(output), "wb") as wav_file:
         wav_file.setnchannels(2)

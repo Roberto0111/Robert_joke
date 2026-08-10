@@ -1,21 +1,6 @@
 # Robert Joke
 
-Roberto 與賓士貓四格輪播：五天認真講幹話，週三與週日用角色對話談人生觀點。
-
-目前收錄：
-
-- `assets/001_deadpan_nonsense_tuxedo_cat.png`
-- `captions/001_deadpan_nonsense_tuxedo_cat.md`
-- `ai_shorts/pilot_001_landlord_cat/output/roberto_joke_pilot_001.mp4`
-
-IG 文案：
-
-```text
-我沒有在逃避問題。
-我是讓問題找不到我。
-
-#認真講幹話 #四格漫畫 #賓士貓 #台式幽默 #擺爛哲學
-```
+Roberto 與賓士貓的人生對話 Reels：每天用嚴肅、自然的四格對話談一個具體生活困惑。參考帳號只用來分析抽象敘事節奏，成品的題目、文字、結論與視覺都必須原創。
 
 GitHub Pages 可使用 `index.html` 作為首頁。
 
@@ -73,9 +58,10 @@ Instagram API 發圖或 Reel 的流程都是先建立 media container，再呼�
 ```text
 LaunchAgent com.roberto.robert-joke
   -> scripts/run_daily_pipeline.py
-  -> 蒐集近期 IG 成效與台灣熱門搜尋
+  -> 蒐集近期 IG 成效、台灣熱門搜尋與一篇參考帳號貼文
+  -> 只學參考貼文的敘事結構，換題目、換結論並做原創性檢查
   -> codex exec 生成兩張四格輪播圖/caption/manifest
-  -> 依每日 IG 成效決定兩張 carousel 或 12 秒直式 Reel
+  -> 固定製作 16 秒沉穩風格直式 Reel
   -> Python 等兩張圖片檔出現並驗證為 1080x1350
   -> git push 到 GitHub
   -> Instagram API 發文
@@ -112,15 +98,14 @@ LaunchAgent 的工作目錄是：
 /Users/roberto/Automation/Robert_joke
 ```
 
-14 天成長模式排程：
+目前日更模式：
 
 ```text
 每天 20:30
-週三、週日發布「人生對話」，其餘五天發布「認真講幹話」
+每天發布「人生對話」
 每天先分析 Reel 與圖片的觀看、觸及、分享、收藏
-目前 Reel 觸及明顯領先，因此每日優先發布 Reel
-只有 carousel 成效明顯反超，或分析樣本不足時，才切回兩張輪播／備援星期表
-Reel 會依序播放兩張四格原稿，使用原創惡整 Vlog 感背景音，總長 12 秒
+每日先讀一篇指定參考帳號貼文，只抽取抽象敘事方法，不複製內容或視覺
+固定發布 Reel，依序播放兩張四格原稿，使用原創沉穩背景音，總長 16 秒
 ```
 
 成長策略與基準記錄在 `growth/strategy.md`。IG 成效會每天寫入本機 `analytics/`，不會 commit token 或私密資料。
