@@ -1,0 +1,14 @@
+{
+  "run_id": "2026-08-10_2030",
+  "content_mode": "life_dialogue",
+  "topic": "捨不得丟掉買錯的東西",
+  "image_paths": [
+    "assets/2026-08-10_2030_deadpan_joke_01.png",
+    "assets/2026-08-10_2030_deadpan_joke_02.png"
+  ],
+  "caption_path": "captions/2026-08-10_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-08-10_2030_generation_prompt.md",
+  "status": "generated",
+  "publish_format": "reel",
+  "video_path": "assets/2026-08-10_2030_deadpan_joke_reel.mp4"
+}
