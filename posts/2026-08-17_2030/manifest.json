@@ -1,0 +1,27 @@
+{
+  "run_id": "2026-08-17_2030",
+  "content_mode": "life_dialogue",
+  "topic": "替朋友墊錢與催款尷尬",
+  "image_paths": [
+    "assets/2026-08-17_2030_deadpan_joke_01.png",
+    "assets/2026-08-17_2030_deadpan_joke_02.png"
+  ],
+  "caption_path": "captions/2026-08-17_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-08-17_2030_generation_prompt.md",
+  "status": "generated",
+  "publish_format": "reel",
+  "growth_experiment": {
+    "id": "A_specific_scene_16",
+    "label": "具體生活現場",
+    "hook_style": "直接說出剛發生的具體場景，不先講道理",
+    "topic_pillar": "金錢、人情與不好意思拒絕",
+    "conclusion_style": "指出真正付出的隱形成本",
+    "cta_style": "一句自然的『你也遇過嗎？』",
+    "reel_seconds": 16,
+    "page_one_seconds": 7
+  },
+  "video_path": "assets/2026-08-17_2030_deadpan_joke_reel.mp4",
+  "motion_style": "cinematic_2_5d_v1",
+  "reel_seconds": 16,
+  "page_one_seconds": 7
+}
