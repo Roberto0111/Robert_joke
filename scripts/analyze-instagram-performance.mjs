@@ -38,7 +38,7 @@ const targetGap = Math.max(0, targetFollowers - currentFollowers);
 const adReadiness = evaluateAdReadiness(best);
 
 const recommendations = [
-  `執行實驗 ${nextExperiment.id}：${nextExperiment.label}。本篇只改指定變因，其餘角色與四格結構固定。`,
+  `執行實驗 ${nextExperiment.id}：${nextExperiment.label}。本篇只改指定變因，其餘角色與五頁情緒結構固定。`,
   `首格使用「${nextExperiment.hook_style}」；題材優先「${nextExperiment.topic_pillar}」；Reel ${nextExperiment.reel_seconds} 秒。`,
   "前 1 秒必須已看見人物、賓士貓與完整首句，不使用黑畫面、片頭 Logo 或空鏡。",
 ];
@@ -46,7 +46,7 @@ if (posts.reduce((sum, post) => sum + post.shares, 0) <= 1) {
   recommendations.push("分享訊號太低；選一個觀眾會立刻想到某位朋友的具體尷尬或選擇，不寫泛用人生大道理。");
 }
 if (posts.reduce((sum, post) => sum + post.saves, 0) === 0) {
-  recommendations.push("收藏仍為 0；第四格必須給可在下次遇到同場景時使用的具體判斷句。");
+  recommendations.push("收藏仍為 0；第五頁必須給可在下次遇到同場景時使用的具體判斷句。");
 }
 if (followerTrend.delta7d <= 0) {
   recommendations.push("近 7 日粉絲沒有成長；本週優先提高可轉傳性，不用增加發文頻率掩蓋內容問題。");
@@ -72,7 +72,7 @@ Phase: organic validation
 - Hook: ${nextExperiment.hook_style}
 - Topic pillar: ${nextExperiment.topic_pillar}
 - Conclusion: ${nextExperiment.conclusion_style}
-- Reel timing: ${nextExperiment.reel_seconds}s total, ${nextExperiment.page_one_seconds}s on page one
+- Reel timing: ${nextExperiment.reel_seconds}s total across five readable pages
 - Caption CTA: ${nextExperiment.cta_style}
 
 ## Recent Performance
@@ -104,7 +104,7 @@ ${recommendations.map((item) => `- ${item}`).join("\n")}
 ## Guardrails
 
 - Keep one primary Reel per day at 20:30; quality and learning matter more than posting volume.
-- Keep Roberto, the tuxedo cat, original art, Traditional Chinese, and the four-beat life-dialogue identity stable.
+- Keep Roberto, the tuxedo cat, original art, Traditional Chinese, and the five-beat emotional-dialogue identity stable.
 - Change one creative package at a time and require at least two samples before declaring a winner.
 - Optimize for follower growth, reach, shares, and saves; never buy followers, mass-follow, or automate spam comments/DMs.
 - Never copy a winning caption; reuse only the proven abstract structure.
@@ -192,8 +192,7 @@ function experimentCatalog() {
       topic_pillar: "金錢、人情與不好意思拒絕",
       conclusion_style: "指出真正付出的隱形成本",
       cta_style: "一句自然的『你也遇過嗎？』",
-      reel_seconds: 16,
-      page_one_seconds: 7,
+      reel_seconds: 28,
     },
     {
       id: "B_confession_14",
@@ -202,8 +201,7 @@ function experimentCatalog() {
       topic_pillar: "比較、面子與社交焦慮",
       conclusion_style: "貓精準拆掉 Roberto 的自我包裝",
       cta_style: "不要求互動，以可轉傳的最後一句收尾",
-      reel_seconds: 14,
-      page_one_seconds: 6,
+      reel_seconds: 27,
     },
     {
       id: "C_contradiction_16",
@@ -212,8 +210,7 @@ function experimentCatalog() {
       topic_pillar: "休息、拖延與自我要求",
       conclusion_style: "把問題從意志力改寫成選擇成本",
       cta_style: "問觀眾會怎麼選，不暗示標準答案",
-      reel_seconds: 16,
-      page_one_seconds: 7,
+      reel_seconds: 28,
     },
     {
       id: "D_relationship_18",
@@ -222,8 +219,7 @@ function experimentCatalog() {
       topic_pillar: "友情、界線與害怕失去",
       conclusion_style: "區分關心與勉強維持",
       cta_style: "用一句適合傳給朋友但不情緒勒索的收尾",
-      reel_seconds: 18,
-      page_one_seconds: 8,
+      reel_seconds: 30,
     },
     {
       id: "E_cat_dry_turn_14",
@@ -232,18 +228,16 @@ function experimentCatalog() {
       topic_pillar: "消費、飲食、健身與日常自欺",
       conclusion_style: "貓用一點乾幽默說出精準後果",
       cta_style: "短問句，讓觀眾自然想到可分享的人",
-      reel_seconds: 14,
-      page_one_seconds: 6,
+      reel_seconds: 27,
     },
     {
       id: "F_decision_tool_18",
       label: "可收藏的判斷工具",
       hook_style: "提出一個大家常拖著不決定的具體選擇",
       topic_pillar: "工作、選擇與放下沉沒成本",
-      conclusion_style: "第四格給一句能在下次使用的判斷問題",
+      conclusion_style: "第五頁給一句能在下次使用的判斷問題",
       cta_style: "自然提醒留著下次卡住時看，不硬討收藏",
-      reel_seconds: 18,
-      page_one_seconds: 8,
+      reel_seconds: 30,
     },
   ];
 }

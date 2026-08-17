@@ -16,10 +16,20 @@ from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_STOCK_ROOT = Path("/Users/roberto/Automation/stock_fund_flow_project")
-DEFAULT_USERNAME = "juliana551107"
+DEFAULT_USERNAME = "itsmumutime"
 STATE_PATH = ROOT / ".reference_state.json"
 PREFERRED_KEYWORDS = (
     "人生",
+    "生活",
+    "自己",
+    "工作",
+    "同事",
+    "朋友",
+    "職場",
+    "胖",
+    "身材",
+    "焦慮",
+    "界線",
     "父母",
     "家庭",
     "關係",
@@ -36,6 +46,13 @@ AVOID_KEYWORDS = (
     "改命",
     "賺錢",
     "段位",
+    "加盟",
+    "優惠",
+    "限時",
+    "私訊",
+    "下單",
+    "購買",
+    "經營者",
 )
 
 
@@ -65,7 +82,7 @@ def fetch_posts(username: str, stock_root: Path) -> list[dict[str, Any]]:
 
     fields = (
         f"business_discovery.username({username})"
-        "{username,media.limit(20){id,caption,media_type,media_url,thumbnail_url,"
+        "{username,media.limit(30){id,caption,media_type,media_url,thumbnail_url,like_count,comments_count,"
         "permalink,timestamp,children.limit(20){id,media_type,media_url,thumbnail_url,permalink}}}"
     )
     response = requests.get(
@@ -116,10 +133,11 @@ def select_post(posts: list[dict[str, Any]]) -> tuple[dict[str, Any], str]:
     if non_problematic:
         pool = non_problematic
 
-    def rank(post: dict[str, Any]) -> tuple[int, str]:
+    def rank(post: dict[str, Any]) -> tuple[int, int, str]:
         caption = str(post.get("caption") or "")
-        preferred = int(any(keyword in caption for keyword in PREFERRED_KEYWORDS))
-        return preferred, str(post.get("timestamp") or "")
+        preferred = sum(keyword in caption for keyword in PREFERRED_KEYWORDS)
+        engagement = int(post.get("like_count") or 0) + int(post.get("comments_count") or 0) * 4
+        return preferred, engagement, str(post.get("timestamp") or "")
 
     selected = max(pool, key=rank)
     reason = "newest_unused_serious_life_topic" if unused else "reference_cycle_restarted"
@@ -214,6 +232,8 @@ def main() -> int:
         "caption": caption,
         "permalink": permalink,
         "timestamp": str(selected.get("timestamp") or ""),
+        "like_count": int(selected.get("like_count") or 0),
+        "comments_count": int(selected.get("comments_count") or 0),
         "source_slide_count": len(((selected.get("children") or {}).get("data") or [])) or 1,
         "downloaded_files": [str(path) for path in downloaded],
         "selection_reason": selection_reason,
@@ -228,7 +248,7 @@ def main() -> int:
                 f"Reference timestamp: {metadata['timestamp']}",
                 f"Reference caption: {caption}",
                 "",
-                "Use this post only to study abstract storytelling mechanics: hook, tension, turn, compression, and save/share value.",
+                "Use this post only to study abstract storytelling mechanics: recognition hook, concrete scene, tension, emotional turn, compression, and save/share value.",
                 "Do not copy or closely paraphrase its wording, topic, conclusion, examples, imagery, layout, typography, characters, or branding.",
                 "The Roberto Joke result must use a different topic and an independently reasoned conclusion.",
             ]

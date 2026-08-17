@@ -33,15 +33,15 @@ IG_IMAGE_WIDTH = 1080
 IG_IMAGE_HEIGHT = 1350
 REEL_WIDTH = 1080
 REEL_HEIGHT = 1920
-REEL_SECONDS = 16
-REEL_PAGE_ONE_SECONDS = 7
+CAROUSEL_PAGE_COUNT = 5
+REEL_SECONDS = 28
 REEL_FPS = 30
 REFERENCE_FETCH_PYTHON = Path(os.environ.get("REFERENCE_FETCH_PYTHON", "/opt/anaconda3/bin/python3"))
 REFERENCE_FETCH_SCRIPT = ROOT / "scripts" / "fetch_reference_post.py"
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Generate a four-panel life dialogue, then publish its carousel or Reel.")
+    parser = argparse.ArgumentParser(description="Generate a five-page emotional life dialogue, then publish its carousel or Reel.")
     parser.add_argument("--run-id", default=current_run_id(), help="Run id, default YYYY-MM-DD_HHMM in local time.")
     parser.add_argument("--generate-only", action="store_true", help="Only trigger Codex and wait for local files.")
     parser.add_argument("--post-only", action="store_true", help="Skip Codex and publish an existing run id.")
@@ -144,14 +144,14 @@ def determine_content_mode(run_id: str) -> tuple[str, str]:
 
 
 def run_paths(run_id: str) -> dict[str, Path]:
-    image_1 = ROOT / "assets" / f"{run_id}_deadpan_joke_01.png"
-    image_2 = ROOT / "assets" / f"{run_id}_deadpan_joke_02.png"
+    images = tuple(
+        ROOT / "assets" / f"{run_id}_deadpan_joke_{index:02d}.png"
+        for index in range(1, CAROUSEL_PAGE_COUNT + 1)
+    )
     return {
         "run_dir": ROOT / "posts" / run_id,
-        "image": image_1,
-        "image_1": image_1,
-        "image_2": image_2,
-        "images": (image_1, image_2),
+        "image": images[0],
+        "images": images,
         "caption": ROOT / "captions" / f"{run_id}_deadpan_joke.md",
         "prompt": ROOT / "prompts" / f"{run_id}_generation_prompt.md",
         "manifest": ROOT / "posts" / run_id / "manifest.json",
@@ -166,21 +166,22 @@ def run_paths(run_id: str) -> dict[str, Path]:
 def ensure_dirs(paths: dict[str, Path]) -> None:
     for key in ("run_dir", "reference_dir"):
         paths[key].mkdir(parents=True, exist_ok=True)
-    for key in ("image_1", "image_2", "caption", "prompt"):
+    for image_path in paths["images"]:
+        image_path.parent.mkdir(parents=True, exist_ok=True)
+    for key in ("caption", "prompt"):
         paths[key].parent.mkdir(parents=True, exist_ok=True)
 
 
 def load_growth_experiment() -> dict:
     strategy_path = ROOT / "analytics" / "daily_strategy.json"
     fallback = {
-        "id": "control_life_dialogue_16",
-        "label": "16 秒人生對話控制組",
-        "hook_style": "從具體生活困境開始",
+        "id": "control_emotional_carousel_28",
+        "label": "28 秒五頁情緒故事控制組",
+        "hook_style": "先說出觀眾不太敢承認的具體感受",
         "topic_pillar": "日常選擇",
-        "conclusion_style": "貓給一句具體的新視角",
+        "conclusion_style": "貓把隱藏假設壓成一句可收藏的新視角",
         "cta_style": "自然短問句",
         "reel_seconds": REEL_SECONDS,
-        "page_one_seconds": REEL_PAGE_ONE_SECONDS,
     }
     if not strategy_path.exists():
         return fallback
@@ -249,13 +250,14 @@ def build_codex_prompt(run_id: str, paths: dict[str, Path], content_mode: str) -
     if content_mode != "life_dialogue":
         raise RuntimeError(f"Unsupported content mode: {content_mode}")
     content_brief = """
-Content mode: LIFE DIALOGUE (人生對話)
-- Start from one concrete adult-life tension such as comparison, rest, boundaries, uncertainty, loneliness, failure, or letting go.
-- Panel 1: Roberto admits a real worry in plain spoken language.
-- Panel 2: the tuxedo cat asks one short question that challenges the hidden assumption.
-- Panel 3: Roberto answers honestly, revealing why he is stuck.
-- Panel 4: the cat gives one concise insight that changes how panels 1-3 are understood.
-- The tone is serious, observant, and emotionally grounded. A trace of dry wit is allowed, but no prank energy or forced punchline.
+Content mode: EMOTIONAL LIFE DIALOGUE (情緒型人生對話)
+- Start from one concrete adult-life tension such as comparison, rest, boundaries, uncertainty, loneliness, failure, body image, work, friendship, or letting go.
+- Page 1: a private feeling viewers rarely admit out loud. It must create immediate recognition, not explain the lesson.
+- Page 2: one concrete everyday scene showing how that feeling changes Roberto's behavior.
+- Page 3: the tuxedo cat asks one short question that exposes the hidden assumption.
+- Page 4: Roberto answers honestly and names the fear, shame, or need underneath the behavior.
+- Page 5: the cat compresses the emotional turn into one concise, specific insight that changes how pages 1-4 are understood.
+- The tone is serious, observant, emotionally grounded, and human. A trace of dry wit is allowed, but no prank energy or forced punchline.
 - Avoid generic motivational slogans, fake therapy language, diagnoses, absolute claims, moral superiority, and advice that needs a long explanation.
 - Brainstorm scores: relatability, natural dialogue, insight, and save/share value, each 0-5.
 - The caption must include #人生對話 and 2-4 other relevant hashtags.
@@ -263,17 +265,17 @@ Content mode: LIFE DIALOGUE (人生對話)
     experiment = paths.get("growth_experiment", {})
     experiment_brief = f"""
 Controlled growth experiment for this post:
-- Experiment ID: {experiment.get('id', 'control_life_dialogue_16')}
-- Package: {experiment.get('label', '16 秒人生對話控制組')}
-- Required first-panel hook: {experiment.get('hook_style', '從具體生活困境開始')}
+- Experiment ID: {experiment.get('id', 'control_emotional_carousel_28')}
+- Package: {experiment.get('label', '28 秒五頁情緒故事控制組')}
+- Required first-page hook: {experiment.get('hook_style', '先說出觀眾不太敢承認的具體感受')}
 - Preferred topic pillar: {experiment.get('topic_pillar', '日常選擇')}
-- Required conclusion mechanism: {experiment.get('conclusion_style', '貓給一句具體的新視角')}
+- Required conclusion mechanism: {experiment.get('conclusion_style', '貓把隱藏假設壓成一句可收藏的新視角')}
 - Caption ending: {experiment.get('cta_style', '自然短問句')}
-- Reel reading time: {experiment.get('reel_seconds', REEL_SECONDS)} seconds total.
-Treat these as controlled packaging variables. Do not change the fixed characters, originality rules, or four-panel life-dialogue identity.
+- Reel target reading time: {experiment.get('reel_seconds', REEL_SECONDS)} seconds total. The pipeline will enforce a readable minimum for five pages.
+Treat these as controlled packaging variables. Do not change the fixed characters, originality rules, or five-page emotional-dialogue identity.
 """.strip()
     return f"""
-You are generating one four-panel Instagram carousel story for @roberto_joke.
+You are generating one five-page Instagram carousel story for @roberto_joke.
 
 {content_brief}
 
@@ -290,12 +292,12 @@ Attached image:
 
 Daily reference study:
 - Read {paths["reference_context"]}. If reference images are attached, study the complete post before brainstorming.
-- Privately identify its abstract mechanics: opening tension, escalation, emotional turn, final compression, and why someone might save or share it.
+- Privately identify its abstract mechanics: recognition hook, concrete scene, escalation, emotional turn, final compression, and why someone might save or share it.
 - Borrow only those abstract mechanics. The output must use a clearly different topic, wording, examples, conclusion, setting, composition, typography, characters, and visual identity.
 - Never translate, paraphrase, remix, or imitate a recognizable sentence from the reference. Never mention the source account in the finished post.
 - Reject the reference post's substance when it depends on stereotypes, manipulation, absolutist claims, or unsupported relationship/financial advice. Structural study is not endorsement.
 - Record the five-part structural analysis and a short originality check in the generation prompt record, not in the caption or artwork.
-- If the reference fetch is unavailable, follow the same serious four-beat structure using an original everyday dilemma.
+- If the reference fetch is unavailable, follow the same serious five-beat structure using an original everyday dilemma.
 
 Current trend context:
 - Read {paths["trends"]}. It contains current Taiwan Google search trends fetched immediately before this run.
@@ -312,32 +314,31 @@ Growth context:
 - Do not repeat a weak topic merely because it was recently posted. Prefer concepts that a viewer would send to one specific friend.
 
 Hard requirements:
-- Generate exactly two colorful 1080x1350 images for one Instagram carousel. Each image contains exactly two stacked comic panels, for exactly four panels total.
-- Keep the same characters, wardrobe, rendering, room palette, line weight, and facial identity across both images. They must feel like one continuous four-panel story.
-- Follow the selected content mode's four-panel dialogue structure exactly.
-- Put one large Traditional Chinese line in each panel. Text must be immediately readable on a phone, fully inside generous safe margins, and never overlap a face.
-- The fourth-panel conclusion must be the strongest beat. It must reframe or deepen the first three panels, not explain the visible action.
+- Generate exactly five colorful 1080x1350 images for one Instagram carousel. Each image is one full-page scene with one story beat; do not split a page into comic panels.
+- Keep the same characters, wardrobe, rendering, room palette, line weight, and facial identity across all five images. They must feel like one continuous story.
+- Follow the selected content mode's five-page emotional structure exactly.
+- Put one large Traditional Chinese line on each page. Text must be immediately readable on a phone, fully inside generous safe margins, and never overlap a face.
+- The fifth-page conclusion must be the strongest beat. It must reframe or deepen the first four pages, not explain the visible action.
 - The male protagonist must be based on the attached reference photo: East Asian man, round youthful face, side-swept black hair, slightly sleepy eyes, wearing a black collared top with gray zipper/placket.
 - Preserve the reference identity in a polished realistic-comic meme style. Do not use a generic anime man.
 - Style: original polished Taiwanese editorial webcomic with a cinematic, subdued palette, concise spoken Traditional Chinese, and restrained natural acting.
 - Use soft practical lighting, calm framing, believable rooms or streets, and subtle facial expressions. Avoid meme fonts, comic explosion lines, exaggerated reaction faces, prank-video energy, stickers, and loud decorative effects.
 - Include a black-and-white tuxedo cat in every image. The cat is Roberto's perceptive, calmly incisive dialogue partner.
-- The panel-four line should begin with "貓：" so the speaker is unmistakable.
-- Use exactly four concise dialogue/caption beats, one per panel. Avoid explanatory paragraphs.
+- The page-five line should begin with "貓：" so the speaker is unmistakable. Page three may also begin with "貓：" when the cat asks its question.
+- Use exactly five concise dialogue/caption beats, one per page. Avoid explanatory paragraphs.
 - Before generating the image, brainstorm at least 12 genuinely different life-dialogue story candidates. At least 8 must be non-workplace topics.
 - Score every candidate for relatability, natural dialogue, insight, and save/share value. Select only the highest-scoring candidate with at least 15/20.
 - A valid final line must reframe the setup, expose an overlooked assumption or consequence, or create a more precise way to understand the problem. It must not merely describe what the image already shows.
 - Reject corporate-jargon reskins and generic social-media wisdom unless the wording creates a genuinely specific new meaning.
 - Compare against the latest 20 posts. Vary the dilemma, insight mechanism, setting, pose, and cat reaction, not just the nouns.
-- Record the top five candidate stories, scores, rejection notes, and the reason for the final selection in the generation prompt record. Still generate exactly one four-panel story across two images.
+- Record the top five candidate stories, scores, rejection notes, and the reason for the final selection in the generation prompt record. Still generate exactly one five-page story across five images.
 - Caption must use only 3-5 relevant hashtags and include the selected mode's required hashtag. Add one natural conversational question only when it fits; never use spammy engagement bait.
 - Do not post to Instagram.
 - Do not run git push.
 - Do not print .env, tokens, access keys, or secrets.
 
 Output these exact files:
-- Carousel page 1 (panels 1-2): {paths["image_1"]}
-- Carousel page 2 (panels 3-4): {paths["image_2"]}
+{chr(10).join(f'- Carousel page {index}: {path}' for index, path in enumerate(paths['images'], start=1))}
 - Caption: {paths["caption"]}
 - Prompt record: {paths["prompt"]}
 - Manifest: {paths["manifest"]}
@@ -347,17 +348,14 @@ Manifest JSON must include:
   "run_id": "{run_id}",
   "content_mode": "{content_mode}",
   "topic": "<short topic>",
-  "image_paths": [
-    "assets/{run_id}_deadpan_joke_01.png",
-    "assets/{run_id}_deadpan_joke_02.png"
-  ],
+  "image_paths": {json.dumps([f"assets/{run_id}_deadpan_joke_{index:02d}.png" for index in range(1, CAROUSEL_PAGE_COUNT + 1)], ensure_ascii=False, indent=2)},
   "caption_path": "captions/{run_id}_deadpan_joke.md",
   "prompt_path": "prompts/{run_id}_generation_prompt.md",
   "status": "generated"
 }}
 
 Avoid repeating old topics, setups, or exact punchlines already found in posts/, captions/, assets/.
-The story must reward swiping: panels 1-3 reveal the tension naturally, then panel 4 delivers a mode-appropriate cat conclusion worth sharing or saving.
+The story must reward swiping: pages 1-4 deepen one recognizable tension naturally, then page 5 delivers a cat conclusion worth sharing or saving.
 """.strip()
 
 
@@ -390,7 +388,7 @@ def fetch_trend_context(run_id: str, paths: dict[str, Path]) -> None:
 
 def fetch_reference_context(run_id: str, paths: dict[str, Path]) -> None:
     fallback = (
-        "Reference study unavailable for this run. Use an original serious life dialogue and the fixed four-beat structure.\n"
+        "Reference study unavailable for this run. Use an original serious life dialogue and the fixed five-beat structure.\n"
     )
     paths["reference_images"] = ()
     if not REFERENCE_FETCH_PYTHON.exists() or not REFERENCE_FETCH_SCRIPT.exists():
@@ -547,9 +545,9 @@ def prepare_publish_asset(run_id: str, paths: dict[str, Path], publish_format: s
         create_reel(run_id, paths)
         manifest["video_path"] = rel(paths["reel"])
         manifest["motion_style"] = "cinematic_2_5d_v1"
-        reel_seconds, page_one_seconds = reel_timing(paths)
+        reel_seconds, page_durations = reel_timing(paths)
         manifest["reel_seconds"] = reel_seconds
-        manifest["page_one_seconds"] = page_one_seconds
+        manifest["page_durations"] = page_durations
     else:
         manifest.pop("video_path", None)
     paths["manifest"].write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -567,7 +565,7 @@ def render_reel_preview(source_run_id: str) -> Path:
     return paths["reel"]
 
 
-def build_reel_filter_graph(page_durations: tuple[float, float]) -> str:
+def build_reel_filter_graph(page_durations: tuple[float, ...]) -> str:
     foreground_size = 1000
     foreground_height = 1250
     foreground_y = (REEL_HEIGHT - foreground_height) // 2
@@ -595,7 +593,8 @@ def build_reel_filter_graph(page_durations: tuple[float, float]) -> str:
             f"d=1:s={REEL_WIDTH}x{REEL_HEIGHT}:fps={REEL_FPS},"
             f"fps={REEL_FPS},setsar=1,settb=AVTB,setpts=PTS-STARTPTS[v{index}]"
         )
-    segments.append("[v0][v1]concat=n=2:v=1:a=0,format=yuv420p[v]")
+    streams = "".join(f"[v{index}]" for index in range(len(page_durations)))
+    segments.append(f"{streams}concat=n={len(page_durations)}:v=1:a=0,format=yuv420p[v]")
     return ";".join(segments)
 
 
@@ -603,12 +602,9 @@ def create_reel(run_id: str, paths: dict[str, Path]) -> None:
     if not FFMPEG_BIN.exists():
         raise RuntimeError(f"ffmpeg not found: {FFMPEG_BIN}")
     soundtrack = paths["run_dir"] / "reflective_soundtrack.wav"
-    reel_seconds, page_one_seconds = reel_timing(paths)
-    create_reflective_soundtrack(soundtrack, reel_seconds, page_one_seconds)
-    page_durations = (
-        page_one_seconds,
-        reel_seconds - page_one_seconds,
-    )
+    reel_seconds, page_durations = reel_timing(paths)
+    transition_times = tuple(sum(page_durations[:index]) for index in range(1, len(page_durations)))
+    create_reflective_soundtrack(soundtrack, reel_seconds, transition_times)
     filter_graph = build_reel_filter_graph(page_durations)
     command = [str(FFMPEG_BIN), "-y"]
     for image_path, duration in zip(paths["images"], page_durations):
@@ -620,7 +616,7 @@ def create_reel(run_id: str, paths: dict[str, Path]) -> None:
         "-map",
         "[v]",
         "-map",
-        "2:a",
+        f"{len(paths['images'])}:a",
         "-t",
         str(reel_seconds),
         "-r",
@@ -651,15 +647,27 @@ def create_reel(run_id: str, paths: dict[str, Path]) -> None:
     log(run_id, f"Reel created: {paths['reel'].name}")
 
 
-def reel_timing(paths: dict) -> tuple[int, int]:
+def reel_timing(paths: dict) -> tuple[int, tuple[float, ...]]:
     experiment = paths.get("growth_experiment", {})
-    reel_seconds = max(14, min(18, int(experiment.get("reel_seconds", REEL_SECONDS))))
-    page_one_seconds = int(experiment.get("page_one_seconds", round(reel_seconds * 0.44)))
-    page_one_seconds = max(6, min(reel_seconds - 7, page_one_seconds))
-    return reel_seconds, page_one_seconds
+    page_count = len(paths["images"])
+    minimum_seconds = page_count * 5
+    reel_seconds = max(minimum_seconds, min(36, int(experiment.get("reel_seconds", REEL_SECONDS))))
+    first_seconds = 5.0
+    last_seconds = 6.0
+    if page_count == 1:
+        return reel_seconds, (float(reel_seconds),)
+    if page_count == 2:
+        return reel_seconds, (first_seconds, reel_seconds - first_seconds)
+    middle_seconds = (reel_seconds - first_seconds - last_seconds) / (page_count - 2)
+    durations = (first_seconds, *(middle_seconds for _ in range(page_count - 2)), last_seconds)
+    return reel_seconds, tuple(round(value, 3) for value in durations)
 
 
-def create_reflective_soundtrack(output: Path, reel_seconds: int, page_one_seconds: int) -> None:
+def create_reflective_soundtrack(
+    output: Path,
+    reel_seconds: int,
+    transition_times: tuple[float, ...],
+) -> None:
     sample_rate = 48_000
     total_samples = reel_seconds * sample_rate
     audio = [0.0] * total_samples
@@ -696,19 +704,20 @@ def create_reflective_soundtrack(output: Path, reel_seconds: int, page_one_secon
             )
             audio[position] += volume * attack * decay * tone / 1.18
 
-    for hit_time, frequency in ((page_one_seconds, 659.25), (page_one_seconds + 0.12, 880.00)):
-        start_sample = int(hit_time * sample_rate)
-        hit_samples = int(0.65 * sample_rate)
-        for index in range(hit_samples):
-            position = start_sample + index
-            if position >= total_samples:
-                break
-            elapsed = index / sample_rate
-            audio[position] += (
-                0.10
-                * math.sin(2 * math.pi * frequency * elapsed)
-                * math.exp(-5.2 * elapsed)
-            )
+    for transition_time in transition_times:
+        for hit_time, frequency in ((transition_time, 659.25), (transition_time + 0.12, 880.00)):
+            start_sample = int(hit_time * sample_rate)
+            hit_samples = int(0.65 * sample_rate)
+            for index in range(hit_samples):
+                position = start_sample + index
+                if position >= total_samples:
+                    break
+                elapsed = index / sample_rate
+                audio[position] += (
+                    0.065
+                    * math.sin(2 * math.pi * frequency * elapsed)
+                    * math.exp(-5.2 * elapsed)
+                )
 
     peak = max(max(abs(sample) for sample in audio), 0.001)
     scale = 0.62 / peak
@@ -747,7 +756,7 @@ def publish_to_instagram(run_id: str, paths: dict[str, Path], publish_format: st
     image_urls = [
         f"https://raw.githubusercontent.com/Roberto0111/Robert_joke/main/"
         f"assets/{run_id}_deadpan_joke_{index:02d}.png"
-        for index in range(1, 3)
+        for index in range(1, CAROUSEL_PAGE_COUNT + 1)
     ]
     env = os.environ.copy()
     env["IG_IMAGE_URL"] = image_urls[0]
