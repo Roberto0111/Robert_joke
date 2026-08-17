@@ -35,6 +35,7 @@ REEL_WIDTH = 1080
 REEL_HEIGHT = 1920
 REEL_SECONDS = 16
 REEL_PAGE_ONE_SECONDS = 7
+REEL_FPS = 30
 REFERENCE_FETCH_PYTHON = Path(os.environ.get("REFERENCE_FETCH_PYTHON", "/opt/anaconda3/bin/python3"))
 REFERENCE_FETCH_SCRIPT = ROOT / "scripts" / "fetch_reference_post.py"
 
@@ -46,6 +47,11 @@ def main() -> int:
     parser.add_argument("--post-only", action="store_true", help="Skip Codex and publish an existing run id.")
     parser.add_argument("--dry-run", action="store_true", help="Do not push or publish; useful for testing.")
     parser.add_argument(
+        "--preview-reel-from",
+        metavar="RUN_ID",
+        help="Render an animated preview from an existing run without generating, committing, or publishing.",
+    )
+    parser.add_argument(
         "--format",
         choices=("auto", "image", "reel"),
         default="auto",
@@ -54,6 +60,10 @@ def main() -> int:
     args = parser.parse_args()
 
     LOG_DIR.mkdir(exist_ok=True)
+    if args.preview_reel_from:
+        preview = render_reel_preview(args.preview_reel_from)
+        print(preview)
+        return 0
     with locked():
         run_id = args.run_id
         paths = run_paths(run_id)
@@ -495,9 +505,54 @@ def prepare_publish_asset(run_id: str, paths: dict[str, Path], publish_format: s
     if publish_format == "reel":
         create_reel(run_id, paths)
         manifest["video_path"] = rel(paths["reel"])
+        manifest["motion_style"] = "cinematic_2_5d_v1"
     else:
         manifest.pop("video_path", None)
     paths["manifest"].write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def render_reel_preview(source_run_id: str) -> Path:
+    paths = run_paths(source_run_id)
+    missing = [str(path) for path in paths["images"] if not path.exists()]
+    if missing:
+        raise RuntimeError(f"Preview source images not found: {missing}")
+    preview_dir = ROOT / "previews"
+    preview_dir.mkdir(parents=True, exist_ok=True)
+    paths["reel"] = preview_dir / f"{source_run_id}_motion_preview.mp4"
+    create_reel(f"preview-{source_run_id}", paths)
+    return paths["reel"]
+
+
+def build_reel_filter_graph(page_durations: tuple[float, float]) -> str:
+    foreground_size = 1000
+    foreground_height = 1250
+    foreground_y = (REEL_HEIGHT - foreground_height) // 2
+    segments = []
+    for index, duration in enumerate(page_durations):
+        frames = max(2, int(round(duration * REEL_FPS)))
+        zoom_amount = 0.018 if index == 0 else 0.032
+        horizontal_direction = 1 if index == 0 else -1
+        vertical_direction = -1 if index == 0 else 1
+        segments.append(
+            f"[{index}:v]split=2[bg{index}src][fg{index}src];"
+            f"[bg{index}src]scale=1200:2134:force_original_aspect_ratio=increase,"
+            f"crop={REEL_WIDTH}:{REEL_HEIGHT}:"
+            f"x='(in_w-out_w)/2+{horizontal_direction}*18*sin(t*0.34)':"
+            f"y='(in_h-out_h)/2+{vertical_direction}*12*cos(t*0.27)',"
+            f"boxblur=35:12[bg{index}];"
+            f"[fg{index}src]scale={foreground_size}:{foreground_height}[fg{index}];"
+            f"[bg{index}][fg{index}]overlay="
+            f"x='(W-w)/2+4*sin(t*0.72+{index})':"
+            f"y='{foreground_y}+3*sin(t*1.15+{index})':eval=frame[scene{index}];"
+            f"[scene{index}]zoompan="
+            f"z='1+{zoom_amount}*pow(on/{frames - 1},1.15)':"
+            f"x='iw/2-(iw/zoom/2)+2*sin(on/18+{index})':"
+            f"y='ih/2-(ih/zoom/2)+2*cos(on/24+{index})':"
+            f"d=1:s={REEL_WIDTH}x{REEL_HEIGHT}:fps={REEL_FPS},"
+            f"fps={REEL_FPS},setsar=1,settb=AVTB,setpts=PTS-STARTPTS[v{index}]"
+        )
+    segments.append("[v0][v1]concat=n=2:v=1:a=0,format=yuv420p[v]")
+    return ";".join(segments)
 
 
 def create_reel(run_id: str, paths: dict[str, Path]) -> None:
@@ -505,30 +560,14 @@ def create_reel(run_id: str, paths: dict[str, Path]) -> None:
         raise RuntimeError(f"ffmpeg not found: {FFMPEG_BIN}")
     soundtrack = paths["run_dir"] / "reflective_soundtrack.wav"
     create_reflective_soundtrack(soundtrack)
-    foreground_size = 1000
-    foreground_height = 1250
-    foreground_y = (REEL_HEIGHT - foreground_height) // 2
-    page_durations = (REEL_PAGE_ONE_SECONDS, REEL_SECONDS - REEL_PAGE_ONE_SECONDS)
-    filter_graph = (
-        f"[0:v]split=2[bg0src][fg0src];"
-        f"[bg0src]scale={REEL_WIDTH}:{REEL_HEIGHT}:force_original_aspect_ratio=increase,"
-        f"crop={REEL_WIDTH}:{REEL_HEIGHT},boxblur=35:12[bg0];"
-        f"[fg0src]scale={foreground_size}:{foreground_height}[fg0];"
-        f"[bg0][fg0]overlay=(W-w)/2:{foreground_y},"
-        f"fade=t=out:st={page_durations[0] - 0.18}:d=0.18,"
-        f"setpts=PTS-STARTPTS[v0];"
-        f"[1:v]split=2[bg1src][fg1src];"
-        f"[bg1src]scale={REEL_WIDTH}:{REEL_HEIGHT}:force_original_aspect_ratio=increase,"
-        f"crop={REEL_WIDTH}:{REEL_HEIGHT},boxblur=35:12[bg1];"
-        f"[fg1src]scale={foreground_size}:{foreground_height}[fg1];"
-        f"[bg1][fg1]overlay=(W-w)/2:{foreground_y},"
-        f"fade=t=in:st=0:d=0.18,fade=t=out:st={page_durations[1] - 0.5}:d=0.5,"
-        f"setpts=PTS-STARTPTS[v1];"
-        f"[v0][v1]concat=n=2:v=1:a=0,format=yuv420p[v]"
+    page_durations = (
+        REEL_PAGE_ONE_SECONDS,
+        REEL_SECONDS - REEL_PAGE_ONE_SECONDS,
     )
+    filter_graph = build_reel_filter_graph(page_durations)
     command = [str(FFMPEG_BIN), "-y"]
     for image_path, duration in zip(paths["images"], page_durations):
-        command.extend(["-loop", "1", "-framerate", "30", "-t", str(duration), "-i", str(image_path)])
+        command.extend(["-loop", "1", "-framerate", str(REEL_FPS), "-t", str(duration), "-i", str(image_path)])
     command.extend([
         "-i", str(soundtrack),
         "-filter_complex",
@@ -540,7 +579,7 @@ def create_reel(run_id: str, paths: dict[str, Path]) -> None:
         "-t",
         str(REEL_SECONDS),
         "-r",
-        "30",
+        str(REEL_FPS),
         "-c:v",
         "libx264",
         "-preset",
