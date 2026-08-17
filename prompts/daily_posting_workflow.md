@@ -16,13 +16,13 @@ prompts/YYYY-MM-DD_HHMM_generation_prompt.md
 
 1. 透過 Business Discovery 選取指定參考帳號近期一篇未讀貼文，把輪播圖下載到當次暫存資料夾。
 2. 只分析參考貼文的開場、推進、轉折、收束與收藏／分享動機，完成原創性檢查後換成不同題目與結論。
-3. 讀取 `prompts/daily_comic_style.md`、近期貼文、當次熱門搜尋與 IG 成效策略。
+3. 讀取 `prompts/daily_comic_style.md`、近期貼文、當次熱門搜尋與 IG 成效策略；嚴格執行當日唯一的 `growth_experiment`，不要同時改動其他變因。
 4. 使用 `assets/main_character_reference.jpg` 固定 Roberto 本人外型。
 5. 構思並評分至少 12 個人生對話故事，選出總分至少 15/20 且第四格觀點最強的一則。
 6. 生成兩張 1080x1350 圖：第 1 張放第 1、2 格，第 2 張放第 3、4 格。
 7. 建立 caption、generation prompt 與 manifest；manifest 必須記錄 `content_mode`，`image_paths` 必須依序列出兩張圖。
 8. Python 檢查兩張圖尺寸、檔案大小與 manifest，任何一項不符就停止。
-9. 固定製作 16 秒直式 Reel：第 1 頁停留 7 秒、第 2 頁停留 9 秒，搭配原創沉穩配樂；兩張原圖仍保留供內容檢查。
+9. 製作 14-18 秒直式 Reel；頁面停留時間由當日成長實驗指定，搭配原創沉穩配樂，首幀不得黑畫面；兩張原圖仍保留供內容檢查。
 10. commit 並用專用 deploy key push 到 GitHub，等待公開 URL 可讀後再呼叫 Instagram API。
 11. 主貼文成功後同步發布 Story，並把 media id 與狀態寫回 manifest。
 

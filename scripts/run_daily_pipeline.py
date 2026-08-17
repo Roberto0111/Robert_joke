@@ -74,11 +74,13 @@ def main() -> int:
         if not args.post_only:
             collect_growth_metrics(run_id)
 
+        paths["growth_experiment"] = load_growth_experiment()
         publish_format, format_reason = determine_publish_format(args.format, run_id)
         log(
             run_id,
             f"pipeline started content_mode={content_mode} content_reason={content_reason} "
             f"format={publish_format} format_reason={format_reason} "
+            f"experiment={paths['growth_experiment'].get('id', 'control')} "
             f"dry_run={args.dry_run} "
             f"generate_only={args.generate_only} post_only={args.post_only}",
         )
@@ -168,6 +170,30 @@ def ensure_dirs(paths: dict[str, Path]) -> None:
         paths[key].parent.mkdir(parents=True, exist_ok=True)
 
 
+def load_growth_experiment() -> dict:
+    strategy_path = ROOT / "analytics" / "daily_strategy.json"
+    fallback = {
+        "id": "control_life_dialogue_16",
+        "label": "16 秒人生對話控制組",
+        "hook_style": "從具體生活困境開始",
+        "topic_pillar": "日常選擇",
+        "conclusion_style": "貓給一句具體的新視角",
+        "cta_style": "自然短問句",
+        "reel_seconds": REEL_SECONDS,
+        "page_one_seconds": REEL_PAGE_ONE_SECONDS,
+    }
+    if not strategy_path.exists():
+        return fallback
+    try:
+        strategy = json.loads(strategy_path.read_text(encoding="utf-8"))
+        experiment = strategy.get("next_experiment")
+        if not isinstance(experiment, dict) or not experiment.get("id"):
+            return fallback
+        return {**fallback, **experiment}
+    except (OSError, ValueError, TypeError):
+        return fallback
+
+
 def trigger_codex(run_id: str, paths: dict[str, Path], content_mode: str, dry_run: bool) -> None:
     if dry_run:
         prompt_file = paths["run_dir"] / "codex_prompt.txt"
@@ -234,10 +260,24 @@ Content mode: LIFE DIALOGUE (人生對話)
 - Brainstorm scores: relatability, natural dialogue, insight, and save/share value, each 0-5.
 - The caption must include #人生對話 and 2-4 other relevant hashtags.
 """.strip()
+    experiment = paths.get("growth_experiment", {})
+    experiment_brief = f"""
+Controlled growth experiment for this post:
+- Experiment ID: {experiment.get('id', 'control_life_dialogue_16')}
+- Package: {experiment.get('label', '16 秒人生對話控制組')}
+- Required first-panel hook: {experiment.get('hook_style', '從具體生活困境開始')}
+- Preferred topic pillar: {experiment.get('topic_pillar', '日常選擇')}
+- Required conclusion mechanism: {experiment.get('conclusion_style', '貓給一句具體的新視角')}
+- Caption ending: {experiment.get('cta_style', '自然短問句')}
+- Reel reading time: {experiment.get('reel_seconds', REEL_SECONDS)} seconds total.
+Treat these as controlled packaging variables. Do not change the fixed characters, originality rules, or four-panel life-dialogue identity.
+""".strip()
     return f"""
 You are generating one four-panel Instagram carousel story for @roberto_joke.
 
 {content_brief}
+
+{experiment_brief}
 
 Read:
 - README.md
@@ -502,10 +542,14 @@ def validate_generation(paths: dict[str, Path]) -> None:
 def prepare_publish_asset(run_id: str, paths: dict[str, Path], publish_format: str) -> None:
     manifest = json.loads(paths["manifest"].read_text(encoding="utf-8"))
     manifest["publish_format"] = publish_format
+    manifest["growth_experiment"] = paths.get("growth_experiment", {})
     if publish_format == "reel":
         create_reel(run_id, paths)
         manifest["video_path"] = rel(paths["reel"])
         manifest["motion_style"] = "cinematic_2_5d_v1"
+        reel_seconds, page_one_seconds = reel_timing(paths)
+        manifest["reel_seconds"] = reel_seconds
+        manifest["page_one_seconds"] = page_one_seconds
     else:
         manifest.pop("video_path", None)
     paths["manifest"].write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -559,10 +603,11 @@ def create_reel(run_id: str, paths: dict[str, Path]) -> None:
     if not FFMPEG_BIN.exists():
         raise RuntimeError(f"ffmpeg not found: {FFMPEG_BIN}")
     soundtrack = paths["run_dir"] / "reflective_soundtrack.wav"
-    create_reflective_soundtrack(soundtrack)
+    reel_seconds, page_one_seconds = reel_timing(paths)
+    create_reflective_soundtrack(soundtrack, reel_seconds, page_one_seconds)
     page_durations = (
-        REEL_PAGE_ONE_SECONDS,
-        REEL_SECONDS - REEL_PAGE_ONE_SECONDS,
+        page_one_seconds,
+        reel_seconds - page_one_seconds,
     )
     filter_graph = build_reel_filter_graph(page_durations)
     command = [str(FFMPEG_BIN), "-y"]
@@ -577,7 +622,7 @@ def create_reel(run_id: str, paths: dict[str, Path]) -> None:
         "-map",
         "2:a",
         "-t",
-        str(REEL_SECONDS),
+        str(reel_seconds),
         "-r",
         str(REEL_FPS),
         "-c:v",
@@ -606,9 +651,17 @@ def create_reel(run_id: str, paths: dict[str, Path]) -> None:
     log(run_id, f"Reel created: {paths['reel'].name}")
 
 
-def create_reflective_soundtrack(output: Path) -> None:
+def reel_timing(paths: dict) -> tuple[int, int]:
+    experiment = paths.get("growth_experiment", {})
+    reel_seconds = max(14, min(18, int(experiment.get("reel_seconds", REEL_SECONDS))))
+    page_one_seconds = int(experiment.get("page_one_seconds", round(reel_seconds * 0.44)))
+    page_one_seconds = max(6, min(reel_seconds - 7, page_one_seconds))
+    return reel_seconds, page_one_seconds
+
+
+def create_reflective_soundtrack(output: Path, reel_seconds: int, page_one_seconds: int) -> None:
     sample_rate = 48_000
-    total_samples = REEL_SECONDS * sample_rate
+    total_samples = reel_seconds * sample_rate
     audio = [0.0] * total_samples
 
     # Slow original underscore: soft minor-seventh chords and a restrained page-turn chime.
@@ -620,7 +673,7 @@ def create_reflective_soundtrack(output: Path) -> None:
         (164.81, 207.65, 261.63, 329.63),
     )
     notes = []
-    for chord_index in range(math.ceil(REEL_SECONDS / (beat * 2))):
+    for chord_index in range(math.ceil(reel_seconds / (beat * 2))):
         start = chord_index * beat * 2
         chord = chord_progression[chord_index % len(chord_progression)]
         for note_index, frequency in enumerate(chord):
@@ -643,7 +696,7 @@ def create_reflective_soundtrack(output: Path) -> None:
             )
             audio[position] += volume * attack * decay * tone / 1.18
 
-    for hit_time, frequency in ((REEL_PAGE_ONE_SECONDS, 659.25), (REEL_PAGE_ONE_SECONDS + 0.12, 880.00)):
+    for hit_time, frequency in ((page_one_seconds, 659.25), (page_one_seconds + 0.12, 880.00)):
         start_sample = int(hit_time * sample_rate)
         hit_samples = int(0.65 * sample_rate)
         for index in range(hit_samples):

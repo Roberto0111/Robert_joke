@@ -1,0 +1,32 @@
+{
+  "updated_at": "2026-08-17T12:04:31.166Z",
+  "account": "roberto_joke",
+  "phase": "organic_validation",
+  "target_followers": 1000,
+  "current_followers": 3,
+  "remaining_followers": 997,
+  "follower_change_7d": 0,
+  "best_recent_post": {
+    "id": "18085720481670188",
+    "permalink": "https://www.instagram.com/reel/DcD5xrZlNx1/",
+    "reach": 164,
+    "views": 186,
+    "shares": 1,
+    "saves": 0
+  },
+  "next_experiment": {
+    "id": "F_decision_tool_18",
+    "label": "可收藏的判斷工具",
+    "hook_style": "提出一個大家常拖著不決定的具體選擇",
+    "topic_pillar": "工作、選擇與放下沉沒成本",
+    "conclusion_style": "第四格給一句能在下次使用的判斷問題",
+    "cta_style": "自然提醒留著下次卡住時看，不硬討收藏",
+    "reel_seconds": 18,
+    "page_one_seconds": 8
+  },
+  "paid_promotion": {
+    "ready": false,
+    "candidate_media_id": null,
+    "reason": "目前最佳自然觸及 164、分享＋收藏 1；先改善內容，不投廣告。"
+  }
+}
