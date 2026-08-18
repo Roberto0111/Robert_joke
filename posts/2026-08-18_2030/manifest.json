@@ -1,0 +1,35 @@
+{
+  "run_id": "2026-08-18_2030",
+  "content_mode": "life_dialogue",
+  "topic": "外送湊免運與折扣自欺",
+  "image_paths": [
+    "assets/2026-08-18_2030_deadpan_joke_01.png",
+    "assets/2026-08-18_2030_deadpan_joke_02.png",
+    "assets/2026-08-18_2030_deadpan_joke_03.png",
+    "assets/2026-08-18_2030_deadpan_joke_04.png",
+    "assets/2026-08-18_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-08-18_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-08-18_2030_generation_prompt.md",
+  "status": "generated",
+  "publish_format": "reel",
+  "growth_experiment": {
+    "id": "E_cat_dry_turn_14",
+    "label": "嚴肅中的冷轉折",
+    "hook_style": "Roberto 很認真地替自己找理由",
+    "topic_pillar": "消費、飲食、健身與日常自欺",
+    "conclusion_style": "貓用一點乾幽默說出精準後果",
+    "cta_style": "短問句，讓觀眾自然想到可分享的人",
+    "reel_seconds": 27
+  },
+  "video_path": "assets/2026-08-18_2030_deadpan_joke_reel.mp4",
+  "motion_style": "cinematic_2_5d_v1",
+  "reel_seconds": 27,
+  "page_durations": [
+    5.0,
+    5.333,
+    5.333,
+    5.333,
+    6.0
+  ]
+}
