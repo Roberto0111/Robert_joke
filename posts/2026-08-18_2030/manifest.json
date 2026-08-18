@@ -11,7 +11,7 @@
   ],
   "caption_path": "captions/2026-08-18_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-08-18_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "publish_format": "reel",
   "growth_experiment": {
     "id": "E_cat_dry_turn_14",
@@ -31,5 +31,9 @@
     5.333,
     5.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17898182841589572",
+  "instagram_story_media_id": "18026044373849470",
+  "instagram_story_status": "published",
+  "published_at": "2026-08-18T20:40:55"
 }
