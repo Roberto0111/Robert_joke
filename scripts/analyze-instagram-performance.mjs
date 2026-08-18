@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { analyzePairedReels } from "./paired-reel-analysis.mjs";
 
 const root = process.cwd();
 const analyticsDir = path.join(root, "analytics");
@@ -11,15 +12,19 @@ if (!fs.existsSync(analyticsPath)) {
 const targetFollowers = 1000;
 const report = JSON.parse(fs.readFileSync(analyticsPath, "utf8"));
 const manifestByMediaId = readManifestIndex(path.join(root, "posts"));
-const posts = (report.posts || []).map((post) => ({
-  ...post,
-  views: number(post.metrics?.views),
-  reach: number(post.metrics?.reach),
-  shares: number(post.metrics?.shares),
-  saves: number(post.metrics?.saved),
-  interactions: number(post.metrics?.total_interactions),
-  experiment: manifestByMediaId.get(String(post.id))?.growth_experiment || null,
-}));
+const posts = (report.posts || []).map((post) => {
+  const manifest = manifestByMediaId.get(String(post.id)) || null;
+  return {
+    ...post,
+    views: number(post.metrics?.views),
+    reach: number(post.metrics?.reach),
+    shares: number(post.metrics?.shares),
+    saves: number(post.metrics?.saved),
+    interactions: number(post.metrics?.total_interactions),
+    experiment: manifest?.growth_experiment || null,
+    series: manifest?.content_mode || ((post.caption || "").includes("#人生對話") ? "life_dialogue" : "deadpan_comedy"),
+  };
+});
 
 const reels = posts.filter((post) => post.media_product_type === "REELS");
 const images = posts.filter((post) => post.media_product_type !== "REELS");
@@ -32,6 +37,7 @@ const comedyStats = summarize(comedyPosts);
 const followerTrend = readFollowerTrend(analyticsDir, report);
 const experimentStats = summarizeExperiments(posts);
 const nextExperiment = chooseNextExperiment(experimentStats, report.collected_at);
+const pairedAnalysis = analyzePairedReels(posts, report.collected_at);
 const best = [...posts].sort((a, b) => postScore(b) - postScore(a))[0];
 const currentFollowers = number(report.profile?.followers_count);
 const targetGap = Math.max(0, targetFollowers - currentFollowers);
@@ -56,6 +62,9 @@ if (adReadiness.ready) {
   recommendations.push("已有自然流量勝出貼文；請 Roberto 核准後才建立小額廣告測試，不會自動扣款。");
 }
 recommendations.push("每日參考貼文只拆解敘事機制；題目、句子、結論與視覺必須保持 Roberto 原創。");
+if (pairedAnalysis.status === "ready") {
+  recommendations.unshift(`成對比較：${pairedAnalysis.next_test}`);
+}
 
 const strategy = `# Roberto Joke Organic Growth Strategy
 
@@ -85,6 +94,10 @@ Phase: organic validation
 ## Experiment Leaderboard
 
 ${experimentTable(experimentStats)}
+
+## Similar Reel Pair Diagnosis
+
+${pairedAnalysisMarkdown(pairedAnalysis)}
 
 ## Best Recent Post
 
@@ -130,6 +143,7 @@ const payload = {
   deadpan_comedy: comedyStats,
   next_experiment: nextExperiment,
   experiment_stats: experimentStats,
+  paired_reel_analysis: pairedAnalysis,
   recommendations,
   best_post_id: best?.id || null,
   paid_promotion: adReadiness,
@@ -157,6 +171,7 @@ fs.writeFileSync(
       saves: best.saves,
     } : null,
     next_experiment: nextExperiment,
+    paired_reel_analysis: pairedAnalysis,
     paid_promotion: adReadiness,
   }, null, 2)}\n`,
 );
@@ -170,6 +185,7 @@ Updated: ${payload.updated_at}
 - Recent share + save rate: ${percent(reelStats.shareSaveRate)}
 - Best recent Reel: ${best?.permalink || "none"}
 - Next experiment: ${nextExperiment.id} (${nextExperiment.label})
+- Paired Reel test: ${pairedAnalysis.next_test}
 - Paid promotion: ${adReadiness.ready ? "ready for a small controlled test" : "off"}
 - Decision: ${adReadiness.reason}
 
@@ -324,6 +340,25 @@ function evaluateAdReadiness(post) {
       ? `自然觸及 ${post.reach}，分享＋收藏 ${post.shares + post.saves}，已通過小額廣告測試門檻。`
       : `目前最佳自然觸及 ${post.reach}、分享＋收藏 ${post.shares + post.saves}；先改善內容，不投廣告。`,
   };
+}
+
+function pairedAnalysisMarkdown(analysis) {
+  if (analysis.status !== "ready") {
+    return [
+      "- Status: insufficient sample",
+      `- ${analysis.reason}`,
+      `- Next: ${analysis.next_test}`,
+    ].join("\n");
+  }
+  return [
+    `- Confidence: ${analysis.confidence}`,
+    `- Winner: ${analysis.winner.permalink || analysis.winner.id} (reach ${analysis.winner.reach})`,
+    `- Comparison: ${analysis.loser.permalink || analysis.loser.id} (reach ${analysis.loser.reach})`,
+    `- Reach ratio: ${analysis.reach_ratio}x`,
+    ...analysis.diagnoses.map((item) => `- Hypothesis: ${item}`),
+    `- Controlled next test: ${analysis.next_test}`,
+    `- Caution: ${analysis.caution}`,
+  ].join("\n");
 }
 
 function experimentTable(stats) {
