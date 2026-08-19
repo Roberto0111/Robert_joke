@@ -11,7 +11,7 @@
   ],
   "caption_path": "captions/2026-08-19_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-08-19_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "publish_format": "reel",
   "growth_experiment": {
     "id": "B_confession_14",
@@ -31,5 +31,9 @@
     5.333,
     5.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17999864918995672",
+  "instagram_story_media_id": "18220636315329129",
+  "instagram_story_status": "published",
+  "published_at": "2026-08-19T20:39:51"
 }
