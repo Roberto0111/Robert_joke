@@ -1,0 +1,35 @@
+{
+  "run_id": "2026-08-20_2030",
+  "content_mode": "life_dialogue",
+  "topic": "捨不得睡與用明天清醒換今晚自由",
+  "image_paths": [
+    "assets/2026-08-20_2030_deadpan_joke_01.png",
+    "assets/2026-08-20_2030_deadpan_joke_02.png",
+    "assets/2026-08-20_2030_deadpan_joke_03.png",
+    "assets/2026-08-20_2030_deadpan_joke_04.png",
+    "assets/2026-08-20_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-08-20_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-08-20_2030_generation_prompt.md",
+  "status": "generated",
+  "publish_format": "reel",
+  "growth_experiment": {
+    "id": "C_contradiction_16",
+    "label": "反常識矛盾",
+    "hook_style": "用一個看似矛盾但具體的句子製造停留",
+    "topic_pillar": "休息、拖延與自我要求",
+    "conclusion_style": "把問題從意志力改寫成選擇成本",
+    "cta_style": "問觀眾會怎麼選，不暗示標準答案",
+    "reel_seconds": 28
+  },
+  "video_path": "assets/2026-08-20_2030_deadpan_joke_reel.mp4",
+  "motion_style": "cinematic_2_5d_v1",
+  "reel_seconds": 28,
+  "page_durations": [
+    5.0,
+    5.667,
+    5.667,
+    5.667,
+    6.0
+  ]
+}
