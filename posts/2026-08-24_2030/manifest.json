@@ -1,0 +1,35 @@
+{
+  "run_id": "2026-08-24_2030",
+  "content_mode": "life_dialogue",
+  "topic": "高薪工作 offer 與面試沉沒成本",
+  "image_paths": [
+    "assets/2026-08-24_2030_deadpan_joke_01.png",
+    "assets/2026-08-24_2030_deadpan_joke_02.png",
+    "assets/2026-08-24_2030_deadpan_joke_03.png",
+    "assets/2026-08-24_2030_deadpan_joke_04.png",
+    "assets/2026-08-24_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-08-24_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-08-24_2030_generation_prompt.md",
+  "status": "generated",
+  "publish_format": "reel",
+  "growth_experiment": {
+    "id": "F_decision_tool_18",
+    "label": "可收藏的判斷工具",
+    "hook_style": "提出一個大家常拖著不決定的具體選擇",
+    "topic_pillar": "工作、選擇與放下沉沒成本",
+    "conclusion_style": "第五頁給一句能在下次使用的判斷問題",
+    "cta_style": "自然提醒留著下次卡住時看，不硬討收藏",
+    "reel_seconds": 30
+  },
+  "video_path": "assets/2026-08-24_2030_deadpan_joke_reel.mp4",
+  "motion_style": "cinematic_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
