@@ -1,0 +1,35 @@
+{
+  "run_id": "2026-08-25_2030",
+  "content_mode": "life_dialogue",
+  "topic": "腰痛仍答應幫朋友搬家與友情保證金",
+  "image_paths": [
+    "assets/2026-08-25_2030_deadpan_joke_01.png",
+    "assets/2026-08-25_2030_deadpan_joke_02.png",
+    "assets/2026-08-25_2030_deadpan_joke_03.png",
+    "assets/2026-08-25_2030_deadpan_joke_04.png",
+    "assets/2026-08-25_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-08-25_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-08-25_2030_generation_prompt.md",
+  "status": "generated",
+  "publish_format": "reel",
+  "growth_experiment": {
+    "id": "D_relationship_18",
+    "label": "關係裡的小瞬間",
+    "hook_style": "從一句真實對話或已讀未回的小場景開始",
+    "topic_pillar": "友情、界線與害怕失去",
+    "conclusion_style": "區分關心與勉強維持",
+    "cta_style": "用一句適合傳給朋友但不情緒勒索的收尾",
+    "reel_seconds": 30
+  },
+  "video_path": "assets/2026-08-25_2030_deadpan_joke_reel.mp4",
+  "motion_style": "cinematic_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
