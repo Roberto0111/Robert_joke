@@ -1,0 +1,35 @@
+{
+  "run_id": "2026-08-27_2030",
+  "content_mode": "life_dialogue",
+  "topic": "升職後想退回專業職與職稱沉沒成本",
+  "image_paths": [
+    "assets/2026-08-27_2030_deadpan_joke_01.png",
+    "assets/2026-08-27_2030_deadpan_joke_02.png",
+    "assets/2026-08-27_2030_deadpan_joke_03.png",
+    "assets/2026-08-27_2030_deadpan_joke_04.png",
+    "assets/2026-08-27_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-08-27_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-08-27_2030_generation_prompt.md",
+  "status": "generated",
+  "publish_format": "reel",
+  "growth_experiment": {
+    "id": "P_contrast_hook_13",
+    "label": "成對驗證：13 字內反差首句",
+    "hook_style": "首句 13 字內，先給一個具體矛盾，再讓觀眾看原因",
+    "topic_pillar": "工作、選擇與沉沒成本",
+    "conclusion_style": "第五頁給一句下次遇到同場景時能直接使用的判斷問題",
+    "cta_style": "自然提醒留著下次卡住時看，不硬討收藏",
+    "reel_seconds": 30
+  },
+  "video_path": "assets/2026-08-27_2030_deadpan_joke_reel.mp4",
+  "motion_style": "cinematic_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
