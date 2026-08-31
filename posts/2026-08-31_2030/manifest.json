@@ -11,7 +11,7 @@
   ],
   "caption_path": "captions/2026-08-31_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-08-31_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "publish_format": "reel",
   "growth_experiment": {
     "id": "P_contrast_hook_13",
@@ -31,5 +31,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17874446877631017",
+  "instagram_story_media_id": "17998268195809364",
+  "instagram_story_status": "published",
+  "published_at": "2026-08-31T20:45:35"
 }
