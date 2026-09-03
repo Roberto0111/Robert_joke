@@ -18,3 +18,4 @@ posts/*/*_original_*.png
 previews/
 analytics/
 .reference_state.json
+.token_refresh_state.json

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "check:ig-token": "node scripts/post-to-instagram.mjs --check-token",
+    "maintain:ig-token": "node scripts/maintain-instagram-token.mjs",
     "collect:ig-insights": "node scripts/collect-instagram-insights.mjs",
     "post:ig": "node scripts/post-to-instagram.mjs",
     "post:ig:dry-run": "node scripts/post-to-instagram.mjs --dry-run"

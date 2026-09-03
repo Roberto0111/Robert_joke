@@ -71,6 +71,9 @@ def main() -> int:
         content_mode, content_reason = determine_content_mode(run_id)
         paths["content_mode"] = content_mode
 
+        if not args.dry_run and not args.generate_only:
+            maintain_instagram_token(run_id)
+
         if not args.post_only:
             collect_growth_metrics(run_id)
 
@@ -455,6 +458,24 @@ def collect_growth_metrics(run_id: str) -> None:
             log(run_id, f"strategy analysis unavailable; continuing: {redact(analysis.stdout).strip()[:300]}")
     else:
         log(run_id, f"analytics unavailable; continuing: {redact(result.stdout).strip()[:300]}")
+
+
+def maintain_instagram_token(run_id: str) -> None:
+    result = subprocess.run(
+        [str(NODE_BIN), "scripts/maintain-instagram-token.mjs"],
+        cwd=ROOT,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        timeout=60,
+    )
+    output = redact(result.stdout.strip())
+    if result.returncode != 0:
+        log(run_id, f"Instagram token preflight failed: {output[:1000]}")
+        raise RuntimeError(
+            "Instagram authorization is invalid or expired; generation stopped before creating new assets"
+        )
+    log(run_id, f"Instagram token preflight passed: {output[:1000]}")
 
 
 def normalize_image_for_instagram(run_id: str, image_path: Path, run_dir: Path) -> None:

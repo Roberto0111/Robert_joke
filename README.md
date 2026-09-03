@@ -37,6 +37,8 @@ GitHub Pages 可使用 `index.html` 作為首頁。
    npm run check:ig-token
    ```
 
+   正式排程會在生成內容前驗證 Token 所屬帳號，並每 7 天嘗試刷新一次 Instagram Login 長效 Token。若授權失效，流程會先停止，不會白做圖片後才發現無法發布。
+
 5. 先 dry run 檢查 payload：
 
    ```bash
