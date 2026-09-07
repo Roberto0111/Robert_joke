@@ -139,11 +139,11 @@ def current_run_id() -> str:
 def determine_publish_format(requested: str, run_id: str) -> tuple[str, str]:
     if requested != "auto":
         return requested, "explicit"
-    return "reel", "fixed_serious_life_dialogue_reel"
+    return "reel", "fixed_mini_clown_life_dialogue_reel"
 
 
 def determine_content_mode(run_id: str) -> tuple[str, str]:
-    return "life_dialogue", "fixed_life_dialogue_series"
+    return "life_dialogue", "fixed_mini_clown_life_dialogue_series"
 
 
 def run_paths(run_id: str) -> dict[str, Path]:
@@ -253,16 +253,18 @@ def build_codex_prompt(run_id: str, paths: dict[str, Path], content_mode: str) -
     if content_mode != "life_dialogue":
         raise RuntimeError(f"Unsupported content mode: {content_mode}")
     content_brief = """
-Content mode: EMOTIONAL LIFE DIALOGUE (情緒型人生對話)
-- Start from one concrete adult-life tension such as comparison, rest, boundaries, uncertainty, loneliness, failure, body image, work, friendship, or letting go.
-- Page 1: a private feeling viewers rarely admit out loud. It must create immediate recognition, not explain the lesson.
-- Page 2: one concrete everyday scene showing how that feeling changes Roberto's behavior.
-- Page 3: the tuxedo cat asks one short question that exposes the hidden assumption.
-- Page 4: Roberto answers honestly and names the fear, shame, or need underneath the behavior.
-- Page 5: the cat compresses the emotional turn into one concise, specific insight that changes how pages 1-4 are understood.
-- The tone is serious, observant, emotionally grounded, and human. A trace of dry wit is allowed, but no prank energy or forced punchline.
+Content mode: ROBERTO MINI-CLOWN LIFE DIALOGUE (迷你小丑人生對話)
+- Start from one concrete adult-life tension such as comparison, rest, boundaries, uncertainty, loneliness, failure, money, body image, work, friendship, family, or letting go.
+- Choose exactly one honest mood label for the whole story: `comic` or `heavy`.
+- Use `comic` only when the premise builds through visible absurdity, self-owning behavior, or a sharp tuxedo-cat heckle. Page 5 must land a real punchline or comic reversal.
+- Use `heavy` when the subject needs emotional weight. Page 5 must deliver a precise reframe with aftertaste rather than a forced joke.
+- Page 1: a short recognition hook viewers understand immediately.
+- Page 2: one concrete everyday scene that proves the setup.
+- Page 3: the tuxedo cat asks or states one short line that breaks Roberto's self-story.
+- Page 4: Roberto reveals the embarrassing, absurd, fearful, or vulnerable truth underneath.
+- Page 5: the cat delivers the strongest turn. It should make pages 1-4 feel different in retrospect.
 - Avoid generic motivational slogans, fake therapy language, diagnoses, absolute claims, moral superiority, and advice that needs a long explanation.
-- Brainstorm scores: relatability, natural dialogue, insight, and save/share value, each 0-5.
+- Brainstorm scores: relatability, dialogue/punchline naturalness, insight, and save/share value, each 0-5.
 - The caption must include #人生對話 and 2-4 other relevant hashtags.
 """.strip()
     experiment = paths.get("growth_experiment", {})
@@ -294,13 +296,14 @@ Attached image:
 - Any images attached after the likeness reference are slides from one reference post selected for this run.
 
 Daily reference study:
+- Current study source: @juliana551107.
 - Read {paths["reference_context"]}. If reference images are attached, study the complete post before brainstorming.
 - Privately identify its abstract mechanics: recognition hook, concrete scene, escalation, emotional turn, final compression, and why someone might save or share it.
 - Borrow only those abstract mechanics. The output must use a clearly different topic, wording, examples, conclusion, setting, composition, typography, characters, and visual identity.
 - Never translate, paraphrase, remix, or imitate a recognizable sentence from the reference. Never mention the source account in the finished post.
 - Reject the reference post's substance when it depends on stereotypes, manipulation, absolutist claims, or unsupported relationship/financial advice. Structural study is not endorsement.
 - Record the five-part structural analysis and a short originality check in the generation prompt record, not in the caption or artwork.
-- If the reference fetch is unavailable, follow the same serious five-beat structure using an original everyday dilemma.
+- If the reference fetch is unavailable, follow the same original five-beat mini-clown structure using an everyday dilemma.
 
 Current trend context:
 - Read {paths["trends"]}. It contains current Taiwan Google search trends fetched immediately before this run.
@@ -319,14 +322,16 @@ Growth context:
 Hard requirements:
 - Generate exactly five colorful 1080x1350 images for one Instagram carousel. Each image is one full-page scene with one story beat; do not split a page into comic panels.
 - Keep the same characters, wardrobe, rendering, room palette, line weight, and facial identity across all five images. They must feel like one continuous story.
-- Follow the selected content mode's five-page emotional structure exactly.
+- Follow the selected content mode's five-page structure exactly and keep one consistent `comic` or `heavy` mood.
 - Put one large Traditional Chinese line on each page. Text must be immediately readable on a phone, fully inside generous safe margins, and never overlap a face.
 - The fifth-page conclusion must be the strongest beat. It must reframe or deepen the first four pages, not explain the visible action.
 - The male protagonist must be based on the attached reference photo: East Asian man, round youthful face, side-swept black hair, slightly sleepy eyes, wearing a black collared top with gray zipper/placket.
-- Preserve the reference identity in a polished realistic-comic meme style. Do not use a generic anime man.
-- Style: original polished Taiwanese editorial webcomic with a cinematic, subdued palette, concise spoken Traditional Chinese, and restrained natural acting.
-- Use soft practical lighting, calm framing, believable rooms or streets, and subtle facial expressions. Avoid meme fonts, comic explosion lines, exaggerated reaction faces, prank-video energy, stickers, and loud decorative effects.
-- Include a black-and-white tuxedo cat in every image. The cat is Roberto's perceptive, calmly incisive dialogue partner.
+- Preserve the reference identity in a polished chibi editorial illustration. Do not use a generic anime man.
+- Style: an original polished Taiwanese mini-clown editorial cartoon. Use a clean warm-white paper background, generous negative space, strong black Traditional Chinese headline typography, crisp dark outlines, selective color, and one uncluttered chibi scene per page.
+- Roberto is a small theatrical clown version of himself, not a copyrighted movie character: keep his recognizable black side-swept hair, youthful round face, sleepy mischievous eyes, charcoal-black short coat, gray vest/placket, tiny red bow tie, subtle original face paint, and playful or world-weary acting. Never use green hair, a purple suit, scarred smile makeup, or recognizable DC Joker costume details.
+- Expressions may be sly, shameless, defeated, or theatrically serious. For `comic`, allow stronger physical comedy and the cat's unimpressed reaction. For `heavy`, use quieter posture, more empty space, and muted charcoal, burgundy, and desaturated blue accents.
+- Avoid photorealism, generic anime rendering, cluttered cinematic rooms, copied reference layouts, copied character design, Instagram UI, stickers, logos, watermarks, and illegible decorative effects.
+- Include the same black-and-white tuxedo cat in every image. The cat is Roberto's dry, judgmental scene partner and must remain visually distinct from the clown.
 - The page-five line should begin with "貓：" so the speaker is unmistakable. Page three may also begin with "貓：" when the cat asks its question.
 - Use exactly five concise dialogue/caption beats, one per page. Avoid explanatory paragraphs.
 - Before generating the image, brainstorm at least 12 genuinely different life-dialogue story candidates. At least 8 must be non-workplace topics.
@@ -336,6 +341,7 @@ Hard requirements:
 - Compare against the latest 20 posts. Vary the dilemma, insight mechanism, setting, pose, and cat reaction, not just the nouns.
 - Record the top five candidate stories, scores, rejection notes, and the reason for the final selection in the generation prompt record. Still generate exactly one five-page story across five images.
 - Caption must use only 3-5 relevant hashtags and include the selected mode's required hashtag. Add one natural conversational question only when it fits; never use spammy engagement bait.
+- The generation prompt record must state why the selected mood is `comic` or `heavy` and why its matching soundtrack is appropriate.
 - Do not post to Instagram.
 - Do not run git push.
 - Do not print .env, tokens, access keys, or secrets.
@@ -350,6 +356,7 @@ Manifest JSON must include:
 {{
   "run_id": "{run_id}",
   "content_mode": "{content_mode}",
+  "mood": "<comic or heavy>",
   "topic": "<short topic>",
   "image_paths": {json.dumps([f"assets/{run_id}_deadpan_joke_{index:02d}.png" for index in range(1, CAROUSEL_PAGE_COUNT + 1)], ensure_ascii=False, indent=2)},
   "caption_path": "captions/{run_id}_deadpan_joke.md",
@@ -391,7 +398,7 @@ def fetch_trend_context(run_id: str, paths: dict[str, Path]) -> None:
 
 def fetch_reference_context(run_id: str, paths: dict[str, Path]) -> None:
     fallback = (
-        "Reference study unavailable for this run. Use an original serious life dialogue and the fixed five-beat structure.\n"
+        "Reference study unavailable for this run. Use an original mini-clown life dialogue and the fixed five-beat structure.\n"
     )
     paths["reference_images"] = ()
     if not REFERENCE_FETCH_PYTHON.exists() or not REFERENCE_FETCH_SCRIPT.exists():
@@ -553,6 +560,8 @@ def validate_generation(paths: dict[str, Path]) -> None:
         raise RuntimeError("Manifest status must be generated or published")
     if manifest.get("content_mode") != paths["content_mode"]:
         raise RuntimeError(f"Manifest content_mode must be {paths['content_mode']}")
+    if manifest.get("status") == "generated" and manifest.get("mood") not in {"comic", "heavy"}:
+        raise RuntimeError("Manifest mood must be comic or heavy")
     expected_images = [rel(path) for path in paths["images"]]
     if manifest.get("image_paths") != expected_images:
         raise RuntimeError(f"Manifest image_paths must be {expected_images}")
@@ -560,12 +569,16 @@ def validate_generation(paths: dict[str, Path]) -> None:
 
 def prepare_publish_asset(run_id: str, paths: dict[str, Path], publish_format: str) -> None:
     manifest = json.loads(paths["manifest"].read_text(encoding="utf-8"))
+    mood = normalize_story_mood(manifest.get("mood"))
+    paths["story_mood"] = mood
+    manifest["mood"] = mood
+    manifest["music_profile"] = soundtrack_profile(mood)
     manifest["publish_format"] = publish_format
     manifest["growth_experiment"] = paths.get("growth_experiment", {})
     if publish_format == "reel":
         create_reel(run_id, paths)
         manifest["video_path"] = rel(paths["reel"])
-        manifest["motion_style"] = "cinematic_2_5d_v1"
+        manifest["motion_style"] = "mini_clown_2_5d_v1"
         reel_seconds, page_durations = reel_timing(paths)
         manifest["reel_seconds"] = reel_seconds
         manifest["page_durations"] = page_durations
@@ -582,6 +595,11 @@ def render_reel_preview(source_run_id: str) -> Path:
     preview_dir = ROOT / "previews"
     preview_dir.mkdir(parents=True, exist_ok=True)
     paths["reel"] = preview_dir / f"{source_run_id}_motion_preview.mp4"
+    try:
+        manifest = json.loads(paths["manifest"].read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        manifest = {}
+    paths["story_mood"] = normalize_story_mood(manifest.get("mood"))
     create_reel(f"preview-{source_run_id}", paths)
     return paths["reel"]
 
@@ -622,10 +640,14 @@ def build_reel_filter_graph(page_durations: tuple[float, ...]) -> str:
 def create_reel(run_id: str, paths: dict[str, Path]) -> None:
     if not FFMPEG_BIN.exists():
         raise RuntimeError(f"ffmpeg not found: {FFMPEG_BIN}")
-    soundtrack = paths["run_dir"] / "reflective_soundtrack.wav"
+    mood = normalize_story_mood(paths.get("story_mood"))
+    soundtrack = paths["run_dir"] / f"{soundtrack_profile(mood)}.wav"
     reel_seconds, page_durations = reel_timing(paths)
     transition_times = tuple(sum(page_durations[:index]) for index in range(1, len(page_durations)))
-    create_reflective_soundtrack(soundtrack, reel_seconds, transition_times)
+    if mood == "comic":
+        create_comic_soundtrack(soundtrack, reel_seconds, transition_times)
+    else:
+        create_heavy_soundtrack(soundtrack, reel_seconds, transition_times)
     filter_graph = build_reel_filter_graph(page_durations)
     command = [str(FFMPEG_BIN), "-y"]
     for image_path, duration in zip(paths["images"], page_durations):
@@ -665,7 +687,15 @@ def create_reel(run_id: str, paths: dict[str, Path]) -> None:
     run(command, cwd=ROOT)
     if paths["reel"].stat().st_size < 100_000:
         raise RuntimeError(f"Generated Reel looks too small: {paths['reel']}")
-    log(run_id, f"Reel created: {paths['reel'].name}")
+    log(run_id, f"Reel created: {paths['reel'].name} mood={mood} music={soundtrack_profile(mood)}")
+
+
+def normalize_story_mood(value: object) -> str:
+    return "comic" if str(value or "").strip().lower() == "comic" else "heavy"
+
+
+def soundtrack_profile(mood: str) -> str:
+    return "playful_clown_instrumental_v1" if normalize_story_mood(mood) == "comic" else "weighty_clown_instrumental_v1"
 
 
 def reel_timing(paths: dict) -> tuple[int, tuple[float, ...]]:
@@ -684,7 +714,7 @@ def reel_timing(paths: dict) -> tuple[int, tuple[float, ...]]:
     return reel_seconds, tuple(round(value, 3) for value in durations)
 
 
-def create_reflective_soundtrack(
+def create_heavy_soundtrack(
     output: Path,
     reel_seconds: int,
     transition_times: tuple[float, ...],
@@ -693,21 +723,21 @@ def create_reflective_soundtrack(
     total_samples = reel_seconds * sample_rate
     audio = [0.0] * total_samples
 
-    # Slow original underscore: soft minor-seventh chords and a restrained page-turn chime.
-    beat = 60.0 / 72.0
+    # Original instrumental only: low minor chords, sparse pulse, and restrained transition bells.
+    beat = 60.0 / 62.0
     chord_progression = (
-        (220.00, 261.63, 329.63, 392.00),
-        (174.61, 220.00, 261.63, 329.63),
-        (196.00, 246.94, 293.66, 369.99),
-        (164.81, 207.65, 261.63, 329.63),
+        (110.00, 130.81, 164.81, 196.00),
+        (87.31, 110.00, 130.81, 164.81),
+        (98.00, 123.47, 146.83, 185.00),
+        (82.41, 103.83, 130.81, 164.81),
     )
     notes = []
     for chord_index in range(math.ceil(reel_seconds / (beat * 2))):
         start = chord_index * beat * 2
         chord = chord_progression[chord_index % len(chord_progression)]
         for note_index, frequency in enumerate(chord):
-            notes.append((start + note_index * 0.055, 1.65, frequency, 0.095))
-        notes.append((start, 1.2, chord[0] / 2, 0.12))
+            notes.append((start + note_index * 0.08, 2.1, frequency, 0.09))
+        notes.append((start, 1.7, chord[0] / 2, 0.135))
 
     for start, duration, frequency, volume in notes:
         start_sample = int(start * sample_rate)
@@ -717,8 +747,8 @@ def create_reflective_soundtrack(
             if position >= total_samples:
                 break
             elapsed = index / sample_rate
-            decay = math.exp(-2.0 * elapsed)
-            attack = min(1.0, elapsed / 0.045)
+            decay = math.exp(-1.45 * elapsed)
+            attack = min(1.0, elapsed / 0.075)
             tone = (
                 math.sin(2 * math.pi * frequency * elapsed)
                 + 0.18 * math.sin(2 * math.pi * frequency * 2 * elapsed)
@@ -726,7 +756,7 @@ def create_reflective_soundtrack(
             audio[position] += volume * attack * decay * tone / 1.18
 
     for transition_time in transition_times:
-        for hit_time, frequency in ((transition_time, 659.25), (transition_time + 0.12, 880.00)):
+        for hit_time, frequency in ((transition_time, 329.63), (transition_time + 0.16, 440.00)):
             start_sample = int(hit_time * sample_rate)
             hit_samples = int(0.65 * sample_rate)
             for index in range(hit_samples):
@@ -735,13 +765,80 @@ def create_reflective_soundtrack(
                     break
                 elapsed = index / sample_rate
                 audio[position] += (
-                    0.065
+                    0.052
                     * math.sin(2 * math.pi * frequency * elapsed)
                     * math.exp(-5.2 * elapsed)
                 )
 
+    write_stereo_wav(output, audio, sample_rate, peak_level=0.56)
+
+
+def create_comic_soundtrack(
+    output: Path,
+    reel_seconds: int,
+    transition_times: tuple[float, ...],
+) -> None:
+    sample_rate = 48_000
+    total_samples = reel_seconds * sample_rate
+    audio = [0.0] * total_samples
+    beat = 60.0 / 108.0
+    melody = (523.25, 659.25, 783.99, 698.46, 587.33, 739.99, 880.00, 783.99)
+    bass = (130.81, 146.83, 123.47, 110.00)
+
+    for step in range(math.ceil(reel_seconds / (beat / 2))):
+        start = step * beat / 2
+        frequency = melody[step % len(melody)]
+        duration = 0.19 if step % 2 == 0 else 0.13
+        start_sample = int(start * sample_rate)
+        note_samples = int(duration * sample_rate)
+        for index in range(note_samples):
+            position = start_sample + index
+            if position >= total_samples:
+                break
+            elapsed = index / sample_rate
+            envelope = min(1.0, elapsed / 0.008) * math.exp(-10.5 * elapsed)
+            pluck = math.sin(2 * math.pi * frequency * elapsed)
+            pluck += 0.32 * math.sin(2 * math.pi * frequency * 2.01 * elapsed)
+            audio[position] += 0.105 * envelope * pluck
+
+    for step in range(math.ceil(reel_seconds / beat)):
+        start = step * beat
+        frequency = bass[step % len(bass)]
+        start_sample = int(start * sample_rate)
+        note_samples = int(0.28 * sample_rate)
+        for index in range(note_samples):
+            position = start_sample + index
+            if position >= total_samples:
+                break
+            elapsed = index / sample_rate
+            envelope = min(1.0, elapsed / 0.012) * math.exp(-7.5 * elapsed)
+            audio[position] += 0.13 * envelope * math.sin(2 * math.pi * frequency * elapsed)
+
+        # A tiny dry woodblock keeps the cue playful without becoming childish.
+        click_start = int((start + beat * 0.5) * sample_rate)
+        for index in range(int(0.045 * sample_rate)):
+            position = click_start + index
+            if position >= total_samples:
+                break
+            elapsed = index / sample_rate
+            audio[position] += 0.035 * math.sin(2 * math.pi * 1280 * elapsed) * math.exp(-48 * elapsed)
+
+    for transition_time in transition_times:
+        for offset, frequency in ((0.0, 783.99), (0.09, 739.99), (0.18, 698.46)):
+            start_sample = int((transition_time + offset) * sample_rate)
+            for index in range(int(0.24 * sample_rate)):
+                position = start_sample + index
+                if position >= total_samples:
+                    break
+                elapsed = index / sample_rate
+                audio[position] += 0.07 * math.sin(2 * math.pi * frequency * elapsed) * math.exp(-12 * elapsed)
+
+    write_stereo_wav(output, audio, sample_rate, peak_level=0.58)
+
+
+def write_stereo_wav(output: Path, audio: list[float], sample_rate: int, peak_level: float) -> None:
     peak = max(max(abs(sample) for sample in audio), 0.001)
-    scale = 0.62 / peak
+    scale = peak_level / peak
     output.parent.mkdir(parents=True, exist_ok=True)
     with wave.open(str(output), "wb") as wav_file:
         wav_file.setnchannels(2)

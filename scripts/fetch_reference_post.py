@@ -16,7 +16,7 @@ from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_STOCK_ROOT = Path("/Users/roberto/Automation/stock_fund_flow_project")
-DEFAULT_USERNAME = "itsmumutime"
+DEFAULT_USERNAME = "juliana551107"
 STATE_PATH = ROOT / ".reference_state.json"
 PREFERRED_KEYWORDS = (
     "人生",

@@ -27,6 +27,30 @@ class DailyPipelineTests(unittest.TestCase):
         graph = pipeline.build_reel_filter_graph((5.0, 5.5, 5.5, 5.5, 6.0))
         self.assertIn("[v0][v1][v2][v3][v4]concat=n=5", graph)
 
+    def test_comic_mood_selects_playful_music(self) -> None:
+        self.assertEqual(
+            pipeline.soundtrack_profile("comic"),
+            "playful_clown_instrumental_v1",
+        )
+
+    def test_heavy_and_unknown_moods_select_weighty_music(self) -> None:
+        self.assertEqual(
+            pipeline.soundtrack_profile("heavy"),
+            "weighty_clown_instrumental_v1",
+        )
+        self.assertEqual(
+            pipeline.soundtrack_profile("unexpected"),
+            "weighty_clown_instrumental_v1",
+        )
+
+    def test_generation_prompt_requires_original_clown_and_mood(self) -> None:
+        paths = pipeline.run_paths("test")
+        paths["growth_experiment"] = {}
+        prompt = pipeline.build_codex_prompt("test", paths, "life_dialogue")
+        self.assertIn('"mood": "<comic or heavy>"', prompt)
+        self.assertIn("not a copyrighted movie character", prompt)
+        self.assertIn("juliana551107", prompt)
+
 
 if __name__ == "__main__":
     unittest.main()
