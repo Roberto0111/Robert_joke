@@ -38,6 +38,16 @@ REEL_SECONDS = 28
 REEL_FPS = 30
 REFERENCE_FETCH_PYTHON = Path(os.environ.get("REFERENCE_FETCH_PYTHON", "/opt/anaconda3/bin/python3"))
 REFERENCE_FETCH_SCRIPT = ROOT / "scripts" / "fetch_reference_post.py"
+CODEX_TRANSIENT_ATTEMPTS = max(1, int(os.environ.get("CODEX_TRANSIENT_ATTEMPTS", "3")))
+CODEX_TRANSIENT_RETRY_SECONDS = max(1, int(os.environ.get("CODEX_TRANSIENT_RETRY_SECONDS", "90")))
+CODEX_TRANSIENT_ERRORS = (
+    "at capacity",
+    "temporarily unavailable",
+    "overloaded",
+    "rate limit",
+    "too many requests",
+    "http 429",
+)
 
 
 def main() -> int:
@@ -234,19 +244,41 @@ def trigger_codex(run_id: str, paths: dict[str, Path], content_mode: str, dry_ru
         str(paths["run_dir"] / "codex_last_message.txt"),
         "-",
     ])
-    log(run_id, "starting codex exec")
-    result = subprocess.run(
-        cmd,
-        input=prompt,
-        text=True,
-        cwd=ROOT,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-        timeout=TIMEOUT_SECONDS,
-    )
-    (paths["run_dir"] / "codex_exec.log").write_text(result.stdout, encoding="utf-8")
-    if result.returncode != 0:
-        raise RuntimeError(f"codex exec failed with exit code {result.returncode}; see {paths['run_dir'] / 'codex_exec.log'}")
+    attempt_logs = []
+    for attempt in range(1, CODEX_TRANSIENT_ATTEMPTS + 1):
+        log(run_id, f"starting codex exec attempt={attempt}/{CODEX_TRANSIENT_ATTEMPTS}")
+        result = subprocess.run(
+            cmd,
+            input=prompt,
+            text=True,
+            cwd=ROOT,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            timeout=TIMEOUT_SECONDS,
+        )
+        attempt_logs.append(
+            f"===== attempt {attempt}/{CODEX_TRANSIENT_ATTEMPTS} exit={result.returncode} =====\n"
+            f"{result.stdout.rstrip()}\n"
+        )
+        (paths["run_dir"] / "codex_exec.log").write_text(
+            "\n".join(attempt_logs),
+            encoding="utf-8",
+        )
+        if result.returncode == 0:
+            return
+        if not is_transient_codex_failure(result.stdout) or attempt == CODEX_TRANSIENT_ATTEMPTS:
+            raise RuntimeError(
+                f"codex exec failed with exit code {result.returncode}; "
+                f"see {paths['run_dir'] / 'codex_exec.log'}"
+            )
+        delay = CODEX_TRANSIENT_RETRY_SECONDS * attempt
+        log(run_id, f"temporary Codex capacity error; retrying in {delay}s")
+        time.sleep(delay)
+
+
+def is_transient_codex_failure(output: str) -> bool:
+    normalized = output.casefold()
+    return any(pattern in normalized for pattern in CODEX_TRANSIENT_ERRORS)
 
 
 def build_codex_prompt(run_id: str, paths: dict[str, Path], content_mode: str) -> str:

@@ -63,6 +63,7 @@ LaunchAgent com.roberto.robert-joke
   -> 蒐集近期 IG 成效、台灣熱門搜尋與一篇參考帳號貼文
   -> 只學 @juliana551107 貼文的抽象敘事結構，換角色、換題目、換結論並做原創性檢查
   -> codex exec 生成五張單頁輪播圖/caption/manifest
+  -> Codex 滿載、429 或暫時不可用時自動重試最多三次，保留每次嘗試日誌
   -> 依每日受控成長實驗製作 27-30 秒 2.5D 動態直式 Reel
   -> 依 manifest mood 自動選擇俏皮或沉重的原創純音樂
   -> Python 等五張圖片檔出現並驗證為 1080x1350
@@ -129,3 +130,8 @@ logs/pipeline.log
 posts/RUN_ID/codex_exec.log
 posts/RUN_ID/instagram_publish.log
 ```
+
+Codex 的暫時性失敗預設會在 90 秒、180 秒後重試。可由 LaunchAgent
+環境變數 `CODEX_TRANSIENT_ATTEMPTS` 與 `CODEX_TRANSIENT_RETRY_SECONDS`
+調整；角色檔遺失、圖片驗證失敗等真正錯誤不會盲目重試。若日更未發，先查
+`logs/launchd.err.log`，再查對應 `posts/RUN_ID/codex_exec.log`。
