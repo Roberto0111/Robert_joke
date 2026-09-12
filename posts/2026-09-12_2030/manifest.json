@@ -1,0 +1,95 @@
+{
+  "run_id": "2026-09-12_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "聚餐取消時假裝失望，結果被補約",
+  "image_paths": [
+    "assets/2026-09-12_2030_deadpan_joke_01.png",
+    "assets/2026-09-12_2030_deadpan_joke_02.png",
+    "assets/2026-09-12_2030_deadpan_joke_03.png",
+    "assets/2026-09-12_2030_deadpan_joke_04.png",
+    "assets/2026-09-12_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-09-12_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-09-12_2030_generation_prompt.md",
+  "status": "generated",
+  "growth_experiment": {
+    "id": "organic_v2_A",
+    "label": "具體現場首句",
+    "hook_style": "從一個看得見的生活動作或對話開場；首句最多 16 字，不先講道理",
+    "topic_pillar": "友情：邀約、拒絕與不好意思說出口的小事",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-09-12",
+    "review_on": "2026-09-26",
+    "status": "balanced_exploration",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "soundtrack": "playful_clown_instrumental_v1",
+  "reel_target_seconds": 30,
+  "page_durations_seconds": [
+    5.5,
+    5.5,
+    5.5,
+    6,
+    7.5
+  ],
+  "beats": [
+    "我回「好可惜」，嘴角失控。",
+    "他剛取消聚餐，我就把零食拆了。",
+    "貓：那你幹嘛傳哭臉？",
+    "總不能讓他知道，我等這句一整天。",
+    "貓：他怕你失望，改約明天了。"
+  ],
+  "validation": [
+    {
+      "path": "assets/2026-09-12_2030_deadpan_joke_01.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 1596792,
+      "sha256": "28725d991b9d17f68bcb174edc431675b2fbe5cfc3407b781cfeda2ebcc26a93"
+    },
+    {
+      "path": "assets/2026-09-12_2030_deadpan_joke_02.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 1714704,
+      "sha256": "d9af1336961346bfbeabd84a503b4c086f4e87633df4bcefb289e2373b2fa95f"
+    },
+    {
+      "path": "assets/2026-09-12_2030_deadpan_joke_03.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 1709829,
+      "sha256": "611bf4b3b6f2cac3f62c8e6de3479f8435f02d6aa33a27db867a5067d3de1613"
+    },
+    {
+      "path": "assets/2026-09-12_2030_deadpan_joke_04.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 1727637,
+      "sha256": "521e4262f0297d288cc700f2c64846330c57b1719f5883fc0d0fef4851cfc075"
+    },
+    {
+      "path": "assets/2026-09-12_2030_deadpan_joke_05.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 1720946,
+      "sha256": "a1890271a1abb3dc15259fbe75fc0c5de7c7bec981e691e245b44f2fd482acba"
+    }
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-09-12_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
