@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-09-12_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-09-12_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "growth_experiment": {
     "id": "organic_v2_A",
     "label": "具體現場首句",
@@ -91,5 +91,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18109321580170753",
+  "instagram_story_media_id": "18024327977884665",
+  "instagram_story_status": "published",
+  "published_at": "2026-09-12T20:41:51"
 }
