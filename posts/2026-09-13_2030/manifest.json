@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-09-13_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-09-13_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "growth_experiment": {
     "id": "organic_v2_B",
     "label": "不太體面的坦白首句",
@@ -97,5 +97,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18150906613523595",
+  "instagram_story_media_id": "18118620044478425",
+  "instagram_story_status": "published",
+  "published_at": "2026-09-13T20:40:25"
 }
