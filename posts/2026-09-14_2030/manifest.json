@@ -1,0 +1,110 @@
+{
+  "run_id": "2026-09-14_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "假日拼圖計時，把休閒變成自我考核",
+  "image_paths": [
+    "assets/2026-09-14_2030_deadpan_joke_01.png",
+    "assets/2026-09-14_2030_deadpan_joke_02.png",
+    "assets/2026-09-14_2030_deadpan_joke_03.png",
+    "assets/2026-09-14_2030_deadpan_joke_04.png",
+    "assets/2026-09-14_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-09-14_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-09-14_2030_generation_prompt.md",
+  "status": "generated",
+  "beats": [
+    "我把拼圖計時器打開了。",
+    "上次兩小時，今天要更快。",
+    "貓：拼完有獎金？",
+    "沒有，但總要比昨天厲害吧。",
+    "貓：盒子裡沒考官，是你自己帶的。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_A",
+    "label": "具體現場首句",
+    "hook_style": "從一個看得見的生活動作或對話開場；首句最多 16 字，不先講道理",
+    "topic_pillar": "休息：假日、興趣與對自己的要求",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-09-14",
+    "review_on": "2026-09-26",
+    "status": "balanced_exploration",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "soundtrack": "playful_clown_instrumental_v1",
+  "reel_target_seconds": 30,
+  "suggested_page_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "image_validation": [
+    {
+      "path": "assets/2026-09-14_2030_deadpan_joke_01.png",
+      "dimensions": [
+        1080,
+        1350
+      ],
+      "bytes": 2237008,
+      "sha256": "fdaa69681b3981ce44771af57f4477ccaf325325d07574d7eed95536bd4e8743",
+      "source": "/Users/roberto/.codex/generated_images/01a09fe6-a0b8-7271-86af-6d3404fd10b8/exec-398a3e24-23f9-4728-bc62-5ecda0bce425.png"
+    },
+    {
+      "path": "assets/2026-09-14_2030_deadpan_joke_02.png",
+      "dimensions": [
+        1080,
+        1350
+      ],
+      "bytes": 2298954,
+      "sha256": "ef3a5259160a081d5d2449d2419f263c1b70fa4166f8f2dae6f20bbc126f962d",
+      "source": "/Users/roberto/.codex/generated_images/01a09fe6-a0b8-7271-86af-6d3404fd10b8/exec-ee498c39-db23-429f-ba96-6e94d8d79953.png"
+    },
+    {
+      "path": "assets/2026-09-14_2030_deadpan_joke_03.png",
+      "dimensions": [
+        1080,
+        1350
+      ],
+      "bytes": 2378906,
+      "sha256": "7dec0f7aee2eda071158bdb48097595606186119a8ac4691f1077cf7959518ee",
+      "source": "/Users/roberto/.codex/generated_images/01a09fe6-a0b8-7271-86af-6d3404fd10b8/exec-a1008fcf-7e05-4045-b5b9-79f493b2bc8f.png"
+    },
+    {
+      "path": "assets/2026-09-14_2030_deadpan_joke_04.png",
+      "dimensions": [
+        1080,
+        1350
+      ],
+      "bytes": 2308418,
+      "sha256": "c7bb09b7afc1885b0f74dae57266f67b4efe3ad26d5de8faffb4d44a37e6ef92",
+      "source": "/Users/roberto/.codex/generated_images/01a09fe6-a0b8-7271-86af-6d3404fd10b8/exec-698d2917-9f47-4817-a9e4-2ab65e770ce7.png"
+    },
+    {
+      "path": "assets/2026-09-14_2030_deadpan_joke_05.png",
+      "dimensions": [
+        1080,
+        1350
+      ],
+      "bytes": 2174900,
+      "sha256": "1cdd32c2e3208a9c8a817f0be800e3785c1941ce97e6baee4eb3502e3ab79de9",
+      "source": "/Users/roberto/.codex/generated_images/01a09fe6-a0b8-7271-86af-6d3404fd10b8/exec-da40ceca-9705-4de9-9c0d-41e37b9bee97.png"
+    }
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-09-14_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
