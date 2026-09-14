@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-09-14_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-09-14_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "beats": [
     "我把拼圖計時器打開了。",
     "上次兩小時，今天要更快。",
@@ -106,5 +106,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17877209436629614",
+  "instagram_story_media_id": "18111117938029895",
+  "instagram_story_status": "published",
+  "published_at": "2026-09-14T20:40:33"
 }
