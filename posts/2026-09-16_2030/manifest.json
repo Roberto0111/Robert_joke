@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-09-16_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-09-16_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "experiment_id": "organic_v2_A",
   "soundtrack": "playful_clown_instrumental_v1",
   "reel_target_seconds": 30,
@@ -55,5 +55,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18102529310339044",
+  "instagram_story_media_id": "17910504681494694",
+  "instagram_story_status": "published",
+  "published_at": "2026-09-16T20:41:44"
 }
