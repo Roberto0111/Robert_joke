@@ -1,0 +1,69 @@
+{
+  "run_id": "2026-09-17_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "替媽媽訂好生日餐廳，再誘導她自己選",
+  "image_paths": [
+    "assets/2026-09-17_2030_deadpan_joke_01.png",
+    "assets/2026-09-17_2030_deadpan_joke_02.png",
+    "assets/2026-09-17_2030_deadpan_joke_03.png",
+    "assets/2026-09-17_2030_deadpan_joke_04.png",
+    "assets/2026-09-17_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-09-17_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-09-17_2030_generation_prompt.md",
+  "status": "generated",
+  "experiment_id": "organic_v2_B",
+  "growth_experiment": {
+    "id": "organic_v2_B",
+    "label": "不太體面的坦白首句",
+    "hook_style": "Roberto 坦白一個不好意思承認的小心思；首句最多 16 字，不用固定『卻』句型",
+    "topic_pillar": "家庭：關心與替別人做決定的界線",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-09-17",
+    "review_on": "2026-09-26",
+    "status": "balanced_exploration",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "soundtrack": "playful_clown_instrumental_v1",
+  "music_profile": "playful_clown_instrumental_v1",
+  "reel_target_seconds": 30,
+  "page_durations_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "page_texts": [
+    "我想讓媽選我訂好的。",
+    "她生日想吃麵，我一直滑火鍋照。",
+    "貓：不是問她想吃什麼？",
+    "我都訂好了，想讓她自己說要去。",
+    "貓：你連她的生日願望都訂好了。"
+  ],
+  "generation_method": "built-in image_gen",
+  "validation": {
+    "image_count": 5,
+    "dimensions": [
+      1080,
+      1350
+    ],
+    "visual_review": "passed",
+    "traditional_chinese_review": "passed"
+  },
+  "publish_format": "reel",
+  "video_path": "assets/2026-09-17_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
