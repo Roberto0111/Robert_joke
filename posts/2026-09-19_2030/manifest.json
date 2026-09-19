@@ -1,0 +1,102 @@
+{
+  "run_id": "2026-09-19_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "想結束朋友來訪，卻用續茶一次次留人",
+  "image_paths": [
+    "assets/2026-09-19_2030_deadpan_joke_01.png",
+    "assets/2026-09-19_2030_deadpan_joke_02.png",
+    "assets/2026-09-19_2030_deadpan_joke_03.png",
+    "assets/2026-09-19_2030_deadpan_joke_04.png",
+    "assets/2026-09-19_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-09-19_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-09-19_2030_generation_prompt.md",
+  "status": "generated",
+  "experiment_id": "organic_v2_B",
+  "growth_experiment": {
+    "id": "organic_v2_B",
+    "label": "不太體面的坦白首句",
+    "hook_style": "Roberto 坦白一個不好意思承認的小心思；首句最多 16 字，不用固定『卻』句型",
+    "topic_pillar": "友情：邀約、拒絕與不好意思說出口的小事",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-09-19",
+    "review_on": "2026-09-26",
+    "status": "balanced_exploration",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "page_texts": [
+    "我想散場，又怕太明顯。",
+    "他一站起來，我就問要不要茶。",
+    "貓：你到底想不想睡？",
+    "想啊，但怕他覺得我在趕人。",
+    "貓：他每次逃跑，都被你招待回來。"
+  ],
+  "soundtrack": "playful_clown_instrumental_v1",
+  "music_profile": "playful_clown_instrumental_v1",
+  "reel_target_seconds": 30,
+  "page_durations_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "generation_method": "built-in image_gen",
+  "validation": [
+    {
+      "path": "assets/2026-09-19_2030_deadpan_joke_01.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2256120,
+      "sha256": "e6d024b8512752e593a7fcac34dcfa9407472722135b4dafb9d210564cb64f29",
+      "source": "/Users/roberto/.codex/generated_images/01a0b9a6-c971-70c1-9788-3c7e45125b1b/exec-3e0dbe47-81d9-4406-bd46-823bbe093518.png"
+    },
+    {
+      "path": "assets/2026-09-19_2030_deadpan_joke_02.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2215240,
+      "sha256": "b09304fbea155a9d910c87b4273917cafa507fdfd54e354fcbbf43a297f1a6e2",
+      "source": "/Users/roberto/.codex/generated_images/01a0b9a6-c971-70c1-9788-3c7e45125b1b/exec-13c636aa-7f18-4e8d-870d-62426d1eeeb9.png"
+    },
+    {
+      "path": "assets/2026-09-19_2030_deadpan_joke_03.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2164024,
+      "sha256": "2657713171b42950e9a1547ddfdadcd080340122d11f56fc38287d5102ab7b4e",
+      "source": "/Users/roberto/.codex/generated_images/01a0b9a6-c971-70c1-9788-3c7e45125b1b/exec-a1f40afe-6cb8-46c8-a4f7-5a78f33d0b35.png"
+    },
+    {
+      "path": "assets/2026-09-19_2030_deadpan_joke_04.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2179691,
+      "sha256": "ebf29fe8dd828590f491dd37f41591390551762a7aa955091f89eb8ac30b4760",
+      "source": "/Users/roberto/.codex/generated_images/01a0b9a6-c971-70c1-9788-3c7e45125b1b/exec-75d2ee92-d1fc-4f19-b1f0-e47ebf8da653.png"
+    },
+    {
+      "path": "assets/2026-09-19_2030_deadpan_joke_05.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2237090,
+      "sha256": "3644c28f839de4ef953d280dd0e66388f5e0dd307d75e92c064a09bd027ccafd",
+      "source": "/Users/roberto/.codex/generated_images/01a0b9a6-c971-70c1-9788-3c7e45125b1b/exec-87e845a1-994a-4b3e-bf9c-c211e114aab8.png"
+    }
+  ],
+  "publish_format": "reel",
+  "video_path": "assets/2026-09-19_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
