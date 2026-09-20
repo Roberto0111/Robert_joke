@@ -1,0 +1,97 @@
+{
+  "run_id": "2026-09-20_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "特價鞋引發整套穿搭加購",
+  "image_paths": [
+    "assets/2026-09-20_2030_deadpan_joke_01.png",
+    "assets/2026-09-20_2030_deadpan_joke_02.png",
+    "assets/2026-09-20_2030_deadpan_joke_03.png",
+    "assets/2026-09-20_2030_deadpan_joke_04.png",
+    "assets/2026-09-20_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-09-20_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-09-20_2030_generation_prompt.md",
+  "status": "generated",
+  "growth_experiment": {
+    "id": "organic_v2_A",
+    "label": "具體現場首句",
+    "hook_style": "從一個看得見的生活動作或對話開場；首句最多 16 字，不先講道理",
+    "topic_pillar": "消費：省錢、衝動購物與面子",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-09-20",
+    "review_on": "2026-09-26",
+    "status": "balanced_exploration",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "story_beats": [
+    "這雙鞋怎麼搭？",
+    "褲子換了，外套又不配。",
+    "貓：你本來要買什麼？",
+    "襪子，但這雙鞋剛好特價。",
+    "貓：一雙特價鞋，整個人得重買。"
+  ],
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ],
+  "soundtrack": "playful_clown_instrumental_v1",
+  "validation": [
+    {
+      "path": "assets/2026-09-20_2030_deadpan_joke_01.png",
+      "size": [
+        1080,
+        1350
+      ],
+      "bytes": 2185757,
+      "sha256": "49a341d700d9bced9695dfc28951856df2f468b6b6d7ae3735566bd74c7bfc4c"
+    },
+    {
+      "path": "assets/2026-09-20_2030_deadpan_joke_02.png",
+      "size": [
+        1080,
+        1350
+      ],
+      "bytes": 2193743,
+      "sha256": "6bda03fad0b2c3376721be973e9143387aa79078e55028fa66d383bef4acf428"
+    },
+    {
+      "path": "assets/2026-09-20_2030_deadpan_joke_03.png",
+      "size": [
+        1080,
+        1350
+      ],
+      "bytes": 2182426,
+      "sha256": "b1035a33c5c6274547c7138a4c6d728df1defdb8e00b1b82e6b9720aaea70663"
+    },
+    {
+      "path": "assets/2026-09-20_2030_deadpan_joke_04.png",
+      "size": [
+        1080,
+        1350
+      ],
+      "bytes": 2188345,
+      "sha256": "77106bd7ed4e9413be2bdc0b7e98b4ea15215dfb731a58b233d50d3546855c35"
+    },
+    {
+      "path": "assets/2026-09-20_2030_deadpan_joke_05.png",
+      "size": [
+        1080,
+        1350
+      ],
+      "bytes": 2204820,
+      "sha256": "125d4e6c562442d2aa88a49344821f48fa64f6af20dda67108640748863d6d41"
+    }
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-09-20_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1"
+}
