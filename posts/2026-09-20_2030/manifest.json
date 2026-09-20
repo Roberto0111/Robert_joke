@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-09-20_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-09-20_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "growth_experiment": {
     "id": "organic_v2_A",
     "label": "具體現場首句",
@@ -93,5 +93,9 @@
   "music_profile": "playful_clown_instrumental_v1",
   "publish_format": "reel",
   "video_path": "assets/2026-09-20_2030_deadpan_joke_reel.mp4",
-  "motion_style": "mini_clown_2_5d_v1"
+  "motion_style": "mini_clown_2_5d_v1",
+  "instagram_media_id": "18111460498920699",
+  "instagram_story_media_id": "18624863092011429",
+  "instagram_story_status": "published",
+  "published_at": "2026-09-20T20:41:48"
 }
