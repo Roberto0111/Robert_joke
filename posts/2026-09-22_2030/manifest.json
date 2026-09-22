@@ -1,0 +1,121 @@
+{
+  "run_id": "2026-09-22_2030",
+  "content_mode": "life_dialogue",
+  "mood": "heavy",
+  "topic": "朋友修椅子後急著回禮，把親近變成人情結帳",
+  "image_paths": [
+    "assets/2026-09-22_2030_deadpan_joke_01.png",
+    "assets/2026-09-22_2030_deadpan_joke_02.png",
+    "assets/2026-09-22_2030_deadpan_joke_03.png",
+    "assets/2026-09-22_2030_deadpan_joke_04.png",
+    "assets/2026-09-22_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-09-22_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-09-22_2030_generation_prompt.md",
+  "status": "generated",
+  "beats": [
+    "椅子修好，我立刻拿錢。",
+    "他不收，我又包了一盒禮。",
+    "貓：你這麼急著還？",
+    "我怕下次見面，還欠他什麼。",
+    "貓：他想當朋友，你急著當沒欠他的人。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_A",
+    "label": "具體現場首句",
+    "hook_style": "從一個看得見的生活動作或對話開場；首句最多 16 字，不先講道理",
+    "topic_pillar": "關係：付出、界線與真實的小對話",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-09-22",
+    "review_on": "2026-09-26",
+    "status": "balanced_exploration",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "soundtrack": "weighty_clown_instrumental_v1",
+  "reel_page_seconds": [
+    5.5,
+    5.5,
+    5.5,
+    6,
+    7.5
+  ],
+  "reel_duration_seconds": 30,
+  "generation_tool": "built-in image_gen",
+  "validation": [
+    {
+      "page": 1,
+      "size": [
+        1080,
+        1350
+      ],
+      "bytes": 2350092,
+      "source_size": [
+        1086,
+        1448
+      ]
+    },
+    {
+      "page": 2,
+      "size": [
+        1080,
+        1350
+      ],
+      "bytes": 2232861,
+      "source_size": [
+        1092,
+        1440
+      ]
+    },
+    {
+      "page": 3,
+      "size": [
+        1080,
+        1350
+      ],
+      "bytes": 2226270,
+      "source_size": [
+        1092,
+        1440
+      ]
+    },
+    {
+      "page": 4,
+      "size": [
+        1080,
+        1350
+      ],
+      "bytes": 2203207,
+      "source_size": [
+        1092,
+        1440
+      ]
+    },
+    {
+      "page": 5,
+      "size": [
+        1080,
+        1350
+      ],
+      "bytes": 2171032,
+      "source_size": [
+        1092,
+        1440
+      ]
+    }
+  ],
+  "music_profile": "weighty_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-09-22_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
