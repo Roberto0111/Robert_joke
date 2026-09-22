@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-09-22_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-09-22_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "beats": [
     "椅子修好，我立刻拿錢。",
     "他不收，我又包了一盒禮。",
@@ -117,5 +117,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18098226734383915",
+  "instagram_story_media_id": "18011251358761671",
+  "instagram_story_status": "published",
+  "published_at": "2026-09-22T20:43:12"
 }
