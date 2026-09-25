@@ -1,0 +1,58 @@
+{
+  "run_id": "2026-09-25_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "午休假裝有約，只為安靜吃便當，養出一位假朋友",
+  "image_paths": [
+    "assets/2026-09-25_2030_deadpan_joke_01.png",
+    "assets/2026-09-25_2030_deadpan_joke_02.png",
+    "assets/2026-09-25_2030_deadpan_joke_03.png",
+    "assets/2026-09-25_2030_deadpan_joke_04.png",
+    "assets/2026-09-25_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-09-25_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-09-25_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "我午休會假裝有約。",
+    "便當買好，再躲進空會議室。",
+    "貓：約的人呢？",
+    "我只想吃飯，不想接話。",
+    "貓：你為了不陪聊，養了個假朋友。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_B",
+    "label": "不太體面的坦白首句",
+    "hook_style": "Roberto 坦白一個不好意思承認的小心思；首句最多 16 字，不用固定『卻』句型",
+    "topic_pillar": "工作：一個具體日常選擇；不要再寫離職或沉沒成本",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-09-25",
+    "review_on": "2026-09-26",
+    "status": "balanced_exploration",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "soundtrack": "playful_clown_instrumental_v1",
+  "reel_target_duration_seconds": 30,
+  "page_durations_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-09-25_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
