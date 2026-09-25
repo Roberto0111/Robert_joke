@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-09-25_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-09-25_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "dialogue": [
     "我午休會假裝有約。",
     "便當買好，再躲進空會議室。",
@@ -54,5 +54,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17982778905088869",
+  "instagram_story_media_id": "17963555831983735",
+  "instagram_story_status": "published",
+  "published_at": "2026-09-25T20:40:04"
 }
