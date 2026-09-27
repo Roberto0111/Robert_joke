@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-09-27_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-09-27_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "page_texts": [
     "我偷偷盼電鍋壞掉。",
     "飯沒焦，我還掀蓋找證據。",
@@ -68,5 +68,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17995469394040404",
+  "instagram_story_media_id": "18173597113453046",
+  "instagram_story_status": "published",
+  "published_at": "2026-09-27T20:47:43"
 }
