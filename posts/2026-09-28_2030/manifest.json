@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-09-28_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-09-28_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "page_texts": [
     "我一邊畫畫，一邊算售價。",
     "畫才兩張，包材買了一箱。",
@@ -77,5 +77,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18117036997979976",
+  "instagram_story_media_id": "18159591655446520",
+  "instagram_story_status": "published",
+  "published_at": "2026-09-28T20:44:54"
 }
