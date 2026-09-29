@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-09-29_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-09-29_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "page_texts": [
     "我會吃朋友的醋。",
     "他跟別人吃鍋，我嫌那家難吃。",
@@ -132,5 +132,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18096985337081187",
+  "instagram_story_media_id": "18129816656500451",
+  "instagram_story_status": "published",
+  "published_at": "2026-09-29T20:49:48"
 }
