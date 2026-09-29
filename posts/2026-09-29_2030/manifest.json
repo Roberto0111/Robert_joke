@@ -1,0 +1,136 @@
+{
+  "run_id": "2026-09-29_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "朋友跟別人吃火鍋，沒被揪的醋意變成餐廳食評",
+  "image_paths": [
+    "assets/2026-09-29_2030_deadpan_joke_01.png",
+    "assets/2026-09-29_2030_deadpan_joke_02.png",
+    "assets/2026-09-29_2030_deadpan_joke_03.png",
+    "assets/2026-09-29_2030_deadpan_joke_04.png",
+    "assets/2026-09-29_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-09-29_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-09-29_2030_generation_prompt.md",
+  "status": "generated",
+  "page_texts": [
+    "我會吃朋友的醋。",
+    "他跟別人吃鍋，我嫌那家難吃。",
+    "貓：你吃過？",
+    "沒，我以為他會先約我。",
+    "貓：少揪你，湯底就有罪。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_B",
+    "label": "不太體面的坦白首句",
+    "hook_style": "Roberto 坦白一個不好意思承認的小心思；首句最多 16 字，不用固定『卻』句型",
+    "topic_pillar": "關係：付出、界線與真實的小對話",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-09-29",
+    "review_on": "2026-09-26",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "reel_target_seconds": 30,
+  "reel_page_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "soundtrack": "playful_clown_instrumental_v1",
+  "reference_study": {
+    "status": "unavailable",
+    "fallback": "original_five_beat_life_dialogue"
+  },
+  "candidate_count": 12,
+  "non_workplace_candidate_count": 10,
+  "selected_score": {
+    "relatability": 5,
+    "natural_dialogue": 5,
+    "insight": 4,
+    "save_share_value": 5,
+    "total": 19
+  },
+  "generation_method": "built_in_image_gen; sips dimension normalization only",
+  "validation": {
+    "status": "passed",
+    "image_count": 5,
+    "format": "PNG",
+    "dimensions": [
+      1080,
+      1350
+    ],
+    "visual_review": "Five final files inspected for exact Traditional Chinese, likeness, wardrobe, cat markings, room continuity and single-scene layout.",
+    "caption_hashtag_count": 4,
+    "caption_ends_with_page_five": true,
+    "images": [
+      {
+        "path": "assets/2026-09-29_2030_deadpan_joke_01.png",
+        "bytes": 2157559,
+        "sha256": "1a3611961841a65e5183ceba48ca14a8482d013621e58ff418dad830ce88db17",
+        "headline_side_margins_px": [
+          135,
+          129
+        ],
+        "headline_ink_height_px": 106
+      },
+      {
+        "path": "assets/2026-09-29_2030_deadpan_joke_02.png",
+        "bytes": 2085761,
+        "sha256": "0a7bad085cf0b8558b36efdfdb38a6e5695830b1efb41296ee6101ec8aea73f8",
+        "headline_side_margins_px": [
+          141,
+          152
+        ],
+        "headline_ink_height_px": 63
+      },
+      {
+        "path": "assets/2026-09-29_2030_deadpan_joke_03.png",
+        "bytes": 2197103,
+        "sha256": "cfd12d502258cf0527d8ada5929a590c3a52681dfa9716266677dfe0d53e5fe3",
+        "headline_side_margins_px": [
+          220,
+          209
+        ],
+        "headline_ink_height_px": 116
+      },
+      {
+        "path": "assets/2026-09-29_2030_deadpan_joke_04.png",
+        "bytes": 2155466,
+        "sha256": "6d02bc4389389807b49a9ac23c01972ff1b397bda51736d771b017a4f4a00e79",
+        "headline_side_margins_px": [
+          132,
+          117
+        ],
+        "headline_ink_height_px": 84
+      },
+      {
+        "path": "assets/2026-09-29_2030_deadpan_joke_05.png",
+        "bytes": 2045798,
+        "sha256": "768af7267336408210fa052b453d5709de2dee495db6f9dff8f35554d75ce53c",
+        "headline_side_margins_px": [
+          202,
+          205
+        ],
+        "headline_ink_height_px": 64
+      }
+    ]
+  },
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-09-29_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
