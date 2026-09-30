@@ -1,0 +1,167 @@
+{
+  "run_id": "2026-09-30_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "討厭帳號卻每次更新都追完，成了比粉絲更穩定的觀眾",
+  "image_paths": [
+    "assets/2026-09-30_2030_deadpan_joke_01.png",
+    "assets/2026-09-30_2030_deadpan_joke_02.png",
+    "assets/2026-09-30_2030_deadpan_joke_03.png",
+    "assets/2026-09-30_2030_deadpan_joke_04.png",
+    "assets/2026-09-30_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-09-30_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-09-30_2030_generation_prompt.md",
+  "status": "generated",
+  "page_texts": [
+    "我又點開討厭的帳號。",
+    "他才更新，我就看到底。",
+    "貓：你到底在等什麼？",
+    "想看他哪天終於出糗。",
+    "貓：粉絲還會漏看，你不會。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_A",
+    "label": "具體現場首句",
+    "hook_style": "從一個看得見的生活動作或對話開場；首句最多 16 字，不先講道理",
+    "topic_pillar": "數位生活：已讀、群組與社交比較",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-09-30",
+    "review_on": "2026-09-26",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "reel_target_seconds": 30,
+  "reel_page_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "soundtrack": "playful_clown_instrumental_v1",
+  "reference_study": {
+    "status": "unavailable",
+    "fallback": "original_five_beat_life_dialogue"
+  },
+  "candidate_count": 12,
+  "non_workplace_candidate_count": 10,
+  "selected_score": {
+    "relatability": 5,
+    "natural_dialogue": 5,
+    "insight": 4,
+    "save_share_value": 5,
+    "total": 19
+  },
+  "generation_method": "built_in_image_gen; sips dimension normalization only",
+  "validation": {
+    "five_pages_visually_reviewed": true,
+    "traditional_chinese_checked_visually": true,
+    "character_and_room_continuity_checked": true,
+    "single_scene_per_page": true,
+    "caption_hashtag_count": 4,
+    "caption_ends_with_page_five": true,
+    "image_files": [
+      {
+        "path": "assets/2026-09-30_2030_deadpan_joke_01.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 2045388,
+        "sha256": "a8a8d713e90dfeeccf57c765bc338e2998e34e61e9e6c9a956f34d0ef9f9926f",
+        "headline_ink_bbox": [
+          217,
+          129,
+          861,
+          194
+        ],
+        "headline_side_margins_px": [
+          217,
+          219
+        ]
+      },
+      {
+        "path": "assets/2026-09-30_2030_deadpan_joke_02.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 2029687,
+        "sha256": "91cb974338578ef4772bbfcfa018712809930b32a9b08f9701637479503d92c5",
+        "headline_ink_bbox": [
+          199,
+          127,
+          877,
+          192
+        ],
+        "headline_side_margins_px": [
+          199,
+          203
+        ]
+      },
+      {
+        "path": "assets/2026-09-30_2030_deadpan_joke_03.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 1970122,
+        "sha256": "c973b933f617d14181ae0f399bbe5f4d14cbc6da9960bdc687d22b59bea68385",
+        "headline_ink_bbox": [
+          220,
+          124,
+          858,
+          190
+        ],
+        "headline_side_margins_px": [
+          220,
+          222
+        ]
+      },
+      {
+        "path": "assets/2026-09-30_2030_deadpan_joke_04.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 1902120,
+        "sha256": "ed1d0d4fde80c6a2bc65eb15aaaf89c5d24e5d7110768ec363d792eb14936400",
+        "headline_ink_bbox": [
+          216,
+          124,
+          863,
+          190
+        ],
+        "headline_side_margins_px": [
+          216,
+          217
+        ]
+      },
+      {
+        "path": "assets/2026-09-30_2030_deadpan_joke_05.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 1860450,
+        "sha256": "2ab432ab2ddbc4392993b3f34f434ce938383b7e6cc9ca5564cf13309ac6cd39",
+        "headline_ink_bbox": [
+          127,
+          124,
+          951,
+          190
+        ],
+        "headline_side_margins_px": [
+          127,
+          129
+        ]
+      }
+    ]
+  },
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-09-30_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
