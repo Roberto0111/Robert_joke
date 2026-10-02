@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-10-02_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-10-02_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "page_texts": [
     "這張五分鐘就好。",
     "其實昨晚改到兩點。",
@@ -84,5 +84,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18128533417836495",
+  "instagram_story_media_id": "18225381694329798",
+  "instagram_story_status": "published",
+  "published_at": "2026-10-02T20:50:49"
 }
