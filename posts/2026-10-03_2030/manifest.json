@@ -1,0 +1,59 @@
+{
+  "run_id": "2026-10-03_2030",
+  "content_mode": "life_dialogue",
+  "mood": "heavy",
+  "topic": "想單獨找朋友說心事，邀約卻變成多人聚餐",
+  "image_paths": [
+    "assets/2026-10-03_2030_deadpan_joke_01.png",
+    "assets/2026-10-03_2030_deadpan_joke_02.png",
+    "assets/2026-10-03_2030_deadpan_joke_03.png",
+    "assets/2026-10-03_2030_deadpan_joke_04.png",
+    "assets/2026-10-03_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-03_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-03_2030_generation_prompt.md",
+  "status": "generated",
+  "page_texts": [
+    "我不想認識他的朋友。",
+    "約他吃飯，他又揪了三個。",
+    "貓：你討厭他們？",
+    "我只敢跟他說，我最近不好。",
+    "貓：人多了，你又得說還好。"
+  ],
+  "generation_method": "built_in_image_gen",
+  "music_profile": "weighty_clown_instrumental_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_B",
+    "label": "不太體面的坦白首句",
+    "hook_style": "Roberto 坦白一個不好意思承認的小心思；首句最多 16 字，不用固定『卻』句型",
+    "topic_pillar": "友情：邀約、拒絕與不好意思說出口的小事",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-10-03",
+    "review_on": "2026-09-26",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "quality_checks": {
+    "image_count": 5,
+    "width": 1080,
+    "height": 1350,
+    "visual_review": "passed",
+    "traditional_chinese": "visually_verified",
+    "caption_hashtags": 4,
+    "minimum_headline_side_margin_px": 94
+  },
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-03_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1"
+}
