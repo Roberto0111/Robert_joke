@@ -1,0 +1,114 @@
+{
+  "run_id": "2026-10-04_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "吃到飽只顧回本，把愛吃的布丁留到吃不下",
+  "image_paths": [
+    "assets/2026-10-04_2030_deadpan_joke_01.png",
+    "assets/2026-10-04_2030_deadpan_joke_02.png",
+    "assets/2026-10-04_2030_deadpan_joke_03.png",
+    "assets/2026-10-04_2030_deadpan_joke_04.png",
+    "assets/2026-10-04_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-04_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-04_2030_generation_prompt.md",
+  "status": "generated",
+  "page_texts": [
+    "我又端了一盤蝦。",
+    "不愛吃，還是剝了三盤。",
+    "貓：你不是最愛布丁？",
+    "蝦比較貴，吃布丁會虧。",
+    "貓：吃到飽，被你吃成沒得選。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_A",
+    "label": "具體現場首句",
+    "hook_style": "從一個看得見的生活動作或對話開場；首句最多 16 字，不先講道理",
+    "topic_pillar": "消費：省錢、衝動購物與面子",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-10-04",
+    "review_on": "2026-09-26",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "candidate_count": 12,
+  "non_workplace_candidate_count": 11,
+  "selected_score": {
+    "relatability": 5,
+    "natural_dialogue": 5,
+    "insight": 4,
+    "save_share_value": 5,
+    "total": 19
+  },
+  "generation_method": "built-in image_gen; sips size normalization only",
+  "music_profile": "playful_clown_instrumental_v1",
+  "soundtrack": {
+    "profile": "playful_clown_instrumental_v1",
+    "rationale": "原創俏皮撥弦、短低音與木魚呼應端盤、剝殼與貓的停頓；無旁白。",
+    "audio_generated": false
+  },
+  "reel_target_seconds": 30,
+  "page_durations_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "validation": {
+    "image_count": 5,
+    "dimensions": [
+      1080,
+      1350
+    ],
+    "format": "PNG",
+    "unique_images": true,
+    "text_proofreading": "visual, all five exact Traditional Chinese beats verified",
+    "headline_minimum_side_margin_px": 90,
+    "headline_side_margins_px": [
+      [
+        103,
+        243
+      ],
+      [
+        97,
+        101
+      ],
+      [
+        96,
+        101
+      ],
+      [
+        92,
+        90
+      ],
+      [
+        112,
+        247
+      ]
+    ],
+    "all_pages_single_scene": true,
+    "likeness_and_wardrobe_consistent": true,
+    "tuxedo_cat_on_all_pages": true,
+    "caption_hashtag_count": 4,
+    "caption_ends_with_final_line": true,
+    "latest_completed_posts_compared": 20,
+    "reel_generated": false,
+    "instagram_posted": false,
+    "git_push_run": false
+  },
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-04_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
