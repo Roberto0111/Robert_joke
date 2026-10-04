@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-10-04_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-10-04_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "page_texts": [
     "我又端了一盤蝦。",
     "不愛吃，還是剝了三盤。",
@@ -110,5 +110,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18104979589977433",
+  "instagram_story_media_id": "17890118829458385",
+  "instagram_story_status": "published",
+  "published_at": "2026-10-04T20:55:00"
 }
