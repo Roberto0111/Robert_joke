@@ -1,0 +1,120 @@
+{
+  "run_id": "2026-10-05_2030",
+  "content_mode": "life_dialogue",
+  "mood": "heavy",
+  "topic": "只敢唱被誇過的歌，讓上次的掌聲決定這次的歌單",
+  "image_paths": [
+    "assets/2026-10-05_2030_deadpan_joke_01.png",
+    "assets/2026-10-05_2030_deadpan_joke_02.png",
+    "assets/2026-10-05_2030_deadpan_joke_03.png",
+    "assets/2026-10-05_2030_deadpan_joke_04.png",
+    "assets/2026-10-05_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-05_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-05_2030_generation_prompt.md",
+  "status": "generated",
+  "page_texts": [
+    "我只敢唱被誇過的歌。",
+    "新歌練熟了，點完又切掉。",
+    "貓：不是說想唱這首？",
+    "上次被誇過，不想讓他們改口。",
+    "貓：上次的掌聲還在替你點歌。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_B",
+    "label": "不太體面的坦白首句",
+    "hook_style": "Roberto 坦白一個不好意思承認的小心思；首句最多 16 字，不用固定『卻』句型",
+    "topic_pillar": "休息：假日、興趣與對自己的要求",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-10-05",
+    "review_on": "2026-09-26",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "soundtrack": {
+    "profile": "weighty_clown_instrumental_v1",
+    "rationale": "原創低音小調、稀疏脈衝與克制鐘聲，留白支持害怕失去既有肯定的停頓；無旁白。",
+    "audio_generated": false
+  },
+  "reel_reading_plan": {
+    "target_seconds": 30,
+    "suggested_page_seconds": [
+      5,
+      6,
+      5,
+      6,
+      8
+    ],
+    "rendered": false
+  },
+  "generation": {
+    "tool": "built_in_image_gen",
+    "use_case": "illustration-story",
+    "selected_score": 19,
+    "candidates_scored": 12,
+    "non_workplace_candidates": 11,
+    "study_reference_images_supplied_to_generation": false,
+    "likeness_reference": "assets/main_character_reference.jpg"
+  },
+  "validation": {
+    "image_count": 5,
+    "width": 1080,
+    "height": 1350,
+    "exact_text_visually_checked": true,
+    "character_consistency_visually_checked": true,
+    "caption_hashtags": 4,
+    "caption_ends_with_final_line": true,
+    "assets": [
+      {
+        "path": "assets/2026-10-05_2030_deadpan_joke_01.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 1803167,
+        "sha256": "0ecba8fcebdfc9ff0b09df1a7390680f08dc071f8cc5576207a06dc395298793"
+      },
+      {
+        "path": "assets/2026-10-05_2030_deadpan_joke_02.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 1846425,
+        "sha256": "524f95734d315eb761669b67c2c45faff1727c77e91bb499a049f7cf285c32ba"
+      },
+      {
+        "path": "assets/2026-10-05_2030_deadpan_joke_03.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 1912630,
+        "sha256": "25393144033ccbf47bbbadaf8998fd8d376eefd5555983320025333d2a213790"
+      },
+      {
+        "path": "assets/2026-10-05_2030_deadpan_joke_04.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 1855684,
+        "sha256": "a34f2b5c191fbaa34e12b5b79fa6b766950560187afe4bc5a696509aff83b8cb"
+      },
+      {
+        "path": "assets/2026-10-05_2030_deadpan_joke_05.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 1847999,
+        "sha256": "1a9d56d48e1c29cf344372a97bacd3607ec345771d8b1c32cc111ac539eed9b3"
+      }
+    ]
+  },
+  "music_profile": "weighty_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-05_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
