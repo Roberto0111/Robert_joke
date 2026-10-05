@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-10-05_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-10-05_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "page_texts": [
     "我只敢唱被誇過的歌。",
     "新歌練熟了，點完又切掉。",
@@ -116,5 +116,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18111197885135022",
+  "instagram_story_media_id": "17968467402195111",
+  "instagram_story_status": "published",
+  "published_at": "2026-10-05T20:49:21"
 }
