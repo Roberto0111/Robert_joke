@@ -1,0 +1,96 @@
+{
+  "run_id": "2026-10-07_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "生日祝福變成友情突擊考",
+  "image_paths": [
+    "assets/2026-10-07_2030_deadpan_joke_01.png",
+    "assets/2026-10-07_2030_deadpan_joke_02.png",
+    "assets/2026-10-07_2030_deadpan_joke_03.png",
+    "assets/2026-10-07_2030_deadpan_joke_04.png",
+    "assets/2026-10-07_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-07_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-07_2030_generation_prompt.md",
+  "status": "generated",
+  "page_texts": [
+    "我會記誰沒祝我生日。",
+    "祝福看完，我開始對名單。",
+    "貓：你不是收到很多了？",
+    "我想看誰不用提醒也記得。",
+    "貓：壽星只有你，考生一大群。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_B",
+    "label": "不太體面的坦白首句",
+    "hook_style": "Roberto 坦白一個不好意思承認的小心思；首句最多 16 字，不用固定『卻』句型",
+    "topic_pillar": "數位生活：已讀、群組與社交比較",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-10-07",
+    "review_on": "2026-09-26",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "soundtrack": {
+    "profile": "playful_clown_instrumental_v1",
+    "rationale": "原創俏皮撥弦、短促低音與木魚節奏呼應認真對名單的自我打臉，末頁留空讓貓的冷吐槽落下；無旁白。",
+    "audio_generated": false
+  },
+  "music_profile": "playful_clown_instrumental_v1",
+  "reel_reading_plan": {
+    "total_seconds": 30,
+    "page_seconds": [
+      5,
+      6,
+      5,
+      6,
+      8
+    ],
+    "rendered": false,
+    "note": "Downstream reading target; this request delivers the five-page carousel only."
+  },
+  "generation": {
+    "tool": "built-in image_gen",
+    "selected_image_count": 5,
+    "typography_corrections": 1,
+    "likeness_reference": "assets/main_character_reference.jpg",
+    "continuity_reference": "assets/2026-10-07_2030_deadpan_joke_01.png",
+    "source_images_used_for_generation": false,
+    "render_size": [
+      1122,
+      1402
+    ],
+    "final_size": [
+      1080,
+      1350
+    ],
+    "normalization": "macOS sips resize only; no cropping or typography overlays"
+  },
+  "validation": {
+    "passed": true,
+    "distinct_pngs": 5,
+    "dimensions": [
+      1080,
+      1350
+    ],
+    "caption_hashtag_count": 4,
+    "hook_characters_including_punctuation": 10,
+    "headline_side_margin_minimum_px": 90,
+    "text_verification": "All five Traditional Chinese headlines checked visually against page_texts.",
+    "characters_and_scene": "Same Roberto likeness, charcoal/gray outfit, red bow, tuxedo cat, coral table, mint stools, yellow cake across five full-page scenes."
+  },
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-07_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
