@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-10-07_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-10-07_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "page_texts": [
     "我會記誰沒祝我生日。",
     "祝福看完，我開始對名單。",
@@ -92,5 +92,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18101540471375479",
+  "instagram_story_media_id": "17967286590166222",
+  "instagram_story_status": "published",
+  "published_at": "2026-10-07T20:53:02"
 }
