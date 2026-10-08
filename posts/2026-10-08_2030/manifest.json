@@ -1,0 +1,163 @@
+{
+  "run_id": "2026-10-08_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "教爸爸用手機卻忍不住代按，教出下次繼續找自己的習慣",
+  "image_paths": [
+    "assets/2026-10-08_2030_deadpan_joke_01.png",
+    "assets/2026-10-08_2030_deadpan_joke_02.png",
+    "assets/2026-10-08_2030_deadpan_joke_03.png",
+    "assets/2026-10-08_2030_deadpan_joke_04.png",
+    "assets/2026-10-08_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-08_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-08_2030_generation_prompt.md",
+  "status": "generated",
+  "page_texts": [
+    "爸，手機給我。",
+    "說好教他，我又自己按完。",
+    "貓：他有碰到手機嗎？",
+    "看他慢慢找，我就忍不住。",
+    "貓：他學會了，下次還是找你。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_A",
+    "label": "具體現場首句",
+    "hook_style": "從一個看得見的生活動作或對話開場；首句最多 16 字，不先講道理",
+    "topic_pillar": "家庭：關心與替別人做決定的界線",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-10-08",
+    "review_on": "2026-09-26",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "candidate_count": 12,
+  "non_workplace_candidate_count": 12,
+  "selected_score": {
+    "relatability": 5,
+    "dialogue_naturalness": 5,
+    "insight": 5,
+    "save_share_value": 4,
+    "total": 19
+  },
+  "music_profile": "playful_clown_instrumental_v1",
+  "soundtrack": {
+    "profile": "playful_clown_instrumental_v1",
+    "rationale": "原創俏皮撥弦、短促低音與木魚節奏呼應搶著代按的忙碌，末句前留白，讓貓把成功教學翻成下次繼續求助；無旁白。",
+    "audio_generated": false
+  },
+  "reel_reading_plan": {
+    "total_seconds": 30,
+    "page_seconds": [
+      5,
+      6,
+      5,
+      6,
+      8
+    ],
+    "rendered": false,
+    "note": "Downstream reading handoff; only the five-page carousel assets were requested."
+  },
+  "generation": {
+    "tool": "built-in image_gen",
+    "use_case": "illustration-story",
+    "selected_image_count": 5,
+    "layout_corrections": 1,
+    "likeness_reference": "assets/main_character_reference.jpg",
+    "continuity_reference": "assets/2026-10-08_2030_deadpan_joke_01.png",
+    "reference_study_slides_used_as_generation_inputs": false,
+    "native_size": [
+      1122,
+      1402
+    ],
+    "final_size": [
+      1080,
+      1350
+    ],
+    "normalization": "macOS sips resize only; no cropping, local painting or text overlays",
+    "selected_source_paths": [
+      "/Users/roberto/.codex/generated_images/01a11b7f-41cb-72c2-822b-f667b9605c44/exec-1a6bb38a-ea97-4150-9ad9-16f54411c49b.png",
+      "/Users/roberto/.codex/generated_images/01a11b7f-41cb-72c2-822b-f667b9605c44/exec-5c428b45-64b3-41a5-9197-38895cb7a472.png",
+      "/Users/roberto/.codex/generated_images/01a11b7f-41cb-72c2-822b-f667b9605c44/exec-9e5df706-0f35-496a-b912-c7020dcd36a4.png",
+      "/Users/roberto/.codex/generated_images/01a11b7f-41cb-72c2-822b-f667b9605c44/exec-c2aef045-8880-44a8-b577-b0973a2112ea.png",
+      "/Users/roberto/.codex/generated_images/01a11b7f-41cb-72c2-822b-f667b9605c44/exec-3624ab2c-28a0-4c0a-a39e-935ef1053646.png"
+    ]
+  },
+  "validation": {
+    "passed": true,
+    "distinct_pngs": 5,
+    "dimensions": [
+      1080,
+      1350
+    ],
+    "all_pngs_opened_and_visually_inspected": true,
+    "exact_page_texts_visually_verified": true,
+    "single_scene_per_page": true,
+    "character_wardrobe_palette_and_cat_continuity_verified": true,
+    "caption_hashtag_count": 4,
+    "caption_ends_with_final_story_line": true,
+    "hook_characters_including_punctuation": 7,
+    "headline_side_margin_minimum_px": 99,
+    "headline_ink_heights_px": [
+      57,
+      57,
+      57,
+      58,
+      60
+    ],
+    "headline_boxes_px": [
+      [
+        103,
+        174,
+        495,
+        231
+      ],
+      [
+        101,
+        173,
+        804,
+        230
+      ],
+      [
+        104,
+        175,
+        680,
+        232
+      ],
+      [
+        104,
+        172,
+        788,
+        230
+      ],
+      [
+        99,
+        169,
+        935,
+        229
+      ]
+    ],
+    "page_file_bytes": [
+      1681142,
+      1703952,
+      1693136,
+      1690047,
+      1693869
+    ],
+    "notes": "All five headlines checked visually against page_texts; no face overlap or cropped lettering. Native OCR was unavailable (nilError), so no OCR success is claimed."
+  },
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-08_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
