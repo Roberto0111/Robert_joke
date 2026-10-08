@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-10-08_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-10-08_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "page_texts": [
     "爸，手機給我。",
     "說好教他，我又自己按完。",
@@ -159,5 +159,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18337810918257164",
+  "instagram_story_media_id": "18180006154453071",
+  "instagram_story_status": "published",
+  "published_at": "2026-10-08T20:51:46"
 }
