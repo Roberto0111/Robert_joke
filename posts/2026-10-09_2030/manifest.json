@@ -1,0 +1,205 @@
+{
+  "run_id": "2026-10-09_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "問稿件意見只想聽到可以，真正想改的是同事的答案",
+  "image_paths": [
+    "assets/2026-10-09_2030_deadpan_joke_01.png",
+    "assets/2026-10-09_2030_deadpan_joke_02.png",
+    "assets/2026-10-09_2030_deadpan_joke_03.png",
+    "assets/2026-10-09_2030_deadpan_joke_04.png",
+    "assets/2026-10-09_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-09_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-09_2030_generation_prompt.md",
+  "status": "generated",
+  "page_texts": [
+    "我問意見，會挑人。",
+    "他說要改，我又傳給別人。",
+    "貓：那稿改了嗎？",
+    "沒，想問到有人說可以。",
+    "貓：你想改的，是同事的答案。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_B",
+    "label": "不太體面的坦白首句",
+    "hook_style": "Roberto 坦白一個不好意思承認的小心思；首句最多 16 字，不用固定『卻』句型",
+    "topic_pillar": "工作：一個具體日常選擇；不要再寫離職或沉沒成本",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-10-09",
+    "review_on": "2026-09-26",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ],
+  "reel_timing_status": "target_only_for_downstream_pipeline",
+  "music_profile": "playful_clown_instrumental_v1",
+  "soundtrack": {
+    "profile": "playful_clown_instrumental_v1",
+    "rationale": "原創俏皮撥弦、短促低音與木魚配合急著轉傳卻不改稿的自我打臉，末頁留停頓給貓的冷吐槽；無旁白。",
+    "audio_generated": false
+  },
+  "generation": {
+    "tool": "built-in image_gen",
+    "use_case": "illustration-story",
+    "candidates_scored": 12,
+    "non_workplace_candidates": 8,
+    "selected_candidate": "A",
+    "selection_scores": {
+      "relatability": 5,
+      "dialogue_naturalness": 5,
+      "insight": 5,
+      "save_share_value": 4,
+      "total": 19
+    },
+    "imagegen_calls": 6,
+    "selected_image_count": 5,
+    "layout_corrections": 1,
+    "likeness_reference": "assets/main_character_reference.jpg",
+    "continuity_reference": "assets/2026-10-09_2030_deadpan_joke_01.png",
+    "reference_study_slides_used_as_generation_inputs": false,
+    "selected_source_paths": [
+      "/Users/roberto/.codex/generated_images/01a120a5-ddc4-7321-9c75-3af49777399d/exec-e47a3f59-da3d-4007-8366-6fec64c65cd2.png",
+      "/Users/roberto/.codex/generated_images/01a120a5-ddc4-7321-9c75-3af49777399d/exec-a75e7f5c-0ede-4d8f-bbf9-c757b431fc01.png",
+      "/Users/roberto/.codex/generated_images/01a120a5-ddc4-7321-9c75-3af49777399d/exec-e5b50b7a-c02b-4db4-9d9e-bc46348e84e9.png",
+      "/Users/roberto/.codex/generated_images/01a120a5-ddc4-7321-9c75-3af49777399d/exec-4b57e670-74b3-416b-b240-8c2a5320d0a1.png",
+      "/Users/roberto/.codex/generated_images/01a120a5-ddc4-7321-9c75-3af49777399d/exec-23af7d85-23c6-4325-b42a-2c5cd924644d.png"
+    ],
+    "native_sizes": [
+      [
+        1092,
+        1440
+      ],
+      [
+        1122,
+        1402
+      ],
+      [
+        1122,
+        1402
+      ],
+      [
+        1122,
+        1402
+      ],
+      [
+        1122,
+        1402
+      ]
+    ],
+    "final_size": [
+      1080,
+      1350
+    ],
+    "normalization": "macOS sips resize only to required 1080x1350; no cropping, local painting, or text overlays"
+  },
+  "validation": {
+    "png_count": 5,
+    "format": "PNG",
+    "color_mode": "RGB",
+    "image_dimensions_pass": true,
+    "visually_reviewed_all_five": true,
+    "traditional_chinese_exact_text_visual_pass": true,
+    "one_scene_and_one_headline_per_page": true,
+    "character_and_prop_continuity_pass": true,
+    "minimum_headline_side_margin_px": 111,
+    "headline_height_range_px": [
+      63,
+      66
+    ],
+    "final_line_prefix": "貓：",
+    "hashtag_count": 4,
+    "caption_last_line_matches_page_5": true,
+    "ocr_status": "unavailable: macOS Vision generic error; exact text checked visually on all final files",
+    "images": [
+      {
+        "path": "assets/2026-10-09_2030_deadpan_joke_01.png",
+        "bytes": 1857188,
+        "sha256": "b311792061d4d9d739d9d878f92ab3020cc139fc23ed161b500dfa97c1e463a6",
+        "header_ink_bbox_px": [
+          116,
+          163,
+          712,
+          228
+        ],
+        "header_side_margins_px": [
+          116,
+          368
+        ]
+      },
+      {
+        "path": "assets/2026-10-09_2030_deadpan_joke_02.png",
+        "bytes": 1818142,
+        "sha256": "9b0d6e19de3282805ec527923defdcdace9233b84a66b5daf6731b2883d3e0db",
+        "header_ink_bbox_px": [
+          111,
+          163,
+          932,
+          229
+        ],
+        "header_side_margins_px": [
+          111,
+          148
+        ]
+      },
+      {
+        "path": "assets/2026-10-09_2030_deadpan_joke_03.png",
+        "bytes": 1795331,
+        "sha256": "54202c72569782a2226b379995590d06305ac70772b37464171fd3caef5b46ee",
+        "header_ink_bbox_px": [
+          116,
+          162,
+          661,
+          228
+        ],
+        "header_side_margins_px": [
+          116,
+          419
+        ]
+      },
+      {
+        "path": "assets/2026-10-09_2030_deadpan_joke_04.png",
+        "bytes": 1813555,
+        "sha256": "5a1dfe50402aebe2403608097fdeb25305f139001442ccb1f417c6d2589f8602",
+        "header_ink_bbox_px": [
+          112,
+          164,
+          819,
+          228
+        ],
+        "header_side_margins_px": [
+          112,
+          261
+        ]
+      },
+      {
+        "path": "assets/2026-10-09_2030_deadpan_joke_05.png",
+        "bytes": 1806485,
+        "sha256": "3055fb648114f3355e2a59d690a8086d74ca28b3bf2db181e3106814de795168",
+        "header_ink_bbox_px": [
+          113,
+          164,
+          960,
+          227
+        ],
+        "header_side_margins_px": [
+          113,
+          120
+        ]
+      }
+    ]
+  },
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-09_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1"
+}
