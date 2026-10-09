@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-10-09_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-10-09_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "page_texts": [
     "我問意見，會挑人。",
     "他說要改，我又傳給別人。",
@@ -201,5 +201,9 @@
   },
   "publish_format": "reel",
   "video_path": "assets/2026-10-09_2030_deadpan_joke_reel.mp4",
-  "motion_style": "mini_clown_2_5d_v1"
+  "motion_style": "mini_clown_2_5d_v1",
+  "instagram_media_id": "18097192085428129",
+  "instagram_story_media_id": "18074634227735231",
+  "instagram_story_status": "published",
+  "published_at": "2026-10-09T20:50:43"
 }
