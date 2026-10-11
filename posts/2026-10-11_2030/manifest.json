@@ -1,0 +1,270 @@
+{
+  "run_id": "2026-10-11_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "試衣都不喜歡，仍怕店員白忙而把購物變成報恩",
+  "image_paths": [
+    "assets/2026-10-11_2030_deadpan_joke_01.png",
+    "assets/2026-10-11_2030_deadpan_joke_02.png",
+    "assets/2026-10-11_2030_deadpan_joke_03.png",
+    "assets/2026-10-11_2030_deadpan_joke_04.png",
+    "assets/2026-10-11_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-11_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-11_2030_generation_prompt.md",
+  "status": "generated",
+  "page_texts": [
+    "我不敢空手走出店。",
+    "三件都不愛，還是買了一件。",
+    "貓：買回去會穿？",
+    "她陪我試好久，我怕她白忙。",
+    "貓：人家在上班，你在報恩。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_B",
+    "label": "不太體面的坦白首句",
+    "hook_style": "Roberto 坦白一個不好意思承認的小心思；首句最多 16 字，不用固定『卻』句型",
+    "topic_pillar": "消費：省錢、衝動購物與面子",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-10-11",
+    "review_on": "2026-09-26",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ],
+  "reel_timing_status": "target_only_for_downstream_pipeline",
+  "music_profile": "playful_clown_instrumental_v1",
+  "soundtrack": {
+    "profile": "playful_clown_instrumental_v1",
+    "rationale": "原創俏皮撥弦、短促低音與木魚，配合猶豫轉身、硬買付款、停頓坦白和過分鄭重的小鞠躬；最後留空隙讓貓的報恩吐槽落地。無旁白或人聲。",
+    "audio_generated": false
+  },
+  "generation": {
+    "tool": "built-in image_gen",
+    "use_case": "illustration-story",
+    "candidates_scored": 12,
+    "non_workplace_candidates": 12,
+    "recent_completed_posts_compared": 20,
+    "selected_candidate": "A",
+    "selection_scores": {
+      "relatability": 5,
+      "dialogue_naturalness": 5,
+      "insight": 4,
+      "save_share_value": 5,
+      "total": 19
+    },
+    "imagegen_calls": 9,
+    "selected_image_count": 5,
+    "revision_calls": 4,
+    "likeness_reference": "assets/main_character_reference.jpg",
+    "continuity_reference": "assets/2026-10-11_2030_deadpan_joke_01.png",
+    "reference_study_slides_used_as_generation_inputs": false,
+    "selected_source_paths": [
+      "/Users/roberto/.codex/generated_images/01a12af2-5631-7662-abea-365b8af1d100/exec-f23114ad-9af9-4a3f-9b3c-b5b1627a04a6.png",
+      "/Users/roberto/.codex/generated_images/01a12af2-5631-7662-abea-365b8af1d100/exec-7fe8fbd4-ae08-4ef4-b8fc-3325334af3bf.png",
+      "/Users/roberto/.codex/generated_images/01a12af2-5631-7662-abea-365b8af1d100/exec-436fc46f-532e-4092-8db3-648ea349ecf7.png",
+      "/Users/roberto/.codex/generated_images/01a12af2-5631-7662-abea-365b8af1d100/exec-5cf6fcb2-d25d-42f3-b517-fb5d33db4273.png",
+      "/Users/roberto/.codex/generated_images/01a12af2-5631-7662-abea-365b8af1d100/exec-0f646ab5-25a0-4333-982f-42e1b2e9b658.png"
+    ],
+    "native_sizes": [
+      [
+        1092,
+        1440
+      ],
+      [
+        1122,
+        1402
+      ],
+      [
+        1122,
+        1402
+      ],
+      [
+        1122,
+        1402
+      ],
+      [
+        1122,
+        1402
+      ]
+    ],
+    "final_size": [
+      1080,
+      1350
+    ],
+    "normalization": "macOS sips size normalization only; illustration, text, bag correction and arm cleanup performed with built-in image_gen"
+  },
+  "validation": {
+    "image_checks": [
+      {
+        "path": "assets/2026-10-11_2030_deadpan_joke_01.png",
+        "bytes": 1913659,
+        "size": [
+          1080,
+          1350
+        ],
+        "format": "PNG",
+        "mode": "RGB",
+        "native_size": [
+          1092,
+          1440
+        ],
+        "sha256": "53a64e12b2e885a641cd6f2bb8dc2825edced6df2867ad1b71e999dff64cbd55",
+        "headline_ink_bbox_px": [
+          100,
+          155,
+          635,
+          217
+        ],
+        "headline_side_margins_px": [
+          100,
+          445
+        ]
+      },
+      {
+        "path": "assets/2026-10-11_2030_deadpan_joke_02.png",
+        "bytes": 1874711,
+        "size": [
+          1080,
+          1350
+        ],
+        "format": "PNG",
+        "mode": "RGB",
+        "native_size": [
+          1122,
+          1402
+        ],
+        "sha256": "b1187a073fbc74d700414148379be1552f8b1815fda7da0607979d2ab34bdd44",
+        "headline_ink_bbox_px": [
+          100,
+          156,
+          864,
+          218
+        ],
+        "headline_side_margins_px": [
+          100,
+          216
+        ]
+      },
+      {
+        "path": "assets/2026-10-11_2030_deadpan_joke_03.png",
+        "bytes": 1855036,
+        "size": [
+          1080,
+          1350
+        ],
+        "format": "PNG",
+        "mode": "RGB",
+        "native_size": [
+          1122,
+          1402
+        ],
+        "sha256": "5b5e9267c912c5b3aa815626dd64d07c703490ce12e5e1fcf30444e9617687dd",
+        "headline_ink_bbox_px": [
+          101,
+          152,
+          652,
+          225
+        ],
+        "headline_side_margins_px": [
+          101,
+          428
+        ]
+      },
+      {
+        "path": "assets/2026-10-11_2030_deadpan_joke_04.png",
+        "bytes": 1773267,
+        "size": [
+          1080,
+          1350
+        ],
+        "format": "PNG",
+        "mode": "RGB",
+        "native_size": [
+          1122,
+          1402
+        ],
+        "sha256": "0230e430562ff99d4f5a656d479ef39c6823fa7c4b4b9ca1014a80b0f36fb2b8",
+        "headline_ink_bbox_px": [
+          99,
+          156,
+          888,
+          224
+        ],
+        "headline_side_margins_px": [
+          99,
+          192
+        ]
+      },
+      {
+        "path": "assets/2026-10-11_2030_deadpan_joke_05.png",
+        "bytes": 1872799,
+        "size": [
+          1080,
+          1350
+        ],
+        "format": "PNG",
+        "mode": "RGB",
+        "native_size": [
+          1122,
+          1402
+        ],
+        "sha256": "c78ffaba04f7ac4f251720c11096c6e591c7f652870557e956b8abc75229fdf0",
+        "headline_ink_bbox_px": [
+          97,
+          155,
+          862,
+          225
+        ],
+        "headline_side_margins_px": [
+          97,
+          218
+        ]
+      }
+    ],
+    "png_count": 5,
+    "dimensions_pass": true,
+    "unique_images_pass": true,
+    "visual": {
+      "visually_reviewed_all_five_final_files": true,
+      "traditional_chinese_text_visual_pass": true,
+      "single_scene_and_single_headline_per_page": true,
+      "character_wardrobe_cat_and_setting_continuity_pass": true,
+      "likeness_reference_used": true,
+      "no_face_text_overlap": true,
+      "no_visible_logos_or_watermarks": true,
+      "page_3_bag_anatomy_corrected": true,
+      "page_4_stray_arm_removed": true,
+      "text_check_method": "Exact Traditional Chinese copy visually compared on all five final files; headline safe margins checked from pixels. No automated OCR claim."
+    },
+    "caption_hashtag_count": 4,
+    "caption_ends_with_page_5": true,
+    "hook_character_count_including_punctuation": 9,
+    "page_character_counts": [
+      9,
+      13,
+      8,
+      13,
+      13
+    ],
+    "minimum_headline_side_margin_px": 97,
+    "headline_ink_height_range_px": [
+      62,
+      73
+    ],
+    "archive_exact_line_matches": []
+  },
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-11_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1"
+}
