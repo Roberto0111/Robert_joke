@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-10-11_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-10-11_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "page_texts": [
     "我不敢空手走出店。",
     "三件都不愛，還是買了一件。",
@@ -266,5 +266,9 @@
   },
   "publish_format": "reel",
   "video_path": "assets/2026-10-11_2030_deadpan_joke_reel.mp4",
-  "motion_style": "mini_clown_2_5d_v1"
+  "motion_style": "mini_clown_2_5d_v1",
+  "instagram_media_id": "18494583196105530",
+  "instagram_story_media_id": "18333819931276764",
+  "instagram_story_status": "published",
+  "published_at": "2026-10-11T20:55:34"
 }
