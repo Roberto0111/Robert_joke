@@ -1,0 +1,228 @@
+{
+  "run_id": "2026-10-12_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "喜歡的遊戲要等整晚有空，手機卻隨時能滑",
+  "image_paths": [
+    "assets/2026-10-12_2030_deadpan_joke_01.png",
+    "assets/2026-10-12_2030_deadpan_joke_02.png",
+    "assets/2026-10-12_2030_deadpan_joke_03.png",
+    "assets/2026-10-12_2030_deadpan_joke_04.png",
+    "assets/2026-10-12_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-12_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-12_2030_generation_prompt.md",
+  "status": "generated",
+  "page_texts": [
+    "我把手把又放回去了。",
+    "剩半小時，先滑手機好了。",
+    "貓：半小時不能玩？",
+    "怕玩不過癮，想等整晚有空。",
+    "貓：你的興趣，還得預約你。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_A",
+    "label": "具體現場首句",
+    "hook_style": "從一個看得見的生活動作或對話開場；首句最多 16 字，不先講道理",
+    "topic_pillar": "休息：假日、興趣與對自己的要求",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-10-12",
+    "review_on": "2026-09-26",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ],
+  "reel_timing_status": "target_only_for_downstream_pipeline",
+  "music_profile": "playful_clown_instrumental_v1",
+  "soundtrack": {
+    "profile": "playful_clown_instrumental_v1",
+    "rationale": "原創無人聲俏皮撥弦、短促低音與木魚，配合慎重放回手把和輕鬆滑手機的落差；末頁停頓讓預約主人的反轉落地。",
+    "audio_generated": false
+  },
+  "generation": {
+    "tool": "built-in image_gen",
+    "use_case": "illustration-story",
+    "candidates_scored": 12,
+    "non_workplace_candidates": 12,
+    "recent_completed_posts_compared": 20,
+    "selected_candidate": "A",
+    "selection_scores": {
+      "relatability": 5,
+      "dialogue_naturalness": 5,
+      "insight": 4,
+      "save_share_value": 5,
+      "total": 19
+    },
+    "imagegen_calls": 6,
+    "revision_calls": 1,
+    "selected_image_count": 5,
+    "likeness_reference": "assets/main_character_reference.jpg",
+    "continuity_reference": "assets/2026-10-12_2030_deadpan_joke_01.png",
+    "reference_study_slides_used_as_generation_inputs": false,
+    "selected_source_paths": [
+      "/Users/roberto/.codex/generated_images/01a13018-a0f1-7fe1-a064-37efa1edfa34/exec-b82ba4d6-5520-47ee-b47c-453ce5566f15.png",
+      "/Users/roberto/.codex/generated_images/01a13018-a0f1-7fe1-a064-37efa1edfa34/exec-2b72ca63-6bc7-443f-b1ee-55f262cfff36.png",
+      "/Users/roberto/.codex/generated_images/01a13018-a0f1-7fe1-a064-37efa1edfa34/exec-c3e50d31-b6df-4097-8b94-c44a3a46d819.png",
+      "/Users/roberto/.codex/generated_images/01a13018-a0f1-7fe1-a064-37efa1edfa34/exec-5ca9dd9e-25c5-414f-a097-39c5e923b5e0.png",
+      "/Users/roberto/.codex/generated_images/01a13018-a0f1-7fe1-a064-37efa1edfa34/exec-c002bee6-d01d-471f-85c2-6a606b9078ca.png"
+    ],
+    "discarded_source_paths": [
+      "/Users/roberto/.codex/generated_images/01a13018-a0f1-7fe1-a064-37efa1edfa34/exec-b70aa544-be7b-4e05-8ca8-fd680a83913d.png"
+    ],
+    "final_size": [
+      1080,
+      1350
+    ],
+    "normalization": "macOS sips size normalization only; all illustration, typography and composition edits used built-in image_gen"
+  },
+  "validation": {
+    "image_checks": [
+      {
+        "path": "assets/2026-10-12_2030_deadpan_joke_01.png",
+        "size": [
+          1080,
+          1350
+        ],
+        "format": "PNG",
+        "mode": "RGB",
+        "bytes": 2099895,
+        "sha256": "104640719b54887585948730d8336f233dc775037da1c5231c3b9a4e3c907930",
+        "native_size": [
+          1092,
+          1440
+        ],
+        "headline_ink_bbox_px": [
+          97,
+          147,
+          628,
+          197
+        ],
+        "headline_side_margins_px": [
+          97,
+          452
+        ]
+      },
+      {
+        "path": "assets/2026-10-12_2030_deadpan_joke_02.png",
+        "size": [
+          1080,
+          1350
+        ],
+        "format": "PNG",
+        "mode": "RGB",
+        "bytes": 2105047,
+        "sha256": "d7a9e64e7e2380a343778c5323e43b8c3ef5322d8c456896c43828245c77eafc",
+        "native_size": [
+          1122,
+          1402
+        ],
+        "headline_ink_bbox_px": [
+          93,
+          145,
+          735,
+          198
+        ],
+        "headline_side_margins_px": [
+          93,
+          345
+        ]
+      },
+      {
+        "path": "assets/2026-10-12_2030_deadpan_joke_03.png",
+        "size": [
+          1080,
+          1350
+        ],
+        "format": "PNG",
+        "mode": "RGB",
+        "bytes": 2181798,
+        "sha256": "16a2054e3de196beec232045ac15ff0aafebafc3fc4855acb8deebf28fb9836e",
+        "native_size": [
+          1122,
+          1402
+        ],
+        "headline_ink_bbox_px": [
+          94,
+          143,
+          663,
+          204
+        ],
+        "headline_side_margins_px": [
+          94,
+          417
+        ]
+      },
+      {
+        "path": "assets/2026-10-12_2030_deadpan_joke_04.png",
+        "size": [
+          1080,
+          1350
+        ],
+        "format": "PNG",
+        "mode": "RGB",
+        "bytes": 2048563,
+        "sha256": "43e75fee98e68f633c8001c9c707d54c5a29a8c4a57ce4a2ace04cce7959244a",
+        "native_size": [
+          1092,
+          1440
+        ],
+        "headline_ink_bbox_px": [
+          97,
+          145,
+          787,
+          200
+        ],
+        "headline_side_margins_px": [
+          97,
+          293
+        ]
+      },
+      {
+        "path": "assets/2026-10-12_2030_deadpan_joke_05.png",
+        "size": [
+          1080,
+          1350
+        ],
+        "format": "PNG",
+        "mode": "RGB",
+        "bytes": 2182184,
+        "sha256": "ac2843ee664b13b2a05e3fb1523f11e5886a5bfebd917aabab1dae756826d930",
+        "native_size": [
+          1122,
+          1402
+        ],
+        "headline_ink_bbox_px": [
+          93,
+          145,
+          772,
+          197
+        ],
+        "headline_side_margins_px": [
+          93,
+          308
+        ]
+      }
+    ],
+    "exactly_five_images": true,
+    "caption_hashtag_count": 4,
+    "caption_ends_with_final_line": true,
+    "hook_character_count_including_punctuation": 10,
+    "no_exact_line_matches_in_previous_captions": true,
+    "visual_review": "PASS: parent inspected all native outputs and normalized page 5; independent reviewer inspected all five final PNGs for exact Traditional Chinese text, single scenes, likeness, character/wardrobe/palette continuity, safe margins and anatomy.",
+    "ocr_status": "Apple Vision returned Foundation._GenericObjCError for all pages; exact text verified visually by two reviewers, not by OCR.",
+    "all_final_artifacts_exist": true
+  },
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-12_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1"
+}
