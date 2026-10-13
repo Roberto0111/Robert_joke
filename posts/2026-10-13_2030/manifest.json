@@ -1,0 +1,212 @@
+{
+  "run_id": "2026-10-13_2030",
+  "content_mode": "life_dialogue",
+  "mood": "heavy",
+  "topic": "摔破朋友的杯子後，連聲道歉也在等對方安慰自己",
+  "image_paths": [
+    "assets/2026-10-13_2030_deadpan_joke_01.png",
+    "assets/2026-10-13_2030_deadpan_joke_02.png",
+    "assets/2026-10-13_2030_deadpan_joke_03.png",
+    "assets/2026-10-13_2030_deadpan_joke_04.png",
+    "assets/2026-10-13_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-13_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-13_2030_generation_prompt.md",
+  "status": "generated",
+  "page_texts": [
+    "我道歉，也想被安慰。",
+    "杯子一破，我連說十次對不起。",
+    "貓：你在等他說什麼？",
+    "我想聽他說，我沒有那麼糟。",
+    "貓：他還沒心疼杯子，就得先哄你。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_B",
+    "label": "不太體面的坦白首句",
+    "hook_style": "Roberto 坦白一個不好意思承認的小心思；首句最多 16 字，不用固定『卻』句型",
+    "topic_pillar": "關係：付出、界線與真實的小對話",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-10-13",
+    "review_on": "2026-09-26",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "reel_target_seconds": 30,
+  "reel_page_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "soundtrack": "weighty_clown_instrumental_v1",
+  "music_profile": "weighty_clown_instrumental_v1",
+  "reel_and_audio_generated": false,
+  "candidate_count": 12,
+  "non_workplace_candidate_count": 11,
+  "selected_score": {
+    "relatability": 5,
+    "natural_dialogue": 5,
+    "insight": 5,
+    "save_share_value": 4,
+    "total": 19
+  },
+  "reference_study": {
+    "available": true,
+    "slides_studied": 8,
+    "complete_post_studied": true,
+    "structural_analysis_in_prompt_record": true,
+    "reference_images_sent_to_generator": false
+  },
+  "generation_method": "built_in_image_gen",
+  "generation_calls": 6,
+  "validation": {
+    "images": [
+      {
+        "path": "assets/2026-10-13_2030_deadpan_joke_01.png",
+        "width": 1080,
+        "height": 1350,
+        "mode": "RGB",
+        "bytes": 1871716,
+        "sha256": "2ba8fdbf7228a00df51631470795e2cc24a2645e3217f9b957efa318a4ab3b97",
+        "headline_ink_bbox": [
+          99,
+          196,
+          745,
+          261
+        ],
+        "headline_side_margins": [
+          99,
+          335
+        ],
+        "source_dimensions": [
+          1092,
+          1440
+        ],
+        "source_path": "/Users/roberto/.codex/generated_images/01a1353f-6f08-71d1-80b7-f75b11177dca/exec-5e5d2207-3a0a-41a1-8b06-ae2a0e32b135.png"
+      },
+      {
+        "path": "assets/2026-10-13_2030_deadpan_joke_02.png",
+        "width": 1080,
+        "height": 1350,
+        "mode": "RGB",
+        "bytes": 1880133,
+        "sha256": "94ad295357328c69327ae9d2592912b58d9a0bab16c887b977a64f67cb2b0b40",
+        "headline_ink_bbox": [
+          93,
+          175,
+          983,
+          243
+        ],
+        "headline_side_margins": [
+          93,
+          97
+        ],
+        "source_dimensions": [
+          1122,
+          1402
+        ],
+        "source_path": "/Users/roberto/.codex/generated_images/01a1353f-6f08-71d1-80b7-f75b11177dca/exec-71b76441-a5cc-4202-8461-6aabbed6c990.png"
+      },
+      {
+        "path": "assets/2026-10-13_2030_deadpan_joke_03.png",
+        "width": 1080,
+        "height": 1350,
+        "mode": "RGB",
+        "bytes": 1896437,
+        "sha256": "88f7f05ae253b66d5ee0b82af75932700f7e99d75fe45d512c1d6db6d8de577a",
+        "headline_ink_bbox": [
+          91,
+          182,
+          837,
+          254
+        ],
+        "headline_side_margins": [
+          91,
+          243
+        ],
+        "source_dimensions": [
+          1122,
+          1402
+        ],
+        "source_path": "/Users/roberto/.codex/generated_images/01a1353f-6f08-71d1-80b7-f75b11177dca/exec-632c21cc-8715-435a-be63-fac1948c5072.png"
+      },
+      {
+        "path": "assets/2026-10-13_2030_deadpan_joke_04.png",
+        "width": 1080,
+        "height": 1350,
+        "mode": "RGB",
+        "bytes": 1888199,
+        "sha256": "f442120d69465de02873ab53b1fce0c8477acae2048033ee04d3094fa750a845",
+        "headline_ink_bbox": [
+          96,
+          162,
+          911,
+          232
+        ],
+        "headline_side_margins": [
+          96,
+          169
+        ],
+        "source_dimensions": [
+          1122,
+          1402
+        ],
+        "source_path": "/Users/roberto/.codex/generated_images/01a1353f-6f08-71d1-80b7-f75b11177dca/exec-31479c2c-b501-499f-b105-699c2bf60ebe.png"
+      },
+      {
+        "path": "assets/2026-10-13_2030_deadpan_joke_05.png",
+        "width": 1080,
+        "height": 1350,
+        "mode": "RGB",
+        "bytes": 1865244,
+        "sha256": "9f7723744e502eea9e1bf207d8e9a4549f90b53b4121cb1146293f0b06c044b4",
+        "headline_ink_bbox": [
+          99,
+          181,
+          979,
+          242
+        ],
+        "headline_side_margins": [
+          99,
+          101
+        ],
+        "source_dimensions": [
+          1122,
+          1402
+        ],
+        "source_path": "/Users/roberto/.codex/generated_images/01a1353f-6f08-71d1-80b7-f75b11177dca/exec-14281b91-cf47-4aa6-be34-45a26b983d51.png"
+      }
+    ],
+    "hashtag_count": 4,
+    "hashtag_list": [
+      "#人生對話",
+      "#友情日常",
+      "#道歉",
+      "#關係界線"
+    ],
+    "image_count": 5,
+    "format": "PNG",
+    "visual_qa": "passed",
+    "independent_visual_qa": "passed",
+    "traditional_chinese_text": "verified visually on all five final images",
+    "headline_min_side_margin_px": 91,
+    "caption_ending_matches_page_5": true,
+    "latest_completed_posts_compared": 20,
+    "exact_caption_archive_duplicates": 0
+  },
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-13_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
