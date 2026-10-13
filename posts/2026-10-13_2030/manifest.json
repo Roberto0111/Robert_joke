@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-10-13_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-10-13_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "page_texts": [
     "我道歉，也想被安慰。",
     "杯子一破，我連說十次對不起。",
@@ -208,5 +208,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18126118754487322",
+  "instagram_story_media_id": "18111848228521773",
+  "instagram_story_status": "published",
+  "published_at": "2026-10-13T20:53:39"
 }
