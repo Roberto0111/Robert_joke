@@ -1,0 +1,225 @@
+{
+  "run_id": "2026-10-15_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "替爸爸收納，讓屋主成了自己家的新來者",
+  "image_paths": [
+    "assets/2026-10-15_2030_deadpan_joke_01.png",
+    "assets/2026-10-15_2030_deadpan_joke_02.png",
+    "assets/2026-10-15_2030_deadpan_joke_03.png",
+    "assets/2026-10-15_2030_deadpan_joke_04.png",
+    "assets/2026-10-15_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-15_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-15_2030_generation_prompt.md",
+  "status": "generated",
+  "page_texts": [
+    "我幫爸收納，最怕他插手。",
+    "他的工具，我全裝進同款盒。",
+    "貓：他找得到嗎？",
+    "沒問，整齊了我就很有成就感。",
+    "貓：家沒搬，你爸倒成新來的。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_B",
+    "label": "不太體面的坦白首句",
+    "hook_style": "Roberto 坦白一個不好意思承認的小心思；首句最多 16 字，不用固定『卻』句型",
+    "topic_pillar": "家庭：關心與替別人做決定的界線",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-10-15",
+    "review_on": "2026-09-26",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ],
+  "reel_timing_status": "target_only_for_downstream_pipeline",
+  "music_profile": "playful_clown_instrumental_v1",
+  "soundtrack": {
+    "profile": "playful_clown_instrumental_v1",
+    "rationale": "原創無人聲俏皮撥弦、短促低音與木魚，配合擋爸爸碰自己工具及整理者只顧成就感的自我打臉；最後留停頓讓屋主變新來者的乾冷反轉落地。",
+    "audio_generated": false
+  },
+  "generation": {
+    "tool": "built-in image_gen",
+    "use_case": "illustration-story",
+    "candidates_scored": 12,
+    "non_workplace_candidates": 11,
+    "recent_completed_posts_compared": 20,
+    "older_captions_reviewed": 155,
+    "selected_candidate": "A",
+    "selection_scores": {
+      "relatability": 5,
+      "dialogue_naturalness": 5,
+      "insight": 5,
+      "save_share_value": 4,
+      "total": 19
+    },
+    "imagegen_calls": 8,
+    "revision_calls": 3,
+    "selected_image_count": 5,
+    "likeness_reference": "assets/main_character_reference.jpg",
+    "continuity_reference": "assets/2026-10-15_2030_deadpan_joke_01.png",
+    "reference_study_slides_used_as_generation_inputs": false,
+    "selected_source_paths": [
+      "/Users/roberto/.codex/generated_images/01a13f8b-a668-70c3-b66f-c28294aecabd/exec-02dd65b4-d4f4-4acb-914c-b0da5ceb378f.png",
+      "/Users/roberto/.codex/generated_images/01a13f8b-a668-70c3-b66f-c28294aecabd/exec-1741339c-3d45-4e47-b472-a2cc1b40ec62.png",
+      "/Users/roberto/.codex/generated_images/01a13f8b-a668-70c3-b66f-c28294aecabd/exec-addb0719-0e26-4033-83ac-780e058d0554.png",
+      "/Users/roberto/.codex/generated_images/01a13f8b-a668-70c3-b66f-c28294aecabd/exec-003f0309-72c0-41d5-a00f-f1324b804b57.png",
+      "/Users/roberto/.codex/generated_images/01a13f8b-a668-70c3-b66f-c28294aecabd/exec-867493d5-0dac-441b-b890-5836faaf7dc4.png"
+    ],
+    "discarded_source_paths": [
+      "/Users/roberto/.codex/generated_images/01a13f8b-a668-70c3-b66f-c28294aecabd/exec-5a0d7731-c760-40c0-9739-075396aabc7f.png",
+      "/Users/roberto/.codex/generated_images/01a13f8b-a668-70c3-b66f-c28294aecabd/exec-03270b30-9fde-439c-8e25-e4f9ea05f6d2.png",
+      "/Users/roberto/.codex/generated_images/01a13f8b-a668-70c3-b66f-c28294aecabd/exec-58d64abc-b963-4313-8a66-adec0dc199d8.png"
+    ],
+    "native_size": [
+      1122,
+      1402
+    ],
+    "final_size": [
+      1080,
+      1350
+    ],
+    "normalization": "macOS sips resampling only; no crop, programmatic redraw, compositing or external text overlay"
+  },
+  "published": false,
+  "video_generated": false,
+  "validation": {
+    "image_checks": [
+      {
+        "path": "assets/2026-10-15_2030_deadpan_joke_01.png",
+        "size": [
+          1080,
+          1350
+        ],
+        "format": "PNG",
+        "mode": "RGB",
+        "bytes": 1707220,
+        "sha256": "5b40ab9d915fa870d83bcc08058e85b75380e6e0d33236cadd67e095726d9abb",
+        "headline_ink_bbox_px": [
+          70,
+          175,
+          1000,
+          256
+        ],
+        "headline_side_margins_px": [
+          70,
+          80
+        ]
+      },
+      {
+        "path": "assets/2026-10-15_2030_deadpan_joke_02.png",
+        "size": [
+          1080,
+          1350
+        ],
+        "format": "PNG",
+        "mode": "RGB",
+        "bytes": 1621284,
+        "sha256": "1fe0aa81e7f83ba2bdbdb3813e5bf5514be61da00ffc5918ae52e3a7737bc413",
+        "headline_ink_bbox_px": [
+          69,
+          174,
+          1011,
+          255
+        ],
+        "headline_side_margins_px": [
+          69,
+          69
+        ]
+      },
+      {
+        "path": "assets/2026-10-15_2030_deadpan_joke_03.png",
+        "size": [
+          1080,
+          1350
+        ],
+        "format": "PNG",
+        "mode": "RGB",
+        "bytes": 1617679,
+        "sha256": "234cff75af7eb2271add978f2888821948dba249a86455947db3d9363e136d18",
+        "headline_ink_bbox_px": [
+          70,
+          169,
+          749,
+          257
+        ],
+        "headline_side_margins_px": [
+          70,
+          331
+        ]
+      },
+      {
+        "path": "assets/2026-10-15_2030_deadpan_joke_04.png",
+        "size": [
+          1080,
+          1350
+        ],
+        "format": "PNG",
+        "mode": "RGB",
+        "bytes": 1682000,
+        "sha256": "2cf7438e4b20e8925cfa46a365911225474f3f14484ed2460217cabaa7fb61b0",
+        "headline_ink_bbox_px": [
+          68,
+          173,
+          1018,
+          254
+        ],
+        "headline_side_margins_px": [
+          68,
+          62
+        ]
+      },
+      {
+        "path": "assets/2026-10-15_2030_deadpan_joke_05.png",
+        "size": [
+          1080,
+          1350
+        ],
+        "format": "PNG",
+        "mode": "RGB",
+        "bytes": 1762513,
+        "sha256": "6a18e7989c6972139d81f98886e966df2aa60a1f179f13c99e2bd3a173ef79df",
+        "headline_ink_bbox_px": [
+          68,
+          173,
+          1015,
+          255
+        ],
+        "headline_side_margins_px": [
+          68,
+          65
+        ]
+      }
+    ],
+    "exactly_five_images": true,
+    "caption_hashtag_count": 4,
+    "caption_ends_with_final_line": true,
+    "hook_character_count_including_punctuation": 12,
+    "page_character_counts": [
+      12,
+      13,
+      8,
+      14,
+      14
+    ],
+    "no_exact_line_matches_in_previous_captions": true,
+    "visual_review": "PASS: parent inspected all selected images; independent reviewer opened all five final PNGs and verified exact Traditional Chinese, single scenes, readable safe margins, no face overlap/cropping, consistent Roberto/dad/cat identities and wardrobe, six boxes per page and hidden screwdriver after page2. No material anatomy errors.",
+    "ocr_status": "Text proofread visually; OCR not run.",
+    "all_final_artifacts_exist": true,
+    "independent_visual_review_passed": true
+  },
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-15_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1"
+}
