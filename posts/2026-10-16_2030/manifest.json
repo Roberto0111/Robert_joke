@@ -1,0 +1,65 @@
+{
+  "run_id": "2026-10-16_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "簡報換了八種字體，內容卻還沒想好",
+  "image_paths": [
+    "assets/2026-10-16_2030_deadpan_joke_01.png",
+    "assets/2026-10-16_2030_deadpan_joke_02.png",
+    "assets/2026-10-16_2030_deadpan_joke_03.png",
+    "assets/2026-10-16_2030_deadpan_joke_04.png",
+    "assets/2026-10-16_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-16_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-16_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "我先把標題置中。",
+    "這份簡報，我換了八種字體。",
+    "貓：所以要講什麼？",
+    "還沒想好，至少看起來有在做。",
+    "貓：內容還沒出生，衣服先買八套。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_A",
+    "label": "具體現場首句",
+    "hook_style": "從一個看得見的生活動作或對話開場；首句最多 16 字，不先講道理",
+    "topic_pillar": "工作：一個具體日常選擇；不要再寫離職或沉沒成本",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-10-16",
+    "review_on": "2026-09-26",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "reel_timing": {
+    "target_seconds": 30,
+    "page_seconds": [
+      5,
+      6,
+      5,
+      6,
+      8
+    ],
+    "video_generated": false
+  },
+  "soundtrack": {
+    "profile": "playful_clown_instrumental_v1",
+    "rationale": "原創無人聲俏皮撥弦、短促低音與木魚，支援精密調字體卻內容空白的自我拆台；最後留停頓讓未出生先買八套衣服的比喻落地。",
+    "audio_generated": false
+  },
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-16_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
