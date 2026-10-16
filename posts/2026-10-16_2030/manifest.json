@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-10-16_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-10-16_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "dialogue": [
     "我先把標題置中。",
     "這份簡報，我換了八種字體。",
@@ -61,5 +61,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18411419734095468",
+  "instagram_story_media_id": "18485861116109814",
+  "instagram_story_status": "published",
+  "published_at": "2026-10-16T20:48:59"
 }
