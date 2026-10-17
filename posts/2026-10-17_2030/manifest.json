@@ -1,0 +1,85 @@
+{
+  "run_id": "2026-10-17_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "朋友互拍時偷偷計較辛苦",
+  "image_paths": [
+    "assets/2026-10-17_2030_deadpan_joke_01.png",
+    "assets/2026-10-17_2030_deadpan_joke_02.png",
+    "assets/2026-10-17_2030_deadpan_joke_03.png",
+    "assets/2026-10-17_2030_deadpan_joke_04.png",
+    "assets/2026-10-17_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-17_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-17_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "我幫朋友拍照，會偷偷計分。",
+    "我拍五十張，他只拍三張。",
+    "貓：那三張不能用？",
+    "都能用，但我就是有點不爽。",
+    "貓：你要的，是他也蹲到腿痠。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_B",
+    "label": "不太體面的坦白首句",
+    "hook_style": "Roberto 坦白一個不好意思承認的小心思；首句最多 16 字，不用固定『卻』句型",
+    "topic_pillar": "友情：邀約、拒絕與不好意思說出口的小事",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-10-17",
+    "review_on": "2026-09-26",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "reel_timing": {
+    "target_seconds": 30,
+    "page_seconds": [
+      5,
+      6,
+      5,
+      6,
+      8
+    ],
+    "video_generated": false
+  },
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "soundtrack": {
+    "profile": "playful_clown_instrumental_v1",
+    "rationale": "原創無人聲俏皮撥弦、短促低音與木魚，配合過分認真的蹲拍與暗中計分；末頁留停頓，讓照片能用卻想平分腿痠的自我拆台落地。",
+    "audio_generated": false
+  },
+  "generation": {
+    "method": "built-in image_gen",
+    "candidate_count": 12,
+    "non_workplace_candidates": 10,
+    "selected_score": 19,
+    "selected_maximum": 20,
+    "page_1_hook_characters": 13,
+    "prompt_record_contains_exact_prompts": true,
+    "normalization": "sips resized native near-4:5 PNG outputs to exact 1080x1350; no artwork cropped or redrawn in postprocessing"
+  },
+  "validation": {
+    "status": "passed",
+    "image_count": 5,
+    "width": 1080,
+    "height": 1350,
+    "visual_review": true,
+    "report_path": "posts/2026-10-17_2030/validation.json"
+  },
+  "published": false,
+  "video_generated": false,
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-17_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1"
+}
