@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-10-17_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-10-17_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "dialogue": [
     "我幫朋友拍照，會偷偷計分。",
     "我拍五十張，他只拍三張。",
@@ -81,5 +81,9 @@
   "video_generated": false,
   "publish_format": "reel",
   "video_path": "assets/2026-10-17_2030_deadpan_joke_reel.mp4",
-  "motion_style": "mini_clown_2_5d_v1"
+  "motion_style": "mini_clown_2_5d_v1",
+  "instagram_media_id": "18021065489938692",
+  "instagram_story_media_id": "18018875768955675",
+  "instagram_story_status": "published",
+  "published_at": "2026-10-17T20:49:02"
 }
