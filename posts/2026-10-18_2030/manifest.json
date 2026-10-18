@@ -1,0 +1,129 @@
+{
+  "run_id": "2026-10-18_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "省錢之後買獎勵，反而難養",
+  "image_paths": [
+    "assets/2026-10-18_2030_deadpan_joke_01.png",
+    "assets/2026-10-18_2030_deadpan_joke_02.png",
+    "assets/2026-10-18_2030_deadpan_joke_03.png",
+    "assets/2026-10-18_2030_deadpan_joke_04.png",
+    "assets/2026-10-18_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-18_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-18_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "我把外送取消了。",
+    "自己煮麵，省了一百。",
+    "貓：那箱又是什麼？",
+    "省錢太辛苦，買來獎勵自己。",
+    "貓：你這個省錢的人，真難養。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_A",
+    "label": "具體現場首句",
+    "hook_style": "從一個看得見的生活動作或對話開場；首句最多 16 字，不先講道理",
+    "topic_pillar": "消費：省錢、衝動購物與面子",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-10-18",
+    "review_on": "2026-09-26",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "reel_timing": {
+    "target_seconds": 30,
+    "page_seconds": [
+      5,
+      6,
+      5,
+      6,
+      8
+    ],
+    "video_generated": false
+  },
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "soundtrack": {
+    "profile": "playful_clown_instrumental_v1",
+    "rationale": "原創無人聲俏皮撥弦、短促低音與木魚，配合把煮麵省錢演成大功勞，再買耳機獎勵自己的荒謬；末頁稍停，讓貓把省錢者翻成難養的室友。",
+    "audio_generated": false
+  },
+  "generation": {
+    "method": "built-in image_gen",
+    "candidate_count": 12,
+    "non_workplace_candidates": 11,
+    "selected_score": 19,
+    "selected_maximum": 20,
+    "page_1_hook_characters": 8,
+    "prompt_record_contains_exact_prompts": true,
+    "normalization": "sips resized native near-4:5 PNGs to exact 1080x1350 without cropping, compositing or redrawing",
+    "sources": [
+      {
+        "page": 1,
+        "source": "/Users/roberto/.codex/generated_images/01a14eff-45e6-7ac3-9616-23e862141572/exec-0ab02495-b503-4ced-bf21-12f241ac4174.png",
+        "target": "assets/2026-10-18_2030_deadpan_joke_01.png"
+      },
+      {
+        "page": 2,
+        "source": "/Users/roberto/.codex/generated_images/01a14eff-45e6-7ac3-9616-23e862141572/exec-8c6498dc-b5aa-42c0-8a14-80fe8862d3ce.png",
+        "target": "assets/2026-10-18_2030_deadpan_joke_02.png"
+      },
+      {
+        "page": 3,
+        "source": "/Users/roberto/.codex/generated_images/01a14eff-45e6-7ac3-9616-23e862141572/exec-c27cfbc7-6a2a-4434-a554-649878919632.png",
+        "target": "assets/2026-10-18_2030_deadpan_joke_03.png"
+      },
+      {
+        "page": 4,
+        "source": "/Users/roberto/.codex/generated_images/01a14eff-45e6-7ac3-9616-23e862141572/exec-db2dca0d-939e-44c6-9668-51d31a270f6b.png",
+        "target": "assets/2026-10-18_2030_deadpan_joke_04.png"
+      },
+      {
+        "page": 5,
+        "source": "/Users/roberto/.codex/generated_images/01a14eff-45e6-7ac3-9616-23e862141572/exec-35a6bd7b-b7be-43cf-940f-c418e6faf3d6.png",
+        "target": "assets/2026-10-18_2030_deadpan_joke_05.png"
+      }
+    ],
+    "targeted_edits": [
+      {
+        "page": 3,
+        "reason": "Restore visible cooked noodles in bowl"
+      },
+      {
+        "page": 5,
+        "reason": "Remove unintended headphone pictogram from carton"
+      }
+    ]
+  },
+  "published": false,
+  "video_generated": false,
+  "validation": {
+    "status": "passed",
+    "image_count": 5,
+    "width": 1080,
+    "height": 1350,
+    "format": "PNG",
+    "color_mode": "RGB",
+    "visual_review": true,
+    "independent_visual_review": true,
+    "text_review": "All five exact Traditional Chinese lines manually verified; Tesseract used as supplemental check and its misrecognitions manually resolved",
+    "character_continuity": true,
+    "prop_continuity": true,
+    "caption_hashtags": 4,
+    "caption_ends_with_final_line": true
+  },
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-18_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1"
+}
