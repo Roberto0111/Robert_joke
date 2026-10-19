@@ -1,0 +1,125 @@
+{
+  "run_id": "2026-10-19_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "想露營，真正想要的只是坐在樹下",
+  "image_paths": [
+    "assets/2026-10-19_2030_deadpan_joke_01.png",
+    "assets/2026-10-19_2030_deadpan_joke_02.png",
+    "assets/2026-10-19_2030_deadpan_joke_03.png",
+    "assets/2026-10-19_2030_deadpan_joke_04.png",
+    "assets/2026-10-19_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-19_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-19_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "我想露營，不想搭帳篷。",
+    "才搭好，又要生火煮飯。",
+    "貓：那你喜歡哪一段？",
+    "坐在樹下，什麼都不用弄。",
+    "貓：你想去的其實是公園。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v2_B",
+    "label": "不太體面的坦白首句",
+    "hook_style": "Roberto 坦白一個不好意思承認的小心思；首句最多 16 字，不用固定『卻』句型",
+    "topic_pillar": "休息：假日、興趣與對自己的要求",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "scheduled_for": "2026-10-19",
+    "review_on": "2026-09-26",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較兩種首句；各七篇、題材平衡。題材更新本身不宣稱因果。",
+    "decision_rule": "每組至少 5 篇發布滿 72 小時且合計觸及 200 才比較；不足就延長，不憑單篇封王。"
+  },
+  "reel_timing": {
+    "target_seconds": 30,
+    "page_seconds": [
+      5,
+      6,
+      5,
+      6,
+      8
+    ],
+    "video_generated": false
+  },
+  "reel_seconds": 30,
+  "music_profile": "playful_clown_instrumental_v1",
+  "soundtrack": {
+    "profile": "playful_clown_instrumental_v1",
+    "rationale": "原創無人聲俏皮撥弦、短促低音與木魚配合帳桿、煮飯和貓佔椅子的自我打臉；末頁略停，讓公園重新命名真正的休息願望。",
+    "audio_generated": false
+  },
+  "generation": {
+    "method": "built-in image_gen",
+    "candidate_count": 12,
+    "non_workplace_candidates": 11,
+    "selected_score": 19,
+    "selected_maximum": 20,
+    "page_1_hook_characters": 11,
+    "prompt_record_contains_exact_prompts": true,
+    "normalization": "sips resized native 1122x1402 PNGs to exactly 1080x1350 without cropping, compositing or redrawing",
+    "sources": [
+      {
+        "page": 1,
+        "source": "/Users/roberto/.codex/generated_images/01a15425-8665-7d71-927e-a65d64f6dbca/exec-ecbc2eec-b001-49c5-ac94-cef09ba3980b.png",
+        "target": "assets/2026-10-19_2030_deadpan_joke_01.png"
+      },
+      {
+        "page": 2,
+        "source": "/Users/roberto/.codex/generated_images/01a15425-8665-7d71-927e-a65d64f6dbca/exec-cef7baee-287a-4ae6-a911-c7b2e0be240c.png",
+        "target": "assets/2026-10-19_2030_deadpan_joke_02.png"
+      },
+      {
+        "page": 3,
+        "source": "/Users/roberto/.codex/generated_images/01a15425-8665-7d71-927e-a65d64f6dbca/exec-fdf0c833-4f51-4821-89b8-6efcfd59d39a.png",
+        "target": "assets/2026-10-19_2030_deadpan_joke_03.png"
+      },
+      {
+        "page": 4,
+        "source": "/Users/roberto/.codex/generated_images/01a15425-8665-7d71-927e-a65d64f6dbca/exec-91f6ca43-11c5-469f-a6cb-5987e114ee30.png",
+        "target": "assets/2026-10-19_2030_deadpan_joke_04.png"
+      },
+      {
+        "page": 5,
+        "source": "/Users/roberto/.codex/generated_images/01a15425-8665-7d71-927e-a65d64f6dbca/exec-9c5d2847-e225-4310-9f35-9c90ae9fe647.png",
+        "target": "assets/2026-10-19_2030_deadpan_joke_05.png"
+      }
+    ],
+    "targeted_edits": [
+      {
+        "page": 3,
+        "reason": "Remove loose foreground tent pole after tent is erected; match stove continuity to page 2"
+      }
+    ]
+  },
+  "published": false,
+  "video_generated": false,
+  "validation": {
+    "status": "passed",
+    "image_count": 5,
+    "width": 1080,
+    "height": 1350,
+    "format": "PNG",
+    "color_mode": "RGB",
+    "visual_review": true,
+    "independent_visual_review": true,
+    "text_review": "All five exact Traditional Chinese lines visually verified by two independent reviews",
+    "character_continuity": true,
+    "prop_continuity": true,
+    "caption_hashtags": 4,
+    "caption_ends_with_final_line": true
+  },
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-19_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
