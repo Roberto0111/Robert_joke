@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-10-19_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-10-19_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "dialogue": [
     "我想露營，不想搭帳篷。",
     "才搭好，又要生火煮飯。",
@@ -121,5 +121,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18356998594169967",
+  "instagram_story_media_id": "18050576141620009",
+  "instagram_story_status": "published",
+  "published_at": "2026-10-19T20:47:47"
 }
