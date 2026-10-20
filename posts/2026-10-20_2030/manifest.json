@@ -1,0 +1,196 @@
+{
+  "run_id": "2026-10-20_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "三攤聚餐都答應，真正聊熟的卻是計程車司機",
+  "image_paths": [
+    "assets/2026-10-20_2030_deadpan_joke_01.png",
+    "assets/2026-10-20_2030_deadpan_joke_02.png",
+    "assets/2026-10-20_2030_deadpan_joke_03.png",
+    "assets/2026-10-20_2030_deadpan_joke_04.png",
+    "assets/2026-10-20_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-20_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-20_2030_generation_prompt.md",
+  "status": "generated",
+  "page_texts": [
+    "貓：聚餐跑三攤，還啃飯糰？",
+    "每攤坐十分鐘，說完抱歉就走。",
+    "貓：你有跟誰聊到嗎？",
+    "沒，但我怕不去就不夠朋友。",
+    "貓：三攤跑完，跟司機最熟。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_A",
+    "label": "貓先戳破一句",
+    "hook_style": "第一格直接是貓對眼前動作的吐槽或追問；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "友情：邀約、拒絕與不好意思說出口的小事",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-10-20",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "balanced_exploration",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "soundtrack": "playful_clown_instrumental_v1",
+  "reel_target_seconds": 30,
+  "page_durations_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "generation": {
+    "method": "built-in image_gen",
+    "postprocessing": "sips dimension normalization only; no added text or compositing",
+    "candidate_count": 12,
+    "non_workplace_candidate_count": 12,
+    "selected_candidate": "A",
+    "selection_scores": {
+      "relatability": 5,
+      "dialogue_naturalness": 5,
+      "insight": 4,
+      "save_share_value": 5,
+      "total": 19
+    },
+    "scores_are_editorial_hypotheses": true,
+    "imagegen_calls": 7,
+    "likeness_reference": "assets/main_character_reference.jpg"
+  },
+  "validation": {
+    "status": "passed",
+    "image_count": 5,
+    "format": "PNG",
+    "width": 1080,
+    "height": 1350,
+    "headline_minimum_side_margin_px": 94,
+    "traditional_chinese_text": "All five final PNGs visually checked character by character against page_texts",
+    "character_continuity": "All five final PNGs visually checked for likeness, wardrobe, cat markings, taxi palette and props",
+    "single_scene_per_page": true,
+    "first_page_character_count_including_speaker_and_punctuation": 13,
+    "caption_hashtag_count": 4,
+    "caption_ends_with_page_five_line": true,
+    "historical_exact_line_collisions": [],
+    "publication_performed": false,
+    "git_push_performed": false,
+    "images": [
+      {
+        "path": "assets/2026-10-20_2030_deadpan_joke_01.png",
+        "bytes": 2171714,
+        "sha256": "2e7c7897f87a1cf73df6a4748207087d4c857fad5a649e60a605b734715203ec",
+        "format": "PNG",
+        "mode": "RGB",
+        "width": 1080,
+        "height": 1350,
+        "headline_ink_bbox": [
+          96,
+          140,
+          986,
+          210
+        ],
+        "headline_side_margins_px": [
+          96,
+          94
+        ],
+        "headline_ink_height_px": 70
+      },
+      {
+        "path": "assets/2026-10-20_2030_deadpan_joke_02.png",
+        "bytes": 2027869,
+        "sha256": "1242e973d30a2419b27c953b272ebd461b1684044d7e1d4000352a08707e3cdc",
+        "format": "PNG",
+        "mode": "RGB",
+        "width": 1080,
+        "height": 1350,
+        "headline_ink_bbox": [
+          152,
+          149,
+          928,
+          210
+        ],
+        "headline_side_margins_px": [
+          152,
+          152
+        ],
+        "headline_ink_height_px": 61
+      },
+      {
+        "path": "assets/2026-10-20_2030_deadpan_joke_03.png",
+        "bytes": 2126886,
+        "sha256": "38c199747f07b943a5c73a7af5016edc3521f8082abc920b46abe11bcd49c473",
+        "format": "PNG",
+        "mode": "RGB",
+        "width": 1080,
+        "height": 1350,
+        "headline_ink_bbox": [
+          129,
+          127,
+          954,
+          208
+        ],
+        "headline_side_margins_px": [
+          129,
+          126
+        ],
+        "headline_ink_height_px": 81
+      },
+      {
+        "path": "assets/2026-10-20_2030_deadpan_joke_04.png",
+        "bytes": 1979580,
+        "sha256": "362227a2e4f56ca4ae98a310d33dd099c3bf84e4bbcde9aaee63d8d8f886b19a",
+        "format": "PNG",
+        "mode": "RGB",
+        "width": 1080,
+        "height": 1350,
+        "headline_ink_bbox": [
+          162,
+          135,
+          919,
+          199
+        ],
+        "headline_side_margins_px": [
+          162,
+          161
+        ],
+        "headline_ink_height_px": 64
+      },
+      {
+        "path": "assets/2026-10-20_2030_deadpan_joke_05.png",
+        "bytes": 2084380,
+        "sha256": "23bca961f17e6f6253e5e5d33fcd9a81de6b5296e0b7689351ae7656fa360a5d",
+        "format": "PNG",
+        "mode": "RGB",
+        "width": 1080,
+        "height": 1350,
+        "headline_ink_bbox": [
+          97,
+          138,
+          985,
+          215
+        ],
+        "headline_side_margins_px": [
+          97,
+          95
+        ],
+        "headline_ink_height_px": 77
+      }
+    ]
+  },
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-20_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
