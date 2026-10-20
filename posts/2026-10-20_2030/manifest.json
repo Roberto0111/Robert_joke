@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-10-20_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-10-20_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "page_texts": [
     "貓：聚餐跑三攤，還啃飯糰？",
     "每攤坐十分鐘，說完抱歉就走。",
@@ -192,5 +192,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17987578682878778",
+  "instagram_story_media_id": "18103928681632280",
+  "instagram_story_status": "published",
+  "published_at": "2026-10-20T20:55:48"
 }
