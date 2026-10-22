@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-10-22_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-10-22_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "page_texts": [
     "貓：散步又買醬油？",
     "上次那瓶還沒開，又拎一瓶。",
@@ -192,5 +192,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18125990947852050",
+  "instagram_story_media_id": "18153464905532452",
+  "instagram_story_status": "published",
+  "published_at": "2026-10-22T21:00:17"
 }
