@@ -1,0 +1,196 @@
+{
+  "run_id": "2026-10-22_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "散步也要買醬油才算有事做，買到快能開滷味攤",
+  "image_paths": [
+    "assets/2026-10-22_2030_deadpan_joke_01.png",
+    "assets/2026-10-22_2030_deadpan_joke_02.png",
+    "assets/2026-10-22_2030_deadpan_joke_03.png",
+    "assets/2026-10-22_2030_deadpan_joke_04.png",
+    "assets/2026-10-22_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-22_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-22_2030_generation_prompt.md",
+  "status": "generated",
+  "page_texts": [
+    "貓：散步又買醬油？",
+    "上次那瓶還沒開，又拎一瓶。",
+    "貓：出門一定要買東西？",
+    "不然總覺得，只是在浪費時間。",
+    "貓：再散幾次，就能開滷味攤。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_A",
+    "label": "貓先戳破一句",
+    "hook_style": "第一格直接是貓對眼前動作的吐槽或追問；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "休息：假日、興趣與對自己的要求",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-10-22",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "balanced_exploration",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "soundtrack": "playful_clown_instrumental_v1",
+  "reel_target_seconds": 30,
+  "page_durations_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "generation": {
+    "method": "built-in image_gen",
+    "postprocessing": "sips dimension normalization only; no added text or compositing",
+    "candidate_count": 12,
+    "non_workplace_candidate_count": 12,
+    "selected_candidate": "A",
+    "selection_scores": {
+      "relatability": 5,
+      "dialogue_naturalness": 5,
+      "insight": 4,
+      "save_share_value": 5,
+      "total": 19
+    },
+    "scores_are_editorial_hypotheses": true,
+    "imagegen_calls": 7,
+    "likeness_reference": "assets/main_character_reference.jpg"
+  },
+  "validation": {
+    "status": "passed",
+    "image_count": 5,
+    "format": "PNG",
+    "width": 1080,
+    "height": 1350,
+    "headline_minimum_side_margin_px": 92,
+    "traditional_chinese_text": "All five selected images visually checked character by character against page_texts",
+    "character_continuity": "Selected pages visually checked for Roberto likeness, outfit, cat markings, entryway palette, five bottles, two-tier shelf and consistent rendering",
+    "single_scene_per_page": true,
+    "first_page_character_count_including_speaker_and_punctuation": 9,
+    "caption_hashtag_count": 4,
+    "caption_ends_with_page_five_line": true,
+    "historical_exact_line_collisions": [],
+    "publication_performed": false,
+    "git_push_performed": false,
+    "images": [
+      {
+        "path": "assets/2026-10-22_2030_deadpan_joke_01.png",
+        "bytes": 1981047,
+        "sha256": "31ed7340a100091464c0b0a17eb186a0932573bab205a0a42bff4be943c44235",
+        "format": "PNG",
+        "mode": "RGB",
+        "width": 1080,
+        "height": 1350,
+        "headline_ink_bbox": [
+          99,
+          146,
+          779,
+          223
+        ],
+        "headline_side_margins_px": [
+          99,
+          301
+        ],
+        "headline_ink_height_px": 77
+      },
+      {
+        "path": "assets/2026-10-22_2030_deadpan_joke_02.png",
+        "bytes": 1961064,
+        "sha256": "1c55acf0e1d7c359b83a9cc1c0174d12a555933a78a34d90ba4fa3317718b338",
+        "format": "PNG",
+        "mode": "RGB",
+        "width": 1080,
+        "height": 1350,
+        "headline_ink_bbox": [
+          109,
+          154,
+          909,
+          216
+        ],
+        "headline_side_margins_px": [
+          109,
+          171
+        ],
+        "headline_ink_height_px": 62
+      },
+      {
+        "path": "assets/2026-10-22_2030_deadpan_joke_03.png",
+        "bytes": 1979432,
+        "sha256": "a615af91ad3c57558c2256224dd4ba7b263f75ab153adace6f9fef4b530320e8",
+        "format": "PNG",
+        "mode": "RGB",
+        "width": 1080,
+        "height": 1350,
+        "headline_ink_bbox": [
+          98,
+          144,
+          945,
+          223
+        ],
+        "headline_side_margins_px": [
+          98,
+          135
+        ],
+        "headline_ink_height_px": 79
+      },
+      {
+        "path": "assets/2026-10-22_2030_deadpan_joke_04.png",
+        "bytes": 1991999,
+        "sha256": "6dd43287e1a8a5e655e4fd3014eb50053377eaa6d95cb9b4b56144124aa8ffb5",
+        "format": "PNG",
+        "mode": "RGB",
+        "width": 1080,
+        "height": 1350,
+        "headline_ink_bbox": [
+          95,
+          148,
+          987,
+          213
+        ],
+        "headline_side_margins_px": [
+          95,
+          93
+        ],
+        "headline_ink_height_px": 65
+      },
+      {
+        "path": "assets/2026-10-22_2030_deadpan_joke_05.png",
+        "bytes": 1930023,
+        "sha256": "bbf7b9d36c692ebfd01fac6ee5cf692e74d664ef4acdecd0437bee577c8cacc3",
+        "format": "PNG",
+        "mode": "RGB",
+        "width": 1080,
+        "height": 1350,
+        "headline_ink_bbox": [
+          95,
+          149,
+          988,
+          219
+        ],
+        "headline_side_margins_px": [
+          95,
+          92
+        ],
+        "headline_ink_height_px": 70
+      }
+    ]
+  },
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-22_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
