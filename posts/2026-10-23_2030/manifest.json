@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-10-23_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-10-23_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "dialogue": [
     "Roberto：我故意留一箱。",
     "抱枕才拿出來，我又塞回去。",
@@ -195,5 +195,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18422219344156426",
+  "instagram_story_media_id": "18129318316852834",
+  "instagram_story_status": "published",
+  "published_at": "2026-10-23T20:54:36"
 }
