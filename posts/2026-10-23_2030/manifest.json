@@ -1,0 +1,199 @@
+{
+  "run_id": "2026-10-23_2030",
+  "content_mode": "life_dialogue",
+  "mood": "heavy",
+  "topic": "搬家後故意留一箱，把想留朋友吃飯藏成還需要幫忙",
+  "image_paths": [
+    "assets/2026-10-23_2030_deadpan_joke_01.png",
+    "assets/2026-10-23_2030_deadpan_joke_02.png",
+    "assets/2026-10-23_2030_deadpan_joke_03.png",
+    "assets/2026-10-23_2030_deadpan_joke_04.png",
+    "assets/2026-10-23_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-23_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-23_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "Roberto：我故意留一箱。",
+    "抱枕才拿出來，我又塞回去。",
+    "貓：不是都搬好了？",
+    "想留他吃飯，又怕他說不要。",
+    "貓：他還沒拒絕晚餐，只是搬完了。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_B",
+    "label": "Roberto先自曝一句",
+    "hook_style": "第一格直接是Roberto坦白自己正在做的尷尬選擇；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "關係：付出、界線與真實的小對話",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-10-23",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "balanced_exploration",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "music_profile": "weighty_clown_instrumental_v1",
+  "reel_target_duration_seconds": 30,
+  "page_durations_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "reel_generated": false,
+  "generation": {
+    "tool": "built-in image_gen",
+    "use_case": "illustration-story",
+    "image_call_count": 5,
+    "likeness_reference": "assets/main_character_reference.jpg",
+    "continuity_reference": "assets/2026-10-23_2030_deadpan_joke_01.png",
+    "reference_post_images_passed_to_generator": false,
+    "source_images": [
+      {
+        "page": 1,
+        "path": "/Users/roberto/.codex/generated_images/01a168bf-1f1d-7e91-94b7-6fb1e7dc2e6d/exec-0603dfde-74e6-4c77-922d-ed98cba6c609.png"
+      },
+      {
+        "page": 2,
+        "path": "/Users/roberto/.codex/generated_images/01a168bf-1f1d-7e91-94b7-6fb1e7dc2e6d/exec-958ed8ce-68fb-4f83-9234-06a71c9257ac.png"
+      },
+      {
+        "page": 3,
+        "path": "/Users/roberto/.codex/generated_images/01a168bf-1f1d-7e91-94b7-6fb1e7dc2e6d/exec-0990b2a3-c1f0-499e-b146-30391a74b8d5.png"
+      },
+      {
+        "page": 4,
+        "path": "/Users/roberto/.codex/generated_images/01a168bf-1f1d-7e91-94b7-6fb1e7dc2e6d/exec-f6488bc2-f71e-4474-b0e0-618ee63ba0ea.png"
+      },
+      {
+        "page": 5,
+        "path": "/Users/roberto/.codex/generated_images/01a168bf-1f1d-7e91-94b7-6fb1e7dc2e6d/exec-e9f5f469-058b-4d24-8e37-78c10cda7922.png"
+      }
+    ],
+    "normalization": "Page 1: sips resample 1122x1402 to 1080x1350; pages 2–5: proportional resample height 1440 to 1350, then centered warm-white padding to 1080x1350. No content edits, cropping or programmatic text overlays."
+  },
+  "validation": {
+    "result": "passed",
+    "image_count": 5,
+    "image_checks": [
+      {
+        "path": "assets/2026-10-23_2030_deadpan_joke_01.png",
+        "width": 1080,
+        "height": 1350,
+        "format": "PNG",
+        "bytes": 2163152,
+        "sha256": "a7c810cada1bbf5a7a43741783ea31f24d0047fcc14c87ccada76882c9c3dd08",
+        "headline_ink_bbox": [
+          113,
+          149,
+          930,
+          221
+        ],
+        "text_checked_visually": true
+      },
+      {
+        "path": "assets/2026-10-23_2030_deadpan_joke_02.png",
+        "width": 1080,
+        "height": 1350,
+        "format": "PNG",
+        "bytes": 1897811,
+        "sha256": "e285fa8afe48159b248949d1a9b3cef286c7cf8564744a67b34e05d051e69432",
+        "headline_ink_bbox": [
+          124,
+          152,
+          958,
+          218
+        ],
+        "text_checked_visually": true
+      },
+      {
+        "path": "assets/2026-10-23_2030_deadpan_joke_03.png",
+        "width": 1080,
+        "height": 1350,
+        "format": "PNG",
+        "bytes": 1883537,
+        "sha256": "2ff5e851d6f40c6426c043d42d3444a6a27a3239de0fd6b4e52fbf9e7e388f46",
+        "headline_ink_bbox": [
+          138,
+          156,
+          799,
+          228
+        ],
+        "text_checked_visually": true
+      },
+      {
+        "path": "assets/2026-10-23_2030_deadpan_joke_04.png",
+        "width": 1080,
+        "height": 1350,
+        "format": "PNG",
+        "bytes": 1894823,
+        "sha256": "e2e217d2a5f6f6256e39991319981c82b19413a73979f05054bd790dbe77cfd4",
+        "headline_ink_bbox": [
+          124,
+          155,
+          949,
+          222
+        ],
+        "text_checked_visually": true
+      },
+      {
+        "path": "assets/2026-10-23_2030_deadpan_joke_05.png",
+        "width": 1080,
+        "height": 1350,
+        "format": "PNG",
+        "bytes": 1909547,
+        "sha256": "2f97685cb37ff1eb5fc51b2a367c4f0443619b30c5ce6c3c4073c8e60070392f",
+        "headline_ink_bbox": [
+          101,
+          157,
+          981,
+          218
+        ],
+        "text_checked_visually": true
+      }
+    ],
+    "dialogue_character_counts": [
+      15,
+      13,
+      9,
+      13,
+      16
+    ],
+    "hashtag_count": 4,
+    "hashtags": [
+      "#人生對話",
+      "#友情日常",
+      "#搬家日記",
+      "#說不出口"
+    ],
+    "caption_ends_with_final_line": true,
+    "visual_review": "All five final PNGs opened individually; Traditional Chinese compared character by character; consistent protagonist identity, wardrobe, cat markings, supporting friend and palette; one continuous scene per page; no face/text overlap.",
+    "text_check_method": "manual visual review, not OCR",
+    "historical_exact_dialogue_matches": [],
+    "latest_completed_posts_compared": 20,
+    "brainstorm_candidates": 12,
+    "non_workplace_candidates": 10,
+    "candidate_score_type": "editorial hypothesis; not performance evidence",
+    "selected_candidate_score": 19
+  },
+  "publishing": {
+    "instagram_published": false,
+    "git_push_performed": false
+  },
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-23_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
