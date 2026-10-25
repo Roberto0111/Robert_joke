@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-10-25_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-10-25_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "dialogue": [
     "Roberto：媽要花，我送蔥。",
     "我還帶了雞蛋，晚餐不用想。",
@@ -177,5 +177,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18095582279172392",
+  "instagram_story_media_id": "18111466490522893",
+  "instagram_story_status": "published",
+  "published_at": "2026-10-25T20:48:59"
 }
