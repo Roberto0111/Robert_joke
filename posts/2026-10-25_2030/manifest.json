@@ -1,0 +1,181 @@
+{
+  "run_id": "2026-10-25_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "媽媽想收花，兒子送蔥與蛋，把自己的點菜包成替她省事",
+  "image_paths": [
+    "assets/2026-10-25_2030_deadpan_joke_01.png",
+    "assets/2026-10-25_2030_deadpan_joke_02.png",
+    "assets/2026-10-25_2030_deadpan_joke_03.png",
+    "assets/2026-10-25_2030_deadpan_joke_04.png",
+    "assets/2026-10-25_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-25_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-25_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "Roberto：媽要花，我送蔥。",
+    "我還帶了雞蛋，晚餐不用想。",
+    "貓：她今天想煮飯嗎？",
+    "沒問，我好久沒吃她煎的蔥蛋。",
+    "貓：原來這束花，是用來點菜的。"
+  ],
+  "page_texts": [
+    "Roberto：媽要花，我送蔥。",
+    "我還帶了雞蛋，晚餐不用想。",
+    "貓：她今天想煮飯嗎？",
+    "沒問，我好久沒吃她煎的蔥蛋。",
+    "貓：原來這束花，是用來點菜的。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_B",
+    "label": "Roberto先自曝一句",
+    "hook_style": "第一格直接是Roberto坦白自己正在做的尷尬選擇；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "家庭：關心與替別人做決定的界線",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-10-25",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "balanced_exploration",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "target_reading_seconds": 30,
+  "page_durations_seconds": [
+    5.5,
+    5.5,
+    5.5,
+    6,
+    7.5
+  ],
+  "soundtrack": "playful_clown_instrumental_v1",
+  "generation_method": "built_in_image_gen",
+  "validation": {
+    "image_count": 5,
+    "dimensions_pass": true,
+    "decoding_pass": true,
+    "traditional_chinese_visual_check": "pass",
+    "character_continuity_visual_check": "pass",
+    "one_scene_one_line_per_page": "pass",
+    "first_page_complete_character_count": 16,
+    "caption_hashtags": [
+      "#人生對話",
+      "#家庭日常",
+      "#關心與界線",
+      "#送禮日常"
+    ],
+    "caption_ends_with_final_dialogue": true,
+    "latest_completed_runs_reviewed": 20,
+    "brainstormed_candidates": 12,
+    "non_workplace_candidates": 12,
+    "selected_editorial_score": 19,
+    "editorial_scores_are_performance_evidence": false,
+    "images": [
+      {
+        "path": "assets/2026-10-25_2030_deadpan_joke_01.png",
+        "width": 1080,
+        "height": 1350,
+        "mode": "RGB",
+        "bytes": 2065727,
+        "sha256": "896ec5186cf43ae7aa0c0676d01dc3c36ffda963f18f937d9cc02cd4864b0d16",
+        "headline_ink_bbox": [
+          80,
+          132,
+          1003,
+          208
+        ],
+        "headline_side_margins_px": [
+          80,
+          77
+        ]
+      },
+      {
+        "path": "assets/2026-10-25_2030_deadpan_joke_02.png",
+        "width": 1080,
+        "height": 1350,
+        "mode": "RGB",
+        "bytes": 2048461,
+        "sha256": "4b9f38ba918a83b944931c5f9cefebae5ab0a097c668e379e4ee1aa1a56b1948",
+        "headline_ink_bbox": [
+          78,
+          133,
+          1005,
+          210
+        ],
+        "headline_side_margins_px": [
+          78,
+          75
+        ]
+      },
+      {
+        "path": "assets/2026-10-25_2030_deadpan_joke_03.png",
+        "width": 1080,
+        "height": 1350,
+        "mode": "RGB",
+        "bytes": 2033662,
+        "sha256": "8606648dfab939fbc842966cc01b205d75e4a655274aca263631a73e13f7f5e1",
+        "headline_ink_bbox": [
+          78,
+          133,
+          838,
+          211
+        ],
+        "headline_side_margins_px": [
+          78,
+          242
+        ]
+      },
+      {
+        "path": "assets/2026-10-25_2030_deadpan_joke_04.png",
+        "width": 1080,
+        "height": 1350,
+        "mode": "RGB",
+        "bytes": 2007707,
+        "sha256": "ea0416867e47c85f9d999f6fde238e1656609114d23180d6d07315b4836747a4",
+        "headline_ink_bbox": [
+          77,
+          131,
+          1009,
+          209
+        ],
+        "headline_side_margins_px": [
+          77,
+          71
+        ]
+      },
+      {
+        "path": "assets/2026-10-25_2030_deadpan_joke_05.png",
+        "width": 1080,
+        "height": 1350,
+        "mode": "RGB",
+        "bytes": 1989636,
+        "sha256": "77fa1c514ea7a128acc447a7cee43890e0fae16ee33ab726009587d6c20e4a45",
+        "headline_ink_bbox": [
+          76,
+          136,
+          923,
+          208
+        ],
+        "headline_side_margins_px": [
+          76,
+          157
+        ]
+      }
+    ]
+  },
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-25_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
