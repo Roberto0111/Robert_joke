@@ -1,0 +1,182 @@
+{
+  "run_id": "2026-10-26_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "辦公室最後半塊餅乾，越客氣越碎",
+  "image_paths": [
+    "assets/2026-10-26_2030_deadpan_joke_01.png",
+    "assets/2026-10-26_2030_deadpan_joke_02.png",
+    "assets/2026-10-26_2030_deadpan_joke_03.png",
+    "assets/2026-10-26_2030_deadpan_joke_04.png",
+    "assets/2026-10-26_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-26_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-26_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "貓：半塊餅乾，你還掰？",
+    "我掰了三次，還不敢吃完。",
+    "貓：剩下那口要留誰？",
+    "不知道，吃最後一塊好像很貪心。",
+    "貓：再掰下去，就輪到掃地機了。"
+  ],
+  "page_texts": [
+    "貓：半塊餅乾，你還掰？",
+    "我掰了三次，還不敢吃完。",
+    "貓：剩下那口要留誰？",
+    "不知道，吃最後一塊好像很貪心。",
+    "貓：再掰下去，就輪到掃地機了。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_A",
+    "label": "貓先戳破一句",
+    "hook_style": "第一格直接是貓對眼前動作的吐槽或追問；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "工作：一個具體日常選擇；不要再寫離職或沉沒成本",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-10-26",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "balanced_exploration",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "target_reading_seconds": 30,
+  "page_durations_seconds": [
+    5.5,
+    5.5,
+    5.5,
+    6,
+    7.5
+  ],
+  "soundtrack": "playful_clown_instrumental_v1",
+  "generation_method": "built_in_image_gen",
+  "validation": {
+    "image_count": 5,
+    "dimensions_pass": true,
+    "decoding_pass": true,
+    "traditional_chinese_visual_check": "pass",
+    "character_continuity_visual_check": "pass",
+    "one_scene_one_line_per_page": "pass",
+    "first_page_complete_character_count": 11,
+    "caption_hashtags": [
+      "#人生對話",
+      "#職場日常",
+      "#辦公室零食",
+      "#不好意思"
+    ],
+    "caption_ends_with_final_dialogue": true,
+    "latest_completed_runs_reviewed": 20,
+    "brainstormed_candidates": 12,
+    "non_workplace_candidates": 8,
+    "selected_editorial_score": 19,
+    "editorial_scores_are_performance_evidence": false,
+    "exact_dialogue_repetition_in_old_captions": false,
+    "images": [
+      {
+        "path": "assets/2026-10-26_2030_deadpan_joke_01.png",
+        "width": 1080,
+        "height": 1350,
+        "mode": "RGB",
+        "bytes": 2044324,
+        "sha256": "1012339be143afc4bac46292204bc5773cf8c41d76b31fa11ee8209decde3ccc",
+        "headline_ink_bbox": [
+          151,
+          187,
+          938,
+          256
+        ],
+        "headline_side_margins_px": [
+          151,
+          142
+        ]
+      },
+      {
+        "path": "assets/2026-10-26_2030_deadpan_joke_02.png",
+        "width": 1080,
+        "height": 1350,
+        "mode": "RGB",
+        "bytes": 2094293,
+        "sha256": "5487c5bafcc1771910de4f83e43692c4b6b2683d5bb2f637a31d751066a33727",
+        "headline_ink_bbox": [
+          122,
+          185,
+          958,
+          257
+        ],
+        "headline_side_margins_px": [
+          122,
+          122
+        ]
+      },
+      {
+        "path": "assets/2026-10-26_2030_deadpan_joke_03.png",
+        "width": 1080,
+        "height": 1350,
+        "mode": "RGB",
+        "bytes": 1936887,
+        "sha256": "9edd8593f6c5d0259bd662324d680eb888b7699148b48b43752958bcd17378cf",
+        "headline_ink_bbox": [
+          166,
+          185,
+          908,
+          257
+        ],
+        "headline_side_margins_px": [
+          166,
+          172
+        ]
+      },
+      {
+        "path": "assets/2026-10-26_2030_deadpan_joke_04.png",
+        "width": 1080,
+        "height": 1350,
+        "mode": "RGB",
+        "bytes": 1892036,
+        "sha256": "98ff7e62ef33093e7391daa3a35e442862365f399b8e91680463bbe21a053300",
+        "headline_ink_bbox": [
+          99,
+          188,
+          980,
+          254
+        ],
+        "headline_side_margins_px": [
+          99,
+          100
+        ]
+      },
+      {
+        "path": "assets/2026-10-26_2030_deadpan_joke_05.png",
+        "width": 1080,
+        "height": 1350,
+        "mode": "RGB",
+        "bytes": 1911694,
+        "sha256": "497a4ece66b4aa55e058cfdde0d9f978af02b47ab78039285e5efa28775b08c0",
+        "headline_ink_bbox": [
+          106,
+          186,
+          974,
+          250
+        ],
+        "headline_side_margins_px": [
+          106,
+          106
+        ]
+      }
+    ]
+  },
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-26_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
