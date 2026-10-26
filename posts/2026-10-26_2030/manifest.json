@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-10-26_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-10-26_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "dialogue": [
     "貓：半塊餅乾，你還掰？",
     "我掰了三次，還不敢吃完。",
@@ -178,5 +178,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17992336584096826",
+  "instagram_story_media_id": "18470679883191160",
+  "instagram_story_status": "published",
+  "published_at": "2026-10-26T21:02:58"
 }
