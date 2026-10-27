@@ -1,0 +1,182 @@
+{
+  "run_id": "2026-10-27_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "讓朋友贏棋，卻受不了他開始教自己",
+  "image_paths": [
+    "assets/2026-10-27_2030_deadpan_joke_01.png",
+    "assets/2026-10-27_2030_deadpan_joke_02.png",
+    "assets/2026-10-27_2030_deadpan_joke_03.png",
+    "assets/2026-10-27_2030_deadpan_joke_04.png",
+    "assets/2026-10-27_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-27_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-27_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "Roberto：讓棋還生氣。",
+    "才輸三局，他就開始教我。",
+    "貓：不是你故意輸的？",
+    "想讓他開心，沒想被當新手。",
+    "貓：你讓了三局，沒讓出第一名。"
+  ],
+  "page_texts": [
+    "Roberto：讓棋還生氣。",
+    "才輸三局，他就開始教我。",
+    "貓：不是你故意輸的？",
+    "想讓他開心，沒想被當新手。",
+    "貓：你讓了三局，沒讓出第一名。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_B",
+    "label": "Roberto先自曝一句",
+    "hook_style": "第一格直接是Roberto坦白自己正在做的尷尬選擇；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "友情：邀約、拒絕與不好意思說出口的小事",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-10-27",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "balanced_exploration",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "soundtrack": "playful_clown_instrumental_v1",
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ],
+  "reel_seconds": 30,
+  "generation_method": "built_in_image_gen",
+  "generation_spec_path": "posts/2026-10-27_2030/generation_spec.json",
+  "generation_sources_path": "posts/2026-10-27_2030/generation_sources.json",
+  "validation": {
+    "image_count": 5,
+    "dimensions_pass": true,
+    "decoding_pass": true,
+    "traditional_chinese_visual_check": "pass",
+    "character_continuity_visual_check": "pass",
+    "one_scene_one_line_per_page": "pass",
+    "first_page_complete_character_count": 14,
+    "caption_hashtags": [
+      "#人生對話",
+      "#友情日常",
+      "#下棋日常",
+      "#賓士貓"
+    ],
+    "caption_ends_with_final_dialogue": true,
+    "latest_completed_runs_reviewed": 20,
+    "brainstormed_candidates": 12,
+    "non_workplace_candidates": 12,
+    "selected_editorial_score": 19,
+    "editorial_scores_are_performance_evidence": false,
+    "exact_hook_or_final_line_in_old_captions": false,
+    "audible_readthrough": "not_verified_local_speech_service_blocked; textual_oral_phrasing_review_completed",
+    "images": [
+      {
+        "path": "assets/2026-10-27_2030_deadpan_joke_01.png",
+        "width": 1080,
+        "height": 1350,
+        "format": "PNG",
+        "mode": "RGB",
+        "bytes": 1850282,
+        "sha256": "6dee80a64d4756f24c881e9f608cb604e29417d5dce1961dbeabafd2dd4dee91",
+        "headline_ink_bbox": [
+          122,
+          153,
+          961,
+          230
+        ],
+        "headline_side_margins_px": [
+          122,
+          119
+        ]
+      },
+      {
+        "path": "assets/2026-10-27_2030_deadpan_joke_02.png",
+        "width": 1080,
+        "height": 1350,
+        "format": "PNG",
+        "mode": "RGB",
+        "bytes": 1860389,
+        "sha256": "b54f981dfe6ea7130827fdf604957bd9c1c207c051f196677971377246a13ad4",
+        "headline_ink_bbox": [
+          128,
+          155,
+          963,
+          230
+        ],
+        "headline_side_margins_px": [
+          128,
+          117
+        ]
+      },
+      {
+        "path": "assets/2026-10-27_2030_deadpan_joke_03.png",
+        "width": 1080,
+        "height": 1350,
+        "format": "PNG",
+        "mode": "RGB",
+        "bytes": 1748318,
+        "sha256": "045df9c7a2339d1a75db59a78642fdfd9c36d3d2ea041e1224496707d05e58c9",
+        "headline_ink_bbox": [
+          129,
+          188,
+          944,
+          273
+        ],
+        "headline_side_margins_px": [
+          129,
+          136
+        ]
+      },
+      {
+        "path": "assets/2026-10-27_2030_deadpan_joke_04.png",
+        "width": 1080,
+        "height": 1350,
+        "format": "PNG",
+        "mode": "RGB",
+        "bytes": 1749319,
+        "sha256": "b74928462bf9169dbe2b43bdf25ad9674b6bbadad1c4f63309ab203d0bc3e67a",
+        "headline_ink_bbox": [
+          134,
+          165,
+          962,
+          237
+        ],
+        "headline_side_margins_px": [
+          134,
+          118
+        ]
+      },
+      {
+        "path": "assets/2026-10-27_2030_deadpan_joke_05.png",
+        "width": 1080,
+        "height": 1350,
+        "format": "PNG",
+        "mode": "RGB",
+        "bytes": 1881634,
+        "sha256": "9c6468f377ea1f2271eb6da21e1b4f499060c739f4130e506577b71e16f0400a",
+        "headline_ink_bbox": [
+          106,
+          166,
+          989,
+          234
+        ],
+        "headline_side_margins_px": [
+          106,
+          91
+        ]
+      }
+    ]
+  },
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-27_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1"
+}
