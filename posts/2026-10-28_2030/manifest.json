@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-10-28_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-10-28_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "dialogue": [
     "貓：省停車費，你買鍋？",
     "再買八百，就能免費停車。",
@@ -53,5 +53,9 @@
   "publish_format": "reel",
   "video_path": "assets/2026-10-28_2030_deadpan_joke_reel.mp4",
   "motion_style": "mini_clown_2_5d_v1",
-  "reel_seconds": 30
+  "reel_seconds": 30,
+  "instagram_media_id": "17996255505020900",
+  "instagram_story_media_id": "17977618485157515",
+  "instagram_story_status": "published",
+  "published_at": "2026-10-28T20:58:01"
 }
