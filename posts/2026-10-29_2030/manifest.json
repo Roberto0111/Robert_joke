@@ -1,0 +1,284 @@
+{
+  "run_id": "2026-10-29_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "睡飽還補眠，等手錶同意自己睡夠了",
+  "image_paths": [
+    "assets/2026-10-29_2030_deadpan_joke_01.png",
+    "assets/2026-10-29_2030_deadpan_joke_02.png",
+    "assets/2026-10-29_2030_deadpan_joke_03.png",
+    "assets/2026-10-29_2030_deadpan_joke_04.png",
+    "assets/2026-10-29_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-29_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-29_2030_generation_prompt.md",
+  "status": "generated",
+  "page_texts": [
+    "Roberto：睡飽還補眠。",
+    "手錶才給六十分，我又躺回去。",
+    "貓：你現在還睏嗎？",
+    "不睏，想睡到它誇我。",
+    "貓：你都醒了，手錶還沒同意。"
+  ],
+  "dialogue": [
+    "Roberto：睡飽還補眠。",
+    "手錶才給六十分，我又躺回去。",
+    "貓：你現在還睏嗎？",
+    "不睏，想睡到它誇我。",
+    "貓：你都醒了，手錶還沒同意。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_B",
+    "label": "Roberto先自曝一句",
+    "hook_style": "第一格直接是Roberto坦白自己正在做的尷尬選擇；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "休息：假日、興趣與對自己的要求",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-10-29",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "balanced_exploration",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ],
+  "reel_timing_status": "target_only_for_downstream_pipeline",
+  "music_profile": "playful_clown_instrumental_v1",
+  "soundtrack": {
+    "profile": "playful_clown_instrumental_v1",
+    "rationale": "原創俏皮撥弦、短促低音和木魚配合睜眼補眠的自我打臉；結尾留停頓給貓的冷吐槽。無旁白。",
+    "audio_generated": false
+  },
+  "editorial_decision": {
+    "assigned_topic": "休息：假日、興趣與對自己的要求",
+    "hook_arm": "organic_v3_opening_20261020_B / Roberto先自曝一句",
+    "audience_dilemma": "明明已感到清醒，仍以手錶分數決定休息算不算數，想得到裝置的誇獎。",
+    "visible_first_frame_action": "坐在沙發邊、已經清醒的Roberto看左手錶，把毯子重新拉上膝蓋；貓停步回頭。",
+    "payoff_mechanism": "把觀察睡眠的工具翻成批准起床的人；重新躺下是在等認可。",
+    "specific_sharing_hypothesis": "想傳給早上精神很好、看到睡眠分數後卻又覺得沒睡好的朋友；不是實測分享證據。",
+    "difference_from_latest_20": "改為白天沙發與睡眠分數，無社交互惠、購物折抵、等完美空檔或替散步找用途；以工具與使用者的權限顛倒收束。",
+    "mood_rationale": "睜眼還努力補眠，坦承想被手錶誇獎，讓最後一句構成具體喜劇反轉。"
+  },
+  "generation": {
+    "tool": "built-in image_gen",
+    "use_case": "illustration-story",
+    "candidates_scored": 12,
+    "non_workplace_candidates": 12,
+    "selected_candidate": "A",
+    "selection_scores": {
+      "relatability": 5,
+      "dialogue_naturalness": 5,
+      "insight": 4,
+      "save_share_value": 5,
+      "total": 19
+    },
+    "scores_are": "subjective editorial estimates, not performance evidence",
+    "imagegen_calls": 6,
+    "layout_corrections": 1,
+    "selected_image_count": 5,
+    "likeness_reference": "assets/main_character_reference.jpg",
+    "continuity_reference": "assets/2026-10-29_2030_deadpan_joke_01.png",
+    "reference_study_slides_used_as_generation_inputs": false,
+    "selected_source_paths": [
+      "/Users/roberto/.codex/generated_images/01a187a5-3133-7361-9057-fd17bcfc52ff/exec-c38378fd-5efc-4bd0-b7fe-87bce06b3b21.png",
+      "/Users/roberto/.codex/generated_images/01a187a5-3133-7361-9057-fd17bcfc52ff/exec-acbab5ff-e30d-494f-a4b8-923a89de6c58.png",
+      "/Users/roberto/.codex/generated_images/01a187a5-3133-7361-9057-fd17bcfc52ff/exec-0d0bb008-a7fd-4e8f-859a-2e36da8ca4ab.png",
+      "/Users/roberto/.codex/generated_images/01a187a5-3133-7361-9057-fd17bcfc52ff/exec-fd312b3d-4ecc-4efa-8106-be8a3778cf8e.png",
+      "/Users/roberto/.codex/generated_images/01a187a5-3133-7361-9057-fd17bcfc52ff/exec-03bb2d97-8ce4-46c6-a0aa-cc906d96b577.png"
+    ],
+    "native_sizes": [
+      [
+        1122,
+        1402
+      ],
+      [
+        1122,
+        1402
+      ],
+      [
+        1122,
+        1402
+      ],
+      [
+        1122,
+        1402
+      ],
+      [
+        1122,
+        1402
+      ]
+    ],
+    "final_size": [
+      1080,
+      1350
+    ],
+    "normalization": "macOS sips resize only; no cropping, local painting, or text overlays"
+  },
+  "validation": {
+    "png_count": 5,
+    "all_image_dimensions_pass": true,
+    "visually_reviewed_all_five_final_files": true,
+    "traditional_chinese_exact_text_visual_pass": true,
+    "one_scene_and_one_headline_per_page": true,
+    "character_wardrobe_cat_and_setting_continuity_pass": true,
+    "no_face_text_overlap": true,
+    "no_logos_or_watermarks": true,
+    "minimum_headline_side_margin_px": 105,
+    "headline_ink_height_range_px": [
+      54,
+      62
+    ],
+    "first_line_characters_including_speaker": 14,
+    "last_line_begins_with_cat": true,
+    "hashtag_count": 4,
+    "caption_last_line_matches_page_5": true,
+    "exact_historical_caption_duplicates": false,
+    "latest_completed_posts_compared": 20,
+    "ocr_summary": "Pages 1/2/5 match after punctuation normalization; 睏 misrecognized on pages 3/4 and verified visually.",
+    "read_through": "Conversational cadence reviewed in text; local say playback attempted but sandbox returned an error, so playback not claimed.",
+    "image_checks": [
+      {
+        "path": "assets/2026-10-29_2030_deadpan_joke_01.png",
+        "bytes": 1995133,
+        "size": [
+          1080,
+          1350
+        ],
+        "mode": "RGB",
+        "format": "PNG",
+        "sha256": "bd8c537d7112bc5c67a5f3bf6cfd07c6b83afe48f701d2d110125599c673515f",
+        "headline_ink_bbox_px": [
+          114,
+          140,
+          704,
+          194
+        ],
+        "headline_side_margins_px": [
+          114,
+          376
+        ],
+        "expected_text": "Roberto：睡飽還補眠。",
+        "ocr_text": "Roberto:睡飽還補眠。",
+        "visual_text_check": "pass",
+        "ocr_verification": "punctuation-normalized exact match"
+      },
+      {
+        "path": "assets/2026-10-29_2030_deadpan_joke_02.png",
+        "bytes": 2006681,
+        "size": [
+          1080,
+          1350
+        ],
+        "mode": "RGB",
+        "format": "PNG",
+        "sha256": "33c362e68d1764832c671e770c33fc877ec2fb0fb83269c7470eb1f5e5781ca5",
+        "headline_ink_bbox_px": [
+          112,
+          145,
+          885,
+          201
+        ],
+        "headline_side_margins_px": [
+          112,
+          195
+        ],
+        "expected_text": "手錶才給六十分，我又躺回去。",
+        "ocr_text": "手錶才給六十分,我又躺回去。",
+        "visual_text_check": "pass",
+        "ocr_verification": "punctuation-normalized exact match"
+      },
+      {
+        "path": "assets/2026-10-29_2030_deadpan_joke_03.png",
+        "bytes": 1980630,
+        "size": [
+          1080,
+          1350
+        ],
+        "mode": "RGB",
+        "format": "PNG",
+        "sha256": "05fbe04467be211c4846a843f8f7216f569ed6977d09a066ab16b2674b250621",
+        "headline_ink_bbox_px": [
+          109,
+          139,
+          665,
+          200
+        ],
+        "headline_side_margins_px": [
+          109,
+          415
+        ],
+        "expected_text": "貓：你現在還睏嗎？",
+        "ocr_text": "貓:你現在還鼎嗎?",
+        "visual_text_check": "pass",
+        "ocr_verification": "OCR misrecognized 睏; checked visually"
+      },
+      {
+        "path": "assets/2026-10-29_2030_deadpan_joke_04.png",
+        "bytes": 1995383,
+        "size": [
+          1080,
+          1350
+        ],
+        "mode": "RGB",
+        "format": "PNG",
+        "sha256": "588c71d4fbbf668fd8c687866f2170db264abcd40bf5950c45687a6c35399ab3",
+        "headline_ink_bbox_px": [
+          111,
+          139,
+          756,
+          201
+        ],
+        "headline_side_margins_px": [
+          111,
+          324
+        ],
+        "expected_text": "不睏，想睡到它誇我。",
+        "ocr_text": "不上曙,想睡到它誇我。",
+        "visual_text_check": "pass",
+        "ocr_verification": "OCR misrecognized 睏; checked visually"
+      },
+      {
+        "path": "assets/2026-10-29_2030_deadpan_joke_05.png",
+        "bytes": 1977861,
+        "size": [
+          1080,
+          1350
+        ],
+        "mode": "RGB",
+        "format": "PNG",
+        "sha256": "b8c46b9ad8b49c70c64713de7bf5e8a7836d25db810a285760b701220077297c",
+        "headline_ink_bbox_px": [
+          105,
+          142,
+          918,
+          200
+        ],
+        "headline_side_margins_px": [
+          105,
+          162
+        ],
+        "expected_text": "貓：你都醒了，手錶還沒同意。",
+        "ocr_text": "貓:你都醒了,手錶還沒同意。",
+        "visual_text_check": "pass",
+        "ocr_verification": "punctuation-normalized exact match"
+      }
+    ]
+  },
+  "publication": {
+    "instagram_posted": false,
+    "git_pushed": false,
+    "video_rendered": false
+  },
+  "publish_format": "reel",
+  "video_path": "assets/2026-10-29_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1"
+}
