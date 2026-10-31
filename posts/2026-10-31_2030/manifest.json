@@ -1,0 +1,44 @@
+{
+  "run_id": "2026-10-31_2030",
+  "content_mode": "life_dialogue",
+  "mood": "heavy",
+  "topic": "一句晚安重錄十遍，把喜歡剪成禮貌",
+  "image_paths": [
+    "assets/2026-10-31_2030_deadpan_joke_01.png",
+    "assets/2026-10-31_2030_deadpan_joke_02.png",
+    "assets/2026-10-31_2030_deadpan_joke_03.png",
+    "assets/2026-10-31_2030_deadpan_joke_04.png",
+    "assets/2026-10-31_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-10-31_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-10-31_2030_generation_prompt.md",
+  "status": "generated",
+  "music_profile": "weighty_clown_instrumental_v1",
+  "publish_format": "reel",
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_B",
+    "label": "Roberto先自曝一句",
+    "hook_style": "第一格直接是Roberto坦白自己正在做的尷尬選擇；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "數位生活：已讀、群組與社交比較",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-10-31",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "balanced_exploration",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "video_path": "assets/2026-10-31_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
