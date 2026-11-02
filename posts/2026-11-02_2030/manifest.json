@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-02_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-02_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "page_texts": [
     "Roberto：伸懶腰還裝拿書。",
     "同一本字典，我抽了又放。",
@@ -290,5 +290,9 @@
   "git_push_performed": false,
   "publish_format": "reel",
   "video_path": "assets/2026-11-02_2030_deadpan_joke_reel.mp4",
-  "motion_style": "mini_clown_2_5d_v1"
+  "motion_style": "mini_clown_2_5d_v1",
+  "instagram_media_id": "18160890409512374",
+  "instagram_story_media_id": "17953228320050026",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-02T21:03:32"
 }
