@@ -1,0 +1,268 @@
+{
+  "run_id": "2026-11-05_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "種豆想放鬆，卻一直挖出確認",
+  "image_paths": [
+    "assets/2026-11-05_2030_deadpan_joke_01.png",
+    "assets/2026-11-05_2030_deadpan_joke_02.png",
+    "assets/2026-11-05_2030_deadpan_joke_03.png",
+    "assets/2026-11-05_2030_deadpan_joke_04.png",
+    "assets/2026-11-05_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-05_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-05_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "貓：豆子剛埋好，又挖？",
+    "才種三天，我就挖了六次。",
+    "貓：不是說種來放鬆？",
+    "看不見根，就怕我把它種死。",
+    "貓：還沒發芽，先搬六次家。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_A",
+    "label": "貓先戳破一句",
+    "hook_style": "第一格直接是貓對眼前動作的吐槽或追問；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "休息：假日、興趣與對自己的要求",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-11-05",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "balanced_exploration",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "soundtrack_id": "playful_clown_instrumental_v1",
+  "reel_target_duration_seconds": 30,
+  "reel_page_durations_seconds": [
+    5.5,
+    6,
+    5.5,
+    6,
+    7
+  ],
+  "reel_generated": false,
+  "generation_method": "built_in_image_gen",
+  "generation_call_count": 6,
+  "reference_study_status": "unavailable_fallback_original_five_beats",
+  "validation": {
+    "image_count": 5,
+    "dimensions": [
+      1080,
+      1350
+    ],
+    "png_decode_passed": true,
+    "headline_codepoint_counts": [
+      11,
+      12,
+      10,
+      13,
+      13
+    ],
+    "headline_visual_review_passed": true,
+    "text_not_over_faces": true,
+    "single_full_page_scene_each": true,
+    "likeness_and_style_continuity_review_passed": true,
+    "minimum_headline_side_margin_px": 188,
+    "hashtags": [
+      "#人生對話",
+      "#假日生活",
+      "#陽台種植",
+      "#自我要求"
+    ],
+    "caption_ends_with_page_five": true,
+    "brainstorm_candidates": 12,
+    "non_workplace_candidates": 12,
+    "selected_editorial_score": 19,
+    "scores_are_measured_performance": false,
+    "prior_post_exact_dialogue_matches": [],
+    "audible_readthrough": "attempted_macOS_say_but_sandbox_denied; textual_oral_rhythm_review_completed",
+    "ocr_note": "P2-P5 headline Han characters match full-page OCR. P1 又挖 misread in full-page OCR; isolated enlarged headline OCR matches. All punctuation and glyphs visually reviewed."
+  },
+  "image_details": [
+    {
+      "page": 1,
+      "path": "assets/2026-11-05_2030_deadpan_joke_01.png",
+      "source": "/Users/roberto/.codex/generated_images/01a1abb1-07c3-7d30-b9c5-a8df67ebfe1a/exec-758752b5-518d-40c4-854b-6d6fc705cc5a.png",
+      "source_size": [
+        1122,
+        1402
+      ],
+      "size": [
+        1080,
+        1350
+      ],
+      "mode": "RGB",
+      "bytes": 1942299,
+      "sha256": "d683003cf3d6f95d622f61372e37448fd71fb22bd46014e0ca64af315cdd6548",
+      "normalization": "resample_to_exact_4_5_rounding_difference_only",
+      "headline_ink_bbox": [
+        282,
+        245,
+        817,
+        289
+      ],
+      "headline_ink_height": 44,
+      "headline_left_right_margins": [
+        282,
+        263
+      ],
+      "expected_headline": "貓：豆子剛埋好，又挖？",
+      "ocr_headline": "貓:豆子剛埋好 > WIE?",
+      "ocr_full_page_headline_cjk_exact": false,
+      "ocr_headline_crop": "貓:豆子剛埋好,又挖?",
+      "headline_visually_verified": true,
+      "character_and_prop_continuity_visually_verified": true
+    },
+    {
+      "page": 2,
+      "path": "assets/2026-11-05_2030_deadpan_joke_02.png",
+      "source": "/Users/roberto/.codex/generated_images/01a1abb1-07c3-7d30-b9c5-a8df67ebfe1a/exec-65841f8d-098b-4ae0-8261-b1d507f12cc0.png",
+      "source_size": [
+        1092,
+        1440
+      ],
+      "size": [
+        1080,
+        1350
+      ],
+      "mode": "RGB",
+      "bytes": 1804607,
+      "sha256": "6b0143f8f2ecb844dd8d9b26d76d52f8f48b357a8662854eb12bddbc4675f44f",
+      "normalization": "proportional_resample_1023x1350_then_center_pad_FBF3EB",
+      "headline_ink_bbox": [
+        234,
+        241,
+        867,
+        288
+      ],
+      "headline_ink_height": 47,
+      "headline_left_right_margins": [
+        234,
+        213
+      ],
+      "expected_headline": "才種三天，我就挖了六次。",
+      "ocr_headline": "才種三天,我就挖了六次。",
+      "ocr_full_page_headline_cjk_exact": true,
+      "headline_visually_verified": true,
+      "character_and_prop_continuity_visually_verified": true
+    },
+    {
+      "page": 3,
+      "path": "assets/2026-11-05_2030_deadpan_joke_03.png",
+      "source": "/Users/roberto/.codex/generated_images/01a1abb1-07c3-7d30-b9c5-a8df67ebfe1a/exec-499c78a1-7a73-4424-92bf-94e77f8236a4.png",
+      "source_size": [
+        1122,
+        1402
+      ],
+      "size": [
+        1080,
+        1350
+      ],
+      "mode": "RGB",
+      "bytes": 1908006,
+      "sha256": "93ebc2d31474d55aa38622b54b040b695a86c2ed17e9d60005511d68436c1efb",
+      "normalization": "resample_to_exact_4_5_rounding_difference_only",
+      "headline_ink_bbox": [
+        283,
+        244,
+        813,
+        289
+      ],
+      "headline_ink_height": 45,
+      "headline_left_right_margins": [
+        283,
+        267
+      ],
+      "expected_headline": "貓：不是說種來放鬆？",
+      "ocr_headline": "貓:不是說種來放鬆?",
+      "ocr_full_page_headline_cjk_exact": true,
+      "headline_visually_verified": true,
+      "character_and_prop_continuity_visually_verified": true
+    },
+    {
+      "page": 4,
+      "path": "assets/2026-11-05_2030_deadpan_joke_04.png",
+      "source": "/Users/roberto/.codex/generated_images/01a1abb1-07c3-7d30-b9c5-a8df67ebfe1a/exec-d4af4cdb-c22d-4fad-b72a-61475be96a95.png",
+      "source_size": [
+        1092,
+        1440
+      ],
+      "size": [
+        1080,
+        1350
+      ],
+      "mode": "RGB",
+      "bytes": 1755418,
+      "sha256": "890787a7b41bcf0b800ee4a44bfca44081091d75fd2c19f832a5daf9cc39b7ff",
+      "normalization": "proportional_resample_1023x1350_then_center_pad_FCF7F2",
+      "headline_ink_bbox": [
+        207,
+        243,
+        892,
+        289
+      ],
+      "headline_ink_height": 46,
+      "headline_left_right_margins": [
+        207,
+        188
+      ],
+      "expected_headline": "看不見根，就怕我把它種死。",
+      "ocr_headline": "看不見根,就怕我把它種死。",
+      "ocr_full_page_headline_cjk_exact": true,
+      "headline_visually_verified": true,
+      "character_and_prop_continuity_visually_verified": true
+    },
+    {
+      "page": 5,
+      "path": "assets/2026-11-05_2030_deadpan_joke_05.png",
+      "source": "/Users/roberto/.codex/generated_images/01a1abb1-07c3-7d30-b9c5-a8df67ebfe1a/exec-ec521fa9-b348-4e9b-a6ba-256a60094e7d.png",
+      "source_size": [
+        1092,
+        1440
+      ],
+      "size": [
+        1080,
+        1350
+      ],
+      "mode": "RGB",
+      "bytes": 1842835,
+      "sha256": "2817723cdb388732ec2cc6d5810a9cf0398df2871b47eb7dccecaab6d6c54425",
+      "normalization": "proportional_resample_1023x1350_then_center_pad_FBF4ED",
+      "headline_ink_bbox": [
+        199,
+        241,
+        891,
+        288
+      ],
+      "headline_ink_height": 47,
+      "headline_left_right_margins": [
+        199,
+        189
+      ],
+      "expected_headline": "貓：還沒發芽，先搬六次家。",
+      "ocr_headline": "貓:還沒發芽,先搬六次家。",
+      "ocr_full_page_headline_cjk_exact": true,
+      "headline_visually_verified": true,
+      "character_and_prop_continuity_visually_verified": true
+    }
+  ],
+  "published_to_instagram": false,
+  "git_push_performed": false,
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-05_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
