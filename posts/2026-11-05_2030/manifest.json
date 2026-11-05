@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-05_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-05_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "dialogue": [
     "貓：豆子剛埋好，又挖？",
     "才種三天，我就挖了六次。",
@@ -264,5 +264,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18421488727153780",
+  "instagram_story_media_id": "18025227965719052",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-05T20:56:51"
 }
