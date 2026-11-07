@@ -1,0 +1,190 @@
+{
+  "run_id": "2026-11-07_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "一個錯字撤回三次，把小錯修成三個秘密",
+  "image_paths": [
+    "assets/2026-11-07_2030_deadpan_joke_01.png",
+    "assets/2026-11-07_2030_deadpan_joke_02.png",
+    "assets/2026-11-07_2030_deadpan_joke_03.png",
+    "assets/2026-11-07_2030_deadpan_joke_04.png",
+    "assets/2026-11-07_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-07_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-07_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "貓：打錯一字，撤回三次？",
+    "約吃飯，我把好喔打成好餓。",
+    "貓：補個字不就好了？",
+    "怕更丟臉，連解釋也撤回。",
+    "貓：一個錯字，被你撤成三個秘密。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_A",
+    "label": "貓先戳破一句",
+    "hook_style": "第一格直接是貓對眼前動作的吐槽或追問；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "數位生活：已讀、群組與社交比較",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-11-07",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "soundtrack_id": "playful_clown_instrumental_v1",
+  "reel_target_duration_seconds": 30,
+  "reel_page_durations_seconds": [
+    5,
+    6,
+    5.5,
+    6,
+    7.5
+  ],
+  "generation_method": "built_in_image_gen",
+  "validation": {
+    "image_count": 5,
+    "all_dimensions_1080x1350": true,
+    "all_png_rgb_decodable": true,
+    "all_images_distinct": true,
+    "single_scene_per_page_visually_verified": true,
+    "character_and_cat_continuity_visually_verified": true,
+    "text_accuracy_visually_verified": true,
+    "ocr_engine": "Tesseract chi_tra",
+    "ocr_exact_match_pages_after_space_and_punctuation_normalization": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "ocr_manual_review": "P1 OCR confused 撤 with 撒; enlarged glyph visually verified as 撤. No image correction required.",
+    "first_line_total_unicode_characters": 12,
+    "minimum_text_side_margin_px": 102,
+    "headline_ink_heights_px": [
+      49,
+      51,
+      50,
+      48,
+      50
+    ],
+    "candidate_count": 12,
+    "non_workplace_candidate_count": 12,
+    "selected_editorial_score": 18,
+    "editorial_score_is_performance_evidence": false,
+    "recent_posts_compared": 20,
+    "no_exact_dialogue_match_in_prior_captions_or_manifests": true,
+    "caption_hashtags": [
+      "#人生對話",
+      "#數位生活",
+      "#聊天日常",
+      "#撤回訊息"
+    ],
+    "caption_ends_with_final_story_line": true,
+    "reference_study_status": "unavailable_original_five_beat_structure_used",
+    "audio_readthrough_status": "system_sandbox_blocked_no_usable_audio_text_cadence_review_completed",
+    "normalization": "sips crop blank margins only, then proportional resize. P1/P3/P4:1122x1402 to1120x1400 (1px each side). P2/P5:1092x1440 to1092x1365 (top10px,bottom65px). Final1080x1350; no illustration or headline cropped."
+  },
+  "image_metadata": [
+    {
+      "page": 1,
+      "path": "assets/2026-11-07_2030_deadpan_joke_01.png",
+      "size": [
+        1080,
+        1350
+      ],
+      "mode": "RGB",
+      "bytes": 2254165,
+      "sha256": "67af85274acbd4b4ae803eeb09eff0631e98c02eaa9e9e9609790a695dc0ed08",
+      "headline_bbox": [
+        228,
+        194,
+        868,
+        242
+      ]
+    },
+    {
+      "page": 2,
+      "path": "assets/2026-11-07_2030_deadpan_joke_02.png",
+      "size": [
+        1080,
+        1350
+      ],
+      "mode": "RGB",
+      "bytes": 2187599,
+      "sha256": "4e14674727af78eecc3931deccd7982c719ca9e82999ff398d002674a16d9887",
+      "headline_bbox": [
+        169,
+        195,
+        927,
+        245
+      ]
+    },
+    {
+      "page": 3,
+      "path": "assets/2026-11-07_2030_deadpan_joke_03.png",
+      "size": [
+        1080,
+        1350
+      ],
+      "mode": "RGB",
+      "bytes": 2135839,
+      "sha256": "66e9d007c757edc40cac122cc81538f3caf762501108c647c709986c09c7593e",
+      "headline_bbox": [
+        267,
+        193,
+        837,
+        242
+      ]
+    },
+    {
+      "page": 4,
+      "path": "assets/2026-11-07_2030_deadpan_joke_04.png",
+      "size": [
+        1080,
+        1350
+      ],
+      "mode": "RGB",
+      "bytes": 2117006,
+      "sha256": "a7e3e9e0d64fc413f27eba75fe44b365b53387274fd333d1d400a322bb0e7bde",
+      "headline_bbox": [
+        225,
+        194,
+        874,
+        241
+      ]
+    },
+    {
+      "page": 5,
+      "path": "assets/2026-11-07_2030_deadpan_joke_05.png",
+      "size": [
+        1080,
+        1350
+      ],
+      "mode": "RGB",
+      "bytes": 2245620,
+      "sha256": "47329b774d0fc46609f2ed7ef8ac46142dd8b6c637c0e218bf286bb8bfa60d50",
+      "headline_bbox": [
+        125,
+        192,
+        978,
+        241
+      ]
+    }
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-07_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
