@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-08_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-08_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "dialogue": [
     "Roberto：媽登台，我藏票。",
     "親戚問起，我說她去學書法。",
@@ -159,5 +159,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17894006205491528",
+  "instagram_story_media_id": "18346586344249395",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-08T21:01:06"
 }
