@@ -1,0 +1,163 @@
+{
+  "run_id": "2026-11-08_2030",
+  "content_mode": "life_dialogue",
+  "mood": "heavy",
+  "topic": "藏起媽媽的演出票，才發現怕被看見的是自己",
+  "image_paths": [
+    "assets/2026-11-08_2030_deadpan_joke_01.png",
+    "assets/2026-11-08_2030_deadpan_joke_02.png",
+    "assets/2026-11-08_2030_deadpan_joke_03.png",
+    "assets/2026-11-08_2030_deadpan_joke_04.png",
+    "assets/2026-11-08_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-08_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-08_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "Roberto：媽登台，我藏票。",
+    "親戚問起，我說她去學書法。",
+    "貓：媽要你保密的？",
+    "沒有，我怕他們連我一起笑。",
+    "貓：媽敢上台，你不敢坐台下。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_B",
+    "label": "Roberto先自曝一句",
+    "hook_style": "第一格直接是Roberto坦白自己正在做的尷尬選擇；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "家庭：關心與替別人做決定的界線",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-11-08",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "soundtrack_id": "weighty_clown_instrumental_v1",
+  "reel_target_duration_seconds": 30,
+  "reel_page_durations_seconds": [
+    5.5,
+    6,
+    5.5,
+    6,
+    7
+  ],
+  "reel_generated": false,
+  "generation_method": "built_in_image_gen",
+  "generation_call_count": 7,
+  "reference_study_status": "unavailable_fixed_five_beat_original_fallback",
+  "trend_used": false,
+  "validation": {
+    "image_count": 5,
+    "all_images_png": true,
+    "all_images_1080x1350": true,
+    "all_files_decode": true,
+    "manual_visual_text_check": "passed",
+    "automatic_ocr": "unavailable_swift_sdk_compiler_mismatch",
+    "headline_safe_margin_px_min": 100,
+    "one_scene_per_page": true,
+    "character_consistency_review": "passed",
+    "caption_hashtag_count": 4,
+    "caption_ends_with_final_dialogue": true,
+    "spoken_readthrough": "textual_read_aloud_review_completed; system_tts_attempt_failed_without_audio"
+  },
+  "image_details": [
+    {
+      "page": 1,
+      "path": "assets/2026-11-08_2030_deadpan_joke_01.png",
+      "width": 1080,
+      "height": 1350,
+      "format": "PNG",
+      "bytes": 2207136,
+      "sha256": "4c14a096d98251e097d056847f8ac29622afbf5e51f4439d2656988246f875fe",
+      "headline_ink_bbox": [
+        165,
+        176,
+        924,
+        232
+      ],
+      "generation_source": "/Users/roberto/.codex/generated_images/01a1bb24-1f92-79e0-87e2-41b741733427/exec-ce6f5a2a-183f-4594-bc80-34c680029c57.png"
+    },
+    {
+      "page": 2,
+      "path": "assets/2026-11-08_2030_deadpan_joke_02.png",
+      "width": 1080,
+      "height": 1350,
+      "format": "PNG",
+      "bytes": 2060431,
+      "sha256": "7c950473ecbbcde0030c953012e0e2eaed2c8f2ce366462212617d4f82aa4783",
+      "headline_ink_bbox": [
+        138,
+        175,
+        953,
+        232
+      ],
+      "generation_source": "/Users/roberto/.codex/generated_images/01a1bb24-1f92-79e0-87e2-41b741733427/exec-49bd2189-d8eb-41fa-a331-a41a6edbb779.png"
+    },
+    {
+      "page": 3,
+      "path": "assets/2026-11-08_2030_deadpan_joke_03.png",
+      "width": 1080,
+      "height": 1350,
+      "format": "PNG",
+      "bytes": 1937009,
+      "sha256": "cf4bf5739bbd2bfc190163925bc5f30f828e729e5d5d0275c67e183833b8acb2",
+      "headline_ink_bbox": [
+        283,
+        176,
+        804,
+        230
+      ],
+      "generation_source": "/Users/roberto/.codex/generated_images/01a1bb24-1f92-79e0-87e2-41b741733427/exec-ff74ca8b-09b2-4511-96bc-3ae3f374f2b1.png"
+    },
+    {
+      "page": 4,
+      "path": "assets/2026-11-08_2030_deadpan_joke_04.png",
+      "width": 1080,
+      "height": 1350,
+      "format": "PNG",
+      "bytes": 2120845,
+      "sha256": "caa804530f6a9dc2ff950907915d05136efe5027643a51975ddea73595156103",
+      "headline_ink_bbox": [
+        130,
+        187,
+        976,
+        247
+      ],
+      "generation_source": "/Users/roberto/.codex/generated_images/01a1bb24-1f92-79e0-87e2-41b741733427/exec-305be147-3b52-46de-9a05-ca6c4fc4bb90.png"
+    },
+    {
+      "page": 5,
+      "path": "assets/2026-11-08_2030_deadpan_joke_05.png",
+      "width": 1080,
+      "height": 1350,
+      "format": "PNG",
+      "bytes": 2087376,
+      "sha256": "7afe2d293501b4ca0e7e728d5b06ee257c1526c9ea6fbd98232619e0059dfd78",
+      "headline_ink_bbox": [
+        114,
+        173,
+        964,
+        231
+      ],
+      "generation_source": "/Users/roberto/.codex/generated_images/01a1bb24-1f92-79e0-87e2-41b741733427/exec-ab0243e5-aa35-4bdc-bacb-71b18ffecc8b.png"
+    }
+  ],
+  "published_to_instagram": false,
+  "git_push_performed": false,
+  "music_profile": "weighty_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-08_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
