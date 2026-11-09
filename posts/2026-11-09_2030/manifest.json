@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-09_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-09_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "dialogue": [
     "貓：雙面影印還用手翻？",
     "新人要教，我說手動比較穩。",
@@ -138,5 +138,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17919252093263657",
+  "instagram_story_media_id": "18038089571896419",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-09T20:53:36"
 }
