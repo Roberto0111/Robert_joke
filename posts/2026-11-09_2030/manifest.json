@@ -1,0 +1,142 @@
+{
+  "run_id": "2026-11-09_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "不肯讓新人教雙面影印，卡住的是前輩面子",
+  "image_paths": [
+    "assets/2026-11-09_2030_deadpan_joke_01.png",
+    "assets/2026-11-09_2030_deadpan_joke_02.png",
+    "assets/2026-11-09_2030_deadpan_joke_03.png",
+    "assets/2026-11-09_2030_deadpan_joke_04.png",
+    "assets/2026-11-09_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-09_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-09_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "貓：雙面影印還用手翻？",
+    "新人要教，我說手動比較穩。",
+    "貓：你會按雙面嗎？",
+    "不會，但我比他早來三年。",
+    "貓：紙沒卡，你的面子卡住了。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_A",
+    "label": "貓先戳破一句",
+    "hook_style": "第一格直接是貓對眼前動作的吐槽或追問；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "工作：一個具體日常選擇；不要再寫離職或沉沒成本",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-11-09",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "reel_target_duration_seconds": 30,
+  "suggested_page_durations_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "reel_rendered": false,
+  "generation_method": "built_in_image_gen",
+  "reference_study_status": "unavailable_original_five_beat_fallback",
+  "quality_checks": {
+    "image_count": 5,
+    "all_dimensions": [
+      1080,
+      1350
+    ],
+    "traditional_chinese": "manually_verified",
+    "character_consistency": "manually_verified",
+    "headline_single_line": true,
+    "first_page_character_count": 11,
+    "caption_hashtag_count": 4,
+    "historical_exact_dialogue_matches": 0
+  },
+  "image_validation": [
+    {
+      "path": "assets/2026-11-09_2030_deadpan_joke_01.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 1453800,
+      "sha256": "6dc78e839c6ec9fef9a3803a3f8062a6b181f68e03d928ba2bc1882150455d5c",
+      "headline_ink_bounds": [
+        253,
+        175,
+        858,
+        227
+      ]
+    },
+    {
+      "path": "assets/2026-11-09_2030_deadpan_joke_02.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 1515384,
+      "sha256": "3b0cb1f0614b1cddb60bd4141230663f76857c5ceeba3ff0d30acbae9510f860",
+      "headline_ink_bounds": [
+        181,
+        173,
+        909,
+        226
+      ]
+    },
+    {
+      "path": "assets/2026-11-09_2030_deadpan_joke_03.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 1539545,
+      "sha256": "e5a9d8d22d13ef4aacf5f24f66a8ac2cfe44482e80fd5c4e02dd875731973cda",
+      "headline_ink_bounds": [
+        281,
+        169,
+        821,
+        227
+      ]
+    },
+    {
+      "path": "assets/2026-11-09_2030_deadpan_joke_04.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 1509753,
+      "sha256": "82f593554f7443f98d18ec30605cac6a1a35ab7ca7514bc911e79ac95d217859",
+      "headline_ink_bounds": [
+        204,
+        173,
+        888,
+        225
+      ]
+    },
+    {
+      "path": "assets/2026-11-09_2030_deadpan_joke_05.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 1494349,
+      "sha256": "033fbeb9b7a8d13bf37e058ddf863b4e25bd37430624ce7a5e15ad3b753364bb",
+      "headline_ink_bounds": [
+        168,
+        173,
+        916,
+        225
+      ]
+    }
+  ],
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-09_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
