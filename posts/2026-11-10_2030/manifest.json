@@ -1,0 +1,267 @@
+{
+  "run_id": "2026-11-10_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "拿貓擋飯局，朋友卻把陪貓當邀請",
+  "image_paths": [
+    "assets/2026-11-10_2030_deadpan_joke_01.png",
+    "assets/2026-11-10_2030_deadpan_joke_02.png",
+    "assets/2026-11-10_2030_deadpan_joke_03.png",
+    "assets/2026-11-10_2030_deadpan_joke_04.png",
+    "assets/2026-11-10_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-10_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-10_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "Roberto：我拿貓擋飯局。",
+    "回說貓要人陪，今晚不出門。",
+    "貓：你不是想一個人躺？",
+    "對，但怕說不想見面很傷人。",
+    "貓：你拿我當藉口，他們當邀請。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_B",
+    "label": "Roberto先自曝一句",
+    "hook_style": "第一格直接是Roberto坦白自己正在做的尷尬選擇；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "友情：邀約、拒絕與不好意思說出口的小事",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-11-10",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "reel_target_duration_seconds": 30,
+  "suggested_page_durations_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "reel_rendered": false,
+  "generation_method": "built_in_image_gen; six calls including one page-one layout refinement; sips aspect-preserving delivery sizing",
+  "reference_study_status": "unavailable; original five-beat structure used",
+  "quality_checks": {
+    "candidate_count": 12,
+    "non_workplace_candidates": 12,
+    "selected_editorial_score": 19,
+    "scores_are_performance_evidence": false,
+    "latest_posts_compared": 20,
+    "first_line_character_count": 15,
+    "exactly_five_images": true,
+    "all_1080x1350": true,
+    "all_images_visually_reviewed": true,
+    "text_visual_match": true,
+    "caption_hashtag_count": 4,
+    "caption_ends_with_page_five": true,
+    "read_aloud": "Local Meijia speech attempt produced zero audio frames; no audible review claimed; textual oral-phrasing review completed.",
+    "instagram_posted": false,
+    "git_push_executed": false
+  },
+  "image_validation": [
+    {
+      "page": 1,
+      "source": "/Users/roberto/.codex/generated_images/01a1c570-c3ad-7643-8912-dc93f80a2205/exec-d03d6623-d329-4020-987a-d1606da9c8a6.png",
+      "source_size": [
+        1092,
+        1440
+      ],
+      "scaled_size": [
+        1023,
+        1350
+      ],
+      "pad_color": "F9F1E7",
+      "path": "assets/2026-11-10_2030_deadpan_joke_01.png",
+      "final_size": [
+        1080,
+        1350
+      ],
+      "bytes": 1736404,
+      "mode": "RGB",
+      "sha256": "442301dd7b4d4f92c52f60ca4bd5dd0f00a88c5d219349a8c9967e6e3459525d",
+      "headline_bbox": [
+        201,
+        193,
+        897,
+        248
+      ],
+      "text_side_margins": [
+        201,
+        183
+      ],
+      "glyph_height": 55,
+      "expected_text": "Roberto：我拿貓擋飯局。",
+      "ocr": "Roberto : 我拿貓擋飯局。",
+      "ocr_normalized_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true
+    },
+    {
+      "page": 2,
+      "source": "/Users/roberto/.codex/generated_images/01a1c570-c3ad-7643-8912-dc93f80a2205/exec-eba8b569-9e9b-4dd2-bd49-e7597e6c2ca6.png",
+      "source_size": [
+        1092,
+        1440
+      ],
+      "scaled_size": [
+        1023,
+        1350
+      ],
+      "pad_color": "FAF1E8",
+      "path": "assets/2026-11-10_2030_deadpan_joke_02.png",
+      "final_size": [
+        1080,
+        1350
+      ],
+      "bytes": 1709174,
+      "mode": "RGB",
+      "sha256": "e54635d1a3ecc4aaf01ed0fe1925e31641381aed4dd9d7c009c837f0ed097b0b",
+      "headline_bbox": [
+        162,
+        192,
+        930,
+        247
+      ],
+      "text_side_margins": [
+        162,
+        150
+      ],
+      "glyph_height": 55,
+      "expected_text": "回說貓要人陪，今晚不出門。",
+      "ocr": "回說貓要人陪,今晚不出門。",
+      "ocr_normalized_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true
+    },
+    {
+      "page": 3,
+      "source": "/Users/roberto/.codex/generated_images/01a1c570-c3ad-7643-8912-dc93f80a2205/exec-e054cf44-657f-4924-bb03-de9355f9cba9.png",
+      "source_size": [
+        1092,
+        1440
+      ],
+      "scaled_size": [
+        1023,
+        1350
+      ],
+      "pad_color": "F9F0E6",
+      "path": "assets/2026-11-10_2030_deadpan_joke_03.png",
+      "final_size": [
+        1080,
+        1350
+      ],
+      "bytes": 1722318,
+      "mode": "RGB",
+      "sha256": "a3f16e04e30c22dca32810d42b2c6806c00462796f038acd903bce791938ecf6",
+      "headline_bbox": [
+        196,
+        192,
+        893,
+        250
+      ],
+      "text_side_margins": [
+        196,
+        187
+      ],
+      "glyph_height": 58,
+      "expected_text": "貓：你不是想一個人躺？",
+      "ocr": "貓:你不是想一個人躺?",
+      "ocr_normalized_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true
+    },
+    {
+      "page": 4,
+      "source": "/Users/roberto/.codex/generated_images/01a1c570-c3ad-7643-8912-dc93f80a2205/exec-5b516de4-732a-4fe6-a5d6-abc143477f7f.png",
+      "source_size": [
+        1092,
+        1440
+      ],
+      "scaled_size": [
+        1023,
+        1350
+      ],
+      "pad_color": "F9F0E6",
+      "path": "assets/2026-11-10_2030_deadpan_joke_04.png",
+      "final_size": [
+        1080,
+        1350
+      ],
+      "bytes": 1678184,
+      "mode": "RGB",
+      "sha256": "653ea6e25a62aea59b6d244976390e9020d1955f09c19b2ea426ca05bc581ef2",
+      "headline_bbox": [
+        186,
+        194,
+        927,
+        248
+      ],
+      "text_side_margins": [
+        186,
+        153
+      ],
+      "glyph_height": 54,
+      "expected_text": "對，但怕說不想見面很傷人。",
+      "ocr": "對,但怕說不想見面很傷人。",
+      "ocr_normalized_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true
+    },
+    {
+      "page": 5,
+      "source": "/Users/roberto/.codex/generated_images/01a1c570-c3ad-7643-8912-dc93f80a2205/exec-99793277-6e3a-41ec-bee8-baea3bca1ed5.png",
+      "source_size": [
+        1092,
+        1440
+      ],
+      "scaled_size": [
+        1023,
+        1350
+      ],
+      "pad_color": "F9F1E8",
+      "path": "assets/2026-11-10_2030_deadpan_joke_05.png",
+      "final_size": [
+        1080,
+        1350
+      ],
+      "bytes": 1769963,
+      "mode": "RGB",
+      "sha256": "7607aa147d95182ece6465722ce5a84c1546729b316e37d13ba16977ad3df2f7",
+      "headline_bbox": [
+        120,
+        193,
+        962,
+        247
+      ],
+      "text_side_margins": [
+        120,
+        118
+      ],
+      "glyph_height": 54,
+      "expected_text": "貓：你拿我當藉口，他們當邀請。",
+      "ocr": "貓:你拿我當藉口,他們當邀請o",
+      "ocr_normalized_match": false,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true,
+      "ocr_review_note": "OCR把末尾句號讀成小寫o；逐字目視確認為正確的全形句號，其他中文字均相符。"
+    }
+  ],
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-10_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
