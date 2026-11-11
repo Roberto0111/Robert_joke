@@ -1,0 +1,286 @@
+{
+  "run_id": "2026-11-11_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "挑枕頭熬到天亮，還沒買先付睡眠",
+  "image_paths": [
+    "assets/2026-11-11_2030_deadpan_joke_01.png",
+    "assets/2026-11-11_2030_deadpan_joke_02.png",
+    "assets/2026-11-11_2030_deadpan_joke_03.png",
+    "assets/2026-11-11_2030_deadpan_joke_04.png",
+    "assets/2026-11-11_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-11_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-11_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "貓：挑枕頭，挑到天亮？",
+    "看完三百則，還要看開箱。",
+    "貓：舊的睡不著？",
+    "睡得著，但我不能買錯啊。",
+    "貓：還沒買，先付了一晚睡眠。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_A",
+    "label": "貓先戳破一句",
+    "hook_style": "第一格直接是貓對眼前動作的吐槽或追問；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "消費：省錢、衝動購物與面子",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-11-11",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "reel_target_duration_seconds": 30,
+  "suggested_page_durations_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "reel_rendered": false,
+  "generation_method": "built_in_image_gen; six calls including a page-two object-continuity correction; sips aspect-preserving sizing and warm-white padding",
+  "reference_study_status": "unavailable; original five-beat structure used",
+  "quality_checks": {
+    "candidate_count": 12,
+    "non_workplace_candidates": 12,
+    "selected_editorial_scores": {
+      "relatability": 5,
+      "natural_dialogue": 5,
+      "insight": 4,
+      "save_share_value": 5
+    },
+    "selected_editorial_score": 19,
+    "scores_are_performance_evidence": false,
+    "latest_posts_compared": 20,
+    "first_line_character_count": 11,
+    "page_character_counts": [
+      11,
+      12,
+      8,
+      12,
+      14
+    ],
+    "exactly_five_images": true,
+    "all_1080x1350": true,
+    "all_images_visually_reviewed": true,
+    "text_visual_match": true,
+    "all_ocr_chinese_match": true,
+    "minimum_text_side_margin_px": 90,
+    "caption_hashtag_count": 4,
+    "caption_ends_with_page_five": true,
+    "oral_phrasing_review": "Five lines reviewed for spoken cadence before generation; no recorded narration or audio playback claimed.",
+    "instagram_posted": false,
+    "git_push_executed": false
+  },
+  "image_validation": [
+    {
+      "page": 1,
+      "path": "assets/2026-11-11_2030_deadpan_joke_01.png",
+      "final_size": [
+        1080,
+        1350
+      ],
+      "mode": "RGB",
+      "bytes": 1744102,
+      "sha256": "de311d6883809b0a7218df3c73236b8ad9335e94f055dd7c5dcd7f7f87dd308d",
+      "headline_bbox": [
+        141,
+        188,
+        948,
+        260
+      ],
+      "text_side_margins": [
+        141,
+        132
+      ],
+      "glyph_height": 72,
+      "expected_text": "貓：挑枕頭，挑到天亮？",
+      "ocr_headline": "貓:挑枕頭,挑到天亮?",
+      "ocr_chinese_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true,
+      "source": "/Users/roberto/.codex/generated_images/01a1ca97-1bfa-7011-a4ea-2299d553046a/exec-2c6bf1bb-a8e9-47e6-8e14-d76b4482ff74.png",
+      "source_size": [
+        1122,
+        1402
+      ],
+      "scaled_size": [
+        1032,
+        1290
+      ],
+      "pad_color": "FBF6F2",
+      "ocr_review_note": "中文逐字相符，標點全半形差異另經目視確認。"
+    },
+    {
+      "page": 2,
+      "path": "assets/2026-11-11_2030_deadpan_joke_02.png",
+      "final_size": [
+        1080,
+        1350
+      ],
+      "mode": "RGB",
+      "bytes": 1644829,
+      "sha256": "0504e7a178a230613fa6bcc5bc6e83da7fe59072e77df15b520f8495d4ef6c20",
+      "headline_bbox": [
+        159,
+        190,
+        954,
+        258
+      ],
+      "text_side_margins": [
+        159,
+        126
+      ],
+      "glyph_height": 68,
+      "expected_text": "看完三百則，還要看開箱。",
+      "ocr_headline": "看完三百則,還要看開箱。",
+      "ocr_chinese_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true,
+      "source": "/Users/roberto/.codex/generated_images/01a1ca97-1bfa-7011-a4ea-2299d553046a/exec-c8dd45f6-9b5b-4de5-90da-e6bb65b8b7de.png",
+      "source_size": [
+        1092,
+        1440
+      ],
+      "scaled_size": [
+        978,
+        1290
+      ],
+      "pad_color": "FAF2EF",
+      "ocr_review_note": "中文逐字相符，標點全半形差異另經目視確認。"
+    },
+    {
+      "page": 3,
+      "path": "assets/2026-11-11_2030_deadpan_joke_03.png",
+      "final_size": [
+        1080,
+        1350
+      ],
+      "mode": "RGB",
+      "bytes": 1746022,
+      "sha256": "a0535a3e412299b7f42153024c4b90b48a632b21eb1df379044fa8c0608de76a",
+      "headline_bbox": [
+        260,
+        187,
+        864,
+        261
+      ],
+      "text_side_margins": [
+        260,
+        216
+      ],
+      "glyph_height": 74,
+      "expected_text": "貓：舊的睡不著？",
+      "ocr_headline": "貓:舊的睡不著?",
+      "ocr_chinese_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true,
+      "source": "/Users/roberto/.codex/generated_images/01a1ca97-1bfa-7011-a4ea-2299d553046a/exec-052176a2-d0f9-4a75-bf5a-5ae1b03c0088.png",
+      "source_size": [
+        1122,
+        1402
+      ],
+      "scaled_size": [
+        1032,
+        1290
+      ],
+      "pad_color": "FBF5F2",
+      "ocr_review_note": "中文逐字相符，標點全半形差異另經目視確認。"
+    },
+    {
+      "page": 4,
+      "path": "assets/2026-11-11_2030_deadpan_joke_04.png",
+      "final_size": [
+        1080,
+        1350
+      ],
+      "mode": "RGB",
+      "bytes": 1735318,
+      "sha256": "d072b772c5aea58709d125a5416cec944dbd63046e90bef0c945d114a6f508d9",
+      "headline_bbox": [
+        131,
+        188,
+        978,
+        256
+      ],
+      "text_side_margins": [
+        131,
+        102
+      ],
+      "glyph_height": 68,
+      "expected_text": "睡得著，但我不能買錯啊。",
+      "ocr_headline": "睡得著,但我不能買錯啊。",
+      "ocr_chinese_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true,
+      "source": "/Users/roberto/.codex/generated_images/01a1ca97-1bfa-7011-a4ea-2299d553046a/exec-59a49439-0804-42fa-a26c-a4fefb6f6009.png",
+      "source_size": [
+        1122,
+        1402
+      ],
+      "scaled_size": [
+        1032,
+        1290
+      ],
+      "pad_color": "FAF5F2",
+      "ocr_review_note": "中文逐字相符，標點全半形差異另經目視確認。"
+    },
+    {
+      "page": 5,
+      "path": "assets/2026-11-11_2030_deadpan_joke_05.png",
+      "final_size": [
+        1080,
+        1350
+      ],
+      "mode": "RGB",
+      "bytes": 1750184,
+      "sha256": "9c17107e309d8958925b0fa3cb3fa53e87b20da26350418393ba0f94ac6623a5",
+      "headline_bbox": [
+        111,
+        190,
+        990,
+        255
+      ],
+      "text_side_margins": [
+        111,
+        90
+      ],
+      "glyph_height": 65,
+      "expected_text": "貓：還沒買，先付了一晚睡眠。",
+      "ocr_headline": "貓:還沒買,先付了一晚睡眠。",
+      "ocr_chinese_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true,
+      "source": "/Users/roberto/.codex/generated_images/01a1ca97-1bfa-7011-a4ea-2299d553046a/exec-e5752d52-9a21-4bc2-b0bf-3d90329268c6.png",
+      "source_size": [
+        1122,
+        1402
+      ],
+      "scaled_size": [
+        1032,
+        1290
+      ],
+      "pad_color": "FAF4F1",
+      "ocr_review_note": "中文逐字相符，標點全半形差異另經目視確認。"
+    }
+  ],
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-11_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
