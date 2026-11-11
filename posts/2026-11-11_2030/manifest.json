@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-11_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-11_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "dialogue": [
     "貓：挑枕頭，挑到天亮？",
     "看完三百則，還要看開箱。",
@@ -282,5 +282,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17907010662354459",
+  "instagram_story_media_id": "18140009242730441",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-11T20:54:32"
 }
