@@ -1,0 +1,313 @@
+{
+  "run_id": "2026-11-12_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "笑完電影卻打一星，怕朋友看見自己的品味",
+  "image_paths": [
+    "assets/2026-11-12_2030_deadpan_joke_01.png",
+    "assets/2026-11-12_2030_deadpan_joke_02.png",
+    "assets/2026-11-12_2030_deadpan_joke_03.png",
+    "assets/2026-11-12_2030_deadpan_joke_04.png",
+    "assets/2026-11-12_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-12_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-12_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "Roberto：笑完還打一星。",
+    "這段摔倒，我倒回去笑三次。",
+    "貓：這一星要給誰看？",
+    "怕朋友知道，這種片我會笑。",
+    "貓：一星給電影，五星給你演技。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_B",
+    "label": "Roberto先自曝一句",
+    "hook_style": "第一格直接是Roberto坦白自己正在做的尷尬選擇；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "休息：假日、興趣與對自己的要求",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-11-12",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "editorial_decision": {
+    "assigned_topic": "休息：假日觀影與對自己品味的要求",
+    "hook_arm": "organic_v3_opening_20261020_B / Roberto先自曝一句",
+    "audience_dilemma": "真的被蠢喜劇逗笑，卻怕朋友嫌自己的品味，所以故意給一星。",
+    "visible_first_frame_action": "嘴角仍笑，右手指選手機第一顆星；電視仍顯示逗笑他的怪物摔倒。",
+    "payoff_mechanism": "同一套星等由評電影轉為貓評Roberto的演技，重新理解前四頁的嫌棄是演出。",
+    "specific_sharing_hypothesis": "給邊看蠢片邊笑、散場卻急著說自己怎麼會看這種片的朋友；未經實測。",
+    "difference_from_latest_20": "使用地板觀影角、重播大笑、貓按手機、掩嘴與影評姿勢破功；無休息打分認可、反覆確認、購物代價或需求藉口。",
+    "mood_rationale": "comic：可見的自我打臉與貓把影評者改評為演員，形成一星與五星的喜劇反轉。"
+  },
+  "reel_target_duration_seconds": 30,
+  "suggested_page_durations_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "soundtrack_rationale": "原創俏皮撥弦、短促低音與木魚對應重播、嘴硬、貓慢拍手的乾冷節奏；不加旁白。",
+  "reel_rendered": false,
+  "generation_method": "built_in_image_gen; seven successful image calls including page-one phone/margin correction and page-three typography correction; sips aspect-preserving sizing plus blank-paper crop only",
+  "reference_study_status": "unavailable; original five-beat structure used",
+  "trend_usage": "none; original everyday dilemma",
+  "quality_checks": {
+    "candidate_count": 12,
+    "non_workplace_candidates": 12,
+    "selected_editorial_scores": {
+      "relatability": 5,
+      "natural_dialogue": 5,
+      "insight": 4,
+      "save_share_value": 5
+    },
+    "selected_editorial_score": 19,
+    "scores_are_performance_evidence": false,
+    "latest_posts_compared": 20,
+    "first_line_character_count": 15,
+    "page_character_counts": [
+      15,
+      13,
+      10,
+      13,
+      15
+    ],
+    "exactly_five_images": true,
+    "all_1080x1350": true,
+    "all_images_visually_reviewed": true,
+    "text_visual_match": true,
+    "all_ocr_normalized_match": true,
+    "ocr_engine": "tesseract chi_tra+eng",
+    "minimum_text_side_margin_px": 87,
+    "headline_glyph_height_px_range": [
+      56,
+      62
+    ],
+    "caption_hashtag_count": 4,
+    "caption_ends_with_page_five": true,
+    "oral_phrasing_review": "Five lines reviewed for spoken cadence before drawing. Native Meijia playback attempt failed due sandbox_extension_issue_file; audio playback was not verified.",
+    "instagram_posted": false,
+    "git_push_executed": false
+  },
+  "image_validation": [
+    {
+      "page": 1,
+      "path": "assets/2026-11-12_2030_deadpan_joke_01.png",
+      "source": "/Users/roberto/.codex/generated_images/01a1cfbd-74be-7ac3-a71c-27e426c77864/exec-0403a23d-caf2-4123-8837-0bd294488add.png",
+      "source_size": [
+        1092,
+        1440
+      ],
+      "scaled_size": [
+        1080,
+        1424
+      ],
+      "blank_crop_top_bottom_px": [
+        37,
+        37
+      ],
+      "final_size": [
+        1080,
+        1350
+      ],
+      "bytes": 2285404,
+      "mode": "RGB",
+      "sha256": "bed06ef9abc81c5c1d2d12fedc8e27de756e10ac902f2235d0d19b2309da70b6",
+      "headline_bbox": [
+        198,
+        180,
+        885,
+        236
+      ],
+      "text_side_margins": [
+        198,
+        195
+      ],
+      "glyph_height": 56,
+      "expected_text": "Roberto：笑完還打一星。",
+      "ocr_headline": "Roberto:笑完還打一星。",
+      "ocr_normalized_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true
+    },
+    {
+      "page": 2,
+      "path": "assets/2026-11-12_2030_deadpan_joke_02.png",
+      "source": "/Users/roberto/.codex/generated_images/01a1cfbd-74be-7ac3-a71c-27e426c77864/exec-a5dfe6e4-1430-4c16-8daa-93b09fc26f84.png",
+      "source_size": [
+        1092,
+        1440
+      ],
+      "scaled_size": [
+        1080,
+        1424
+      ],
+      "blank_crop_top_bottom_px": [
+        37,
+        37
+      ],
+      "final_size": [
+        1080,
+        1350
+      ],
+      "bytes": 2210998,
+      "mode": "RGB",
+      "sha256": "808fe91258688eca2d8b9b4b9a78d2030e8cade4a514e1d589e8d2ea4428bee1",
+      "headline_bbox": [
+        124,
+        179,
+        959,
+        239
+      ],
+      "text_side_margins": [
+        124,
+        121
+      ],
+      "glyph_height": 60,
+      "expected_text": "這段摔倒，我倒回去笑三次。",
+      "ocr_headline": "這段摔倒,我倒回去笑三次。",
+      "ocr_normalized_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true
+    },
+    {
+      "page": 3,
+      "path": "assets/2026-11-12_2030_deadpan_joke_03.png",
+      "source": "/Users/roberto/.codex/generated_images/01a1cfbd-74be-7ac3-a71c-27e426c77864/exec-16c64039-e11a-4f0a-b98a-8802d89ddfc2.png",
+      "source_size": [
+        1092,
+        1440
+      ],
+      "scaled_size": [
+        1080,
+        1424
+      ],
+      "blank_crop_top_bottom_px": [
+        37,
+        37
+      ],
+      "final_size": [
+        1080,
+        1350
+      ],
+      "bytes": 2111922,
+      "mode": "RGB",
+      "sha256": "41c5d8d2013da5490983259b48a7898ce11d3487c4c6a13f88e1b1c6f283a92f",
+      "headline_bbox": [
+        247,
+        182,
+        831,
+        238
+      ],
+      "text_side_margins": [
+        247,
+        249
+      ],
+      "glyph_height": 56,
+      "expected_text": "貓：這一星要給誰看？",
+      "ocr_headline": "貓:這一星要給誰看?",
+      "ocr_normalized_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true
+    },
+    {
+      "page": 4,
+      "path": "assets/2026-11-12_2030_deadpan_joke_04.png",
+      "source": "/Users/roberto/.codex/generated_images/01a1cfbd-74be-7ac3-a71c-27e426c77864/exec-b20aa168-0091-4af7-8f14-1f941d552daa.png",
+      "source_size": [
+        1092,
+        1440
+      ],
+      "scaled_size": [
+        1080,
+        1424
+      ],
+      "blank_crop_top_bottom_px": [
+        37,
+        37
+      ],
+      "final_size": [
+        1080,
+        1350
+      ],
+      "bytes": 2180323,
+      "mode": "RGB",
+      "sha256": "3f50b2bd9e3119738888db13a10f1ca3b8f57a30553516c738628be6cf34f1a6",
+      "headline_bbox": [
+        102,
+        177,
+        983,
+        239
+      ],
+      "text_side_margins": [
+        102,
+        97
+      ],
+      "glyph_height": 62,
+      "expected_text": "怕朋友知道，這種片我會笑。",
+      "ocr_headline": "怕朋友知道,這種片我會笑。",
+      "ocr_normalized_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true
+    },
+    {
+      "page": 5,
+      "path": "assets/2026-11-12_2030_deadpan_joke_05.png",
+      "source": "/Users/roberto/.codex/generated_images/01a1cfbd-74be-7ac3-a71c-27e426c77864/exec-84911d8c-1b68-4933-b514-f501bfd1f5c9.png",
+      "source_size": [
+        1092,
+        1440
+      ],
+      "scaled_size": [
+        1080,
+        1424
+      ],
+      "blank_crop_top_bottom_px": [
+        37,
+        37
+      ],
+      "final_size": [
+        1080,
+        1350
+      ],
+      "bytes": 2182525,
+      "mode": "RGB",
+      "sha256": "6abf1d68fb3232bdac4ce613a845ec29a0e630d1e539883be5ec93473b5b59b5",
+      "headline_bbox": [
+        88,
+        179,
+        993,
+        237
+      ],
+      "text_side_margins": [
+        88,
+        87
+      ],
+      "glyph_height": 58,
+      "expected_text": "貓：一星給電影，五星給你演技。",
+      "ocr_headline": "貓:一星給電影,五星給你演技。",
+      "ocr_normalized_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true
+    }
+  ],
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-12_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
