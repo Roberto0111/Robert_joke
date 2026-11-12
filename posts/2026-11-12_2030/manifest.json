@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-12_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-12_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "dialogue": [
     "Roberto：笑完還打一星。",
     "這段摔倒，我倒回去笑三次。",
@@ -309,5 +309,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18042026834903526",
+  "instagram_story_media_id": "18081910151390077",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-12T20:57:04"
 }
