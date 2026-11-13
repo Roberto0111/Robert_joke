@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-13_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-13_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "dialogue": [
     "貓：少一人，碗筷就全收？",
     "他臨時有事，我把湯冰了。",
@@ -311,5 +311,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17893591182617784",
+  "instagram_story_media_id": "18056641046807598",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-13T20:52:00"
 }
