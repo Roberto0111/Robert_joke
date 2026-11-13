@@ -1,0 +1,315 @@
+{
+  "run_id": "2026-11-13_2030",
+  "content_mode": "life_dialogue",
+  "mood": "heavy",
+  "topic": "少一人就取消整桌，保住全員卻失去見面",
+  "image_paths": [
+    "assets/2026-11-13_2030_deadpan_joke_01.png",
+    "assets/2026-11-13_2030_deadpan_joke_02.png",
+    "assets/2026-11-13_2030_deadpan_joke_03.png",
+    "assets/2026-11-13_2030_deadpan_joke_04.png",
+    "assets/2026-11-13_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-13_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-13_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "貓：少一人，碗筷就全收？",
+    "他臨時有事，我把湯冰了。",
+    "貓：另外兩個不是能來？",
+    "怕少一個，以後就慢慢散了。",
+    "貓：這下沒人缺席，也沒人見面。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_A",
+    "label": "貓先戳破一句",
+    "hook_style": "第一格直接是貓對眼前動作的吐槽或追問；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "關係：付出、界線與真實的小對話",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-11-13",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "editorial_decision": {
+    "assigned_topic": "關係：付出、界線與真實的小對話；四人老友聚餐的全員條件",
+    "hook_arm": "organic_v3_opening_20261020_A / 貓先戳破一句",
+    "audience_dilemma": "想保住四人的交情，一人臨時不能來便取消全桌，使另外兩位有空者也無法相處。",
+    "visible_first_frame_action": "四人份碗筷和湯已備好，Roberto正把全部碗收走，貓看著最後一只碗發問。",
+    "payoff_mechanism": "把全員完整的條件翻成缺席歸零、見面也歸零；不是斷言友情已散。",
+    "specific_sharing_hypothesis": "給每次少一人就取消整攤、大家明明想見卻一直湊不齊的老友群；未經實測。",
+    "difference_from_latest_20": "以撤碗冰湯演出人數完整壓過實際相處；沒有拒約藉口、藏喜好、服務代替陪伴、付款比喻或職業重命名。",
+    "mood_rationale": "heavy：真正想見朋友卻因害怕散掉而取消，末句保留空桌的代價與餘味，沒有鬧劇或強迫笑點。"
+  },
+  "reel_target_duration_seconds": 30,
+  "suggested_page_durations_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "music_profile": "weighty_clown_instrumental_v1",
+  "soundtrack_rationale": "既有原創低音小調、稀疏脈衝與克制鐘聲，搭配撤碗、冰湯、停手與空桌；無旁白。僅交接配樂設定，本輪未渲染音訊。",
+  "reel_rendered": false,
+  "generation_method": "built_in_image_gen; seven calls including page-one margin correction and page-three extra-chair removal; sips aspect-preserving resize only",
+  "reference_study_status": "unavailable; original five-beat fallback used, no invented reference analysis",
+  "trend_usage": "none; original everyday dilemma",
+  "quality_checks": {
+    "candidate_count": 13,
+    "non_workplace_candidates": 12,
+    "selected_editorial_scores": {
+      "relatability": 5,
+      "natural_dialogue": 5,
+      "insight": 5,
+      "save_share_value": 4
+    },
+    "selected_editorial_score": 19,
+    "scores_are_performance_evidence": false,
+    "latest_posts_compared": 20,
+    "first_line_character_count": 12,
+    "page_character_counts": [
+      12,
+      12,
+      11,
+      13,
+      15
+    ],
+    "exactly_five_images": true,
+    "all_1080x1350": true,
+    "all_images_visually_reviewed": true,
+    "independent_visual_review_passed": true,
+    "text_visual_match": true,
+    "all_ocr_normalized_match": true,
+    "ocr_engine": "tesseract chi_tra+eng",
+    "minimum_text_side_margin_px": 86,
+    "headline_ink_height_px_range": [
+      64,
+      66
+    ],
+    "four_chairs_consistent": true,
+    "caption_hashtag_count": 4,
+    "caption_ends_with_page_five": true,
+    "oral_phrasing_review": "Spoken cadence reviewed before drawing. macOS say failed with sandbox_extension_issue_file; AIFF had zero audio bytes; audible readthrough was not verified.",
+    "instagram_posted": false,
+    "git_push_executed": false
+  },
+  "image_validation": [
+    {
+      "page": 1,
+      "source": "/Users/roberto/.codex/generated_images/01a1d4e3-c4a3-7122-a1b7-b72ebf25056b/exec-f2c1e591-0dc1-4035-8de8-dbcaa911d9c9.png",
+      "source_size": [
+        1122,
+        1402
+      ],
+      "path": "assets/2026-11-13_2030_deadpan_joke_01.png",
+      "final_size": [
+        1080,
+        1350
+      ],
+      "bytes": 1679699,
+      "sha256": "d6c631c2fda46a7c03da64a08abf7d858b954369872582dc7b85d918cf4eafae",
+      "transform": "sips aspect-preserving resampleHeight 1350; subpixel rounding to 1080 width; no crop or compositing",
+      "expected_text": "貓：少一人，碗筷就全收？",
+      "ocr_headline": "貓:少一人,碗筷就全收?",
+      "ocr_normalized_match": true,
+      "headline_bbox": [
+        174,
+        145,
+        922,
+        241
+      ],
+      "text_side_margins": [
+        174,
+        158
+      ],
+      "headline_height": 96,
+      "headline_ink_bbox": [
+        175,
+        149,
+        922,
+        214
+      ],
+      "headline_ink_height_px": 65,
+      "minimum_text_margin_px": 158,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true
+    },
+    {
+      "page": 2,
+      "source": "/Users/roberto/.codex/generated_images/01a1d4e3-c4a3-7122-a1b7-b72ebf25056b/exec-be56a30c-e53b-47b5-8727-af5a84e5ef84.png",
+      "source_size": [
+        1122,
+        1402
+      ],
+      "path": "assets/2026-11-13_2030_deadpan_joke_02.png",
+      "final_size": [
+        1080,
+        1350
+      ],
+      "bytes": 1923685,
+      "sha256": "aa02553ec685e3a8f9cd73cbcb76b5eab09de65b08d9a1cbe52c6fc662f4b798",
+      "transform": "sips aspect-preserving resampleHeight 1350; subpixel rounding to 1080 width; no crop or compositing",
+      "expected_text": "他臨時有事，我把湯冰了。",
+      "ocr_headline": "他臨時有事,我把湯冰了。",
+      "ocr_normalized_match": true,
+      "headline_bbox": [
+        173,
+        143,
+        938,
+        239
+      ],
+      "text_side_margins": [
+        173,
+        142
+      ],
+      "headline_height": 96,
+      "headline_ink_bbox": [
+        174,
+        147,
+        937,
+        213
+      ],
+      "headline_ink_height_px": 66,
+      "minimum_text_margin_px": 143,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true
+    },
+    {
+      "page": 3,
+      "source": "/Users/roberto/.codex/generated_images/01a1d4e3-c4a3-7122-a1b7-b72ebf25056b/exec-b1c58ad6-b1d5-4047-83a5-902bd00a9b80.png",
+      "source_size": [
+        1122,
+        1402
+      ],
+      "path": "assets/2026-11-13_2030_deadpan_joke_03.png",
+      "final_size": [
+        1080,
+        1350
+      ],
+      "bytes": 1816594,
+      "sha256": "be74e446cd8110174ef51515fef171e7062b827be9a3cffc715b868d64d36dc6",
+      "transform": "sips aspect-preserving resampleHeight 1350; subpixel rounding to 1080 width; no crop or compositing",
+      "expected_text": "貓：另外兩個不是能來？",
+      "ocr_headline": "貓:另外兩個不是能來?",
+      "ocr_normalized_match": true,
+      "headline_bbox": [
+        172,
+        143,
+        923,
+        241
+      ],
+      "text_side_margins": [
+        172,
+        157
+      ],
+      "headline_height": 98,
+      "headline_ink_bbox": [
+        172,
+        148,
+        922,
+        214
+      ],
+      "headline_ink_height_px": 66,
+      "minimum_text_margin_px": 158,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true
+    },
+    {
+      "page": 4,
+      "source": "/Users/roberto/.codex/generated_images/01a1d4e3-c4a3-7122-a1b7-b72ebf25056b/exec-33d95407-66a5-4418-9a79-b46ec8eec5ab.png",
+      "source_size": [
+        1122,
+        1402
+      ],
+      "path": "assets/2026-11-13_2030_deadpan_joke_04.png",
+      "final_size": [
+        1080,
+        1350
+      ],
+      "bytes": 1913187,
+      "sha256": "fad1a4e2c37a98a5952fd9890b0b7985512d45785c32b38f7bc073f5d8b07a57",
+      "transform": "sips aspect-preserving resampleHeight 1350; subpixel rounding to 1080 width; no crop or compositing",
+      "expected_text": "怕少一個，以後就慢慢散了。",
+      "ocr_headline": "怕少一個,以後就慢慢散了。",
+      "ocr_normalized_match": true,
+      "headline_bbox": [
+        135,
+        144,
+        981,
+        241
+      ],
+      "text_side_margins": [
+        135,
+        99
+      ],
+      "headline_height": 97,
+      "headline_ink_bbox": [
+        135,
+        148,
+        980,
+        214
+      ],
+      "headline_ink_height_px": 66,
+      "minimum_text_margin_px": 100,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true
+    },
+    {
+      "page": 5,
+      "source": "/Users/roberto/.codex/generated_images/01a1d4e3-c4a3-7122-a1b7-b72ebf25056b/exec-462ddd32-d463-4562-831b-a5a29e21c849.png",
+      "source_size": [
+        1122,
+        1402
+      ],
+      "path": "assets/2026-11-13_2030_deadpan_joke_05.png",
+      "final_size": [
+        1080,
+        1350
+      ],
+      "bytes": 1910175,
+      "sha256": "033b6e3b0e4888177c7476e4587a24909b4ea5885578e41e0f37d7b20715bf78",
+      "transform": "sips aspect-preserving resampleHeight 1350; subpixel rounding to 1080 width; no crop or compositing",
+      "expected_text": "貓：這下沒人缺席，也沒人見面。",
+      "ocr_headline": "貓:這下沒人缺席,也沒人見面。",
+      "ocr_normalized_match": true,
+      "headline_bbox": [
+        115,
+        139,
+        996,
+        234
+      ],
+      "text_side_margins": [
+        115,
+        84
+      ],
+      "headline_height": 95,
+      "headline_ink_bbox": [
+        116,
+        144,
+        994,
+        208
+      ],
+      "headline_ink_height_px": 64,
+      "minimum_text_margin_px": 86,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true
+    }
+  ],
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-13_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
