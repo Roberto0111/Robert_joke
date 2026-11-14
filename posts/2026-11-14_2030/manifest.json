@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-14_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-14_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "dialogue": [
     "Roberto：我戒滑，先開群。",
     "Roberto：每小時報到，證明沒在滑。",
@@ -287,5 +287,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18105169331646158",
+  "instagram_story_media_id": "18136942822672665",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-14T20:51:02"
 }
