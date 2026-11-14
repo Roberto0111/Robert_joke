@@ -1,0 +1,291 @@
+{
+  "run_id": "2026-11-14_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "開群戒手機，卻怕有人真的離線",
+  "image_paths": [
+    "assets/2026-11-14_2030_deadpan_joke_01.png",
+    "assets/2026-11-14_2030_deadpan_joke_02.png",
+    "assets/2026-11-14_2030_deadpan_joke_03.png",
+    "assets/2026-11-14_2030_deadpan_joke_04.png",
+    "assets/2026-11-14_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-14_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-14_2030_generation_prompt.md",
+  "status": "generated",
+  "dialogue": [
+    "Roberto：我戒滑，先開群。",
+    "Roberto：每小時報到，證明沒在滑。",
+    "貓：不碰手機，怎麼報到？",
+    "Roberto：沒人回，我怕只剩我。",
+    "貓：你這群，最怕有人戒成功。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_B",
+    "label": "Roberto先自曝一句",
+    "hook_style": "第一格直接是Roberto坦白自己正在做的尷尬選擇；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "數位生活：已讀、群組與社交比較",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-11-14",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "editorial_decision": {
+    "assigned_topic": "數位生活：已讀、群組與社交比較；少滑手機的群組報到",
+    "hook_arm": "organic_v3_opening_20261020_B / Roberto先自曝一句",
+    "audience_dilemma": "想找伴一起少滑手機，卻把持續在線當成彼此還在努力的證明。",
+    "visible_first_frame_action": "手機停在收納盒上方，Roberto仍忙著開群；貓托著盒蓋等他收機。",
+    "payoff_mechanism": "把群組最怕的沉默翻成可能的戒滑成功，令每小時報到的規則反過來妨礙原目標。",
+    "specific_sharing_hypothesis": "會把讀書、運動、少滑手機都做成密集打卡群的朋友；編輯假設，未經成效驗證。",
+    "difference_from_latest_20": "群體參與規則與原目標衝突；不用撤回、重錄、延遲回覆、面子遮掩、付款比喻。低桌、手機盒與收機/拿回/阻止/抱機/空手的動作推進。",
+    "mood_rationale": "comic：每小時拿手機證明沒滑的可見荒謬，加上怕落單的自曝，末頁用成功與群組活躍互相衝突的冷吐槽收束。"
+  },
+  "reel_target_duration_seconds": 30,
+  "suggested_page_durations_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "soundtrack_rationale": "原創無旁白俏皮撥弦、短促低音與木魚，配合反覆收機、拿回及貓的冷吐槽；只交接設定，本輪未渲染音訊。",
+  "reel_rendered": false,
+  "generation_method": "built_in_image_gen; six calls including one page-two aspect-ratio correction; final sips aspect-preserving resize only",
+  "reference_study_status": "unavailable; original five-beat fallback, no invented analysis of unseen post",
+  "trend_usage": "none; original everyday dilemma",
+  "quality_checks": {
+    "candidate_count": 12,
+    "non_workplace_candidates": 12,
+    "selected_editorial_scores": {
+      "relatability": 5,
+      "natural_dialogue": 5,
+      "insight": 4,
+      "save_share_value": 5
+    },
+    "selected_editorial_score": 19,
+    "scores_are_performance_evidence": false,
+    "latest_posts_compared": 20,
+    "first_line_character_count": 16,
+    "page_character_counts": [
+      16,
+      20,
+      12,
+      18,
+      14
+    ],
+    "exactly_five_images": true,
+    "all_1080x1350": true,
+    "all_png_decoded": true,
+    "all_images_visually_reviewed": true,
+    "independent_visual_review_passed": true,
+    "text_visual_match": true,
+    "all_ocr_normalized_match": false,
+    "ocr_note": "OCR matches pages 1,3,5. It misses page2 comma and misreads page4 怕/剩. Root and independent visual reviews confirm all exact text; images were not modified for OCR.",
+    "minimum_text_side_margin_px": 66,
+    "caption_hashtag_count": 4,
+    "caption_ends_with_page_five": true,
+    "oral_phrasing_review": "Spoken cadence reviewed before drawing. macOS say sandbox error produced zero-duration AIFF; audible playback not verified.",
+    "instagram_posted": false,
+    "git_push_executed": false
+  },
+  "image_validation": [
+    {
+      "page": 1,
+      "source": "/Users/roberto/.codex/generated_images/01a1da0a-2b8e-7430-86e4-48cabe5478f8/exec-ddec5b77-41e4-4506-9fa0-412960bede90.png",
+      "path": "assets/2026-11-14_2030_deadpan_joke_01.png",
+      "source_size": [
+        1122,
+        1402
+      ],
+      "final_size": [
+        1080,
+        1350
+      ],
+      "format": "PNG",
+      "bytes": 2139528,
+      "sha256": "c6bf6f2dc97ad543410386739fc706da419ea2cd136728c2deedb403ae60f205",
+      "expected_text": "Roberto：我戒滑，先開群。",
+      "ocr_headline": "Roberto:我戒滑,先開群。",
+      "ocr_normalized_match": true,
+      "headline_bbox": [
+        82,
+        106,
+        1005,
+        327
+      ],
+      "minimum_side_margin_px": 76,
+      "transform": "sips --resampleHeight 1350; aspect-preserving resize, subpixel width rounding, no crop or compositing",
+      "ocr_engine": "tesseract chi_tra+eng psm6 on header QA crop",
+      "headline_ink_bbox": [
+        83,
+        106,
+        1004,
+        326
+      ],
+      "text_visual_match": true,
+      "independent_visual_review_passed": true
+    },
+    {
+      "page": 2,
+      "source": "/Users/roberto/.codex/generated_images/01a1da0a-2b8e-7430-86e4-48cabe5478f8/exec-777584b2-d4ae-4c7d-a9a5-529b5962830c.png",
+      "path": "assets/2026-11-14_2030_deadpan_joke_02.png",
+      "source_size": [
+        1122,
+        1402
+      ],
+      "final_size": [
+        1080,
+        1350
+      ],
+      "format": "PNG",
+      "bytes": 2062941,
+      "sha256": "9da1d2c237d506ada92fffcef845d67a28b53066a87c1e463f8cbb87be848f28",
+      "expected_text": "Roberto：每小時報到，證明沒在滑。",
+      "ocr_headline": "Roberto:每小時報到證明沒在滑。",
+      "ocr_normalized_match": false,
+      "headline_bbox": [
+        142,
+        72,
+        856,
+        440
+      ],
+      "minimum_side_margin_px": 142,
+      "transform": "sips --resampleHeight 1350; aspect-preserving resize, subpixel width rounding, no crop or compositing",
+      "ocr_engine": "tesseract chi_tra+eng psm6 on header QA crop",
+      "headline_ink_bbox": [
+        142,
+        72,
+        850,
+        425
+      ],
+      "text_visual_match": true,
+      "independent_visual_review_passed": true
+    },
+    {
+      "page": 3,
+      "source": "/Users/roberto/.codex/generated_images/01a1da0a-2b8e-7430-86e4-48cabe5478f8/exec-2d3e99df-39cf-46d7-a2b5-8db08835ec8f.png",
+      "path": "assets/2026-11-14_2030_deadpan_joke_03.png",
+      "source_size": [
+        1122,
+        1402
+      ],
+      "final_size": [
+        1080,
+        1350
+      ],
+      "format": "PNG",
+      "bytes": 2145132,
+      "sha256": "8212291aaf4daac308c2a13bb424ce6c9c8384ff0db38cca3b9c438f78851594",
+      "expected_text": "貓：不碰手機，怎麼報到？",
+      "ocr_headline": "貓:不碰手機,怎麼報到?",
+      "ocr_normalized_match": true,
+      "headline_bbox": [
+        79,
+        100,
+        1016,
+        340
+      ],
+      "minimum_side_margin_px": 66,
+      "transform": "sips --resampleHeight 1350; aspect-preserving resize, subpixel width rounding, no crop or compositing",
+      "ocr_engine": "tesseract chi_tra+eng psm6 on header QA crop",
+      "headline_ink_bbox": [
+        79,
+        100,
+        1014,
+        314
+      ],
+      "text_visual_match": true,
+      "independent_visual_review_passed": true
+    },
+    {
+      "page": 4,
+      "source": "/Users/roberto/.codex/generated_images/01a1da0a-2b8e-7430-86e4-48cabe5478f8/exec-be0bfa6e-8501-49ec-98cc-ca86fab8708e.png",
+      "path": "assets/2026-11-14_2030_deadpan_joke_04.png",
+      "source_size": [
+        1122,
+        1402
+      ],
+      "final_size": [
+        1080,
+        1350
+      ],
+      "format": "PNG",
+      "bytes": 2117743,
+      "sha256": "500dba715e4b9918abef94464ffcd178197a511da221d321ce65524316275c11",
+      "expected_text": "Roberto：沒人回，我怕只剩我。",
+      "ocr_headline": "Roberto:沒人回,我伯只和剌我。",
+      "ocr_normalized_match": false,
+      "headline_bbox": [
+        82,
+        106,
+        1007,
+        334
+      ],
+      "minimum_side_margin_px": 71,
+      "transform": "sips --resampleHeight 1350; aspect-preserving resize, subpixel width rounding, no crop or compositing",
+      "ocr_engine": "tesseract chi_tra+eng psm6 on header QA crop",
+      "headline_ink_bbox": [
+        82,
+        106,
+        1009,
+        313
+      ],
+      "text_visual_match": true,
+      "independent_visual_review_passed": true
+    },
+    {
+      "page": 5,
+      "source": "/Users/roberto/.codex/generated_images/01a1da0a-2b8e-7430-86e4-48cabe5478f8/exec-e1ebca20-13a0-4dc5-b2f1-55bb3b5bd3a9.png",
+      "path": "assets/2026-11-14_2030_deadpan_joke_05.png",
+      "source_size": [
+        1122,
+        1402
+      ],
+      "final_size": [
+        1080,
+        1350
+      ],
+      "format": "PNG",
+      "bytes": 2087775,
+      "sha256": "74a22a0920dad433f67534e2992fcc07f1cf75e8778aa8780c15b94d8b6d4b1e",
+      "expected_text": "貓：你這群，最怕有人戒成功。",
+      "ocr_headline": "貓:你這群,最怕有人戒成功。",
+      "ocr_normalized_match": true,
+      "headline_bbox": [
+        88,
+        76,
+        994,
+        440
+      ],
+      "minimum_side_margin_px": 83,
+      "transform": "sips --resampleHeight 1350; aspect-preserving resize, subpixel width rounding, no crop or compositing",
+      "ocr_engine": "tesseract chi_tra+eng psm6 on header QA crop",
+      "headline_ink_bbox": [
+        88,
+        76,
+        997,
+        414
+      ],
+      "text_visual_match": true,
+      "independent_visual_review_passed": true
+    }
+  ],
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-14_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
