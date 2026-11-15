@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-15_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-15_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "story_lines": [
     "貓：爸的拼圖，你幹嘛趕工？",
     "Roberto：趁他午睡，把天空補完。",
@@ -160,5 +160,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18147144253589464",
+  "instagram_story_media_id": "17875361376643175",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-15T20:48:43"
 }
