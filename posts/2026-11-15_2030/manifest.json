@@ -1,0 +1,164 @@
+{
+  "run_id": "2026-11-15_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "替爸爸拼完拼圖，拿走他想玩的過程",
+  "image_paths": [
+    "assets/2026-11-15_2030_deadpan_joke_01.png",
+    "assets/2026-11-15_2030_deadpan_joke_02.png",
+    "assets/2026-11-15_2030_deadpan_joke_03.png",
+    "assets/2026-11-15_2030_deadpan_joke_04.png",
+    "assets/2026-11-15_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-15_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-15_2030_generation_prompt.md",
+  "status": "generated",
+  "story_lines": [
+    "貓：爸的拼圖，你幹嘛趕工？",
+    "Roberto：趁他午睡，把天空補完。",
+    "貓：那他下午玩什麼？",
+    "Roberto：看他卡住，我就手癢。",
+    "貓：他買拼圖，你送他一張海報。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_A",
+    "label": "貓先戳破一句",
+    "hook_style": "第一格直接是貓對眼前動作的吐槽或追問；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "家庭：關心與替別人做決定的界線",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-11-15",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "reel_target_seconds": 30,
+  "page_durations_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "soundtrack_profile": "playful_clown_instrumental_v1",
+  "generation_method": "built-in image_gen",
+  "reference_study_status": "unavailable_original_five_beat_fallback",
+  "trend_used": null,
+  "caption_hashtags": [
+    "#人生對話",
+    "#家庭日常",
+    "#拼圖",
+    "#關心與界線"
+  ],
+  "images": [
+    {
+      "path": "assets/2026-11-15_2030_deadpan_joke_01.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2278527,
+      "sha256": "26e5035bbf68db5d18424a7b1e7f30bf3e7fcb88929a37e9550ffb36e7ed7d2b",
+      "headline_dark_pixel_bounds": [
+        295,
+        104,
+        793,
+        386
+      ],
+      "source_path": "/Users/roberto/.codex/generated_images/01a1df30-c94b-7a53-ac6f-cde6dd4bdd5a/exec-147aa65b-7e24-4712-96c9-5b0c0242b2b9.png"
+    },
+    {
+      "path": "assets/2026-11-15_2030_deadpan_joke_02.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2243059,
+      "sha256": "d0c815020c64d1cff08e1fcd45d4d2e4b60bd69945fcd0bdb743c02c06a5f862",
+      "headline_dark_pixel_bounds": [
+        280,
+        108,
+        812,
+        388
+      ],
+      "source_path": "/Users/roberto/.codex/generated_images/01a1df30-c94b-7a53-ac6f-cde6dd4bdd5a/exec-7069cd56-0fb7-4fed-b48d-6a269d5c818d.png"
+    },
+    {
+      "path": "assets/2026-11-15_2030_deadpan_joke_03.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2240490,
+      "sha256": "380bd5be5d0f520a6ee545d11b3ec7ba4b7eb175d11bb4e7e07aa192eb3bab91",
+      "headline_dark_pixel_bounds": [
+        144,
+        103,
+        963,
+        322
+      ],
+      "source_path": "/Users/roberto/.codex/generated_images/01a1df30-c94b-7a53-ac6f-cde6dd4bdd5a/exec-47108ab7-2c8b-4066-94bb-219d51830a1d.png"
+    },
+    {
+      "path": "assets/2026-11-15_2030_deadpan_joke_04.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2274772,
+      "sha256": "b280da5ec8ae5db10e0e4126b8f063efa9c441f272eb0c7a54d5c02bf605569f",
+      "headline_dark_pixel_bounds": [
+        123,
+        133,
+        992,
+        331
+      ],
+      "source_path": "/Users/roberto/.codex/generated_images/01a1df30-c94b-7a53-ac6f-cde6dd4bdd5a/exec-045cabcf-d1a1-4059-8e47-6eff6db9ce6e.png"
+    },
+    {
+      "path": "assets/2026-11-15_2030_deadpan_joke_05.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2148931,
+      "sha256": "91b6d6132792c7dc8a2c202395254ec14fcaded4f27c565d95ea70450c0d5891",
+      "headline_dark_pixel_bounds": [
+        203,
+        103,
+        885,
+        386
+      ],
+      "source_path": "/Users/roberto/.codex/generated_images/01a1df30-c94b-7a53-ac6f-cde6dd4bdd5a/exec-28f829db-5fa5-45bf-8116-34c2749bd8ee.png"
+    }
+  ],
+  "validation": {
+    "png_count": 5,
+    "all_dimensions_1080x1350": true,
+    "all_pngs_decoded": true,
+    "unique_sha256_count": 5,
+    "visual_review": "passed_root_and_independent_reviewer",
+    "dialogue_visually_verified": true,
+    "single_scene_each_page": true,
+    "caption_ends_with_page_5": true,
+    "ocr_note": "Supporting OCR matched pages 1,2,3,5 using chi_tra+eng after punctuation normalization. Page 4 mixed-language OCR failed; a targeted chi_tra psm11 read correctly returned 看他卡住,我就手癢。 All five full lines and punctuation independently verified visually.",
+    "read_aloud_attempt": "macOS say attempted before drawing, blocked with sandbox_extension_issue_file; output duration N/A. Spoken-cadence text review completed; audible playback not verified."
+  },
+  "delivery_scope": {
+    "instagram_posted": false,
+    "git_push_performed": false,
+    "reel_rendered": false,
+    "audio_rendered": false
+  },
+  "production_notes": [
+    "Five selected source images 1122x1402, proportionally resampled with sips --resampleHeight 1350 to 1080x1350; no stretching, cropping or programmatic text replacement.",
+    "Page 1 canvas and margins corrected with image_gen. Page 5 duplicate box removed with image_gen.",
+    "Reading time and soundtrack are handoff metadata only."
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-15_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
