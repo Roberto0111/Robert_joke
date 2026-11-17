@@ -1,0 +1,221 @@
+{
+  "run_id": "2026-11-17_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "還保鮮盒越裝越多，把客氣變成份量競賽",
+  "image_paths": [
+    "assets/2026-11-17_2030_deadpan_joke_01.png",
+    "assets/2026-11-17_2030_deadpan_joke_02.png",
+    "assets/2026-11-17_2030_deadpan_joke_03.png",
+    "assets/2026-11-17_2030_deadpan_joke_04.png",
+    "assets/2026-11-17_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-17_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-17_2030_generation_prompt.md",
+  "status": "generated",
+  "story_lines": [
+    "貓：還個盒子，要塞整隻雞？",
+    "我：他上次裝了二十顆水餃。",
+    "貓：你們有在比賽？",
+    "我：總不能比他上次少。",
+    "貓：再還兩次，得用浴缸裝了。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_A",
+    "label": "貓先戳破一句",
+    "hook_style": "第一格直接是貓對眼前動作的吐槽或追問；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "友情：邀約、拒絕與不好意思說出口的小事",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-11-17",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "reel_target_seconds": 30,
+  "page_durations_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "soundtrack_profile": "playful_clown_instrumental_v1",
+  "generation_method": "built-in image_gen",
+  "reference_study_status": "unavailable_original_five_beat_fallback",
+  "trend_used": null,
+  "caption_hashtags": [
+    "#人生對話",
+    "#友情日常",
+    "#回禮日常",
+    "#保鮮盒"
+  ],
+  "delivery_scope": {
+    "instagram_posted": false,
+    "git_push_performed": false,
+    "reel_rendered": false,
+    "audio_rendered": false
+  },
+  "images": [
+    {
+      "page": 1,
+      "path": "assets/2026-11-17_2030_deadpan_joke_01.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2154131,
+      "sha256": "5842c98af043462416da4476bfaeb05b4549979a19cc8bbd96334d6f19939b4a",
+      "headline_ink_bounds": [
+        147,
+        153,
+        941,
+        215
+      ],
+      "minimum_text_side_margin_px": 139,
+      "expected_text": "貓：還個盒子，要塞整隻雞？",
+      "ocr_headline": "貓:還個盒子,要塞整隻雞?",
+      "ocr_normalized_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true,
+      "source_path": "/Users/roberto/.codex/generated_images/01a1e97d-9cb9-7233-9912-557fc3ab181d/exec-e5766043-7eb8-42b4-ada4-95201cada6c6.png",
+      "normalization": "sips --resampleHeight 1350; proportional resampling with integer rounding; no crop, no stretch, no text overlay"
+    },
+    {
+      "page": 2,
+      "path": "assets/2026-11-17_2030_deadpan_joke_02.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2206026,
+      "sha256": "b02914009275444bd7fb6cd696c1314f0a471be1fcdbf65e40f5ed076958cca4",
+      "headline_ink_bounds": [
+        127,
+        159,
+        967,
+        223
+      ],
+      "minimum_text_side_margin_px": 113,
+      "expected_text": "我：他上次裝了二十顆水餃。",
+      "ocr_headline": "我:他上次裝了二十顆水餃。",
+      "ocr_normalized_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true,
+      "source_path": "/Users/roberto/.codex/generated_images/01a1e97d-9cb9-7233-9912-557fc3ab181d/exec-4b31bbb4-c01d-4bae-9479-0dd4b07f9f10.png",
+      "normalization": "sips --resampleHeight 1350; proportional resampling with integer rounding; no crop, no stretch, no text overlay"
+    },
+    {
+      "page": 3,
+      "path": "assets/2026-11-17_2030_deadpan_joke_03.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2180308,
+      "sha256": "1ec252d2bd746019ef49a5e901129a4b7781beb5526f7cc1965e5d9a31c9503e",
+      "headline_ink_bounds": [
+        208,
+        143,
+        877,
+        216
+      ],
+      "minimum_text_side_margin_px": 203,
+      "expected_text": "貓：你們有在比賽？",
+      "ocr_headline": "貓:你們有在比賽?",
+      "ocr_normalized_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true,
+      "source_path": "/Users/roberto/.codex/generated_images/01a1e97d-9cb9-7233-9912-557fc3ab181d/exec-231203ac-f4d0-41bf-acee-82adce9ac8e7.png",
+      "normalization": "sips --resampleHeight 1350; proportional resampling with integer rounding; no crop, no stretch, no text overlay"
+    },
+    {
+      "page": 4,
+      "path": "assets/2026-11-17_2030_deadpan_joke_04.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2142236,
+      "sha256": "fa4bc6f42b1432af709ff7f066776f296c24c03e65054a326472d0f38107c537",
+      "headline_ink_bounds": [
+        146,
+        146,
+        956,
+        221
+      ],
+      "minimum_text_side_margin_px": 124,
+      "expected_text": "我：總不能比他上次少。",
+      "ocr_headline": "我:總不能比他上次少。",
+      "ocr_normalized_match": true,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true,
+      "source_path": "/Users/roberto/.codex/generated_images/01a1e97d-9cb9-7233-9912-557fc3ab181d/exec-7da0526b-39c7-47e9-8fdc-073feb2e1feb.png",
+      "normalization": "sips --resampleHeight 1350; proportional resampling with integer rounding; no crop, no stretch, no text overlay"
+    },
+    {
+      "page": 5,
+      "path": "assets/2026-11-17_2030_deadpan_joke_05.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2161933,
+      "sha256": "4ec2eddfa0dd5c03c9f4561b35871514741b64c738824e7bb23551d18989332a",
+      "headline_ink_bounds": [
+        119,
+        153,
+        989,
+        216
+      ],
+      "minimum_text_side_margin_px": 91,
+      "expected_text": "貓：再還兩次，得用浴缸裝了。",
+      "ocr_headline": "貓:再還兩次,得用浴虹裝了。",
+      "ocr_normalized_match": false,
+      "visual_text_match": true,
+      "visual_single_scene_and_character_continuity": true,
+      "source_path": "/Users/roberto/.codex/generated_images/01a1e97d-9cb9-7233-9912-557fc3ab181d/exec-c6098674-a4a4-4941-92f9-99d28268f85f.png",
+      "normalization": "sips --resampleHeight 1350; proportional resampling with integer rounding; no crop, no stretch, no text overlay",
+      "ocr_followups": [
+        {
+          "method": "chi_tra --psm 3",
+          "text": "貓:再還兩次,得用浴虹裝了。",
+          "normalized_match": false
+        },
+        {
+          "method": "chi_tra --psm 6",
+          "text": "貓:再還兩次,得用浴缸外了。",
+          "normalized_match": false
+        }
+      ],
+      "ocr_review_note": "OCR inconsistent on 缸 and 裝. Root and independent reviewer visually verified exact correct Traditional Chinese line on the final image."
+    }
+  ],
+  "validation": {
+    "png_count": 5,
+    "all_dimensions_1080x1350": true,
+    "all_pngs_decoded": true,
+    "unique_sha256_count": 5,
+    "visual_review": "passed_root_and_independent_reviewer",
+    "dialogue_visually_verified": true,
+    "single_scene_each_page": true,
+    "minimum_headline_side_margin_px": 91,
+    "first_line_characters": 13,
+    "caption_ends_with_page_5": true,
+    "caption_hashtag_count": 4,
+    "ocr_note": "Pages1–4 match after punctuation normalization. Page5 OCR misreads vary by segmentation mode; exact characters verified visually by root and independent reviewer.",
+    "read_aloud_attempt": "Before drawing, macOS say invoked on exact five lines but sandbox_extension_issue_file denied synthesis. afinfo confirms 0 audio bytes/0s; audible playback not verified. Conversational spoken-cadence text review completed."
+  },
+  "production_notes": [
+    "Exactly five selected final PNGs; intermediate variants remain only at the generator source directory.",
+    "Page1 targeted edit enlarged headline margins and lightened paper background. Page2 targeted edit corrected aspect ratio. All selected final sources proportionally resampled to1080x1350 with sips.",
+    "Independent visual QA: recognizable likeness, same wardrobe/cat/palette, one scene per page, no face overlap; minor garnish position variation is nonblocking.",
+    "No video or soundtrack file generated; timing and soundtrack fields are metadata for the downstream pipeline."
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-17_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
