@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-17_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-17_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "story_lines": [
     "貓：還個盒子，要塞整隻雞？",
     "我：他上次裝了二十顆水餃。",
@@ -217,5 +217,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17915412408305231",
+  "instagram_story_media_id": "17880557145565731",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-17T20:52:37"
 }
