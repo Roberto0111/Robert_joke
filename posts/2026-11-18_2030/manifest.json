@@ -1,0 +1,133 @@
+{
+  "run_id": "2026-11-18_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "買一支筆，用大紙袋撐面子",
+  "image_paths": [
+    "assets/2026-11-18_2030_deadpan_joke_01.png",
+    "assets/2026-11-18_2030_deadpan_joke_02.png",
+    "assets/2026-11-18_2030_deadpan_joke_03.png",
+    "assets/2026-11-18_2030_deadpan_joke_04.png",
+    "assets/2026-11-18_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-18_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-18_2030_generation_prompt.md",
+  "status": "generated",
+  "story_lines": [
+    "Roberto：買支筆要大紙袋",
+    "我：塞點紙，才不會扁。",
+    "貓：筆有這麼怕冷？",
+    "我：這樣才像買很多。",
+    "貓：筆還沒寫，先替你吹牛。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_B",
+    "label": "Roberto先自曝一句",
+    "hook_style": "第一格直接是Roberto坦白自己正在做的尷尬選擇；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "消費：省錢、衝動購物與面子",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-11-18",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "reel_target_seconds": 30,
+  "page_durations_seconds": [
+    5.5,
+    5.5,
+    5.5,
+    6,
+    7.5
+  ],
+  "soundtrack_profile": "playful_clown_instrumental_v1",
+  "generation_method": "built-in image_gen; final source PNGs proportionally resampled using sips",
+  "reference_study_status": "unavailable; original five-beat fallback",
+  "trend_used": null,
+  "caption_hashtags": [
+    "人生對話",
+    "消費日常",
+    "面子",
+    "賓士貓"
+  ],
+  "delivery_scope": "Five carousel PNG images and text records only; no Instagram publication, git push, Reel or audio generation performed.",
+  "validation": {
+    "exactly_five_images": true,
+    "width": 1080,
+    "height": 1350,
+    "format": "PNG",
+    "png_crc_and_decompression": "passed",
+    "unique_images": true,
+    "headline_visual_check": "passed",
+    "character_and_wardrobe_continuity": "passed",
+    "tuxedo_cat_each_page": true,
+    "single_scene_each_page": true,
+    "first_hook_unicode_characters": 15,
+    "caption_ends_with_final_story_line": true,
+    "hashtag_count": 4,
+    "reference_identity_used": "assets/main_character_reference.jpg",
+    "candidate_count": 12,
+    "non_workplace_candidate_count": 12,
+    "selected_editorial_score": 18,
+    "editorial_scores_are_performance_evidence": false
+  },
+  "production_notes": [
+    "Page1 refined for white space, warm-white paper and strict 4:5 aspect ratio.",
+    "Page5 refined for strict 4:5 and safe margins.",
+    "All selected source images1122x1402; proportional resampling to1080x1350 uses integer pixel rounding, without cropping or text overlays.",
+    "Full prompt transcript, twelve candidate stories, top-five selection/rejection reasoning and latest20 comparison are in prompt_path."
+  ],
+  "images": [
+    {
+      "path": "assets/2026-11-18_2030_deadpan_joke_01.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 1320902,
+      "sha256": "dccb4822a81c575aa9e778a84334ae00a922fb0a674f4c35b19643a882428c33"
+    },
+    {
+      "path": "assets/2026-11-18_2030_deadpan_joke_02.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 1730555,
+      "sha256": "ded978a5b036996733176413a5962b8076cee5170f1764dce01c95969573bca2"
+    },
+    {
+      "path": "assets/2026-11-18_2030_deadpan_joke_03.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 1731846,
+      "sha256": "719fd6ed4fc8989f38e82beccbe0f52d5583145c4d628477c5d4a4a365b50609"
+    },
+    {
+      "path": "assets/2026-11-18_2030_deadpan_joke_04.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 1803164,
+      "sha256": "37a67daf20817147da263de8dae0e5936e6a22c690cfcb12caa55a3159b049ac"
+    },
+    {
+      "path": "assets/2026-11-18_2030_deadpan_joke_05.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 1582900,
+      "sha256": "d2eeab100b53788c018e208dd7238153bd37a78a80995d255a2f52bde7036afe"
+    }
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-18_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
