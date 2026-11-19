@@ -1,0 +1,134 @@
+{
+  "run_id": "2026-11-19_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "一人接龍也偷換牌",
+  "image_paths": [
+    "assets/2026-11-19_2030_deadpan_joke_01.png",
+    "assets/2026-11-19_2030_deadpan_joke_02.png",
+    "assets/2026-11-19_2030_deadpan_joke_03.png",
+    "assets/2026-11-19_2030_deadpan_joke_04.png",
+    "assets/2026-11-19_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-19_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-19_2030_generation_prompt.md",
+  "status": "generated",
+  "story_lines": [
+    "貓：接龍也偷換牌？",
+    "我：差這張，就能過關了。",
+    "貓：輸了有人笑你？",
+    "我：有，我自己。",
+    "貓：一個人玩，還能遇到老千。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v3_opening_20261020_A",
+    "label": "貓先戳破一句",
+    "hook_style": "第一格直接是貓對眼前動作的吐槽或追問；含說話者最多16字，具體到能看見矛盾，不先講道理",
+    "topic_pillar": "休息：假日、興趣與對自己的要求",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v3_opening_20261020",
+    "scheduled_for": "2026-11-19",
+    "review_on": "2026-11-06",
+    "checkpoint_on": "2026-10-27",
+    "status": "review_due_no_automatic_winner",
+    "hypothesis": "只比較首句的說話者與切入方式；角色、30秒、五頁、時段不變。不同故事只提供觀察訊號，不宣稱因果。",
+    "decision_rule": "每組至少5篇72-96小時觀測、合計觸及200；觸及提高20%、分享收藏至少3次且比率不低、平均觀看不降才暫時偏重；不足就延長。"
+  },
+  "reel_target_seconds": 30,
+  "page_durations_seconds": [
+    5.5,
+    6,
+    5.5,
+    5,
+    8
+  ],
+  "soundtrack_profile": "playful_clown_instrumental_v1",
+  "generation_method": "built-in image_gen; five individual image calls with mandatory likeness reference and page-1 continuity reference",
+  "reference_study_status": "unavailable; original five-beat fallback",
+  "trend_used": false,
+  "caption_hashtags": [
+    "#人生對話",
+    "#假日生活",
+    "#接龍",
+    "#自我要求"
+  ],
+  "delivery_scope": "five carousel source PNGs, caption, prompt record, manifest only; not published",
+  "validation": {
+    "image_count": 5,
+    "all_images_1080x1350": true,
+    "all_images_unique": true,
+    "traditional_chinese_visual_check": "passed",
+    "character_and_scene_continuity": "passed",
+    "safe_margins_and_no_face_overlap": "passed",
+    "single_scene_per_page": "passed",
+    "independent_final_png_review": "passed",
+    "opening_characters_including_speaker_and_punctuation": 9,
+    "caption_ends_with_final_line": true,
+    "candidate_count": 12,
+    "nonworkplace_candidate_count": 12,
+    "recent_post_comparison_count": 20,
+    "candidate_score_is_editorial_not_performance": true
+  },
+  "production_notes": {
+    "native_dimensions": [
+      1092,
+      1440
+    ],
+    "final_export": "sips resampling to 1080x1350; no cropping or content repainting",
+    "reel_rendered": false,
+    "music_generated": false,
+    "instagram_posted": false,
+    "git_push_performed": false
+  },
+  "images": [
+    {
+      "path": "assets/2026-11-19_2030_deadpan_joke_01.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2540147,
+      "sha256": "7f4d32329c60cc069cd8406f506171b2c2d35dc285d550aecc9bf89f064bfef8"
+    },
+    {
+      "path": "assets/2026-11-19_2030_deadpan_joke_02.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2458055,
+      "sha256": "8b05d5feb842823987ff8e96db530a66838b403406d9500d11690de7de49eef4"
+    },
+    {
+      "path": "assets/2026-11-19_2030_deadpan_joke_03.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2492542,
+      "sha256": "d1b2e55be78993390dd8d521b3a29e37e32059de03d3025c595b0eb7e47e145f"
+    },
+    {
+      "path": "assets/2026-11-19_2030_deadpan_joke_04.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2486858,
+      "sha256": "a070bedc82e0afcad5f57a7b7a81450f8375fccfc529323535cbd74b519f30fc"
+    },
+    {
+      "path": "assets/2026-11-19_2030_deadpan_joke_05.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2470007,
+      "sha256": "0a362475fa357768025134abed4efdcbec08c347786ccfe846cadc5be18f6be9"
+    }
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-19_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
