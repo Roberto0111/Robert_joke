@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-19_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-19_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "story_lines": [
     "貓：接龍也偷換牌？",
     "我：差這張，就能過關了。",
@@ -130,5 +130,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17996488200061306",
+  "instagram_story_media_id": "17976202587169705",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-19T20:46:45"
 }
