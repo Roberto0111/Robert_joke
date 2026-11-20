@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-20_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-20_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "story_lines": [
     "我：放不下，還收他的衣櫃。",
     "我：他搬家，說丟了太可惜。",
@@ -232,5 +232,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18040130963899573",
+  "instagram_story_media_id": "18121868908772193",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-20T20:45:53"
 }
