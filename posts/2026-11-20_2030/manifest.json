@@ -1,0 +1,236 @@
+{
+  "run_id": "2026-11-20_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "放不下仍收朋友舊衣櫃，幫搬家變接收舊家",
+  "image_paths": [
+    "assets/2026-11-20_2030_deadpan_joke_01.png",
+    "assets/2026-11-20_2030_deadpan_joke_02.png",
+    "assets/2026-11-20_2030_deadpan_joke_03.png",
+    "assets/2026-11-20_2030_deadpan_joke_04.png",
+    "assets/2026-11-20_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-20_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-20_2030_generation_prompt.md",
+  "status": "generated",
+  "story_lines": [
+    "我：放不下，還收他的衣櫃。",
+    "我：他搬家，說丟了太可惜。",
+    "貓：你缺衣櫃？",
+    "我：怕不收，像沒幫上忙。",
+    "貓：他搬新家，舊家搬來你這。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v4_action_scale_20261120_explore",
+    "label": "首格動作中近景（免費探索，非優勝）",
+    "hook_style": "第一格直接是Roberto坦白自己正在做的尷尬選擇；含說話者最多16字，具體到能看見矛盾，不先講道理。首格只改取景尺度：Roberto的臉、正在做事的手、關鍵道具與賓士貓表情作中近景，占去大半畫面，減少無關空白；完整首句仍清楚，不裁掉貓或關鍵動作。其餘四頁、首句說話者既有輪替、題材輪替、五頁30秒與音樂時段不變。",
+    "topic_pillar": "關係：付出、界線與真實的小對話",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v4_action_scale_20261120",
+    "scheduled_for": "2026-11-20",
+    "review_on": "2026-12-04",
+    "checkpoint_on": "2026-11-24",
+    "status": "free_exploration_not_winner",
+    "hypothesis": "只改首格動作取景尺度；與舊期僅描述性比較，故事不同不能歸因。",
+    "decision_rule": "同齡72–96小時至少5篇、觸及200；分享收藏為0不得稱勝出。12/18硬期限重新決定去留，不自動加權或付費。",
+    "speaker_rotation": "Roberto先自曝一句",
+    "starts_on": "2026-11-20",
+    "decision_deadline": "2026-12-18"
+  },
+  "reel_target_seconds": 30,
+  "page_durations_seconds": [
+    5.5,
+    6,
+    5,
+    5.5,
+    8
+  ],
+  "soundtrack_profile": "playful_clown_instrumental_v1",
+  "generation_method": "built-in image_gen; five individual calls with mandatory likeness and generated continuity references",
+  "reference_study_status": "unavailable; original five-beat fallback",
+  "trend_used": false,
+  "caption_hashtags": [
+    "#人生對話",
+    "#友情日常",
+    "#人際界線",
+    "#搬家"
+  ],
+  "delivery_scope": "five carousel PNGs, caption, prompt record and manifest; generated only",
+  "validation": {
+    "image_count": 5,
+    "all_images_1080x1350": true,
+    "all_images_unique": true,
+    "ocr_normalized_headline_matches": true,
+    "exact_traditional_chinese_and_punctuation_visual_check": "passed",
+    "character_and_scene_continuity": "passed",
+    "safe_margins_and_no_face_overlap": "passed",
+    "single_scene_per_page": true,
+    "independent_final_png_review": "passed",
+    "first_page_action_medium_close_and_full_cat": "passed",
+    "opening_characters_including_speaker_and_punctuation": 13,
+    "caption_ends_with_final_line": true,
+    "candidate_count": 12,
+    "nonworkplace_candidate_count": 12,
+    "recent_post_comparison_count": 20,
+    "candidate_score_is_editorial_not_performance": true,
+    "report_path": "tmp/2026-11-20_2030/image_validation.json"
+  },
+  "production_notes": {
+    "native_dimensions": [
+      1122,
+      1402
+    ],
+    "final_export": "sips --resampleHeight 1350; proportional scaling with integer rounding, no crop or text overlay",
+    "generation_call_count": 5,
+    "reel_rendered": false,
+    "music_generated": false,
+    "instagram_posted": false,
+    "git_push_performed": false
+  },
+  "images": [
+    {
+      "page": 1,
+      "path": "assets/2026-11-20_2030_deadpan_joke_01.png",
+      "source_path": "/Users/roberto/.codex/generated_images/01a1f8f0-413c-74a1-888f-c6d1037d21a1/exec-27ecdfdf-7bf6-4f2f-96f0-3a58f521a11e.png",
+      "native_dimensions": [
+        1122,
+        1402
+      ],
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2404030,
+      "sha256": "773766b961c32b7fde00f84522955ff806ad6b4bc0c84dbd17a74141d94b11cf",
+      "headline_ink_bounds": [
+        98,
+        119,
+        999,
+        189
+      ],
+      "minimum_text_side_margin_px": 81,
+      "expected_text": "我：放不下，還收他的衣櫃。",
+      "ocr_headline": "我:放不下:)還收他的衣櫃。",
+      "ocr_normalized_match": true,
+      "export": "sips --resampleHeight 1350; proportional scaling with integer rounding; no crop, overlays or repainting",
+      "ocr_note": "Headline-only word centers; punctuation normalized. Broad first scan mistook a wardrobe edge for a character on page 1; excluded by actual headline band. Exact punctuation separately checked visually.",
+      "independent_visual_review": "passed"
+    },
+    {
+      "page": 2,
+      "path": "assets/2026-11-20_2030_deadpan_joke_02.png",
+      "source_path": "/Users/roberto/.codex/generated_images/01a1f8f0-413c-74a1-888f-c6d1037d21a1/exec-e3d62971-372a-4a74-849d-b3c14d16b7ed.png",
+      "native_dimensions": [
+        1122,
+        1402
+      ],
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2120942,
+      "sha256": "fc38c0672280e65d24bef0790eb32d755302a87abe67aafd252ef62c00453c7e",
+      "headline_ink_bounds": [
+        119,
+        162,
+        980,
+        229
+      ],
+      "minimum_text_side_margin_px": 100,
+      "expected_text": "我：他搬家，說丟了太可惜。",
+      "ocr_headline": "我:他搬家,說丟了太可惜。",
+      "ocr_normalized_match": true,
+      "export": "sips --resampleHeight 1350; proportional scaling with integer rounding; no crop, overlays or repainting",
+      "ocr_note": "Headline-only word centers; punctuation normalized. Broad first scan mistook a wardrobe edge for a character on page 1; excluded by actual headline band. Exact punctuation separately checked visually.",
+      "independent_visual_review": "passed"
+    },
+    {
+      "page": 3,
+      "path": "assets/2026-11-20_2030_deadpan_joke_03.png",
+      "source_path": "/Users/roberto/.codex/generated_images/01a1f8f0-413c-74a1-888f-c6d1037d21a1/exec-06a4eae7-083c-43d4-9342-7f22e7c0a076.png",
+      "native_dimensions": [
+        1122,
+        1402
+      ],
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2163550,
+      "sha256": "fc720175c39c222158b68f335070a53f3018a3b0a8a616f6c7cba02b82fe7787",
+      "headline_ink_bounds": [
+        253,
+        142,
+        850,
+        225
+      ],
+      "minimum_text_side_margin_px": 230,
+      "expected_text": "貓：你缺衣櫃？",
+      "ocr_headline": "貓:你缺衣櫃?",
+      "ocr_normalized_match": true,
+      "export": "sips --resampleHeight 1350; proportional scaling with integer rounding; no crop, overlays or repainting",
+      "ocr_note": "Headline-only word centers; punctuation normalized. Broad first scan mistook a wardrobe edge for a character on page 1; excluded by actual headline band. Exact punctuation separately checked visually.",
+      "independent_visual_review": "passed"
+    },
+    {
+      "page": 4,
+      "path": "assets/2026-11-20_2030_deadpan_joke_04.png",
+      "source_path": "/Users/roberto/.codex/generated_images/01a1f8f0-413c-74a1-888f-c6d1037d21a1/exec-1cba101b-d4f4-4114-bab1-a27c81c9cc46.png",
+      "native_dimensions": [
+        1122,
+        1402
+      ],
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2076846,
+      "sha256": "ddce1da9cdb891bff470dab312026ac7d191cfb0c6ee8e9c57a5f786f2128d57",
+      "headline_ink_bounds": [
+        140,
+        161,
+        964,
+        230
+      ],
+      "minimum_text_side_margin_px": 116,
+      "expected_text": "我：怕不收，像沒幫上忙。",
+      "ocr_headline": "我:怕不收,像沒幫上忙。",
+      "ocr_normalized_match": true,
+      "export": "sips --resampleHeight 1350; proportional scaling with integer rounding; no crop, overlays or repainting",
+      "ocr_note": "Headline-only word centers; punctuation normalized. Broad first scan mistook a wardrobe edge for a character on page 1; excluded by actual headline band. Exact punctuation separately checked visually.",
+      "independent_visual_review": "passed"
+    },
+    {
+      "page": 5,
+      "path": "assets/2026-11-20_2030_deadpan_joke_05.png",
+      "source_path": "/Users/roberto/.codex/generated_images/01a1f8f0-413c-74a1-888f-c6d1037d21a1/exec-f82880b8-870e-45ea-b12e-1c090071f3ec.png",
+      "native_dimensions": [
+        1122,
+        1402
+      ],
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2201710,
+      "sha256": "205cb01d19bdec859c390ce9e06ad3f4c79aa10737d0c26ba630554b23f2da2a",
+      "headline_ink_bounds": [
+        106,
+        128,
+        999,
+        192
+      ],
+      "minimum_text_side_margin_px": 81,
+      "expected_text": "貓：他搬新家，舊家搬來你這。",
+      "ocr_headline": "貓:他搬新家,舊家搬來你這。",
+      "ocr_normalized_match": true,
+      "export": "sips --resampleHeight 1350; proportional scaling with integer rounding; no crop, overlays or repainting",
+      "ocr_note": "Headline-only word centers; punctuation normalized. Broad first scan mistook a wardrobe edge for a character on page 1; excluded by actual headline band. Exact punctuation separately checked visually.",
+      "independent_visual_review": "passed"
+    }
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-20_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
