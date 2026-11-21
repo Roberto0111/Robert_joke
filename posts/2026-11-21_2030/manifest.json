@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-21_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-21_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "story_lines": [
     "貓：拍整齊，要先埋我？",
     "我：再推一點，照片就乾淨了。",
@@ -227,5 +227,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17920010523498283",
+  "instagram_story_media_id": "18140033383633603",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-21T20:47:26"
 }
