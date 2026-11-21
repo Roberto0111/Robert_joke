@@ -1,0 +1,231 @@
+{
+  "run_id": "2026-11-21_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "拍整齊客廳，把衣服推到貓身上",
+  "image_paths": [
+    "assets/2026-11-21_2030_deadpan_joke_01.png",
+    "assets/2026-11-21_2030_deadpan_joke_02.png",
+    "assets/2026-11-21_2030_deadpan_joke_03.png",
+    "assets/2026-11-21_2030_deadpan_joke_04.png",
+    "assets/2026-11-21_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-21_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-21_2030_generation_prompt.md",
+  "status": "generated",
+  "story_lines": [
+    "貓：拍整齊，要先埋我？",
+    "我：再推一點，照片就乾淨了。",
+    "貓：你平常只住那一角？",
+    "我：別人家看起來都比我好。",
+    "貓：別家的貓，搞不好也被埋著。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v4_action_scale_20261120_explore",
+    "label": "首格動作中近景（免費探索，非優勝）",
+    "hook_style": "第一格直接是貓對眼前動作的吐槽或追問；含說話者最多16字，具體到能看見矛盾，不先講道理。首格只改取景尺度：Roberto的臉、正在做事的手、關鍵道具與賓士貓表情作中近景，占去大半畫面，減少無關空白；完整首句仍清楚，不裁掉貓或關鍵動作。其餘四頁、首句說話者既有輪替、題材輪替、五頁30秒與音樂時段不變。",
+    "topic_pillar": "數位生活：已讀、群組與社交比較",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v4_action_scale_20261120",
+    "scheduled_for": "2026-11-21",
+    "review_on": "2026-12-04",
+    "checkpoint_on": "2026-11-24",
+    "status": "free_exploration_not_winner",
+    "hypothesis": "只改首格動作取景尺度；與舊期僅描述性比較，故事不同不能歸因。",
+    "decision_rule": "同齡72–96小時至少5篇、觸及200；分享收藏為0不得稱勝出。12/18硬期限重新決定去留，不自動加權或付費。",
+    "speaker_rotation": "貓先戳破一句",
+    "starts_on": "2026-11-20",
+    "decision_deadline": "2026-12-18"
+  },
+  "reel_target_seconds": 30,
+  "page_durations_seconds": [
+    5,
+    6.333333333333333,
+    6.333333333333333,
+    6.333333333333333,
+    6
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "soundtrack_profile": "playful_clown_instrumental_v1",
+  "generation_method": "built-in image_gen; five initial scenes plus two headline safe-margin edits",
+  "reference_study_status": "unavailable; original five-beat fallback",
+  "trend_used": false,
+  "caption_hashtags": [
+    "#人生對話",
+    "#數位生活",
+    "#社交比較",
+    "#居家日常"
+  ],
+  "delivery_scope": "five carousel PNGs, caption, prompt record and manifest; generated only",
+  "validation": {
+    "validated_at": "2026-11-21T20:45:00+08:00",
+    "image_count": 5,
+    "all_images_1080x1350": true,
+    "all_images_unique": true,
+    "png_decode": "passed",
+    "exact_traditional_chinese_and_punctuation_visual_check": "passed",
+    "independent_final_png_review": "passed",
+    "character_and_scene_continuity": "passed",
+    "safe_margins_and_no_face_overlap": "passed",
+    "single_scene_per_page": true,
+    "first_page_action_medium_close_and_cat_visible": "passed",
+    "opening_characters_including_speaker_and_punctuation": 11,
+    "caption_ends_with_final_line": true,
+    "hashtag_count": 4,
+    "candidate_count": 12,
+    "nonworkplace_candidate_count": 12,
+    "selected_editorial_score": 19,
+    "recent_post_comparison_count": 20,
+    "candidate_score_is_editorial_not_performance": true,
+    "ocr_status": "supporting only; incomplete recognition on pages 1 and 3; all final text separately verified visually",
+    "report_path": "tmp/2026-11-21_2030/image_validation.json"
+  },
+  "images": [
+    {
+      "page": 1,
+      "path": "assets/2026-11-21_2030_deadpan_joke_01.png",
+      "source_path": "/Users/roberto/.codex/generated_images/01a1fe16-adc3-7ab2-b4c8-ef8aa2c28f34/exec-823d977d-de2d-4aa6-9054-e1545ec166bb.png",
+      "native_dimensions": [
+        1092,
+        1440
+      ],
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2478603,
+      "sha256": "3d94b304939e625f913a59ae03ff0fed42eba7ce23fd527b4c6342122df02f10",
+      "expected_text": "貓：拍整齊，要先埋我？",
+      "headline_ink_bounds": [
+        81,
+        109,
+        1004,
+        190
+      ],
+      "minimum_text_side_margin_px": 76,
+      "ocr_supporting_text": "sages。要先埋我?",
+      "final_visual_review": "passed"
+    },
+    {
+      "page": 2,
+      "path": "assets/2026-11-21_2030_deadpan_joke_02.png",
+      "source_path": "/Users/roberto/.codex/generated_images/01a1fe16-adc3-7ab2-b4c8-ef8aa2c28f34/exec-932406a5-2458-45b5-b63b-88924c2aecfd.png",
+      "native_dimensions": [
+        1122,
+        1402
+      ],
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2338494,
+      "sha256": "d0c8c76ab49eff83a2ff0c5aec8256049ad61414f4b9d468690c2ef0459e4893",
+      "expected_text": "我：再推一點，照片就乾淨了。",
+      "headline_ink_bounds": [
+        77,
+        154,
+        1015,
+        225
+      ],
+      "minimum_text_side_margin_px": 65,
+      "ocr_supporting_text": "我:再推一點,照片就乾淨了。",
+      "final_visual_review": "passed"
+    },
+    {
+      "page": 3,
+      "path": "assets/2026-11-21_2030_deadpan_joke_03.png",
+      "source_path": "/Users/roberto/.codex/generated_images/01a1fe16-adc3-7ab2-b4c8-ef8aa2c28f34/exec-be9413a7-cea8-4db0-b6b0-b8a8dd1ba800.png",
+      "native_dimensions": [
+        1122,
+        1402
+      ],
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2313239,
+      "sha256": "2c287e9fb0db2899097e785c2367a901b86960874fe29e2ee08180d0b9db0dfa",
+      "expected_text": "貓：你平常只住那一角？",
+      "headline_ink_bounds": [
+        87,
+        118,
+        990,
+        199
+      ],
+      "minimum_text_side_margin_px": 87,
+      "ocr_supporting_text": "貓:girdnate?",
+      "final_visual_review": "passed"
+    },
+    {
+      "page": 4,
+      "path": "assets/2026-11-21_2030_deadpan_joke_04.png",
+      "source_path": "/Users/roberto/.codex/generated_images/01a1fe16-adc3-7ab2-b4c8-ef8aa2c28f34/exec-8f7f2c5d-bc51-4719-9f27-4d35dd5bbd87.png",
+      "native_dimensions": [
+        1122,
+        1402
+      ],
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2157790,
+      "sha256": "a6338a4ed2587a1b42946505f7a2ee1cf091b6d5be1c3c5df88f2defb99cb88b",
+      "expected_text": "我：別人家看起來都比我好。",
+      "headline_ink_bounds": [
+        137,
+        156,
+        945,
+        219
+      ],
+      "minimum_text_side_margin_px": 135,
+      "ocr_supporting_text": "我:別人家看起來都比我好。",
+      "final_visual_review": "passed"
+    },
+    {
+      "page": 5,
+      "path": "assets/2026-11-21_2030_deadpan_joke_05.png",
+      "source_path": "/Users/roberto/.codex/generated_images/01a1fe16-adc3-7ab2-b4c8-ef8aa2c28f34/exec-7c003859-dae2-4d83-9847-95894bd763b4.png",
+      "native_dimensions": [
+        1122,
+        1402
+      ],
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2166511,
+      "sha256": "6105d5d9c4f4b95d59366a137c9c1cde82b3c4e7c7e425e960310aa2e453540e",
+      "expected_text": "貓：別家的貓，搞不好也被埋著。",
+      "headline_ink_bounds": [
+        131,
+        134,
+        954,
+        195
+      ],
+      "minimum_text_side_margin_px": 126,
+      "ocr_supporting_text": "貓:別家的貓,搞不好也被埋著。",
+      "final_visual_review": "passed"
+    }
+  ],
+  "production_notes": {
+    "generation_call_count": 7,
+    "initial_scenes": 5,
+    "targeted_headline_edits": [
+      4,
+      5
+    ],
+    "final_export": "sips --resampleHeightWidth 1350 1080; no cropping or text overlays during export",
+    "page_1_export_note": "native1092x1440 resized to1080x1350; non-uniform scaling, checked on final exported PNG",
+    "other_native_dimensions": [
+      1122,
+      1402
+    ],
+    "reel_rendered": false,
+    "music_generated": false,
+    "instagram_posted": false,
+    "git_push_performed": false
+  },
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-21_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
