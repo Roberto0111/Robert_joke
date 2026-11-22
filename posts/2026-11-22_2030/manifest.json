@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-22_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-22_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "story_lines": [
     "我：陪媽追劇，先按暫停。",
     "我：坐了半天，她只顧猜兇手。",
@@ -236,5 +236,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17891505645479575",
+  "instagram_story_media_id": "18364809055217074",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-22T20:47:57"
 }
