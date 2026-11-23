@@ -1,0 +1,221 @@
+{
+  "run_id": "2026-11-23_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "下班留外套假裝還在，自己反而留下站崗",
+  "image_paths": [
+    "assets/2026-11-23_2030_deadpan_joke_01.png",
+    "assets/2026-11-23_2030_deadpan_joke_02.png",
+    "assets/2026-11-23_2030_deadpan_joke_03.png",
+    "assets/2026-11-23_2030_deadpan_joke_04.png",
+    "assets/2026-11-23_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-23_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-23_2030_generation_prompt.md",
+  "status": "generated",
+  "story_lines": [
+    "貓：下班了，還幫外套加班？",
+    "我：留著，才不會像我先跑。",
+    "貓：那你怎麼還不走？",
+    "我：外面冷，我在等大家走。",
+    "貓：外套替你加班，你替它站崗。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v4_action_scale_20261120_explore",
+    "label": "首格動作中近景（免費探索，非優勝）",
+    "hook_style": "第一格直接是貓對眼前動作的吐槽或追問；含說話者最多16字，具體到能看見矛盾，不先講道理。首格只改取景尺度：Roberto的臉、正在做事的手、關鍵道具與賓士貓表情作中近景，占去大半畫面，減少無關空白；完整首句仍清楚，不裁掉貓或關鍵動作。其餘四頁、首句說話者既有輪替、題材輪替、五頁30秒與音樂時段不變。",
+    "topic_pillar": "工作：一個具體日常選擇；不要再寫離職或沉沒成本",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v4_action_scale_20261120",
+    "scheduled_for": "2026-11-23",
+    "review_on": "2026-12-04",
+    "checkpoint_on": "2026-11-24",
+    "status": "free_exploration_not_winner",
+    "hypothesis": "只改首格動作取景尺度；與舊期僅描述性比較，故事不同不能歸因。",
+    "decision_rule": "同齡72–96小時至少5篇、觸及200；分享收藏為0不得稱勝出。12/18硬期限重新決定去留，不自動加權或付費。",
+    "speaker_rotation": "貓先戳破一句",
+    "starts_on": "2026-11-20",
+    "decision_deadline": "2026-12-18"
+  },
+  "reel_target_seconds": 30,
+  "page_durations_seconds": [
+    5,
+    6.333333333333333,
+    6.333333333333333,
+    6.333333333333333,
+    6
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "soundtrack_profile": "playful_clown_instrumental_v1",
+  "generation_method": "built-in image_gen; five initial scenes plus targeted page1 framing and page3 anatomy corrections",
+  "reference_study_status": "unavailable; original five-beat fallback",
+  "trend_used": false,
+  "caption_hashtags": [
+    "#人生對話",
+    "#職場日常",
+    "#下班",
+    "#辦公室日常"
+  ],
+  "validation": {
+    "validated_at": "2026-11-23T20:46:39.678686+08:00",
+    "image_count": 5,
+    "all_images_1080x1350": true,
+    "all_images_unique": true,
+    "png_decode": "passed",
+    "exact_traditional_chinese_and_punctuation_visual_check": "passed",
+    "character_and_scene_continuity": "passed",
+    "safe_margins_and_no_face_overlap": "passed",
+    "single_scene_per_page": true,
+    "first_page_action_medium_close_and_cat_visible": "passed",
+    "opening_characters_including_speaker_and_punctuation": 13,
+    "caption_ends_with_final_line": true,
+    "hashtag_count": 4,
+    "candidate_count": 12,
+    "nonworkplace_candidate_count": 8,
+    "selected_editorial_score": 19,
+    "recent_post_comparison_count": 20,
+    "candidate_score_is_editorial_not_performance": true,
+    "independent_review": "pages1,2,4,5 passed; page3 extra limb detected and corrected; all final exports visually reviewed by primary agent",
+    "spoken_rhythm_review": "completed; five beats distinct and read naturally",
+    "audible_playback": "macOS say attempted before drawing; environment denied access, so successful audible playback not claimed"
+  },
+  "images": [
+    {
+      "page": 1,
+      "path": "assets/2026-11-23_2030_deadpan_joke_01.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2284835,
+      "sha256": "677d3c4fc059a9884b2063af9a0345a9f497402840692486578a7bd52ec7a0f1",
+      "source_path": "/Users/roberto/.codex/generated_images/01a20863-60f5-73f0-ab5c-1b2cdf6209ed/exec-0eeb6a6f-d074-4305-965f-227b0a9b1b5a.png",
+      "native_dimensions": [
+        1092,
+        1440
+      ],
+      "expected_text": "貓：下班了，還幫外套加班？",
+      "headline_ink_bounds": [
+        150,
+        130,
+        950,
+        186
+      ],
+      "minimum_text_side_margin_px": 130,
+      "final_visual_review": "passed"
+    },
+    {
+      "page": 2,
+      "path": "assets/2026-11-23_2030_deadpan_joke_02.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2023019,
+      "sha256": "a4bba8ebf3bd8f8f9b98b6ef7a88a5a03a979f0d62dc77f55fff9e24ddaa95f5",
+      "source_path": "/Users/roberto/.codex/generated_images/01a20863-60f5-73f0-ab5c-1b2cdf6209ed/exec-e3ef3c14-ec26-47df-b437-33deab7ca87c.png",
+      "native_dimensions": [
+        1092,
+        1440
+      ],
+      "expected_text": "我：留著，才不會像我先跑。",
+      "headline_ink_bounds": [
+        110,
+        129,
+        999,
+        191
+      ],
+      "minimum_text_side_margin_px": 81,
+      "final_visual_review": "passed"
+    },
+    {
+      "page": 3,
+      "path": "assets/2026-11-23_2030_deadpan_joke_03.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2122132,
+      "sha256": "a25f0e02207b6173532c5825d1dfe916deb1f5675297b17d195bf3d16704cd10",
+      "source_path": "/Users/roberto/.codex/generated_images/01a20863-60f5-73f0-ab5c-1b2cdf6209ed/exec-d0744122-8829-4cab-81be-c64def1082e7.png",
+      "native_dimensions": [
+        1122,
+        1402
+      ],
+      "expected_text": "貓：那你怎麼還不走？",
+      "headline_ink_bounds": [
+        149,
+        124,
+        961,
+        197
+      ],
+      "minimum_text_side_margin_px": 119,
+      "final_visual_review": "passed"
+    },
+    {
+      "page": 4,
+      "path": "assets/2026-11-23_2030_deadpan_joke_04.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2230771,
+      "sha256": "eb03a9d8c7d010dd90d0d9f24ac2f7986d9214519b9c29fda290a613656eaa8c",
+      "source_path": "/Users/roberto/.codex/generated_images/01a20863-60f5-73f0-ab5c-1b2cdf6209ed/exec-4b53edea-2c65-4db5-8e0d-b2836a963a2d.png",
+      "native_dimensions": [
+        1092,
+        1440
+      ],
+      "expected_text": "我：外面冷，我在等大家走。",
+      "headline_ink_bounds": [
+        111,
+        127,
+        998,
+        193
+      ],
+      "minimum_text_side_margin_px": 82,
+      "final_visual_review": "passed"
+    },
+    {
+      "page": 5,
+      "path": "assets/2026-11-23_2030_deadpan_joke_05.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 2172845,
+      "sha256": "627263bc8c0811675ebbfe1131b06ea1fc8cc2d40482f1e2aa6eb5902e65e1ab",
+      "source_path": "/Users/roberto/.codex/generated_images/01a20863-60f5-73f0-ab5c-1b2cdf6209ed/exec-36520835-e067-439f-8e8f-4df9e0e0b2c6.png",
+      "native_dimensions": [
+        1092,
+        1440
+      ],
+      "expected_text": "貓：外套替你加班，你替它站崗。",
+      "headline_ink_bounds": [
+        80,
+        130,
+        1012,
+        187
+      ],
+      "minimum_text_side_margin_px": 68,
+      "final_visual_review": "passed"
+    }
+  ],
+  "production_notes": {
+    "generation_call_count": 7,
+    "initial_scenes": 5,
+    "targeted_edits": [
+      1,
+      3
+    ],
+    "final_export": "sips full-frame resample to1080x1350, no crop, no text overlays; original generated sources preserved",
+    "timing": "existing pipeline timing retained:5 +19/3 +19/3 +19/3 +6 =30 seconds; no Reel rendered",
+    "reel_rendered": false,
+    "music_generated": false,
+    "instagram_posted": false,
+    "git_push_performed": false
+  },
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-23_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
