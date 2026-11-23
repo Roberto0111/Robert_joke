@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-23_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-23_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "story_lines": [
     "貓：下班了，還幫外套加班？",
     "我：留著，才不會像我先跑。",
@@ -217,5 +217,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18080359889439569",
+  "instagram_story_media_id": "18034546439856977",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-23T20:50:19"
 }
