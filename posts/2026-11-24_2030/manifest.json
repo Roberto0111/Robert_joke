@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-24_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-24_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "story_lines": [
     "貓：擦掉三件，還說沒做事？",
     "我：做完就擦，才不會亂。",
@@ -226,5 +226,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18342820129261156",
+  "instagram_story_media_id": "18119640143034013",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-24T20:46:56"
 }
