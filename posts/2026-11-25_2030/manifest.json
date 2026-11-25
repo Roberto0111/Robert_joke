@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-25_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-25_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "growth_experiment": {
     "id": "organic_v4_action_scale_20261120_explore",
     "label": "首格動作中近景（免費探索，非優勝）",
@@ -144,5 +144,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18002556212821002",
+  "instagram_story_media_id": "18155639143552145",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-25T20:51:43"
 }
