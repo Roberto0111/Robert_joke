@@ -1,0 +1,148 @@
+{
+  "run_id": "2026-11-25_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "為補齊盲盒空位繼續買，自己的展示架反過來收房租",
+  "image_paths": [
+    "assets/2026-11-25_2030_deadpan_joke_01.png",
+    "assets/2026-11-25_2030_deadpan_joke_02.png",
+    "assets/2026-11-25_2030_deadpan_joke_03.png",
+    "assets/2026-11-25_2030_deadpan_joke_04.png",
+    "assets/2026-11-25_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-25_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-25_2030_generation_prompt.md",
+  "status": "generated",
+  "growth_experiment": {
+    "id": "organic_v4_action_scale_20261120_explore",
+    "label": "首格動作中近景（免費探索，非優勝）",
+    "hook_style": "第一格直接是貓對眼前動作的吐槽或追問；含說話者最多16字，具體到能看見矛盾，不先講道理。首格只改取景尺度：Roberto的臉、正在做事的手、關鍵道具與賓士貓表情作中近景，占去大半畫面，減少無關空白；完整首句仍清楚，不裁掉貓或關鍵動作。其餘四頁、首句說話者既有輪替、題材輪替、五頁30秒與音樂時段不變。",
+    "topic_pillar": "消費：省錢、衝動購物與面子",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v4_action_scale_20261120",
+    "scheduled_for": "2026-11-25",
+    "review_on": "2026-12-04",
+    "checkpoint_on": "2026-11-24",
+    "status": "free_exploration_not_winner",
+    "hypothesis": "只改首格動作取景尺度；與舊期僅描述性比較，故事不同不能歸因。",
+    "decision_rule": "同齡72–96小時至少5篇、觸及200；分享收藏為0不得稱勝出。12/18硬期限重新決定去留，不自動加權或付費。",
+    "speaker_rotation": "貓先戳破一句",
+    "starts_on": "2026-11-20",
+    "decision_deadline": "2026-12-18"
+  },
+  "suggested_page_durations_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "generation_method": "built-in image_gen",
+  "validation": {
+    "image_count": 5,
+    "dimensions": [
+      1080,
+      1350
+    ],
+    "caption_hashtags": [
+      "#人生對話",
+      "#盲盒日常",
+      "#衝動購物",
+      "#收藏日常"
+    ],
+    "opening_line_character_count": 11,
+    "visual_review": "passed",
+    "image_integrity": [
+      {
+        "path": "assets/2026-11-25_2030_deadpan_joke_01.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 2506751,
+        "sha256": "017ce39f3d99d8b01e7921361d080e50883e140f724d111e059986b4165b0460",
+        "headline_ink_bounds_px": [
+          80,
+          87,
+          1016,
+          187
+        ]
+      },
+      {
+        "path": "assets/2026-11-25_2030_deadpan_joke_02.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 2190301,
+        "sha256": "3ca2cf31de5646d016c7f98f0935ec4729df12fff575737ab492798f90641254",
+        "headline_ink_bounds_px": [
+          138,
+          94,
+          968,
+          165
+        ]
+      },
+      {
+        "path": "assets/2026-11-25_2030_deadpan_joke_03.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 2472858,
+        "sha256": "2da3f508987e881bc239da85bf91ed36383fce27571bfa5d671977403a95e713",
+        "headline_ink_bounds_px": [
+          76,
+          88,
+          1011,
+          182
+        ]
+      },
+      {
+        "path": "assets/2026-11-25_2030_deadpan_joke_04.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 2518556,
+        "sha256": "4487545840f79834d161e0895c676f43bb560cc17eaf799de6360af666185c73",
+        "headline_ink_bounds_px": [
+          82,
+          103,
+          1005,
+          177
+        ]
+      },
+      {
+        "path": "assets/2026-11-25_2030_deadpan_joke_05.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 2522747,
+        "sha256": "c9823a1723f3740dc3b10d9b9ae1a3d7bccd014ccb4fa0e831bd9107968988dc",
+        "headline_ink_bounds_px": [
+          75,
+          93,
+          1018,
+          160
+        ]
+      }
+    ]
+  },
+  "story_lines": [
+    "貓：又重複，還拆盲盒？",
+    "我：再一隻，這排就湊齊了。",
+    "貓：你喜歡缺的那隻？",
+    "我：還好，但空一格很刺眼。",
+    "貓：這格空房，還要房東付租金。"
+  ],
+  "reel_target_seconds": 30,
+  "music_profile": "playful_clown_instrumental_v1",
+  "soundtrack_profile": "playful_clown_instrumental_v1",
+  "reference_study_status": "unavailable; original five-beat fallback",
+  "trend_used": false,
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-25_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
