@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-26_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-26_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "story_lines": [
     "我：彈錯一音，整首重來。",
     "我：一小時了，還在前三個音。",
@@ -149,5 +149,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "18119514980015033",
+  "instagram_story_media_id": "18100725287407095",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-26T20:51:55"
 }
