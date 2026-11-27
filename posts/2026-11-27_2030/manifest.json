@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-27_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-27_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "story_lines": [
     "貓：捏著鼻子，還點？",
     "我：朋友又送同款香氛給我。",
@@ -151,5 +151,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17965163471998387",
+  "instagram_story_media_id": "18502619431105095",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-27T20:49:39"
 }
