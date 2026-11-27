@@ -1,0 +1,155 @@
+{
+  "run_id": "2026-11-27_2030",
+  "content_mode": "life_dialogue",
+  "mood": "comic",
+  "topic": "捏鼻子點朋友送的香氛，假稱讚讓朋友記住假喜好",
+  "image_paths": [
+    "assets/2026-11-27_2030_deadpan_joke_01.png",
+    "assets/2026-11-27_2030_deadpan_joke_02.png",
+    "assets/2026-11-27_2030_deadpan_joke_03.png",
+    "assets/2026-11-27_2030_deadpan_joke_04.png",
+    "assets/2026-11-27_2030_deadpan_joke_05.png"
+  ],
+  "caption_path": "captions/2026-11-27_2030_deadpan_joke.md",
+  "prompt_path": "prompts/2026-11-27_2030_generation_prompt.md",
+  "status": "generated",
+  "story_lines": [
+    "貓：捏著鼻子，還點？",
+    "我：朋友又送同款香氛給我。",
+    "貓：你有說不喜歡嗎？",
+    "我：怕他難過，每次都說好香。",
+    "貓：他記得你的喜好，假的那個。"
+  ],
+  "growth_experiment": {
+    "id": "organic_v4_action_scale_20261120_explore",
+    "label": "首格動作中近景（免費探索，非優勝）",
+    "hook_style": "第一格直接是貓對眼前動作的吐槽或追問；含說話者最多16字，具體到能看見矛盾，不先講道理。首格只改取景尺度：Roberto的臉、正在做事的手、關鍵道具與賓士貓表情作中近景，占去大半畫面，減少無關空白；完整首句仍清楚，不裁掉貓或關鍵動作。其餘四頁、首句說話者既有輪替、題材輪替、五頁30秒與音樂時段不變。",
+    "topic_pillar": "關係：付出、界線與真實的小對話",
+    "conclusion_style": "貓一句話翻轉前面場景；自然有餘味即可，不硬塞教訓或制式判斷問句",
+    "cta_style": "用故事最後一句收尾；不索取留言、按讚、分享或收藏",
+    "reel_seconds": 30,
+    "cycle_id": "organic_v4_action_scale_20261120",
+    "scheduled_for": "2026-11-27",
+    "review_on": "2026-12-04",
+    "checkpoint_on": "2026-11-24",
+    "status": "free_exploration_not_winner",
+    "hypothesis": "只改首格動作取景尺度；與舊期僅描述性比較，故事不同不能歸因。",
+    "decision_rule": "同齡72–96小時至少5篇、觸及200；分享收藏為0不得稱勝出。12/18硬期限重新決定去留，不自動加權或付費。",
+    "speaker_rotation": "貓先戳破一句",
+    "starts_on": "2026-11-20",
+    "decision_deadline": "2026-12-18"
+  },
+  "reel_target_seconds": 30,
+  "suggested_page_durations_seconds": [
+    5,
+    6,
+    5,
+    6,
+    8
+  ],
+  "music_profile": "playful_clown_instrumental_v1",
+  "soundtrack_profile": "playful_clown_instrumental_v1",
+  "generation_method": "built-in image_gen",
+  "reference_study_status": "unavailable; original five-beat fallback",
+  "trend_used": false,
+  "validation": {
+    "image_count": 5,
+    "dimensions": [
+      1080,
+      1350
+    ],
+    "opening_line_character_count": 10,
+    "caption_hashtags": [
+      "#人生對話",
+      "#友情日常",
+      "#送禮",
+      "#說不出口"
+    ],
+    "visual_review": "passed; root inspected selected outputs and an independent agent inspected all five final PNG files",
+    "text_review": "all five exact lines verified visually; Traditional Chinese Tesseract OCR matched headline characters; punctuation omissions in OCR resolved by visual review",
+    "candidate_count": 13,
+    "nonworkplace_candidate_count": 13,
+    "selected_candidate_score": 19,
+    "scores_are_editorial_hypotheses": true,
+    "recent_posts_compared": 20,
+    "broader_archive_check": "Rejected salty-soup candidate because of published 2026-11-06 scene overlap; no published candle/fake-preference match found",
+    "image_integrity": [
+      {
+        "path": "assets/2026-11-27_2030_deadpan_joke_01.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 2020242,
+        "sha256": "c0f3b1789c5d1c1e30b1d554087c8bbc8897d30664a92763d6ce0ed7ae365cd8",
+        "headline_ink_bounds_px": [
+          156,
+          102,
+          932,
+          183
+        ]
+      },
+      {
+        "path": "assets/2026-11-27_2030_deadpan_joke_02.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 1959804,
+        "sha256": "e95e69cba20dce0918ad246c13a25048dcce02641539cb7b05b69824a0ffbec8",
+        "headline_ink_bounds_px": [
+          96,
+          95,
+          996,
+          165
+        ]
+      },
+      {
+        "path": "assets/2026-11-27_2030_deadpan_joke_03.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 1971585,
+        "sha256": "1e1279257591b500a100303cabd28d585e8fe7038a96e65de2514687a09edac0",
+        "headline_ink_bounds_px": [
+          132,
+          94,
+          947,
+          172
+        ]
+      },
+      {
+        "path": "assets/2026-11-27_2030_deadpan_joke_04.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 1881416,
+        "sha256": "d836101bde94774dd80049739cd1ffc7ef8893fb80887115e6488804cbeb4f26",
+        "headline_ink_bounds_px": [
+          118,
+          111,
+          974,
+          175
+        ]
+      },
+      {
+        "path": "assets/2026-11-27_2030_deadpan_joke_05.png",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 1820039,
+        "sha256": "c6086b21f2874c0eed8f7f568a39a762db4bdc3c61d645effcec6ad950a6ba4c",
+        "headline_ink_bounds_px": [
+          105,
+          116,
+          978,
+          177
+        ]
+      }
+    ]
+  },
+  "publish_format": "reel",
+  "video_path": "assets/2026-11-27_2030_deadpan_joke_reel.mp4",
+  "motion_style": "mini_clown_2_5d_v1",
+  "reel_seconds": 30,
+  "page_durations": [
+    5.0,
+    6.333,
+    6.333,
+    6.333,
+    6.0
+  ]
+}
