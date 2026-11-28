@@ -12,7 +12,7 @@
   ],
   "caption_path": "captions/2026-11-28_2030_deadpan_joke.md",
   "prompt_path": "prompts/2026-11-28_2030_generation_prompt.md",
-  "status": "generated",
+  "status": "published",
   "story_lines": [
     "我：他約吃飯，我截圖問人。",
     "我：三個朋友，猜出三種意思。",
@@ -153,5 +153,9 @@
     6.333,
     6.333,
     6.0
-  ]
+  ],
+  "instagram_media_id": "17895791205685634",
+  "instagram_story_media_id": "17920988709602469",
+  "instagram_story_status": "published",
+  "published_at": "2026-11-28T20:51:15"
 }
